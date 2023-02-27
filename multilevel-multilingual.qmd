@@ -2,13 +2,14 @@
 
 ## Introduction
 
-Below, I describe the use of Stata, R, and Julia to estimate multilevel models. Because this document is built by `quarto` I describe calling these programs from within a `quarto` environment. However, each piece of software could be used individually.
+Below, I describe the use of Stata, R, and Julia to estimate multilevel models. Because this document is built by [`quarto`](https://quarto.org/), I describe calling these programs from within a `quarto` environment. However, each piece of software could be used individually and separately.
 
 ## The Data
 
 The examples below use the `simulated_multilevel_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/).
 
-```{r, message = FALSE}
+```{r}
+#| output: false
 
 file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta", 
           ".",
@@ -71,6 +72,8 @@ $$y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_0 + u_1j \times x + e_{ij}$$
 In Stata `mixed`, the syntax for a multilevel model of the form described in @eq-MLMsimple is:
 
 `mixed y x || group: x`
+
+#### Get The Data And Run The Model
 
 ```{stata}
 

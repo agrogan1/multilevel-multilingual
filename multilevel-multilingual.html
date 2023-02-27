@@ -113,16 +113,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Multilevel Models in Stata, R and Julia</h1>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Below, I describe the use of Stata, R, and Julia to estimate multilevel models. Because this document is built by <code>quarto</code> I describe calling these programs from within a <code>quarto</code> environment. However, each piece of software could be used individually.</p>
+<p>Below, I describe the use of Stata, R, and Julia to estimate multilevel models. Because this document is built by <a href="https://quarto.org/"><code>quarto</code></a>, I describe calling these programs from within a <code>quarto</code> environment. However, each piece of software could be used individually and separately.</p>
 </section>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
-<p>The examples below use the <code>simulated_multilevel_data.dta</code> file.</p>
+<p>The examples below use the <code>simulated_multilevel_data.dta</code> file from <a href="https://agrogan1.github.io/multilevel-thinking/"><em>Multilevel Thinking</em></a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="st">"../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"</span>, <span class="st">"."</span>) <span class="co"># copy over most recent version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="st">"../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"</span>, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>          <span class="st">"."</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">overwrite =</span> <span class="cn">TRUE</span>) <span class="co"># copy over most recent version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="the-equation" class="level2">
@@ -137,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>I need to use the library <code>Statamarkdown</code> to call Stata, or I could run Stata on its own</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Statamarkdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Statamarkdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Stata found at /Applications/Stata/StataSE.app/Contents/MacOS/StataSE</code></pre>
 </div>
@@ -149,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>In R, I use the library <code>lme4</code> to run multilevel models.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: Matrix</code></pre>
 </div>
@@ -158,9 +157,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>I need to call Julia from R.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(JuliaCall)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">julia_setup</span>(<span class="at">JULIA_HOME =</span> <span class="st">"/Applications/Julia-1.8.app/Contents/Resources/julia/bin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(JuliaCall)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">julia_setup</span>(<span class="at">JULIA_HOME =</span> <span class="st">"/Applications/Julia-1.8.app/Contents/Resources/julia/bin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Julia version 1.8.5 at location /Applications/Julia-1.8.app/Contents/Resources/julia/bin will be used.</code></pre>
 </div>
@@ -183,13 +182,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Julia</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>In Stata, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
+<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
 <p><code>mixed y x || group: x</code></p>
+<section id="get-the-data-and-run-the-model" class="level4">
+<h4 class="anchored" data-anchor-id="get-the-data-and-run-the-model">Get The Data And Run The Model</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
@@ -235,27 +236,28 @@ LR test vs. linear model: chi2(2) = 198.01                Prob &gt; chi2 = 0.000
 Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
 </div>
+</section>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>In <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
+<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
 <p><code>lmer(y ~ x + z + (1 + x || group), data = ...)</code></p>
 <section id="get-the-data" class="level4">
 <h4 class="anchored" data-anchor-id="get-the-data">Get The Data</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="run-the-model" class="level4">
 <h4 class="anchored" data-anchor-id="run-the-model">Run The Model</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
 Formula: outcome ~ warmth + physical_punishment + group + HDI + ((1 |  
@@ -294,29 +296,29 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 </section>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<p>In Julia, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
+<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
 <p><code>fit(MixedModel, @formula(y ~ x + z + (1 + x | group)), data)</code></p>
 <section id="load-the-needed-packages-and-load-the-data" class="level4">
 <h4 class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data">Load The Needed Packages And Load The Data</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="change-country-to-categorical" class="level4">
 <h4 class="anchored" data-anchor-id="change-country-to-categorical">Change Country To Categorical</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="run-the-model-1" class="level4">
 <h4 class="anchored" data-anchor-id="run-the-model-1">Run The Model</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>               group <span class="op">+</span> HDI <span class="op">+</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>               group <span class="op">+</span> HDI <span class="op">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
  outcome ~ 1 + warmth + physical_punishment + group + HDI + (1 + warmth | country)
