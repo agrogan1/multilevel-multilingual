@@ -17,6 +17,19 @@ file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated
 
 ```
 
+```{r}
+#| echo: false
+
+library(haven)
+
+library(pander)
+
+df <- read_dta("simulated_multilevel_data.dta")
+
+pander(head(df))
+
+```
+
 ## The Equation
 
 $$\begin{gather} \text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth} + e_{ij} \end{gather}$$ {#eq-MLMsubstantive}
