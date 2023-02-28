@@ -19,14 +19,16 @@ file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated
 
 ```{r}
 #| echo: false
+#| label: tbl-multilingual1
+#| tbl-cap: Sample of Simulated Multilevel Data
 
-library(haven)
+library(haven) # read Stata
 
-library(pander)
+library(pander) # nice tables
 
-df <- read_dta("simulated_multilevel_data.dta")
+df <- read_dta("simulated_multilevel_data.dta") # read in data
 
-pander(head(df))
+pander(head(df)) # nice table
 
 ```
 
