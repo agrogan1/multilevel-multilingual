@@ -1,12 +1,34 @@
-# Multilevel Models in Stata, R and Julia
+---
+title: "Multilevel Models in Stata, R and Julia"
+author: "Andrew Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: cosmo
+      dark: vapor
+---
 
 ## Introduction
 
-Below, I describe the use of Stata, R, and Julia to estimate multilevel models. Because this document is built by [`quarto`](https://quarto.org/), I describe calling these programs from within a `quarto` environment. However, each piece of software could be used individually and separately.
+Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate multilevel models. Because this document is built by [`quarto`](https://quarto.org/), I describe calling these programs from within a `quarto` environment. However, each piece of software could be used individually and separately.
 
 ## The Data
 
-The examples below use the `simulated_multilevel_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/).
+```{r}
+#| echo: false
+#| label: fig-bookcover
+#| fig-cap: "Book Cover For Multilevel Thinking"
+#| column: margin
+
+knitr::include_graphics("bookcover.png")
+
+```
+
+
+The examples below use the `simulated_multilevel_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html). Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta) to download the data.
 
 ```{r}
 #| output: false
