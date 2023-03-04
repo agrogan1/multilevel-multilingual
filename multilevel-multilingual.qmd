@@ -13,7 +13,17 @@ format:
 
 ## Introduction
 
-Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate multilevel models. Because this document is built by [`quarto`](https://quarto.org/), I describe calling these programs from within a `quarto` environment. However, each piece of software could be used individually and separately.
+```{css, echo=FALSE}
+
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
+```
+
+Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate multilevel models. Because this document is built by [`Quarto`](https://quarto.org/), I describe calling these programs from within a `Quarto` environment. However, each piece of software could be used individually and separately.
 
 ## The Data
 
@@ -110,11 +120,38 @@ In Stata `mixed`, the syntax for a multilevel model of the form described in @eq
 
 `mixed y x || group: x`
 
-#### Get The Data And Run The Model
+#### Get The Data 
 
-```{stata}
+::: {.callout-tip collapse="true"}
+#### Tip For Running Stata From Quarto
+
+Because I am running Stata from inside a Quarto document, and running Stata in multiple chunks, I need to use the `collectcode=TRUE` option in the first Stata chunk. i.e. my Quarto chunk needs to begin with ````{stata, collectcode=TRUE}`
+
+See Doug Hemken's excellent documentation on `Statamarkdown` [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/linking-code-blocks.html#linking-code-blocks-1).
+:::
+
+```{stata, collectcode=TRUE}
 
 use simulated_multilevel_data.dta
+
+```
+
+#### Graph
+
+```{stata}
+#| fig-height: 3
+
+twoway scatter outcome warmth, xtitle("warmth") ytitle("outcome") title("Outcome by Parental Warmth") scheme(s1color)
+
+quietly graph export scatter.svg, replace
+
+```
+
+![Outcome by Parental Warmth](scatter.svg)
+
+#### Run The Model
+
+```{stata}
 
 mixed outcome warmth physical_punishment group HDI || country: warmth
 
@@ -133,6 +170,21 @@ In R `lme4`, the general syntax for a multilevel model of the form described in 
 library(haven)
 
 df <- read_dta("simulated_multilevel_data.dta")
+
+```
+
+#### Graph
+
+```{r}
+#| fig-height: 3
+
+library(ggplot2)
+
+ggplot(df,
+       aes(x = warmth,
+           y = outcome)) +
+  geom_point(color = "dodgerblue") +
+  labs(title = "Outcome by Parental Warmth")
 
 ```
 
@@ -164,6 +216,19 @@ In Julia `MixedModels`, the general syntax for a multilevel model of the form de
 using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 
 df = DataFrame(load("simulated_multilevel_data.dta"))
+
+```
+
+#### Graph
+
+```{julia}
+#| fig-height: 3
+
+using StatsPlots
+
+@df df scatter(:outcome, :warmth, title = "Outcome by Parental Warmth",
+               ylabel = "outcome",
+               xlabel = "parental warmth")
 
 ```
 

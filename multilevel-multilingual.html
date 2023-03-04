@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-03-01">
+<meta name="dcterms.date" content="2023-03-04">
 
 <title>Multilevel Models in Stata, R and Julia</title>
 <style>
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 1, 2023</p>
+      <p class="date">March 4, 2023</p>
     </div>
   </div>
   
@@ -154,7 +154,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate multilevel models. Because this document is built by <a href="https://quarto.org/"><code>quarto</code></a>, I describe calling these programs from within a <code>quarto</code> environment. However, each piece of software could be used individually and separately.</p>
+<div class="cell">
+<style type="text/css">
+
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
+</style>
+</div>
+<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate multilevel models. Because this document is built by <a href="https://quarto.org/"><code>Quarto</code></a>, I describe calling these programs from within a <code>Quarto</code> environment. However, each piece of software could be used individually and separately.</p>
 </section>
 <section id="the-data" class="level2 page-columns page-full" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">2</span> The Data</h2>
@@ -328,13 +339,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
 <p><code>mixed y x || group: x</code></p>
-<section id="get-the-data-and-run-the-model" class="level4" data-number="5.0.1">
-<h4 data-number="5.0.1" class="anchored" data-anchor-id="get-the-data-and-run-the-model"><span class="header-section-number">5.0.1</span> Get The Data And Run The Model</h4>
-<div class="cell">
+<section id="get-the-data" class="level4" data-number="5.0.1">
+<h4 data-number="5.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">5.0.1</span> Get The Data</h4>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip For Running Stata From Quarto
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Because I am running Stata from inside a Quarto document, and running Stata in multiple chunks, I need to use the <code>collectcode=TRUE</code> option in the first Stata chunk. i.e.&nbsp;my Quarto chunk needs to begin with ```<code>{stata, collectcode=TRUE}</code></p>
+<p>See Doug Hemken’s excellent documentation on <code>Statamarkdown</code> <a href="https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/linking-code-blocks.html#linking-code-blocks-1">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+</div>
+</section>
+<section id="graph" class="level4" data-number="5.0.2">
+<h4 data-number="5.0.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">5.0.2</span> Graph</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">twoway</span> <span class="kw">scatter</span> outcome warmth, <span class="bn">xtitle</span>(<span class="st">"warmth"</span>) <span class="bn">ytitle</span>(<span class="st">"outcome"</span>) <span class="bn">title</span>(<span class="st">"Outcome by Parental Warmth"</span>) <span class="dv">scheme</span>(s1color)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">graph</span> <span class="kw">export</span> <span class="kw">scatter</span>.svg, <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&gt; Parental Warmth") scheme(s1color)
+</code></pre>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="scatter.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Outcome by Parental Warmth</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="run-the-model" class="level4" data-number="5.0.3">
+<h4 data-number="5.0.3" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">5.0.3</span> Run The Model</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
@@ -385,23 +439,38 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
 <p><code>lmer(y ~ x + z + (1 + x || group), data = ...)</code></p>
-<section id="get-the-data" class="level4" data-number="5.0.2">
-<h4 data-number="5.0.2" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">5.0.2</span> Get The Data</h4>
+<section id="get-the-data-1" class="level4" data-number="5.0.4">
+<h4 data-number="5.0.4" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">5.0.4</span> Get The Data</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model" class="level4" data-number="5.0.3">
-<h4 data-number="5.0.3" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">5.0.3</span> Run The Model</h4>
+<section id="graph-1" class="level4" data-number="5.0.5">
+<h4 data-number="5.0.5" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">5.0.5</span> Graph</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> warmth,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> outcome)) <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"dodgerblue"</span>) <span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Outcome by Parental Warmth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="multilevel-multilingual_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="run-the-model-1" class="level4" data-number="5.0.6">
+<h4 data-number="5.0.6" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">5.0.6</span> Run The Model</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
 Formula: outcome ~ warmth + physical_punishment + group + HDI + ((1 |  
@@ -442,27 +511,40 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;2</a> is:</p>
 <p><code>fit(MixedModel, @formula(y ~ x + z + (1 + x | group)), data)</code></p>
-<section id="load-the-needed-packages-and-load-the-data" class="level4" data-number="5.0.4">
-<h4 data-number="5.0.4" class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data"><span class="header-section-number">5.0.4</span> Load The Needed Packages And Load The Data</h4>
+<section id="load-the-needed-packages-and-load-the-data" class="level4" data-number="5.0.7">
+<h4 data-number="5.0.7" class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data"><span class="header-section-number">5.0.7</span> Load The Needed Packages And Load The Data</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="change-country-to-categorical" class="level4" data-number="5.0.5">
-<h4 data-number="5.0.5" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">5.0.5</span> Change Country To Categorical</h4>
+<section id="graph-2" class="level4" data-number="5.0.8">
+<h4 data-number="5.0.8" class="anchored" data-anchor-id="graph-2"><span class="header-section-number">5.0.8</span> Graph</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> df <span class="fu">scatter</span>(<span class="op">:</span>outcome, <span class="op">:</span>warmth, title <span class="op">=</span> <span class="st">"Outcome by Parental Warmth"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>               ylabel <span class="op">=</span> <span class="st">"outcome"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>               xlabel <span class="op">=</span> <span class="st">"parental warmth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="multilevel-multilingual_files/figure-html/unnamed-chunk-15-J1.png" class="img-fluid" width="300"></p>
+</div>
 </div>
 </section>
-<section id="run-the-model-1" class="level4" data-number="5.0.6">
-<h4 data-number="5.0.6" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">5.0.6</span> Run The Model</h4>
+<section id="change-country-to-categorical" class="level4" data-number="5.0.9">
+<h4 data-number="5.0.9" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">5.0.9</span> Change Country To Categorical</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>               group <span class="op">+</span> HDI <span class="op">+</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="run-the-model-2" class="level4" data-number="5.0.10">
+<h4 data-number="5.0.10" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">5.0.10</span> Run The Model</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>               group <span class="op">+</span> HDI <span class="op">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
  outcome ~ 1 + warmth + physical_punishment + group + HDI + (1 + warmth | country)
