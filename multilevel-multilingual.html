@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-03-04">
+<meta name="dcterms.date" content="2023-03-27">
 
 <title>Multilevel Models in Stata, R and Julia</title>
 <style>
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 4, 2023</p>
+      <p class="date">March 27, 2023</p>
     </div>
   </div>
   
@@ -373,7 +373,7 @@ Tip For Running Stata From Quarto
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">graph</span> <span class="kw">export</span> <span class="kw">scatter</span>.svg, <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&gt; Parental Warmth") scheme(s1color)
+<pre><code>&gt; ntal Warmth") scheme(s1color)
 </code></pre>
 </div>
 </div>
@@ -524,9 +524,10 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> df <span class="fu">scatter</span>(<span class="op">:</span>outcome, <span class="op">:</span>warmth, title <span class="op">=</span> <span class="st">"Outcome by Parental Warmth"</span>,</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>               ylabel <span class="op">=</span> <span class="st">"outcome"</span>,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>               xlabel <span class="op">=</span> <span class="st">"parental warmth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> df <span class="fu">scatter</span>(<span class="op">:</span>outcome, <span class="op">:</span>warmth, </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>               title <span class="op">=</span> <span class="st">"Outcome by Parental Warmth"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>               ylabel <span class="op">=</span> <span class="st">"outcome"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>               xlabel <span class="op">=</span> <span class="st">"parental warmth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="multilevel-multilingual_files/figure-html/unnamed-chunk-15-J1.png" class="img-fluid" width="300"></p>
 </div>

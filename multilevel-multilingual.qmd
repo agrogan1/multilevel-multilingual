@@ -226,7 +226,8 @@ df = DataFrame(load("simulated_multilevel_data.dta"))
 
 using StatsPlots
 
-@df df scatter(:outcome, :warmth, title = "Outcome by Parental Warmth",
+@df df scatter(:outcome, :warmth, 
+               title = "Outcome by Parental Warmth",
                ylabel = "outcome",
                xlabel = "parental warmth")
 
