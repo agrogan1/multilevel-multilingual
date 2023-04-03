@@ -1,0 +1,216 @@
+---
+title: "Cross-Classified Models in Stata, R and Julia"
+author: "Andrew Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: cosmo
+      dark: vapor
+---
+
+## Introduction
+
+```{css, echo=FALSE}
+
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
+```
+
+Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate cross-classified models. Because this document is built by [`Quarto`](https://quarto.org/), I describe calling these programs from within a `Quarto` environment. However, each piece of software could be used individually and separately.
+
+## The Data
+
+```{r}
+#| echo: false
+#| label: fig-bookcover
+#| fig-cap: "Book Cover For Multilevel Thinking"
+#| column: margin
+
+knitr::include_graphics("bookcover.png")
+
+```
+
+
+The examples below use the `simulated_multilevel_longitudinal_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html). Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta) to download the data.
+
+```{r}
+#| output: false
+
+file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta", 
+          ".",
+          overwrite = TRUE) # copy over most recent version
+
+```
+
+```{r}
+#| echo: false
+#| label: tbl-multilingual1
+#| tbl-cap: Sample of Simulated Multilevel Longitudinal Data
+
+library(haven) # read Stata
+
+library(pander) # nice tables
+
+df <- read_dta("simulated_multilevel_longitudinal_data.dta") # read in data
+
+pander(head(df)) # nice table
+
+```
+
+## The Equation
+
+$$\begin{gather} \text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + v_{0i} + e_{ij} \end{gather}$$ {#eq-crossclassifiedsubstantive}
+   
+## Setup 
+
+::: {.panel-tabset}
+
+### Stata
+
+I need to use the library `Statamarkdown` to call Stata, or I could run Stata on its own
+
+```{r}
+
+library(Statamarkdown)
+
+```
+
+### R
+
+In R, I use the library `lme4` to run multilevel models.
+
+```{r}
+
+library(lme4)
+
+```
+
+### Julia
+
+I need to call Julia from R.
+
+```{r}
+
+library(JuliaCall)
+
+julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
+
+```
+
+:::
+
+## Get Data & Run Models
+
+To explain statistical syntax for each software, I consider the more general case of a cross-classified model with dependent variable `y`, independent variables `x` and `z`, clustering variables `country` and `id`.
+
+$$y = \beta_0 + \beta_1 x_{ijt} + \beta_2 z_{ijt} + u_{0j} + v_{0i} + e_{ijt}$$ {#eq-crossclassfiedsimple}
+
+::: {.panel-tabset}
+
+### Stata
+
+In Stata `mixed`, the syntax for a multilevel model of the form described in @eq-MLMsimple is:
+
+`mixed y x || _all: R.group1 || group2:`
+
+#### Get The Data 
+
+::: {.callout-tip collapse="true"}
+#### Tip For Running Stata From Quarto
+
+Because I am running Stata from inside a Quarto document, and running Stata in multiple chunks, I need to use the `collectcode=TRUE` option in the first Stata chunk. i.e. my Quarto chunk needs to begin with ````{stata, collectcode=TRUE}`
+
+See Doug Hemken's excellent documentation on `Statamarkdown` [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/linking-code-blocks.html#linking-code-blocks-1).
+:::
+
+```{stata, collectcode=TRUE}
+
+use simulated_multilevel_longitudinal_data.dta
+
+```
+
+#### Run The Model
+
+```{stata}
+
+mixed outcome t warmth physical_punishment group HDI || _all: R.country || id:
+
+```
+
+### R
+
+In R `lme4`, the general syntax for a multilevel model of the form described in @eq-MLMsimple is:
+
+`lmer(y ~ x + z + (1 || group1) + (1 || group2), data = ...)`
+
+#### Get The Data
+
+```{r}
+
+library(haven)
+
+df <- read_dta("simulated_multilevel_longitudinal_data.dta")
+
+```
+
+#### Run The Model
+
+```{r}
+#| warning: false
+
+fit1 <- lmer(outcome ~ t + warmth + physical_punishment + 
+               group + HDI +
+               (1 | id) +
+               (1 | country),
+             data = df)
+
+summary(fit1)
+
+```
+
+### Julia
+
+In Julia `MixedModels`, the general syntax for a multilevel model of the form described in @eq-MLMsimple is:
+
+`fit(MixedModel, @formula(y ~ x + z + (1 | group1) + (1 | group2)), data)`
+
+#### Load The Needed Packages And Load The Data
+
+```{julia}
+#| output: false
+
+using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+df = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
+
+```
+
+#### Change Country To Categorical
+
+```{julia}
+#| output: false
+
+@transform!(df, :country = categorical(:country))
+
+```
+
+#### Run The Model
+
+```{julia}
+
+m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment + 
+                                group + HDI +
+                                (1 | id) +
+                                (1 | country)), df)
+
+```
+
+:::
+
