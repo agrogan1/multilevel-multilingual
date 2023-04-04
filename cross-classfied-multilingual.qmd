@@ -66,7 +66,7 @@ pander(head(df)) # nice table
 
 ## The Equation
 
-$$\begin{gather} \text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + v_{0i} + e_{ij} \end{gather}$$ {#eq-crossclassifiedsubstantive}
+$$\begin{gather} \text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt} \end{gather}$$ {#eq-crossclassifiedsubstantive}
    
 ## Setup 
 
@@ -148,7 +148,7 @@ mixed outcome t warmth physical_punishment group HDI || _all: R.country || id:
 
 In R `lme4`, the general syntax for a multilevel model of the form described in @eq-MLMsimple is:
 
-`lmer(y ~ x + z + (1 || group1) + (1 || group2), data = ...)`
+`lmer(y ~ x + z + (1 | group1) + (1 | group2), data = ...)`
 
 #### Get The Data
 
@@ -205,7 +205,7 @@ df = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
 
 ```{julia}
 
-m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment + 
+m1 = fit(MixedModel, @formula(outcome ~ t + warmth + physical_punishment + 
                                 group + HDI +
                                 (1 | id) +
                                 (1 | country)), df)
