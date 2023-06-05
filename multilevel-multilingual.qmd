@@ -9,6 +9,7 @@ format:
     theme:
       light: cosmo
       dark: vapor
+    fig-height: 3
 ---
 
 ## Introduction
@@ -183,7 +184,7 @@ library(ggplot2)
 ggplot(df,
        aes(x = warmth,
            y = outcome)) +
-  geom_point(color = "dodgerblue") +
+  geom_point() +
   labs(title = "Outcome by Parental Warmth")
 
 ```
