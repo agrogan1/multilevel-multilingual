@@ -141,7 +141,7 @@ use simulated_multilevel_data.dta
 ```{stata}
 #| fig-height: 3
 
-twoway scatter outcome warmth, xtitle("warmth") ytitle("outcome") title("Outcome by Parental Warmth") scheme(s1color)
+twoway scatter outcome warmth, xtitle("warmth") ytitle("outcome") title("Outcome by Parental Warmth") 
 
 quietly graph export scatter.svg, replace
 

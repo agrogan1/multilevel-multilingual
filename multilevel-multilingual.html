@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-03-27">
+<meta name="dcterms.date" content="2023-06-05">
 
 <title>Multilevel Models in Stata, R and Julia</title>
 <style>
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 27, 2023</p>
+      <p class="date">June 5, 2023</p>
     </div>
   </div>
   
@@ -369,11 +369,11 @@ Tip For Running Stata From Quarto
 <section id="graph" class="level4" data-number="5.0.2">
 <h4 data-number="5.0.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">5.0.2</span> Graph</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">twoway</span> <span class="kw">scatter</span> outcome warmth, <span class="bn">xtitle</span>(<span class="st">"warmth"</span>) <span class="bn">ytitle</span>(<span class="st">"outcome"</span>) <span class="bn">title</span>(<span class="st">"Outcome by Parental Warmth"</span>) <span class="dv">scheme</span>(s1color)</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">twoway</span> <span class="kw">scatter</span> outcome warmth, <span class="bn">xtitle</span>(<span class="st">"warmth"</span>) <span class="bn">ytitle</span>(<span class="st">"outcome"</span>) <span class="bn">title</span>(<span class="st">"Outcome by Parental Warmth"</span>) </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">graph</span> <span class="kw">export</span> <span class="kw">scatter</span>.svg, <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&gt; ntal Warmth") scheme(s1color)
+<pre><code>&gt; th") 
 </code></pre>
 </div>
 </div>
@@ -393,22 +393,22 @@ Tip For Running Stata From Quarto
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:   log likelihood =  -9668.198  
-Iteration 1:   log likelihood = -9667.9551  
-Iteration 2:   log likelihood = -9667.9534  
-Iteration 3:   log likelihood = -9667.9533  
-Iteration 4:   log likelihood = -9667.9532  
+Iteration 0:  Log likelihood =  -9668.198  
+Iteration 1:  Log likelihood = -9667.9551  
+Iteration 2:  Log likelihood = -9667.9534  
+Iteration 3:  Log likelihood = -9667.9533  
+Iteration 4:  Log likelihood = -9667.9532  
 
 Computing standard errors ...
 
-Mixed-effects ML regression                     Number of obs     =      3,000
-Group variable: country                         Number of groups  =         30
-                                                Obs per group:
-                                                              min =        100
-                                                              avg =      100.0
-                                                              max =        100
-                                                Wald chi2(4)      =     401.26
-Log likelihood = -9667.9532                     Prob &gt; chi2       =     0.0000
+Mixed-effects ML regression                          Number of obs    =  3,000
+Group variable: country                              Number of groups =     30
+                                                     Obs per group:
+                                                                  min =    100
+                                                                  avg =  100.0
+                                                                  max =    100
+                                                     Wald chi2(4)     = 401.26
+Log likelihood = -9667.9532                          Prob &gt; chi2      = 0.0000
 
 -------------------------------------------------------------------------------------
             outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
