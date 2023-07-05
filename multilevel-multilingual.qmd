@@ -67,7 +67,7 @@ pander(head(df)) # nice table
 
 ## The Equation
 
-$$\begin{gather} \text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth} + e_{ij} \end{gather}$$ {#eq-MLMsubstantive}
+$$\begin{gather} \text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij} \end{gather}$$ {#eq-MLMsubstantive}
    
 ## Setup 
 
@@ -85,11 +85,11 @@ library(Statamarkdown)
 
 ### R
 
-In R, I use the library `lme4` to run multilevel models.
+In R, I use the library `lme4` to run multilevel models. 
 
 ```{r}
 
-library(lme4)
+library(lme4) 
 
 ```
 
@@ -109,9 +109,9 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 ## Get Data & Run Models
 
-To explain statistical syntax for each software, I consider the more general case of a multilevel model with dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`.
+To explain statistical syntax for each software, I consider the more general case of a multilevel model with dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`. *i* is the index for the person, while *j* is the index for the `group`.
 
-$$y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_0 + u_1j \times x + e_{ij}$$ {#eq-MLMsimple}
+$$y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij}$$ {#eq-MLMsimple}
 
 ::: {.panel-tabset}
 
@@ -199,7 +199,7 @@ fit1 <- lmer(outcome ~ warmth + physical_punishment +
                (1 + warmth || country),
              data = df)
 
-summary(fit1)
+tab_model(fit1)
 
 ```
 
