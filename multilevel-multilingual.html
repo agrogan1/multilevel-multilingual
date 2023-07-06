@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-07-05">
+<meta name="dcterms.date" content="2023-07-06">
 
 <title>Multilevel Models in Stata, R and Julia</title>
 <style>
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 5, 2023</p>
+      <p class="date">July 6, 2023</p>
     </div>
   </div>
   
@@ -469,9 +469,40 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in tab_model(fit1): could not find function "tab_model"</code></pre>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: outcome ~ warmth + physical_punishment + group + HDI + ((1 |  
+    country) + (0 + warmth | country))
+   Data: df
+
+REML criterion at convergence: 19350.3
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4496 -0.6807  0.0016  0.6864  3.1792 
+
+Random effects:
+ Groups    Name        Variance  Std.Dev.
+ country   (Intercept)  3.611568 1.90041 
+ country.1 warmth       0.001876 0.04331 
+ Residual              36.049124 6.00409 
+Number of obs: 3000, groups:  country, 30
+
+Fixed effects:
+                    Estimate Std. Error t value
+(Intercept)         49.88754    1.48203  33.662
+warmth               0.96155    0.05875  16.367
+physical_punishment -0.84556    0.07986 -10.588
+group                1.08471    0.22017   4.927
+HDI                  0.01044    0.02116   0.493
+
+Correlation of Fixed Effects:
+            (Intr) warmth physc_ group 
+warmth      -0.126                     
+physcl_pnsh -0.135 -0.025              
+group       -0.218 -0.010 -0.019       
+HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 </div>
 </div>
 </section>

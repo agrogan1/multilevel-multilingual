@@ -199,7 +199,7 @@ fit1 <- lmer(outcome ~ warmth + physical_punishment +
                (1 + warmth || country),
              data = df)
 
-tab_model(fit1)
+summary(fit1)
 
 ```
 
