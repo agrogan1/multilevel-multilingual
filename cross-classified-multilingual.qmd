@@ -1,27 +1,8 @@
 ---
 title: "Cross-Classified Models in Stata, R and Julia"
-author: "Andrew Grogan-Kaylor"
-date: "today"
-format:
-  html:
-    toc: true
-    number-sections: true
-    theme:
-      light: cosmo
-      dark: vapor
 ---
 
 ## Introduction
-
-```{css, echo=FALSE}
-
-blockquote {
-  color: black;
-  border-left: 2px solid #FFCB05; 
-  padding: 0.5em 10px;
-}
-  
-```
 
 A two level multilevel model imagines that *Level 1* units are nested in *Level 2* units. A three level multilevel model imagines that *Level 1* units are nested in *Level 2* units, which are in turn nested in *Level 3*. 
 

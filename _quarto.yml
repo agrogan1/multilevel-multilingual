@@ -7,7 +7,7 @@ website:
   navbar:
     background: primary
     left:
-      index.qmd
+      - index.qmd
 
 google-scholar: true
 
@@ -16,11 +16,12 @@ format:
     theme: 
       light: simplex
       dark: vapor
-    css: styles.css
+    css: multilevel-multilingual.css
     toc: true
     execute:
       echo: false
       warning: false
+      freeze: auto
 
 
 

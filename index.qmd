@@ -1,28 +1,8 @@
 ---
 title: "Multilevel Models in Stata, R and Julia"
-author: "Andrew Grogan-Kaylor"
-date: "today"
-format:
-  html:
-    toc: true
-    number-sections: true
-    theme:
-      light: cosmo
-      dark: vapor
-    fig-height: 3
 ---
 
 ## Introduction
-
-```{css, echo=FALSE}
-
-blockquote {
-  color: black;
-  border-left: 2px solid #FFCB05; 
-  padding: 0.5em 10px;
-}
-  
-```
 
 Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate multilevel models. Because this document is built by [`Quarto`](https://quarto.org/), I describe calling these programs from within a `Quarto` environment. However, each piece of software could be used individually and separately.
 
