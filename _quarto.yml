@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Multilevel Multilingual"
+  navbar:
+    background: primary
+    left:
+      index.qmd
+
+google-scholar: true
+
+format:
+  html:
+    theme: 
+      light: simplex
+      dark: vapor
+    css: styles.css
+    toc: true
+    execute:
+      echo: false
+      warning: false
+
+
+
