@@ -22,7 +22,7 @@ google-scholar: true
 format:
   html:
     theme: 
-      light: simplex
+      light: cosmo
       dark: vapor
     css: multilevel-multilingual.css
     toc: true
