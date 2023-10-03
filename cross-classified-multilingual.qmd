@@ -28,6 +28,7 @@ knitr::include_graphics("bookcover.png")
 The examples below use the `simulated_multilevel_longitudinal_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html). Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta) to download the data.
 
 ```{r}
+#| echo: false
 #| output: false
 
 file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta", 

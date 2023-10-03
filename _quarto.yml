@@ -27,7 +27,7 @@ format:
     css: multilevel-multilingual.css
     toc: true
     execute:
-      echo: false
+      echo: true
       warning: false
       freeze: auto
 
