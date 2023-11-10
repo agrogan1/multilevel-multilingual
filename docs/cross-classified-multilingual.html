@@ -101,6 +101,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
+<meta property="og:title" content="Multilevel Multilingual - 2&nbsp; Cross-Classified Models in Stata, R and Julia">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://agrogan1.github.io/multilevel-multilingual/bookcover.png">
+<meta property="og:site-name" content="Multilevel Multilingual">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="720">
+<meta name="twitter:title" content="Multilevel Multilingual - 2&nbsp; Cross-Classified Models in Stata, R and Julia">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://agrogan1.github.io/multilevel-multilingual/bookcover.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="720">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Cross-Classified Models in Stata, R and Julia]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//cross-classified-multilingual.html">
 <meta name="citation_language" content="en">
@@ -119,6 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
         <div class="quarto-navbar-tools ms-auto tools-wide">
     <a href="https://github.com/agrogan1/multilevel-multilingual" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Multilevel-Multilingual.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -384,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple">Equation&nbsp;<span>2.2</span></a> is:</p>
+<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple">Equation&nbsp;<span class="quarto-unresolved-ref">eq-crossclassfiedsimple</span></a> is:</p>
 <p><code>mixed y x || _all: R.group1 || group2:</code></p>
 <section id="get-the-data" class="level4" data-number="2.5.0.1">
 <h4 data-number="2.5.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">2.5.0.1</span> Get The Data</h4>
@@ -472,7 +485,7 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 </section>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple">Equation&nbsp;<span>2.2</span></a> is:</p>
+<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple">Equation&nbsp;<span class="quarto-unresolved-ref">eq-crossclassfiedsimple</span></a> is:</p>
 <p><code>lmer(y ~ x + z + (1 | group1) + (1 | group2), data = ...)</code></p>
 <section id="get-the-data-1" class="level4" data-number="2.5.0.3">
 <h4 data-number="2.5.0.3" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">2.5.0.3</span> Get The Data</h4>
@@ -532,7 +545,7 @@ HDI         -0.943  0.000 -0.003  0.003  0.000</code></pre>
 </section>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple">Equation&nbsp;<span>2.2</span></a> is:</p>
+<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple">Equation&nbsp;<span class="quarto-unresolved-ref">eq-crossclassfiedsimple</span></a> is:</p>
 <p><code>fit(MixedModel, @formula(y ~ x + z + (1 | group1) + (1 | group2)), data)</code></p>
 <section id="load-the-needed-packages-and-load-the-data" class="level4" data-number="2.5.0.5">
 <h4 data-number="2.5.0.5" class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data"><span class="header-section-number">2.5.0.5</span> Load The Needed Packages And Load The Data</h4>

@@ -125,11 +125,11 @@ use simulated_multilevel_data.dta
 
 twoway scatter outcome warmth, xtitle("warmth") ytitle("outcome") title("Outcome by Parental Warmth") 
 
-quietly graph export scatter.svg, replace
+quietly graph export scatter.png, replace
 
 ```
 
-![Outcome by Parental Warmth](scatter.svg)
+![Outcome by Parental Warmth](scatter.png)
 
 #### Run The Model
 
