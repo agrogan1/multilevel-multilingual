@@ -405,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;<span>2</span></a> is:</p>
+<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;<span class="quarto-unresolved-ref">eq-MLMsimple</span></a> is:</p>
 <p><code>mixed y x || group: x</code></p>
 <section id="get-the-data" class="level4" data-number="0.5.0.1">
 <h4 data-number="0.5.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">0.5.0.1</span> Get The Data</h4>
@@ -501,7 +501,7 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 </section>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;<span>2</span></a> is:</p>
+<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;<span class="quarto-unresolved-ref">eq-MLMsimple</span></a> is:</p>
 <p><code>lmer(y ~ x + z + (1 + x || group), data = ...)</code></p>
 <section id="get-the-data-1" class="level4" data-number="0.5.0.4">
 <h4 data-number="0.5.0.4" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">0.5.0.4</span> Get The Data</h4>
@@ -573,7 +573,7 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 </section>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;<span>2</span></a> is:</p>
+<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple">Equation&nbsp;<span class="quarto-unresolved-ref">eq-MLMsimple</span></a> is:</p>
 <p><code>fit(MixedModel, @formula(y ~ x + z + (1 + x | group)), data)</code></p>
 <section id="load-the-needed-packages-and-load-the-data" class="level4" data-number="0.5.0.7">
 <h4 data-number="0.5.0.7" class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data"><span class="header-section-number">0.5.0.7</span> Load The Needed Packages And Load The Data</h4>

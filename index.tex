@@ -217,7 +217,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, breakable, enhanced, sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, interior hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, breakable, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -329,7 +329,7 @@ outcome
 \hypertarget{the-equation}{%
 \section{The Equation}\label{the-equation}}
 
-\begin{equation}\protect\hypertarget{eq-MLMsubstantive}{}{\begin{gather} \text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij} \end{gather}}\label{eq-MLMsubstantive}\end{equation}
+\begin{equation}\protect\hypertarget{eq-MLMsubstantive}{}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}}\label{eq-MLMsubstantive}\end{equation}
 
 \hypertarget{setup}{%
 \section{Setup}\label{setup}}
@@ -388,7 +388,7 @@ described in Equation~\ref{eq-MLMsimple} is:
 \hypertarget{get-the-data}{%
 \subsubsection{Get The Data}\label{get-the-data}}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colback=white, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, breakable, toprule=.15mm, left=2mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, coltitle=black, toptitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, titlerule=0mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colback=white, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, leftrule=.75mm, toptitle=1mm, bottomrule=.15mm, rightrule=.15mm, titlerule=0mm, toprule=.15mm, left=2mm]
 
 Because I am running Stata from inside a Quarto document, and running
 Stata in multiple chunks, I need to use the \texttt{collectcode=TRUE}
@@ -610,9 +610,13 @@ Data}\label{load-the-needed-packages-and-load-the-data}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-Plot{Plots.GRBackend() n=1}
-\end{verbatim}
+\begin{figure}[H]
+
+{\centering \includegraphics{index_files/figure-pdf/unnamed-chunk-14-J1.pdf}
+
+}
+
+\end{figure}
 
 \hypertarget{change-country-to-categorical}{%
 \subsubsection{Change Country To
@@ -842,7 +846,7 @@ described in Equation~\ref{eq-crossclassfiedsimple} is:
 \hypertarget{get-the-data-2}{%
 \subsubsection{Get The Data}\label{get-the-data-2}}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colback=white, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, breakable, toprule=.15mm, left=2mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, coltitle=black, toptitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, titlerule=0mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colback=white, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, leftrule=.75mm, toptitle=1mm, bottomrule=.15mm, rightrule=.15mm, titlerule=0mm, toprule=.15mm, left=2mm]
 
 Because I am running Stata from inside a Quarto document, and running
 Stata in multiple chunks, I need to use the \texttt{collectcode=TRUE}

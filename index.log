@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.10.8)  10 NOV 2023 12:55
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.10.8)  10 NOV 2023 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1343,21 +1343,556 @@ Overfull \hbox (13.3032pt too wide) in paragraph at lines 315--316
  []
 
 
+Overfull \hbox (222.35434pt too wide) detected at line 332
+[][][][][]
+ []
+
+[5
+
+]
+
+LaTeX Warning: Reference `eq-MLMsimple' on page 6 undefined on input line 384.
+
+[6] (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-TU-empty.cfg
+File: mt-TU-empty.cfg 2021/06/22 v1.1 microtype config. file: fonts with nonstandard glyph set (RS)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 398--400
+[]\TU/lmr/m/n/10.95 See Doug Hemken’s excellent documentation on
+ []
+
+File: scatter.png Graphic file (type bmp)
+<scatter.png>
+[7]
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 457--457
+[]\TU/lmtt/m/n/10.95 Mixed-effects ML regression                          Number of obs    =  3,000[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 458--458
+[]\TU/lmtt/m/n/10.95 Group variable: country                              Number of groups =     30[] 
+ []
+
+
+Overfull \hbox (86.45032pt too wide) in paragraph at lines 459--459
+[]                                                     \TU/lmtt/m/n/10.95 Obs per group:[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 460--460
+[]                                                                  \TU/lmtt/m/n/10.95 min =    100[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 461--461
+[]                                                                  \TU/lmtt/m/n/10.95 avg =  100.0[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 462--462
+[]                                                                  \TU/lmtt/m/n/10.95 max =    100[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 463--463
+[]                                                     \TU/lmtt/m/n/10.95 Wald chi2(4)     = 401.26[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 464--464
+[]\TU/lmtt/m/n/10.95 Log likelihood = -9667.9532                          Prob > chi2      = 0.0000[] 
+ []
+
+
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 466--466
+[]\TU/lmtt/m/n/10.95 -------------------------------------------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 467--467
+[]            \TU/lmtt/m/n/10.95 outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval][] 
+ []
+
+
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 468--468
+[]\TU/lmtt/m/n/10.95 --------------------+----------------------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 469--469
+[]             \TU/lmtt/m/n/10.95 warmth |   .9616447   .0581825    16.53   0.000     .8476091     1.07568[] 
+ []
+
+
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 470--470
+[]\TU/lmtt/m/n/10.95 physical_punishment |  -.8453802   .0798155   -10.59   0.000    -1.001816   -.6889448[] 
+ []
+
+[8]
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 471--471
+[]              \TU/lmtt/m/n/10.95 group |   1.084344   .2200539     4.93   0.000     .6530461    1.515642[] 
+ []
+
+
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 472--472
+[]                \TU/lmtt/m/n/10.95 HDI |    .010557   .0204522     0.52   0.606    -.0295286    .0506426[] 
+ []
+
+
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 473--473
+[]              \TU/lmtt/m/n/10.95 _cons |   49.87963   1.436612    34.72   0.000     47.06392    52.69534[] 
+ []
+
+
+Overfull \hbox (189.9278pt too wide) in paragraph at lines 474--474
+[]\TU/lmtt/m/n/10.95 -------------------------------------------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 476--476
+[]\TU/lmtt/m/n/10.95 ------------------------------------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 477--477
+[]  \TU/lmtt/m/n/10.95 Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval][] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 478--478
+[]\TU/lmtt/m/n/10.95 -----------------------------+------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 480--480
+[]                 \TU/lmtt/m/n/10.95 var(warmth) |   1.83e-06   .0000173      1.76e-14    190.9774[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 481--481
+[]                  \TU/lmtt/m/n/10.95 var(_cons) |   3.370262   .9633726      1.924651    5.901676[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 482--482
+[]\TU/lmtt/m/n/10.95 -----------------------------+------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 483--483
+[]               \TU/lmtt/m/n/10.95 var(Residual) |   36.01906   .9346936      34.23291    37.89842[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 484--484
+[]\TU/lmtt/m/n/10.95 ------------------------------------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (149.68655pt too wide) in paragraph at lines 485--485
+[]\TU/lmtt/m/n/10.95 LR test vs. linear model: chi2(2) = 198.01                Prob > chi2 = 0.0000[] 
+ []
+
+
+Overfull \hbox (57.70657pt too wide) in paragraph at lines 487--487
+[]\TU/lmtt/m/n/10.95 Note: LR test is conservative and provided only for reference.[] 
+ []
+
+
+LaTeX Warning: Reference `eq-MLMsimple' on page 9 undefined on input line 493.
+
+[9]
+File: index_files/figure-pdf/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+<use index_files/figure-pdf/unnamed-chunk-11-1.pdf>
+
+Overfull \hbox (97.94781pt too wide) in paragraph at lines 547--547
+[]\TU/lmtt/m/n/10.95 Formula: outcome ~ warmth + physical_punishment + group + HDI + ((1 |[] 
+ []
+
+[10]
+
+LaTeX Warning: Reference `eq-MLMsimple' on page 11 undefined on input line 583.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
+[]\TU/lmtt/m/n/10.95 fit(MixedModel, @formula(y ~ x + z + (1 + x |
+ []
+
+[11]
+File: index_files/figure-pdf/unnamed-chunk-14-J1.pdf Graphic file (type pdf)
+<use index_files/figure-pdf/unnamed-chunk-14-J1.pdf>
+
+Overfull \hbox (172.68155pt too wide) in paragraph at lines 645--645
+[] \TU/lmtt/m/n/10.95 outcome ~ 1 + warmth + physical_punishment + group + HDI + (1 + warmth | country)[] 
+ []
+
+[12]
+Overfull \hbox (17.46533pt too wide) in paragraph at lines 647--647
+[] \TU/lmtt/m/n/10.95 -9667.9392 19335.8783 19353.8783 19353.9385 19407.9357[] 
+ []
+
+
+Overfull \hbox (0.21909pt too wide) in paragraph at lines 654--654
+[] \TU/lmtt/m/n/10.95 Number of obs: 3000; levels of grouping factors: 30[] 
+ []
+
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+
+Overfull \hbox (51.95782pt too wide) in paragraph at lines 658--658
+[]                          \TU/lmtt/m/n/10.95 Coef.  Std. Error       z  Pr(>|z|)[] 
+ []
+
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+
+Overfull \hbox (51.95782pt too wide) in paragraph at lines 660--660
+[]\TU/lmtt/m/n/10.95 (Intercept)          49.9018      1.43435     34.79    <1e-99[] 
+ []
+
+
+Overfull \hbox (51.95782pt too wide) in paragraph at lines 661--661
+[]\TU/lmtt/m/n/10.95 warmth                0.961545    0.0582135   16.52    <1e-60[] 
+ []
+
+
+Overfull \hbox (51.95782pt too wide) in paragraph at lines 662--662
+[]\TU/lmtt/m/n/10.95 physical_punishment  -0.845389    0.0798149  -10.59    <1e-25[] 
+ []
+
+
+Overfull \hbox (51.95782pt too wide) in paragraph at lines 663--663
+[]\TU/lmtt/m/n/10.95 group                 1.08524     0.220055     4.93    <1e-06[] 
+ []
+
+
+Overfull \hbox (51.95782pt too wide) in paragraph at lines 664--664
+[]\TU/lmtt/m/n/10.95 HDI                   0.0101984   0.0204401    0.50    0.6178[] 
+ []
+
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+Missing character: There is no ─ (U+2500) in font [lmmono10-regular]:!
+[13]
+chapter 2.
+File: bookcover.png Graphic file (type bmp)
+<bookcover.png>
+
+Overfull \hbox (24.08258pt too wide) in paragraph at lines 706--707
+ [][] 
+ []
+
+
+Overfull \hbox (74.74481pt too wide) in paragraph at lines 714--720
+\TU/lmr/m/n/10.95 The examples below use the \TU/lmtt/m/n/10.95 simulated_multilevel_longitudinal_data.dta
+ []
+
+
+Overfull \hbox (12.01115pt too wide) in paragraph at lines 736--737
+ []\TU/lmr/m/n/10.95 country 
+ []
+
+
+Overfull \hbox (6.05818pt too wide) in paragraph at lines 738--739
+ []\TU/lmr/m/n/10.95 HDI 
+ []
+
+
+Overfull \hbox (7.70055pt too wide) in paragraph at lines 740--741
+ []\TU/lmr/m/n/10.95 family 
+ []
+
+
+Overfull \hbox (8.12033pt too wide) in paragraph at lines 744--745
+ []\TU/lmr/m/n/10.95 group 
+ []
+
+
+Overfull \hbox (48.95137pt too wide) in paragraph at lines 748--749
+ []\TU/lmr/m/n/10.95 physical_punishment 
+ []
+
+
+Overfull \hbox (14.42384pt too wide) in paragraph at lines 750--751
+ []\TU/lmr/m/n/10.95 warmth 
+ []
+
+
+Overfull \hbox (16.01884pt too wide) in paragraph at lines 752--753
+ []\TU/lmr/m/n/10.95 outcome 
+ []
+
+
+Overfull \hbox (12.01115pt too wide) in paragraph at lines 758--759
+ []\TU/lmr/m/n/10.95 country 
+ []
+
+
+Overfull \hbox (6.05818pt too wide) in paragraph at lines 760--761
+ []\TU/lmr/m/n/10.95 HDI 
+ []
+
+
+Overfull \hbox (7.70055pt too wide) in paragraph at lines 762--763
+ []\TU/lmr/m/n/10.95 family 
+ []
+
+
+Overfull \hbox (8.12033pt too wide) in paragraph at lines 766--767
+ []\TU/lmr/m/n/10.95 group 
+ []
+
+
+Overfull \hbox (48.95137pt too wide) in paragraph at lines 770--771
+ []\TU/lmr/m/n/10.95 physical_punishment 
+ []
+
+
+Overfull \hbox (14.42384pt too wide) in paragraph at lines 772--773
+ []\TU/lmr/m/n/10.95 warmth 
+ []
+
+
+Overfull \hbox (16.01884pt too wide) in paragraph at lines 774--775
+ []\TU/lmr/m/n/10.95 outcome 
+ []
+
+
+Overfull \hbox (0.82025pt too wide) in paragraph at lines 780--781
+ []|\TU/lmr/m/n/10.95 59.18| 
+ []
+
+
+Overfull \hbox (0.82025pt too wide) in paragraph at lines 781--782
+ []|\TU/lmr/m/n/10.95 58.29| 
+ []
+
+
+Overfull \hbox (0.82025pt too wide) in paragraph at lines 782--783
+ []|\TU/lmr/m/n/10.95 60.58| 
+ []
+
+
+Overfull \hbox (0.82025pt too wide) in paragraph at lines 783--784
+ []|\TU/lmr/m/n/10.95 61.54| 
+ []
+
+
+Overfull \hbox (0.82025pt too wide) in paragraph at lines 784--785
+ []|\TU/lmr/m/n/10.95 55.96| 
+ []
+
+
+Overfull \hbox (0.82025pt too wide) in paragraph at lines 785--786
+ []|\TU/lmr/m/n/10.95 56.19| 
+ []
+
+[14
+
+]
+
 ! Package amsmath Error: \begin{gather} allowed only in paragraph mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.332 ...arget{eq-MLMsubstantive}{}{\begin{gather}
-                                                   \text{outcome}_{ij}= \bet... 
+l.791 ...ssclassifiedsubstantive}{}{\begin{gather}
+                                                   \text{outcome}_{ijt}= \be... 
 Here is how much of TeX's memory you used:
- 39616 strings out of 478663
- 815283 string characters out of 5847144
- 1857018 words of memory out of 5000000
- 59148 multiletter control sequences out of 15000+600000
- 518734 words of font info for 84 fonts, out of 8000000 for 9000
+ 39816 strings out of 478663
+ 820349 string characters out of 5847144
+ 1864018 words of memory out of 5000000
+ 59334 multiletter control sequences out of 15000+600000
+ 518758 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,9n,121p,10600b,482s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,9n,121p,10600b,1023s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on index.pdf (4 pages).
+Output written on index.pdf (14 pages).
