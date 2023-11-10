@@ -6,6 +6,7 @@ book:
   title: "Multilevel Multilingual"
   author: "Andrew Grogan-Kaylor"
   date: "today"
+  cover-image: multilevel-multilingual.png
   sharing: [twitter, facebook, linkedin]
   site-url: https://agrogan1.github.io/multilevel-multilingual/
   search: true
