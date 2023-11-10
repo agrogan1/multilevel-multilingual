@@ -46,7 +46,7 @@
     "href": "cross-classified-multilingual.html#the-data",
     "title": "2  Cross-Classified Models in Stata, R and Julia",
     "section": "2.2 The Data",
-    "text": "2.2 The Data\n\n\n\n\n\n\nFigure 2.1: Book Cover For Multilevel Thinking\n\n\n\nThe examples below use the simulated_multilevel_longitudinal_data.dta file from Multilevel Thinking. Here is a direct link to download the data.\n\n\n\n\nTable 2.1: Sample of Simulated Multilevel Longitudinal Data\n\n\n\n\n\n\n\n\n\n\n\n\n\ncountry\nHDI\nfamily\nid\ngroup\nt\nphysical_punishment\nwarmth\noutcome\n\n\n\n\n1\n69\n1\n1.1\n2\n1\n2\n3\n59.18\n\n\n1\n69\n1\n1.1\n2\n2\n2\n2\n58.29\n\n\n1\n69\n1\n1.1\n2\n3\n3\n3\n60.58\n\n\n1\n69\n2\n1.2\n2\n1\n4\n0\n61.54\n\n\n1\n69\n2\n1.2\n2\n2\n4\n0\n55.96\n\n\n1\n69\n2\n1.2\n2\n3\n4\n2\n56.19"
+    "text": "2.2 The Data\nThe examples below use the simulated_multilevel_longitudinal_data.dta file from Multilevel Thinking. Here is a direct link to download the data.\n\n\n\n\nTable 2.1: Sample of Simulated Multilevel Longitudinal Data\n\n\n\n\n\n\n\n\n\n\n\n\n\ncountry\nHDI\nfamily\nid\ngroup\nt\nphysical_punishment\nwarmth\noutcome\n\n\n\n\n1\n69\n1\n1.1\n2\n1\n2\n3\n59.18\n\n\n1\n69\n1\n1.1\n2\n2\n2\n2\n58.29\n\n\n1\n69\n1\n1.1\n2\n3\n3\n3\n60.58\n\n\n1\n69\n2\n1.2\n2\n1\n4\n0\n61.54\n\n\n1\n69\n2\n1.2\n2\n2\n4\n0\n55.96\n\n\n1\n69\n2\n1.2\n2\n3\n4\n2\n56.19"
   },
   {
     "objectID": "cross-classified-multilingual.html#the-equation",

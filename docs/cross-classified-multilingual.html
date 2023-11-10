@@ -103,22 +103,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="multilevel-multilingual.css">
 <meta property="og:title" content="Multilevel Multilingual - 2&nbsp; Cross-Classified Models in Stata, R and Julia">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://agrogan1.github.io/multilevel-multilingual/bookcover.png">
 <meta property="og:site-name" content="Multilevel Multilingual">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="720">
 <meta name="twitter:title" content="Multilevel Multilingual - 2&nbsp; Cross-Classified Models in Stata, R and Julia">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://agrogan1.github.io/multilevel-multilingual/bookcover.png">
-<meta name="twitter:image-height" content="960">
-<meta name="twitter:image-width" content="720">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Cross-Classified Models in Stata, R and Julia]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//cross-classified-multilingual.html">
 <meta name="citation_language" content="en">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -216,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -242,18 +236,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this data, <em>events</em> are nested inside <em>persons</em> which are in turn nested in <em>countries</em>, since in this data, individuals never change countries. However, the use of a cross-classified framework would allow for a situation in which <em>persons</em> moved from country to country, and experienced different <em>events</em> in different <em>countries</em>.</p>
 <p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate cross-classified models. Because this document is built by <a href="https://quarto.org/"><code>Quarto</code></a>, I describe calling these programs from within a <code>Quarto</code> environment. However, each piece of software could be used individually and separately.</p>
 </section>
-<section id="the-data" class="level2 page-columns page-full" data-number="2.2">
+<section id="the-data" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">2.2</span> The Data</h2>
-<div class="cell page-columns page-full">
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
-<div id="fig-bookcover" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="bookcover.png" class="img-fluid figure-img" width="360"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.1: Book Cover For Multilevel Thinking</figcaption>
-</figure>
-</div>
-</div></div></div>
 <p>The examples below use the <code>simulated_multilevel_longitudinal_data.dta</code> file from <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html"><em>Multilevel Thinking</em></a>. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta">direct link</a> to download the data.</p>
 <div class="cell">
 <div class="cell-output-display">
