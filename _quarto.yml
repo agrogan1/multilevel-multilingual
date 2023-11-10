@@ -33,6 +33,13 @@ format:
       echo: true
       warning: false
       freeze: auto
-
+  pdf:
+    lot: true
+    lof: true
+    keep-tex: true
+    execute:
+      echo: true
+      warning: false   
+      freeze: auto
 
 
