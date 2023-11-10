@@ -11,6 +11,9 @@ book:
   search: true
   repo-url: https://github.com/agrogan1/multilevel-multilingual
   repo-actions: [issue]
+  downloads: [pdf]
+  twitter-card: true
+  open-graph: true
   chapters:
     - index.qmd
     - cross-classified-multilingual.qmd
