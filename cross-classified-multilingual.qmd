@@ -14,17 +14,6 @@ Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-
 
 ## The Data
 
-```{r}
-#| echo: false
-#| label: fig-bookcover
-#| fig-cap: "Book Cover For Multilevel Thinking"
-#| column: margin
-
-knitr::include_graphics("bookcover.png")
-
-```
-
-
 The examples below use the `simulated_multilevel_longitudinal_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html). Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta) to download the data.
 
 ```{r}
