@@ -54,7 +54,7 @@ pander(head(df)) # nice table
 
 ## The Equation
 
-$$\begin{gather} \text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt} \end{gather}$$ {#eq-crossclassifiedsubstantive}
+$$\text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt}$$ {#eq-crossclassifiedsubstantive}
    
 ## Setup 
 
