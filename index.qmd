@@ -118,7 +118,7 @@ quietly graph export scatter.png, replace
 
 ```
 
-![Outcome by Parental Warmth](scatter.png){#fig-Stata}
+![Outcome by Parental Warmth (Stata)](scatter.png){#fig-Stata}
 
 #### Run The Model
 
@@ -149,7 +149,7 @@ df <- read_dta("simulated_multilevel_data.dta")
 ```{r}
 #| fig-height: 3
 #| label: fig-R
-#| fig-cap: "Outcome by Parental Warmth"
+#| fig-cap: "Outcome by Parental Warmth (R)"
 
 library(ggplot2)
 
@@ -197,7 +197,7 @@ df = DataFrame(load("simulated_multilevel_data.dta"))
 ```{julia}
 #| fig-height: 3
 #| label: fig-Julia
-#| fig-cap: "Outcome by Parental Warmth"
+#| fig-cap: "Outcome by Parental Warmth (Julia)"
 
 using StatsPlots
 
