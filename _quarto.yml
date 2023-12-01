@@ -4,6 +4,7 @@ project:
 
 book:
   title: "Multilevel Multilingual"
+  subtitle: "Multilevel Models in Stata, R and Julia"
   author: "Andrew Grogan-Kaylor"
   date: "today"
   cover-image: multilevel-multilingual.png
