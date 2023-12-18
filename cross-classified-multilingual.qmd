@@ -47,7 +47,7 @@ $$\text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} 
    
 ## Setup 
 
-::: {.panel-tabset}
+::: {.panel-tabset group="language"}
 
 ### Stata
 
@@ -89,7 +89,7 @@ To explain statistical syntax for each software, I consider the more general cas
 
 $$y = \beta_0 + \beta_1 x_{ijt} + \beta_2 z_{ijt} + u_{0j} + v_{0i} + e_{ijt}$$ {#eq-crossclassfiedsimple}
 
-::: {.panel-tabset}
+::: {.panel-tabset group="language"}
 
 ### Stata
 
