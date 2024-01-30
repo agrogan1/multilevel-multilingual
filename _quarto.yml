@@ -30,6 +30,7 @@ format:
       light: cosmo
       dark: vapor
     css: multilevel-multilingual.css
+    lightbox: true
     toc: true
     execute:
       echo: true
