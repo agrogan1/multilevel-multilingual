@@ -136,8 +136,6 @@
 \definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
 \makeatother
 \makeatletter
-\makeatother
-\makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
 \makeatletter
@@ -176,23 +174,16 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
@@ -214,11 +205,10 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2023-12-18}
+\date{2024-01-30}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, sharp corners, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -230,11 +220,9 @@
 \listoftables
 \bookmarksetup{startatroot}
 
-\hypertarget{multilevel-multilingual}{%
-\chapter{Multilevel Multilingual}\label{multilevel-multilingual}}
+\chapter{Multilevel Multilingual}\label{multilevel-multilingual}
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\section{Introduction}\label{introduction}
 
 Below, I describe the use of \href{https://www.stata.com/}{Stata},
 \href{https://www.r-project.org/}{R}, and
@@ -244,8 +232,7 @@ Because this document is built by
 programs from within a \texttt{Quarto} environment. However, each piece
 of software could be used individually and separately.
 
-\hypertarget{the-data}{%
-\section{The Data}\label{the-data}}
+\section{The Data}\label{the-data}
 
 The examples below use the \texttt{simulated\_multilevel\_data.dta} file
 from
@@ -254,7 +241,6 @@ Thinking}}. Here is a
 \href{https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta}{direct
 link} to download the data.
 
-\hypertarget{tbl-multilingual1}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0750}}
@@ -264,28 +250,11 @@ link} to download the data.
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2750}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1125}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
-\caption{\label{tbl-multilingual1}Sample of Simulated Multilevel
-Data}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-country
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-HDI
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-family
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-id
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-physical\_punishment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-warmth
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-outcome
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
+
+\caption{\label{tbl-multilingual1}Sample of Simulated Multilevel Data}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
@@ -314,15 +283,14 @@ outcome
 1 & 69 & 4 & 1.4 & 2 & 0 & 6 & 51.71 \\
 1 & 69 & 5 & 1.5 & 2 & 3 & 2 & 55.88 \\
 1 & 69 & 6 & 1.6 & 1 & 5 & 3 & 60.78 \\
+
 \end{longtable}
 
-\hypertarget{the-equation}{%
-\section{The Equation}\label{the-equation}}
+\section{The Equation}\label{the-equation}
 
-\begin{equation}\protect\hypertarget{eq-MLMsubstantive}{}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}}\label{eq-MLMsubstantive}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}}\end{equation}
 
-\hypertarget{setup}{%
-\section{Setup}\label{setup}}
+\section{Setup}\label{setup}
 
 \subsection{Stata}
 
@@ -357,8 +325,7 @@ I need to call Julia from R.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{get-data-run-models}{%
-\section{Get Data \& Run Models}\label{get-data-run-models}}
+\section{Get Data \& Run Models}\label{get-data-run-models}
 
 To explain statistical syntax for each software, I consider the more
 general case of a multilevel model with dependent variable \texttt{y},
@@ -366,7 +333,7 @@ independent variables \texttt{x} and \texttt{z}, clustering variable
 \texttt{group}, and a random slope for \texttt{x}. \emph{i} is the index
 for the person, while \emph{j} is the index for the \texttt{group}.
 
-\begin{equation}\protect\hypertarget{eq-MLMsimple}{}{y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij}}\label{eq-MLMsimple}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLMsimple}{y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij}}\end{equation}
 
 \subsection{Stata}
 
@@ -375,10 +342,9 @@ described in Equation~\ref{eq-MLMsimple} is:
 
 \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:\ x}
 
-\hypertarget{get-the-data}{%
-\subsubsection{Get The Data}\label{get-the-data}}
+\subsubsection{Get The Data}\label{get-the-data}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, coltitle=black, bottomrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, opacitybacktitle=0.6, titlerule=0mm, colback=white, breakable, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, rightrule=.15mm, left=2mm, coltitle=black]
 
 Because I am running Stata from inside a Quarto document, and running
 Stata in multiple chunks, I need to use the \texttt{collectcode=TRUE}
@@ -397,8 +363,7 @@ See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{graph}{%
-\subsubsection{Graph}\label{graph}}
+\subsubsection{Graph}\label{graph}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -414,16 +379,17 @@ See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
 
 \begin{figure}
 
-{\centering \includegraphics{scatter.png}
+\centering{
+
+\includegraphics{scatter.png}
 
 }
 
 \caption{\label{fig-Stata}Outcome by Parental Warmth (Stata)}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{run-the-model}{%
-\subsubsection{Run The Model}\label{run-the-model}}
+\subsubsection{Run The Model}\label{run-the-model}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -484,8 +450,7 @@ form described in Equation~\ref{eq-MLMsimple} is:
 
 \texttt{lmer(y\ \textasciitilde{}\ x\ +\ z\ +\ (1\ +\ x\ \textbar{}\textbar{}\ group),\ data\ =\ ...)}
 
-\hypertarget{get-the-data-1}{%
-\subsubsection{Get The Data}\label{get-the-data-1}}
+\subsubsection{Get The Data}\label{get-the-data-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -495,8 +460,7 @@ form described in Equation~\ref{eq-MLMsimple} is:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{graph-1}{%
-\subsubsection{Graph}\label{graph-1}}
+\subsubsection{Graph}\label{graph-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -512,16 +476,17 @@ form described in Equation~\ref{eq-MLMsimple} is:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{index_files/figure-pdf/fig-R-1.pdf}
+\centering{
+
+\includegraphics{index_files/figure-pdf/fig-R-1.pdf}
 
 }
 
 \caption{\label{fig-R}Outcome by Parental Warmth (R)}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{run-the-model-1}{%
-\subsubsection{Run The Model}\label{run-the-model-1}}
+\subsubsection{Run The Model}\label{run-the-model-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -576,9 +541,8 @@ of the form described in Equation~\ref{eq-MLMsimple} is:
 
 \texttt{fit(MixedModel,\ @formula(y\ \textasciitilde{}\ x\ +\ z\ +\ (1\ +\ x\ \textbar{}\ group)),\ data)}
 
-\hypertarget{load-the-needed-packages-and-load-the-data}{%
 \subsubsection{Load The Needed Packages And Load The
-Data}\label{load-the-needed-packages-and-load-the-data}}
+Data}\label{load-the-needed-packages-and-load-the-data}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -588,8 +552,7 @@ Data}\label{load-the-needed-packages-and-load-the-data}}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{graph-2}{%
-\subsubsection{Graph}\label{graph-2}}
+\subsubsection{Graph}\label{graph-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -604,17 +567,18 @@ Data}\label{load-the-needed-packages-and-load-the-data}}
 
 \begin{figure}[H]
 
-{\centering \includegraphics{index_files/figure-pdf/fig-Julia-J1.pdf}
+\centering{
+
+\includegraphics{index_files/figure-pdf/fig-Julia-J1.pdf}
 
 }
 
 \caption{\label{fig-Julia}Outcome by Parental Warmth (Julia)}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{change-country-to-categorical}{%
 \subsubsection{Change Country To
-Categorical}\label{change-country-to-categorical}}
+Categorical}\label{change-country-to-categorical}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -622,8 +586,7 @@ Categorical}\label{change-country-to-categorical}}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{run-the-model-2}{%
-\subsubsection{Run The Model}\label{run-the-model-2}}
+\subsubsection{Run The Model}\label{run-the-model-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -661,12 +624,10 @@ HDI                   0.0101984   0.0204401    0.50    0.6178
 
 \bookmarksetup{startatroot}
 
-\hypertarget{cross-classified-models-in-stata-r-and-julia}{%
 \chapter{Cross-Classified Models in Stata, R and
-Julia}\label{cross-classified-models-in-stata-r-and-julia}}
+Julia}\label{cross-classified-models-in-stata-r-and-julia}
 
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
+\section{Introduction}\label{introduction-1}
 
 A two level multilevel model imagines that \emph{Level 1} units are
 nested in \emph{Level 2} units. A three level multilevel model imagines
@@ -692,8 +653,7 @@ models. Because this document is built by
 programs from within a \texttt{Quarto} environment. However, each piece
 of software could be used individually and separately.
 
-\hypertarget{the-data-1}{%
-\section{The Data}\label{the-data-1}}
+\section{The Data}\label{the-data-1}
 
 The examples below use the
 \texttt{simulated\_multilevel\_longitudinal\_data.dta} file from
@@ -702,7 +662,6 @@ Thinking}}. Here is a
 \href{https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta}{direct
 link} to download the data.
 
-\hypertarget{tbl-multilingual1}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
@@ -713,30 +672,12 @@ link} to download the data.
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.2619}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
+
 \caption{\label{tbl-multilingual1}Sample of Simulated Multilevel
-Longitudinal Data}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-country
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-HDI
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-family
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-id
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-t
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-physical\_punishment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-warmth
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-outcome
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
+Longitudinal Data}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
@@ -767,15 +708,14 @@ outcome
 1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
 1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
 1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
+
 \end{longtable}
 
-\hypertarget{the-equation-1}{%
-\section{The Equation}\label{the-equation-1}}
+\section{The Equation}\label{the-equation-1}
 
-\begin{equation}\protect\hypertarget{eq-crossclassifiedsubstantive}{}{\text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt}}\label{eq-crossclassifiedsubstantive}\end{equation}
+\begin{equation}\phantomsection\label{eq-crossclassifiedsubstantive}{\text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt}}\end{equation}
 
-\hypertarget{setup-1}{%
-\section{Setup}\label{setup-1}}
+\section{Setup}\label{setup-1}
 
 \subsection{Stata}
 
@@ -810,15 +750,14 @@ I need to call Julia from R.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{get-data-run-models-1}{%
-\section{Get Data \& Run Models}\label{get-data-run-models-1}}
+\section{Get Data \& Run Models}\label{get-data-run-models-1}
 
 To explain statistical syntax for each software, I consider the more
 general case of a cross-classified model with dependent variable
 \texttt{y}, independent variables \texttt{x} and \texttt{z}, clustering
 variables \texttt{country} and \texttt{id}.
 
-\begin{equation}\protect\hypertarget{eq-crossclassfiedsimple}{}{y = \beta_0 + \beta_1 x_{ijt} + \beta_2 z_{ijt} + u_{0j} + v_{0i} + e_{ijt}}\label{eq-crossclassfiedsimple}\end{equation}
+\begin{equation}\phantomsection\label{eq-crossclassfiedsimple}{y = \beta_0 + \beta_1 x_{ijt} + \beta_2 z_{ijt} + u_{0j} + v_{0i} + e_{ijt}}\end{equation}
 
 \subsection{Stata}
 
@@ -827,10 +766,9 @@ described in Equation~\ref{eq-crossclassfiedsimple} is:
 
 \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ \_all:\ R.group1\ \textbar{}\textbar{}\ group2:}
 
-\hypertarget{get-the-data-2}{%
-\subsubsection{Get The Data}\label{get-the-data-2}}
+\subsubsection{Get The Data}\label{get-the-data-2}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, coltitle=black, bottomrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, opacitybacktitle=0.6, titlerule=0mm, colback=white, breakable, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, rightrule=.15mm, left=2mm, coltitle=black]
 
 Because I am running Stata from inside a Quarto document, and running
 Stata in multiple chunks, I need to use the \texttt{collectcode=TRUE}
@@ -849,8 +787,7 @@ See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{run-the-model-3}{%
-\subsubsection{Run The Model}\label{run-the-model-3}}
+\subsubsection{Run The Model}\label{run-the-model-3}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -874,8 +811,7 @@ form described in Equation~\ref{eq-crossclassfiedsimple} is:
 
 \texttt{lmer(y\ \textasciitilde{}\ x\ +\ z\ +\ (1\ \textbar{}\ group1)\ +\ (1\ \textbar{}\ group2),\ data\ =\ ...)}
 
-\hypertarget{get-the-data-3}{%
-\subsubsection{Get The Data}\label{get-the-data-3}}
+\subsubsection{Get The Data}\label{get-the-data-3}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -885,8 +821,7 @@ form described in Equation~\ref{eq-crossclassfiedsimple} is:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{run-the-model-4}{%
-\subsubsection{Run The Model}\label{run-the-model-4}}
+\subsubsection{Run The Model}\label{run-the-model-4}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -944,9 +879,8 @@ of the form described in Equation~\ref{eq-crossclassfiedsimple} is:
 
 \texttt{fit(MixedModel,\ @formula(y\ \textasciitilde{}\ x\ +\ z\ +\ (1\ \textbar{}\ group1)\ +\ (1\ \textbar{}\ group2)),\ data)}
 
-\hypertarget{load-the-needed-packages-and-load-the-data-1}{%
 \subsubsection{Load The Needed Packages And Load The
-Data}\label{load-the-needed-packages-and-load-the-data-1}}
+Data}\label{load-the-needed-packages-and-load-the-data-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -956,9 +890,8 @@ Data}\label{load-the-needed-packages-and-load-the-data-1}}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{change-country-to-categorical-1}{%
 \subsubsection{Change Country To
-Categorical}\label{change-country-to-categorical-1}}
+Categorical}\label{change-country-to-categorical-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -966,8 +899,7 @@ Categorical}\label{change-country-to-categorical-1}}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{run-the-model-5}{%
-\subsubsection{Run The Model}\label{run-the-model-5}}
+\subsubsection{Run The Model}\label{run-the-model-5}
 
 \begin{Shaded}
 \begin{Highlighting}[]
