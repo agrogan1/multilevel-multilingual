@@ -447,11 +447,54 @@ Tip For Running Stata From Quarto
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment <span class="fu">group</span> HDI || <span class="dt">_all</span>: R.country || id:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>variable t not found
-r(111);
+<pre><code>Performing EM optimization ...
 
-end of do-file
-r(111);</code></pre>
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -28534.027  
+Iteration 1:  Log likelihood = -28533.997  
+Iteration 2:  Log likelihood = -28533.997  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                            Number of obs =   9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+                   _all |          1      9,000    9,000.0      9,000
+                     id |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                       Wald chi2(5)  = 1206.21
+Log likelihood = -28533.997                            Prob &gt; chi2   =  0.0000
+
+-------------------------------------------------------------------------------------
+            outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+                  t |   .9879647   .0658315    15.01   0.000     .8589373    1.116992
+             warmth |   .9462548   .0381869    24.78   0.000     .8714098      1.0211
+physical_punishment |  -.9267739   .0499549   -18.55   0.000    -1.024684    -.828864
+              group |    .985819   .1534866     6.42   0.000     .6849908    1.286647
+                HDI |   .0075436   .0207106     0.36   0.716    -.0330485    .0481356
+              _cons |   49.49447   1.424253    34.75   0.000     46.70299    52.28596
+-------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+_all: Identity               |
+              var(R.country) |   3.650496   .9878413      2.147893    6.204274
+-----------------------------+------------------------------------------------
+id: Identity                 |
+                  var(_cons) |   8.852634   .4815279      7.957424    9.848556
+-----------------------------+------------------------------------------------
+               var(Residual) |   26.00093   .4747632      25.08686     26.9483
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 1328.22               Prob &gt; chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
 </div>
 </section>

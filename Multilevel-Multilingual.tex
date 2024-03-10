@@ -205,7 +205,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-01-30}
+\date{2024-03-10}
 
 \begin{document}
 \maketitle
@@ -344,7 +344,7 @@ described in Equation~\ref{eq-MLMsimple} is:
 
 \subsubsection{Get The Data}\label{get-the-data}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, opacitybacktitle=0.6, titlerule=0mm, colback=white, breakable, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, rightrule=.15mm, left=2mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, breakable, opacityback=0, left=2mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, rightrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Because I am running Stata from inside a Quarto document, and running
 Stata in multiple chunks, I need to use the \texttt{collectcode=TRUE}
@@ -372,10 +372,6 @@ See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
 \KeywordTok{quietly} \KeywordTok{graph} \KeywordTok{export} \KeywordTok{scatter}\NormalTok{.png, }\KeywordTok{replace}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-> arental Warmth") 
-\end{verbatim}
 
 \begin{figure}
 
@@ -768,7 +764,7 @@ described in Equation~\ref{eq-crossclassfiedsimple} is:
 
 \subsubsection{Get The Data}\label{get-the-data-2}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, opacitybacktitle=0.6, titlerule=0mm, colback=white, breakable, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, rightrule=.15mm, left=2mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, breakable, opacityback=0, left=2mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, rightrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Because I am running Stata from inside a Quarto document, and running
 Stata in multiple chunks, I need to use the \texttt{collectcode=TRUE}
@@ -797,11 +793,54 @@ See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
 \end{Shaded}
 
 \begin{verbatim}
-variable t not found
-r(111);
+Performing EM optimization ...
 
-end of do-file
-r(111);
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -28534.027  
+Iteration 1:  Log likelihood = -28533.997  
+Iteration 2:  Log likelihood = -28533.997  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                            Number of obs =   9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+                   _all |          1      9,000    9,000.0      9,000
+                     id |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                       Wald chi2(5)  = 1206.21
+Log likelihood = -28533.997                            Prob > chi2   =  0.0000
+
+-------------------------------------------------------------------------------------
+            outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+                  t |   .9879647   .0658315    15.01   0.000     .8589373    1.116992
+             warmth |   .9462548   .0381869    24.78   0.000     .8714098      1.0211
+physical_punishment |  -.9267739   .0499549   -18.55   0.000    -1.024684    -.828864
+              group |    .985819   .1534866     6.42   0.000     .6849908    1.286647
+                HDI |   .0075436   .0207106     0.36   0.716    -.0330485    .0481356
+              _cons |   49.49447   1.424253    34.75   0.000     46.70299    52.28596
+-------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+_all: Identity               |
+              var(R.country) |   3.650496   .9878413      2.147893    6.204274
+-----------------------------+------------------------------------------------
+id: Identity                 |
+                  var(_cons) |   8.852634   .4815279      7.957424    9.848556
+-----------------------------+------------------------------------------------
+               var(Residual) |   26.00093   .4747632      25.08686     26.9483
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 1328.22               Prob > chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
 \end{verbatim}
 
 \subsection{R}
