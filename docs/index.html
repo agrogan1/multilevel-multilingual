@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-03-10">
+<meta name="dcterms.date" content="2024-03-12">
 
 <title>Multilevel Multilingual</title>
 <style>
@@ -148,10 +148,10 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Multilevel Multilingual">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-03-10">
-<meta name="citation_cover_date" content="2024-03-10">
+<meta name="citation_publication_date" content="2024-03-12">
+<meta name="citation_cover_date" content="2024-03-12">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-03-10">
+<meta name="citation_online_date" content="2024-03-12">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//">
 <meta name="citation_language" content="en">
 </head>
@@ -237,11 +237,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">0.1</span> Introduction</a></li>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">0.2</span> The Data</a></li>
-  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">0.3</span> The Equation</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">0.4</span> Setup</a></li>
-  <li><a href="#get-data-run-models" id="toc-get-data-run-models" class="nav-link" data-scroll-target="#get-data-run-models"><span class="header-section-number">0.5</span> Get Data &amp; Run Models</a></li>
+  <li><a href="#multilevel-multilingual" id="toc-multilevel-multilingual" class="nav-link active" data-scroll-target="#multilevel-multilingual"><span class="header-section-number">1</span> Multilevel Multilingual</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">1.2</span> The Data</a></li>
+  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">1.3</span> The Equation</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">1.4</span> Setup</a></li>
+  <li><a href="#get-data-run-models" id="toc-get-data-run-models" class="nav-link" data-scroll-target="#get-data-run-models"><span class="header-section-number">1.5</span> Get Data &amp; Run Models</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -268,7 +271,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 10, 2024</p>
+      <p class="date">March 12, 2024</p>
     </div>
   </div>
   
@@ -281,18 +284,20 @@ window.Quarto = {
 
 
 <p><a href="multilevel-multilingual.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="multilevel-multilingual.png" title="Multilevel Multilingual" class="quarto-cover-image img-fluid"></a></p>
-<section id="introduction" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">0.1</span> Introduction</h2>
+<section id="multilevel-multilingual" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Multilevel Multilingual</h1>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
 <p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate multilevel models. Because this document is built by <a href="https://quarto.org/"><code>Quarto</code></a>, I describe calling these programs from within a <code>Quarto</code> environment. However, each piece of software could be used individually and separately.</p>
 </section>
-<section id="the-data" class="level2" data-number="0.2">
-<h2 data-number="0.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">0.2</span> The Data</h2>
+<section id="the-data" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">1.2</span> The Data</h2>
 <p>The examples below use the <code>simulated_multilevel_data.dta</code> file from <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html"><em>Multilevel Thinking</em></a>. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta">direct link</a> to download the data.</p>
 <div class="cell">
 <div id="tbl-multilingual1" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-multilingual1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Sample of Simulated Multilevel Data
+Table&nbsp;1.1: Sample of Simulated Multilevel Data
 </figcaption>
 <div aria-describedby="tbl-multilingual1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -388,12 +393,12 @@ Table&nbsp;1: Sample of Simulated Multilevel Data
 </div>
 </div>
 </section>
-<section id="the-equation" class="level2" data-number="0.3">
-<h2 data-number="0.3" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">0.3</span> The Equation</h2>
-<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij} \tag{1}\]</span></span></p>
+<section id="the-equation" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">1.3</span> The Equation</h2>
+<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij} \tag{1.1}\]</span></span></p>
 </section>
-<section id="setup" class="level2" data-number="0.4">
-<h2 data-number="0.4" class="anchored" data-anchor-id="setup"><span class="header-section-number">0.4</span> Setup</h2>
+<section id="setup" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="setup"><span class="header-section-number">1.4</span> Setup</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
@@ -420,18 +425,18 @@ Table&nbsp;1: Sample of Simulated Multilevel Data
 </div>
 </div>
 </section>
-<section id="get-data-run-models" class="level2" data-number="0.5">
-<h2 data-number="0.5" class="anchored" data-anchor-id="get-data-run-models"><span class="header-section-number">0.5</span> Get Data &amp; Run Models</h2>
+<section id="get-data-run-models" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="get-data-run-models"><span class="header-section-number">1.5</span> Get Data &amp; Run Models</h2>
 <p>To explain statistical syntax for each software, I consider the more general case of a multilevel model with dependent variable <code>y</code>, independent variables <code>x</code> and <code>z</code>, clustering variable <code>group</code>, and a random slope for <code>x</code>. <em>i</em> is the index for the person, while <em>j</em> is the index for the <code>group</code>.</p>
-<p><span id="eq-MLMsimple"><span class="math display">\[y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij} \tag{2}\]</span></span></p>
+<p><span id="eq-MLMsimple"><span class="math display">\[y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij} \tag{1.2}\]</span></span></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>2</span></a> is:</p>
+<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.2</span></a> is:</p>
 <p><code>mixed y x || group: x</code></p>
-<section id="get-the-data" class="level4" data-number="0.5.0.1">
-<h4 data-number="0.5.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">0.5.0.1</span> Get The Data</h4>
+<section id="get-the-data" class="level4" data-number="1.5.0.1">
+<h4 data-number="1.5.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">1.5.0.1</span> Get The Data</h4>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -454,8 +459,8 @@ Tip For Running Stata From Quarto
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="graph" class="level4" data-number="0.5.0.2">
-<h4 data-number="0.5.0.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">0.5.0.2</span> Graph</h4>
+<section id="graph" class="level4" data-number="1.5.0.2">
+<h4 data-number="1.5.0.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">1.5.0.2</span> Graph</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">twoway</span> <span class="kw">scatter</span> outcome warmth, <span class="bn">xtitle</span>(<span class="st">"warmth"</span>) <span class="bn">ytitle</span>(<span class="st">"outcome"</span>) <span class="bn">title</span>(<span class="st">"Outcome by Parental Warmth"</span>) </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -464,16 +469,16 @@ Tip For Running Stata From Quarto
 <div id="fig-Stata" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Stata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="scatter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="scatter.png" class="img-fluid figure-img"></a>
+<a href="scatter.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="scatter.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Stata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Outcome by Parental Warmth (Stata)
+Figure&nbsp;1.1: Outcome by Parental Warmth (Stata)
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="run-the-model" class="level4" data-number="0.5.0.3">
-<h4 data-number="0.5.0.3" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">0.5.0.3</span> Run The Model</h4>
+<section id="run-the-model" class="level4" data-number="1.5.0.3">
+<h4 data-number="1.5.0.3" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">1.5.0.3</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -525,18 +530,18 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 </section>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>2</span></a> is:</p>
+<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.2</span></a> is:</p>
 <p><code>lmer(y ~ x + z + (1 + x || group), data = ...)</code></p>
-<section id="get-the-data-1" class="level4" data-number="0.5.0.4">
-<h4 data-number="0.5.0.4" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">0.5.0.4</span> Get The Data</h4>
+<section id="get-the-data-1" class="level4" data-number="1.5.0.4">
+<h4 data-number="1.5.0.4" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">1.5.0.4</span> Get The Data</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="graph-1" class="level4" data-number="0.5.0.5">
-<h4 data-number="0.5.0.5" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">0.5.0.5</span> Graph</h4>
+<section id="graph-1" class="level4" data-number="1.5.0.5">
+<h4 data-number="1.5.0.5" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">1.5.0.5</span> Graph</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -549,18 +554,18 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <div id="fig-R" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-R-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="index_files/figure-html/fig-R-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="index_files/figure-html/fig-R-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/fig-R-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Outcome by Parental Warmth (R)
+Figure&nbsp;1.2: Outcome by Parental Warmth (R)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="run-the-model-1" class="level4" data-number="0.5.0.6">
-<h4 data-number="0.5.0.6" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">0.5.0.6</span> Run The Model</h4>
+<section id="run-the-model-1" class="level4" data-number="1.5.0.6">
+<h4 data-number="1.5.0.6" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">1.5.0.6</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
@@ -606,18 +611,18 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 </section>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>2</span></a> is:</p>
+<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.2</span></a> is:</p>
 <p><code>fit(MixedModel, @formula(y ~ x + z + (1 + x | group)), data)</code></p>
-<section id="load-the-needed-packages-and-load-the-data" class="level4" data-number="0.5.0.7">
-<h4 data-number="0.5.0.7" class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data"><span class="header-section-number">0.5.0.7</span> Load The Needed Packages And Load The Data</h4>
+<section id="load-the-needed-packages-and-load-the-data" class="level4" data-number="1.5.0.7">
+<h4 data-number="1.5.0.7" class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data"><span class="header-section-number">1.5.0.7</span> Load The Needed Packages And Load The Data</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="graph-2" class="level4" data-number="0.5.0.8">
-<h4 data-number="0.5.0.8" class="anchored" data-anchor-id="graph-2"><span class="header-section-number">0.5.0.8</span> Graph</h4>
+<section id="graph-2" class="level4" data-number="1.5.0.8">
+<h4 data-number="1.5.0.8" class="anchored" data-anchor-id="graph-2"><span class="header-section-number">1.5.0.8</span> Graph</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -629,24 +634,24 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 <div id="fig-Julia" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Julia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-Julia-J1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="index_files/figure-html/fig-Julia-J1.png" class="img-fluid figure-img" width="300"></a>
+<a href="index_files/figure-html/fig-Julia-J1.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/fig-Julia-J1.png" class="img-fluid figure-img" width="300"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Julia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Outcome by Parental Warmth (Julia)
+Figure&nbsp;1.3: Outcome by Parental Warmth (Julia)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="change-country-to-categorical" class="level4" data-number="0.5.0.9">
-<h4 data-number="0.5.0.9" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">0.5.0.9</span> Change Country To Categorical</h4>
+<section id="change-country-to-categorical" class="level4" data-number="1.5.0.9">
+<h4 data-number="1.5.0.9" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">1.5.0.9</span> Change Country To Categorical</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model-2" class="level4" data-number="0.5.0.10">
-<h4 data-number="0.5.0.10" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">0.5.0.10</span> Run The Model</h4>
+<section id="run-the-model-2" class="level4" data-number="1.5.0.10">
+<h4 data-number="1.5.0.10" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">1.5.0.10</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
@@ -684,10 +689,11 @@ HDI                   0.0101984   0.0204401    0.50    0.6178
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;1: Outcome by Parental Warmth (Stata)</span>
-<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;2: Outcome by Parental Warmth (R)</span>
-<span class="glightbox-desc lightbox-desc-4">Figure&nbsp;3: Outcome by Parental Warmth (Julia)</span>
+<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;1.1: Outcome by Parental Warmth (Stata)</span>
+<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;1.2: Outcome by Parental Warmth (R)</span>
+<span class="glightbox-desc lightbox-desc-4">Figure&nbsp;1.3: Outcome by Parental Warmth (Julia)</span>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1232,7 +1238,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

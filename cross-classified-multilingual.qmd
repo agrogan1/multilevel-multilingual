@@ -1,6 +1,4 @@
----
-title: "Cross-Classified Models in Stata, R and Julia"
----
+# Cross-Classified Models in Stata, R and Julia
 
 ## Introduction
 
