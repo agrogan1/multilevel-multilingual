@@ -4,7 +4,6 @@
 
 $$\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}$$ {#eq-MLMunconditional}
 
-
 The Intraclass Correlation Coefficient (ICC) is given by:
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCunconditional}
