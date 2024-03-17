@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-03-12">
+<meta name="dcterms.date" content="2024-03-17">
 
 <title>Multilevel Multilingual</title>
 <style>
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cross-classified-multilingual.html" rel="next">
+<link href="./unconditional-multilingual.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -148,10 +148,10 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Multilevel Multilingual">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-03-12">
-<meta name="citation_cover_date" content="2024-03-12">
+<meta name="citation_publication_date" content="2024-03-17">
+<meta name="citation_cover_date" content="2024-03-17">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-03-12">
+<meta name="citation_online_date" content="2024-03-17">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//">
 <meta name="citation_language" content="en">
 </head>
@@ -223,8 +223,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./cross-classified-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></span></a>
   </div>
 </li>
     </ul>
@@ -271,7 +277,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 12, 2024</p>
+      <p class="date">March 17, 2024</p>
     </div>
   </div>
   
@@ -292,7 +298,7 @@ window.Quarto = {
 </section>
 <section id="the-data" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">1.2</span> The Data</h2>
-<p>The examples below use the <code>simulated_multilevel_data.dta</code> file from <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html"><em>Multilevel Thinking</em></a>. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta">direct link</a> to download the data.</p>
+<p>The examples use the <code>simulated_multilevel_data.dta</code> file from <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html"><em>Multilevel Thinking</em></a>. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta">direct link</a> to download the data.</p>
 <div class="cell">
 <div id="tbl-multilingual1" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -469,7 +475,7 @@ Tip For Running Stata From Quarto
 <div id="fig-Stata" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Stata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="scatter.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="scatter.png" class="img-fluid figure-img"></a>
+<a href="scatter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="scatter.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Stata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.1: Outcome by Parental Warmth (Stata)
@@ -554,7 +560,7 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <div id="fig-R" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-R-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/fig-R-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="index_files/figure-html/fig-R-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="index_files/figure-html/fig-R-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.2: Outcome by Parental Warmth (R)
@@ -634,7 +640,7 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 <div id="fig-Julia" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Julia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-Julia-J1.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/fig-Julia-J1.png" class="img-fluid figure-img" width="300"></a>
+<a href="index_files/figure-html/fig-Julia-J1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="index_files/figure-html/fig-Julia-J1.png" class="img-fluid figure-img" width="300"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Julia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.3: Outcome by Parental Warmth (Julia)
@@ -1232,13 +1238,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cross-classified-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Cross-Classified Models in Stata, R and Julia</span>">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./unconditional-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Unconditional Model</span>">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

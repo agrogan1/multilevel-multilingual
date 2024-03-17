@@ -1,12 +1,4 @@
-# Unconditional Model
-
-## The Equation
-
-$$\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}$$ {#eq-MLMunconditional}
-
-The Intraclass Correlation Coefficient (ICC) is given by:
-
-$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCunconditional}
+# Descriptive Statitics
 
 ```{r}
 #| label: unconditionalsetup
@@ -23,7 +15,7 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 ```
 
-## Run Models
+## Descriptive Statistics
 
 ::: {.panel-tabset group="language"}
 
@@ -37,17 +29,13 @@ use simulated_multilevel_data.dta // use data
 
 ```{stata, collectcode=TRUE}
 
-mixed outcome || country: // unconditional model
-  
-```
+summarize outcome warmth physical_punishment HDI
 
-```{stata}
-  
-estat icc // calculate icc
+tabulate group
 
 ```
 
-### R
+### R 
 
 ```{r}
 
@@ -58,20 +46,12 @@ df <- read_dta("simulated_multilevel_data.dta")
 ```
 
 ```{r}
-#| warning: false
 
-fit0 <- lmer(outcome ~ (1 | country),
-             data = df)
+df$country <- factor(df$country)
 
-summary(fit0)
+df$group <- factor(df$group)
 
-```
-
-```{r}
-
-library(performance)
-
-performance::icc(fit0) # calculate icc
+skimr::skim(df)
 
 ```
 
@@ -91,20 +71,14 @@ df = DataFrame(load("simulated_multilevel_data.dta"))
 
 @transform!(df, :country = categorical(:country))
 
-```
-
-```{julia}
-
-m0 = fit(MixedModel, @formula(outcome ~ (1 | country)), df)
+@transform!(df, :group = categorical(:group))
 
 ```
 
 ```{julia}
 
-icc(m0)
+describe(df)
 
 ```
-
-
 
 :::

@@ -18,7 +18,9 @@ book:
   open-graph: true
   chapters:
     - index.qmd
+    - descriptives-multilingual.qmd
     - unconditional-multilingual.qmd
+    - cross-sectional-multilingual.qmd
     - cross-classified-multilingual.qmd
   navbar:
     background: primary
