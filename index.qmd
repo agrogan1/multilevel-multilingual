@@ -51,6 +51,14 @@ library(Statamarkdown)
 
 ```
 
+::: {.callout-tip collapse="true"}
+#### Tip For Running Stata From Quarto
+
+Because I am running Stata from inside a Quarto document, and running Stata in multiple chunks, I need to use the `collectcode=TRUE` option in the first Stata chunk. i.e. my Quarto chunk needs to begin with ````{stata, collectcode=TRUE}`
+
+See Doug Hemken's excellent documentation on `Statamarkdown` [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/linking-code-blocks.html#linking-code-blocks-1).
+:::
+
 ### R
 
 In R, I use the library `lme4` to run multilevel models. 
@@ -79,7 +87,7 @@ switch(Sys.info()[['sysname']],
 
 :::
 
-## Get Data & Run Models
+## An Introduction To Equations and Syntax
 
 To explain statistical syntax for each software, I consider the more general case of a multilevel model with dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`. *i* is the index for the person, while *j* is the index for the `group`.
 
@@ -93,42 +101,6 @@ In Stata `mixed`, the syntax for a multilevel model of the form described in @eq
 
 `mixed y x || group: x`
 
-#### Get The Data 
-
-::: {.callout-tip collapse="true"}
-#### Tip For Running Stata From Quarto
-
-Because I am running Stata from inside a Quarto document, and running Stata in multiple chunks, I need to use the `collectcode=TRUE` option in the first Stata chunk. i.e. my Quarto chunk needs to begin with ````{stata, collectcode=TRUE}`
-
-See Doug Hemken's excellent documentation on `Statamarkdown` [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/linking-code-blocks.html#linking-code-blocks-1).
-:::
-
-```{stata, collectcode=TRUE}
-
-use simulated_multilevel_data.dta
-
-```
-
-#### Graph
-
-```{stata}
-#| fig-height: 3
-
-twoway scatter outcome warmth, xtitle("warmth") ytitle("outcome") title("Outcome by Parental Warmth") 
-
-quietly graph export scatter.png, replace
-
-```
-
-![Outcome by Parental Warmth (Stata)](scatter.png){#fig-Stata}
-
-#### Run The Model
-
-```{stata}
-
-mixed outcome warmth physical_punishment group HDI || country: warmth
-
-```
 
 ### R
 
@@ -136,98 +108,12 @@ In R `lme4`, the general syntax for a multilevel model of the form described in 
 
 `lmer(y ~ x + z + (1 + x || group), data = ...)`
 
-#### Get The Data
-
-```{r}
-
-library(haven)
-
-df <- read_dta("simulated_multilevel_data.dta")
-
-```
-
-#### Graph
-
-```{r}
-#| fig-height: 3
-#| label: fig-R
-#| fig-cap: "Outcome by Parental Warmth (R)"
-
-library(ggplot2)
-
-ggplot(df,
-       aes(x = warmth,
-           y = outcome)) +
-  geom_point() +
-  labs(title = "Outcome by Parental Warmth")
-
-```
-
-#### Run The Model
-
-```{r}
-#| warning: false
-
-fit1 <- lmer(outcome ~ warmth + physical_punishment + 
-               group + HDI +
-               (1 + warmth || country),
-             data = df)
-
-summary(fit1)
-
-```
 
 ### Julia
 
 In Julia `MixedModels`, the general syntax for a multilevel model of the form described in @eq-MLMsimple is:
 
 `fit(MixedModel, @formula(y ~ x + z + (1 + x | group)), data)`
-
-#### Load The Needed Packages And Load The Data
-
-```{julia}
-#| output: false
-
-using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
-
-df = DataFrame(load("simulated_multilevel_data.dta"))
-
-```
-
-#### Graph
-
-```{julia}
-#| fig-height: 3
-#| label: fig-Julia
-#| fig-cap: "Outcome by Parental Warmth (Julia)"
-
-using StatsPlots
-
-@df df scatter(:outcome, :warmth, 
-               title = "Outcome by Parental Warmth",
-               ylabel = "outcome",
-               xlabel = "parental warmth")
-
-```
-
-#### Change Country To Categorical
-
-```{julia}
-#| output: false
-
-@transform!(df, :country = categorical(:country))
-
-```
-
-#### Run The Model
-
-```{julia}
-
-m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment + 
-               group + HDI +
-               (1 + warmth | country)), df)
-
-```
 
 :::
 

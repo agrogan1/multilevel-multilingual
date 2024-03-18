@@ -1,1 +1,133 @@
 # Cross Sectional Model
+
+::: {.panel-tabset group="language"}
+
+## Stata
+
+### Get The Data 
+
+```{stata, collectcode=TRUE}
+
+use simulated_multilevel_data.dta
+
+```
+
+### Graph
+
+```{stata}
+#| fig-height: 3
+
+twoway scatter outcome warmth, xtitle("warmth") ytitle("outcome") title("Outcome by Parental Warmth") 
+
+quietly graph export scatter.png, replace
+
+```
+
+![Outcome by Parental Warmth (Stata)](scatter.png){#fig-Stata}
+
+### Run The Model
+
+```{stata}
+
+mixed outcome warmth physical_punishment group HDI || country: warmth
+
+```
+
+## R
+
+### Get The Data
+
+```{r}
+
+library(haven)
+
+df <- read_dta("simulated_multilevel_data.dta")
+
+```
+
+### Graph
+
+```{r}
+#| fig-height: 3
+#| label: fig-R
+#| fig-cap: "Outcome by Parental Warmth (R)"
+
+library(ggplot2)
+
+ggplot(df,
+       aes(x = warmth,
+           y = outcome)) +
+  geom_point() +
+  labs(title = "Outcome by Parental Warmth")
+
+```
+
+### Run The Model
+
+```{r}
+#| warning: false
+
+fit1 <- lmer(outcome ~ warmth + physical_punishment + 
+               group + HDI +
+               (1 + warmth || country),
+             data = df)
+
+summary(fit1)
+
+```
+
+## Julia
+
+### Load The Needed Packages And Load The Data
+
+```{julia}
+#| output: false
+
+using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+df = DataFrame(load("simulated_multilevel_data.dta"))
+
+```
+
+### Graph
+
+```{julia}
+#| fig-height: 3
+#| label: fig-Julia
+#| fig-cap: "Outcome by Parental Warmth (Julia)"
+
+using StatsPlots
+
+@df df scatter(:outcome, :warmth, 
+               title = "Outcome by Parental Warmth",
+               ylabel = "outcome",
+               xlabel = "parental warmth")
+
+```
+
+### Change Country To Categorical
+
+```{julia}
+#| output: false
+
+@transform!(df, :country = categorical(:country))
+
+```
+
+### Run The Model
+
+```{julia}
+
+m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment + 
+               group + HDI +
+               (1 + warmth | country)), df)
+
+```
+
+
+:::
+
+
+
+
+
