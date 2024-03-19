@@ -224,7 +224,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptives-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statitics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -252,8 +252,7 @@ window.Quarto = {
   <li><a href="#multilevel-multilingual" id="toc-multilevel-multilingual" class="nav-link active" data-scroll-target="#multilevel-multilingual"><span class="header-section-number">1</span> Multilevel Multilingual</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">1.2</span> The Data</a></li>
-  <li><a href="#an-introduction-to-equations-and-syntax" id="toc-an-introduction-to-equations-and-syntax" class="nav-link" data-scroll-target="#an-introduction-to-equations-and-syntax"><span class="header-section-number">1.3</span> An Introduction To Equations and Syntax</a></li>
+  <li><a href="#an-introduction-to-equations-and-syntax" id="toc-an-introduction-to-equations-and-syntax" class="nav-link" data-scroll-target="#an-introduction-to-equations-and-syntax"><span class="header-section-number">1.2</span> An Introduction To Equations and Syntax</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -298,10 +297,7 @@ window.Quarto = {
 <h1 data-number="1"><span class="header-section-number">1</span> Multilevel Multilingual</h1>
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate multilevel models. Because this document is built by <a href="https://quarto.org/"><code>Quarto</code></a>, I am calling these programs from within a <code>Quarto</code> environment. However, each piece of software could be used individually and separately.</p>
-</section>
-<section id="the-data" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">1.2</span> The Data</h2>
+<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate multilevel models. ## The Data</p>
 <p>The examples use the <code>simulated_multilevel_data.dta</code> file from <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html"><em>Multilevel Thinking</em></a>. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta">direct link</a> to download the data.</p>
 <div class="cell">
 <div id="tbl-multilingual1" class="cell quarto-float anchored">
@@ -403,8 +399,8 @@ Table&nbsp;1.1: Sample of Simulated Multilevel Data
 </div>
 </div>
 </section>
-<section id="an-introduction-to-equations-and-syntax" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="an-introduction-to-equations-and-syntax"><span class="header-section-number">1.3</span> An Introduction To Equations and Syntax</h2>
+<section id="an-introduction-to-equations-and-syntax" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="an-introduction-to-equations-and-syntax"><span class="header-section-number">1.2</span> An Introduction To Equations and Syntax</h2>
 <p>To explain statistical syntax for each software, I consider the general case of a multilevel model with dependent variable <code>y</code>, independent variables <code>x</code> and <code>z</code>, clustering variable <code>group</code>, and a random slope for <code>x</code>. <em>i</em> is the index for the person, while <em>j</em> is the index for the <code>group</code>.</p>
 <p><span id="eq-MLMsimple"><span class="math display">\[y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij} \tag{1.1}\]</span></span></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
@@ -971,13 +967,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./descriptives-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Descriptive Statitics</span>">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statitics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./descriptives-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Descriptive Statistics</span>">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

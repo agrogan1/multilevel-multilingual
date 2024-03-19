@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Multilingual - 2&nbsp; Descriptive Statitics</title>
+<title>Multilevel Multilingual - 2&nbsp; Descriptive Statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,11 +107,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 2&nbsp; Descriptive Statitics">
+<meta property="og:title" content="Multilevel Multilingual - 2&nbsp; Descriptive Statistics">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 2&nbsp; Descriptive Statitics">
+<meta name="twitter:title" content="Multilevel Multilingual - 2&nbsp; Descriptive Statistics">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Descriptive Statitics]{.chapter-title}">
+<meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Descriptive Statistics]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//descriptives-multilingual.html">
 <meta name="citation_language" content="en">
 </head>
@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptives-multilingual.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statitics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptives-multilingual.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptives-multilingual.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statitics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,12 +197,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Model</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cross-classified-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></span></a>
   </div>
 </li>
     </ul>
@@ -224,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statitics</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></h1>
 </div>
 
 
@@ -278,253 +272,52 @@ physical_p~t |      3,000    2.494667    1.380075          0          5
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven) <span class="co"># read data in Stata format</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>R’s descriptive statistics functions rely heavily on whether a variable is a <em>numeric</em> variable, or a <em>factor</em> variable. Below, I convert two variables to factors (<code>factor</code>) before using <code>summary</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to generate descriptive statistics.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>country)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>group <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>group)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Data summary</caption>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Name</td>
-<td style="text-align: left;">df</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">3000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">_______________________</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Column type frequency:</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">character</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">________________________</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Group variables</td>
-<td style="text-align: left;">None</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: character</strong></p>
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 13%">
-<col style="width: 19%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: right;">min</th>
-<th style="text-align: right;">max</th>
-<th style="text-align: right;">empty</th>
-<th style="text-align: right;">n_unique</th>
-<th style="text-align: right;">whitespace</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">id</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3000</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: factor</strong></p>
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 11%">
-<col style="width: 16%">
-<col style="width: 9%">
-<col style="width: 10%">
-<col style="width: 36%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: left;">ordered</th>
-<th style="text-align: right;">n_unique</th>
-<th style="text-align: left;">top_counts</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">country</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">1: 100, 2: 100, 3: 100, 4: 100</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">group</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">1: 1507, 2: 1493</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: numeric</strong></p>
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 10%">
-<col style="width: 15%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 7%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: right;">mean</th>
-<th style="text-align: right;">sd</th>
-<th style="text-align: right;">p0</th>
-<th style="text-align: right;">p25</th>
-<th style="text-align: right;">p50</th>
-<th style="text-align: right;">p75</th>
-<th style="text-align: right;">p100</th>
-<th style="text-align: left;">hist</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">HDI</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">64.77</td>
-<td style="text-align: right;">17.25</td>
-<td style="text-align: right;">33.00</td>
-<td style="text-align: right;">53.00</td>
-<td style="text-align: right;">70.00</td>
-<td style="text-align: right;">81.00</td>
-<td style="text-align: right;">87.00</td>
-<td style="text-align: left;">▅▂▅▇▇</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">family</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">50.50</td>
-<td style="text-align: right;">28.87</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">25.75</td>
-<td style="text-align: right;">50.50</td>
-<td style="text-align: right;">75.25</td>
-<td style="text-align: right;">100.00</td>
-<td style="text-align: left;">▇▇▇▇▇</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">physical_punishment</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2.49</td>
-<td style="text-align: right;">1.38</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">2.00</td>
-<td style="text-align: right;">3.00</td>
-<td style="text-align: right;">3.25</td>
-<td style="text-align: right;">5.00</td>
-<td style="text-align: left;">▇▇▇▆▂</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">warmth</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3.52</td>
-<td style="text-align: right;">1.89</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">2.00</td>
-<td style="text-align: right;">4.00</td>
-<td style="text-align: right;">5.00</td>
-<td style="text-align: right;">7.00</td>
-<td style="text-align: left;">▃▃▇▃▅</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">outcome</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">53.47</td>
-<td style="text-align: right;">6.65</td>
-<td style="text-align: right;">33.39</td>
-<td style="text-align: right;">48.78</td>
-<td style="text-align: right;">53.64</td>
-<td style="text-align: right;">58.06</td>
-<td style="text-align: right;">76.75</td>
-<td style="text-align: left;">▁▅▇▃▁</td>
-</tr>
-</tbody>
-</table>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    country          HDI            family            id            group   
+ 1      : 100   Min.   :33.00   Min.   :  1.00   Length:3000        1:1507  
+ 2      : 100   1st Qu.:53.00   1st Qu.: 25.75   Class :character   2:1493  
+ 3      : 100   Median :70.00   Median : 50.50   Mode  :character           
+ 4      : 100   Mean   :64.77   Mean   : 50.50                              
+ 5      : 100   3rd Qu.:81.00   3rd Qu.: 75.25                              
+ 6      : 100   Max.   :87.00   Max.   :100.00                              
+ (Other):2400                                                               
+ physical_punishment     warmth         outcome     
+ Min.   :0.000       Min.   :0.000   Min.   :33.39  
+ 1st Qu.:2.000       1st Qu.:2.000   1st Qu.:48.78  
+ Median :3.000       Median :4.000   Median :53.64  
+ Mean   :2.495       Mean   :3.524   Mean   :53.47  
+ 3rd Qu.:3.250       3rd Qu.:5.000   3rd Qu.:58.06  
+ Max.   :5.000       Max.   :7.000   Max.   :76.75  
+                                                    </code></pre>
 </div>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">MixedModelsExtras</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">MixedModelsExtras</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>group <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>group))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Similarly to R, Julia relies on the idea of <em>variable type</em>. I use <code>transform</code> to convert the appropriate variables to <em>categorical</em> variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>group <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>group))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>8×7 DataFrame
  Row │ variable             mean     min      median   max     nmissing  eltyp ⋯
@@ -546,6 +339,12 @@ physical_p~t |      3,000    2.494667    1.380075          0          5
 </div>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><code>skimr</code> is an excellent new alternative library for generating descriptive statistics in R.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

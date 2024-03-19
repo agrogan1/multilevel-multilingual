@@ -215,7 +215,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptives-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statitics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -228,12 +228,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Model</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cross-classified-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></span></a>
   </div>
 </li>
     </ul>
@@ -273,11 +267,13 @@ window.Quarto = {
 </header>
 
 
+<p>An <em>unconditional</em> multilevel model is a model with no independent variables. One should always run an unconditional model as the first step of a multilevel model in order to get a sense of the way that variation is apportioned in the model across the different levels.</p>
 <section id="the-equation" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">3.1</span> The Equation</h2>
 <p><span id="eq-MLMunconditional"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij} \tag{3.1}\]</span></span></p>
 <p>The Intraclass Correlation Coefficient (ICC) is given by:</p>
 <p><span id="eq-ICCunconditional"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{3.2}\]</span></span></p>
+<p>In a two level multilevel model, the ICC provides a measure of the amount of variation attributable to Level 2.</p>
 </section>
 <section id="run-models" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="run-models"><span class="header-section-number">3.2</span> Run Models</h2>
@@ -349,10 +345,12 @@ LR test vs. linear model: chibar2(01) = 169.64        Prob &gt;= chibar2 = 0.000
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fit0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
 Formula: outcome ~ (1 | country)
@@ -967,8 +965,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./descriptives-multilingual.html" class="pagination-link  aria-label=" &lt;span="" statitics&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statitics</span></span>
+      <a href="./descriptives-multilingual.html" class="pagination-link  aria-label=" &lt;span="" statistics&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
