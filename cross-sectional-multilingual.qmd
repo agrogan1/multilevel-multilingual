@@ -1,5 +1,20 @@
 # Cross Sectional Model
 
+```{r}
+#| label: unconditionalsetup
+#| echo: false
+#| output: false
+
+library(Statamarkdown)
+
+library(lme4) 
+
+library(JuliaCall)
+
+julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
+
+```
+
 ::: {.panel-tabset group="language"}
 
 ## Stata
