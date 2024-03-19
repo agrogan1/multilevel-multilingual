@@ -1,0 +1,101 @@
+# Descriptive Statitics
+
+
+
+```{r}
+#| label: unconditionalsetup
+#| echo: false
+#| output: false
+
+library(Statamarkdown)
+
+library(lme4) 
+
+library(JuliaCall)
+
+julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
+
+```
+
+
+
+## Descriptive Statistics
+
+::: {.panel-tabset group="language"}
+
+### Stata
+
+
+
+```{stata, collectcode=TRUE}
+
+use simulated_multilevel_data.dta // use data
+
+```
+
+```{stata, collectcode=TRUE}
+
+summarize outcome warmth physical_punishment HDI
+
+tabulate group
+
+```
+
+
+
+### R 
+
+
+
+```{r}
+
+library(haven)
+
+df <- read_dta("simulated_multilevel_data.dta")
+
+```
+
+```{r}
+
+df$country <- factor(df$country)
+
+df$group <- factor(df$group)
+
+skimr::skim(df)
+
+```
+
+
+
+### Julia
+
+
+
+```{julia}
+#| output: false
+
+using Tables, MixedModels, MixedModelsExtras, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+df = DataFrame(load("simulated_multilevel_data.dta"))
+
+```
+
+```{julia}
+#| output: false
+
+@transform!(df, :country = categorical(:country))
+
+@transform!(df, :group = categorical(:group))
+
+```
+
+```{julia}
+
+describe(df)
+
+```
+
+
+
+:::
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Multilingual - 2&nbsp; Cross-Classified Models in Stata, R and Julia</title>
+<title>Multilevel Multilingual - 5&nbsp; Cross-Classified Models in Stata, R and Julia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./index.html" rel="prev">
+<link href="./cross-sectional-multilingual.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -135,13 +135,13 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 2&nbsp; Cross-Classified Models in Stata, R and Julia">
+<meta property="og:title" content="Multilevel Multilingual - 5&nbsp; Cross-Classified Models in Stata, R and Julia">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 2&nbsp; Cross-Classified Models in Stata, R and Julia">
+<meta name="twitter:title" content="Multilevel Multilingual - 5&nbsp; Cross-Classified Models in Stata, R and Julia">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Cross-Classified Models in Stata, R and Julia]{.chapter-title}">
+<meta name="citation_title" content="[5]{.chapter-number}&nbsp; [Cross-Classified Models in Stata, R and Julia]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//cross-classified-multilingual.html">
 <meta name="citation_language" content="en">
 </head>
@@ -193,7 +193,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cross-classified-multilingual.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cross-classified-multilingual.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -213,8 +213,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./descriptives-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statitics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./cross-classified-multilingual.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></span></a>
   </div>
 </li>
     </ul>
@@ -227,11 +245,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">2.2</span> The Data</a></li>
-  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">2.3</span> The Equation</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">2.4</span> Setup</a></li>
-  <li><a href="#get-data-run-models" id="toc-get-data-run-models" class="nav-link" data-scroll-target="#get-data-run-models"><span class="header-section-number">2.5</span> Get Data &amp; Run Models</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">5.2</span> The Data</a></li>
+  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">5.3</span> The Equation</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">5.4</span> Setup</a></li>
+  <li><a href="#get-data-run-models" id="toc-get-data-run-models" class="nav-link" data-scroll-target="#get-data-run-models"><span class="header-section-number">5.5</span> Get Data &amp; Run Models</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -240,7 +258,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross-Classified Models in Stata, R and Julia</span></h1>
 </div>
 
 
@@ -257,21 +275,21 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
 <p>A two level multilevel model imagines that <em>Level 1</em> units are nested in <em>Level 2</em> units. A three level multilevel model imagines that <em>Level 1</em> units are nested in <em>Level 2</em> units, which are in turn nested in <em>Level 3</em>.</p>
 <p>A cross-classified model imagines that the nesting is not hierarchical, but rather that there are two sets of clusters or nestings in which individuals may be nested.</p>
 <p>In this data, <em>events</em> are nested inside <em>persons</em> which are in turn nested in <em>countries</em>, since in this data, individuals never change countries. However, the use of a cross-classified framework would allow for a situation in which <em>persons</em> moved from country to country, and experienced different <em>events</em> in different <em>countries</em>.</p>
 <p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate cross-classified models. Because this document is built by <a href="https://quarto.org/"><code>Quarto</code></a>, I describe calling these programs from within a <code>Quarto</code> environment. However, each piece of software could be used individually and separately.</p>
 </section>
-<section id="the-data" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">2.2</span> The Data</h2>
+<section id="the-data" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">5.2</span> The Data</h2>
 <p>The examples below use the <code>simulated_multilevel_longitudinal_data.dta</code> file from <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html"><em>Multilevel Thinking</em></a>. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta">direct link</a> to download the data.</p>
 <div class="cell">
 <div id="tbl-multilingual1" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-multilingual1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.1: Sample of Simulated Multilevel Longitudinal Data
+Table&nbsp;5.1: Sample of Simulated Multilevel Longitudinal Data
 </figcaption>
 <div aria-describedby="tbl-multilingual1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -375,12 +393,12 @@ Table&nbsp;2.1: Sample of Simulated Multilevel Longitudinal Data
 </div>
 </div>
 </section>
-<section id="the-equation" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">2.3</span> The Equation</h2>
-<p><span id="eq-crossclassifiedsubstantive"><span class="math display">\[\text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt} \tag{2.1}\]</span></span></p>
+<section id="the-equation" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">5.3</span> The Equation</h2>
+<p><span id="eq-crossclassifiedsubstantive"><span class="math display">\[\text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt} \tag{5.1}\]</span></span></p>
 </section>
-<section id="setup" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="setup"><span class="header-section-number">2.4</span> Setup</h2>
+<section id="setup" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="setup"><span class="header-section-number">5.4</span> Setup</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
@@ -407,18 +425,18 @@ Table&nbsp;2.1: Sample of Simulated Multilevel Longitudinal Data
 </div>
 </div>
 </section>
-<section id="get-data-run-models" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="get-data-run-models"><span class="header-section-number">2.5</span> Get Data &amp; Run Models</h2>
+<section id="get-data-run-models" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="get-data-run-models"><span class="header-section-number">5.5</span> Get Data &amp; Run Models</h2>
 <p>To explain statistical syntax for each software, I consider the more general case of a cross-classified model with dependent variable <code>y</code>, independent variables <code>x</code> and <code>z</code>, clustering variables <code>country</code> and <code>id</code>.</p>
-<p><span id="eq-crossclassfiedsimple"><span class="math display">\[y = \beta_0 + \beta_1 x_{ijt} + \beta_2 z_{ijt} + u_{0j} + v_{0i} + e_{ijt} \tag{2.2}\]</span></span></p>
+<p><span id="eq-crossclassfiedsimple"><span class="math display">\[y = \beta_0 + \beta_1 x_{ijt} + \beta_2 z_{ijt} + u_{0j} + v_{0i} + e_{ijt} \tag{5.2}\]</span></span></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> is:</p>
+<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple" class="quarto-xref">Equation&nbsp;<span>5.2</span></a> is:</p>
 <p><code>mixed y x || _all: R.group1 || group2:</code></p>
-<section id="get-the-data" class="level4" data-number="2.5.0.1">
-<h4 data-number="2.5.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">2.5.0.1</span> Get The Data</h4>
+<section id="get-the-data" class="level4" data-number="5.5.0.1">
+<h4 data-number="5.5.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">5.5.0.1</span> Get The Data</h4>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -441,8 +459,8 @@ Tip For Running Stata From Quarto
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model" class="level4" data-number="2.5.0.2">
-<h4 data-number="2.5.0.2" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">2.5.0.2</span> Run The Model</h4>
+<section id="run-the-model" class="level4" data-number="5.5.0.2">
+<h4 data-number="5.5.0.2" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">5.5.0.2</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment <span class="fu">group</span> HDI || <span class="dt">_all</span>: R.country || id:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -500,18 +518,18 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 </section>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> is:</p>
+<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple" class="quarto-xref">Equation&nbsp;<span>5.2</span></a> is:</p>
 <p><code>lmer(y ~ x + z + (1 | group1) + (1 | group2), data = ...)</code></p>
-<section id="get-the-data-1" class="level4" data-number="2.5.0.3">
-<h4 data-number="2.5.0.3" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">2.5.0.3</span> Get The Data</h4>
+<section id="get-the-data-1" class="level4" data-number="5.5.0.3">
+<h4 data-number="5.5.0.3" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">5.5.0.3</span> Get The Data</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model-1" class="level4" data-number="2.5.0.4">
-<h4 data-number="2.5.0.4" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">2.5.0.4</span> Run The Model</h4>
+<section id="run-the-model-1" class="level4" data-number="5.5.0.4">
+<h4 data-number="5.5.0.4" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">5.5.0.4</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> t <span class="sc">+</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
@@ -560,24 +578,24 @@ HDI         -0.943  0.000 -0.003  0.003  0.000</code></pre>
 </section>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> is:</p>
+<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-crossclassfiedsimple" class="quarto-xref">Equation&nbsp;<span>5.2</span></a> is:</p>
 <p><code>fit(MixedModel, @formula(y ~ x + z + (1 | group1) + (1 | group2)), data)</code></p>
-<section id="load-the-needed-packages-and-load-the-data" class="level4" data-number="2.5.0.5">
-<h4 data-number="2.5.0.5" class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data"><span class="header-section-number">2.5.0.5</span> Load The Needed Packages And Load The Data</h4>
+<section id="load-the-needed-packages-and-load-the-data" class="level4" data-number="5.5.0.5">
+<h4 data-number="5.5.0.5" class="anchored" data-anchor-id="load-the-needed-packages-and-load-the-data"><span class="header-section-number">5.5.0.5</span> Load The Needed Packages And Load The Data</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="change-country-to-categorical" class="level4" data-number="2.5.0.6">
-<h4 data-number="2.5.0.6" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">2.5.0.6</span> Change Country To Categorical</h4>
+<section id="change-country-to-categorical" class="level4" data-number="5.5.0.6">
+<h4 data-number="5.5.0.6" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">5.5.0.6</span> Change Country To Categorical</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model-2" class="level4" data-number="2.5.0.7">
-<h4 data-number="2.5.0.7" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">2.5.0.7</span> Run The Model</h4>
+<section id="run-the-model-2" class="level4" data-number="5.5.0.7">
+<h4 data-number="5.5.0.7" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">5.5.0.7</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> t <span class="op">+</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
@@ -1152,8 +1170,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link  aria-label=" &lt;span="" multilingual&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilevel Multilingual</span></span>
+      <a href="./cross-sectional-multilingual.html" class="pagination-link  aria-label=" &lt;span="" sectional="" model&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Model</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -15,6 +15,13 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 ```
 
+## The Equation
+
+## The Equation
+
+$$\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}$$ {#eq-MLMsubstantive}
+
+
 ::: {.panel-tabset group="language"}
 
 ## Stata
