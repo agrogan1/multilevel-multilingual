@@ -120,22 +120,6 @@
 
 \KOMAoption{captions}{tableheading}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
-\definecolor{quarto-callout-color}{HTML}{909090}
-\definecolor{quarto-callout-note-color}{HTML}{0758E5}
-\definecolor{quarto-callout-important-color}{HTML}{CC1914}
-\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
-\definecolor{quarto-callout-tip-color}{HTML}{00A047}
-\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
-\definecolor{quarto-callout-color-frame}{HTML}{acacac}
-\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
-\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
-\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
-\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
-\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
-\makeatother
-\makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
 \makeatletter
@@ -205,7 +189,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-03-12}
+\date{2024-03-19}
 
 \begin{document}
 \maketitle
@@ -227,15 +211,9 @@
 Below, I describe the use of \href{https://www.stata.com/}{Stata},
 \href{https://www.r-project.org/}{R}, and
 \href{https://www.julialang.org/}{Julia} to estimate multilevel models.
-Because this document is built by
-\href{https://quarto.org/}{\texttt{Quarto}}, I describe calling these
-programs from within a \texttt{Quarto} environment. However, each piece
-of software could be used individually and separately.
+\#\# The Data
 
-\section{The Data}\label{the-data}
-
-The examples below use the \texttt{simulated\_multilevel\_data.dta} file
-from
+The examples use the \texttt{simulated\_multilevel\_data.dta} file from
 \href{https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html}{\emph{Multilevel
 Thinking}}. Here is a
 \href{https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta}{direct
@@ -286,49 +264,10 @@ outcome
 
 \end{longtable}
 
-\section{The Equation}\label{the-equation}
+\section{An Introduction To Equations and Syntax}\label{sec-syntax}
 
-\begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}}\end{equation}
-
-\section{Setup}\label{setup}
-
-\subsection{Stata}
-
-I need to use the library \texttt{Statamarkdown} to call Stata, or I
-could run Stata on its own
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(Statamarkdown)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection{R}
-
-In R, I use the library \texttt{lme4} to run multilevel models.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(lme4) }
-\end{Highlighting}
-\end{Shaded}
-
-\subsection{Julia}
-
-I need to call Julia from R.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(JuliaCall)}
-
-\FunctionTok{julia\_setup}\NormalTok{(}\AttributeTok{JULIA\_HOME =} \StringTok{"/Applications/Julia{-}1.8.app/Contents/Resources/julia/bin"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\section{Get Data \& Run Models}\label{get-data-run-models}
-
-To explain statistical syntax for each software, I consider the more
-general case of a multilevel model with dependent variable \texttt{y},
+To explain statistical syntax for each software, I consider the general
+case of a multilevel model with dependent variable \texttt{y},
 independent variables \texttt{x} and \texttt{z}, clustering variable
 \texttt{group}, and a random slope for \texttt{x}. \emph{i} is the index
 for the person, while \emph{j} is the index for the \texttt{group}.
@@ -340,21 +279,387 @@ for the person, while \emph{j} is the index for the \texttt{group}.
 In Stata \texttt{mixed}, the syntax for a multilevel model of the form
 described in Equation~\ref{eq-MLMsimple} is:
 
-\texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:\ x}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mixed }\FunctionTok{y}\NormalTok{ x || }\FunctionTok{group}\NormalTok{: x}
+\end{Highlighting}
+\end{Shaded}
 
-\subsubsection{Get The Data}\label{get-the-data}
+\subsection{R}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, opacitybacktitle=0.6, breakable, titlerule=0mm, bottomtitle=1mm, opacityback=0, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, rightrule=.15mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, leftrule=.75mm, left=2mm]
+In R \texttt{lme4}, the general syntax for a multilevel model of the
+form described in Equation~\ref{eq-MLMsimple} is:
 
-Because I am running Stata from inside a Quarto document, and running
-Stata in multiple chunks, I need to use the \texttt{collectcode=TRUE}
-option in the first Stata chunk. i.e.~my Quarto chunk needs to begin
-with ```\texttt{\{stata,\ collectcode=TRUE\}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lmer}\NormalTok{(y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x }\SpecialCharTok{+}\NormalTok{ z }\SpecialCharTok{+}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ x }\SpecialCharTok{||}\NormalTok{ group), }\AttributeTok{data =}\NormalTok{ ...)}
+\end{Highlighting}
+\end{Shaded}
 
-See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
-\href{https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/linking-code-blocks.html\#linking-code-blocks-1}{here}.
+\subsection{Julia}
 
-\end{tcolorbox}
+In Julia \texttt{MixedModels}, the general syntax for a multilevel model
+of the form described in Equation~\ref{eq-MLMsimple} is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(y }\OperatorTok{\textasciitilde{}}\NormalTok{ x }\OperatorTok{+}\NormalTok{ z }\OperatorTok{+}\NormalTok{ (}\FloatTok{1} \OperatorTok{+}\NormalTok{ x }\OperatorTok{|}\NormalTok{ group)), data)}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Descriptive Statistics}\label{descriptive-statistics}
+
+\section{Descriptive Statistics}\label{descriptive-statistics-1}
+
+\subsection{Stata}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{use}\NormalTok{ simulated\_multilevel\_data.dta }\CommentTok{// use data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{summarize}\NormalTok{ outcome warmth physical\_punishment HDI}
+
+\KeywordTok{tabulate} \FunctionTok{group}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+     outcome |      3,000    53.46757     6.65179   33.39014   76.75101
+      warmth |      3,000    3.524333    1.889956          0          7
+physical_p~t |      3,000    2.494667    1.380075          0          5
+         HDI |      3,000    64.76667    17.24562         33         87
+
+
+  arbitrary |
+      group |
+   variable |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |      1,507       50.23       50.23
+          2 |      1,493       49.77      100.00
+------------+-----------------------------------
+      Total |      3,000      100.00
+\end{verbatim}
+
+\subsection{R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(haven) }\CommentTok{\# read data in Stata format}
+
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"simulated\_multilevel\_data.dta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+R's descriptive statistics functions rely heavily on whether a variable
+is a \emph{numeric} variable, or a \emph{factor} variable. Below, I
+convert two variables to factors (\texttt{factor}) before using
+\texttt{summary}\footnote{\texttt{skimr} is an excellent new alternative
+  library for generating descriptive statistics in R.} to generate
+descriptive statistics.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{country }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{country)}
+
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{group }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{group)}
+
+\FunctionTok{summary}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    country          HDI            family            id            group   
+ 1      : 100   Min.   :33.00   Min.   :  1.00   Length:3000        1:1507  
+ 2      : 100   1st Qu.:53.00   1st Qu.: 25.75   Class :character   2:1493  
+ 3      : 100   Median :70.00   Median : 50.50   Mode  :character           
+ 4      : 100   Mean   :64.77   Mean   : 50.50                              
+ 5      : 100   3rd Qu.:81.00   3rd Qu.: 75.25                              
+ 6      : 100   Max.   :87.00   Max.   :100.00                              
+ (Other):2400                                                               
+ physical_punishment     warmth         outcome     
+ Min.   :0.000       Min.   :0.000   Min.   :33.39  
+ 1st Qu.:2.000       1st Qu.:2.000   1st Qu.:48.78  
+ Median :3.000       Median :4.000   Median :53.64  
+ Mean   :2.495       Mean   :3.524   Mean   :53.47  
+ 3rd Qu.:3.250       3rd Qu.:5.000   3rd Qu.:58.06  
+ Max.   :5.000       Max.   :7.000   Max.   :76.75  
+                                                    
+\end{verbatim}
+
+\subsection{Julia}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{using} \BuiltInTok{Tables}\NormalTok{, }\BuiltInTok{MixedModels}\NormalTok{, }\BuiltInTok{MixedModelsExtras}\NormalTok{, }\BuiltInTok{StatFiles}\NormalTok{, }\BuiltInTok{DataFrames}\NormalTok{, }\BuiltInTok{CategoricalArrays}\NormalTok{, }\BuiltInTok{DataFramesMeta}
+
+\NormalTok{df }\OperatorTok{=} \FunctionTok{DataFrame}\NormalTok{(}\FunctionTok{load}\NormalTok{(}\StringTok{"simulated\_multilevel\_data.dta"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Similarly to R, Julia relies on the idea of \emph{variable type}. I use
+\texttt{transform} to convert the appropriate variables to
+\emph{categorical} variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{@transform}\NormalTok{!(df, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
+
+\PreprocessorTok{@transform}\NormalTok{!(df, }\OperatorTok{:}\NormalTok{group }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{group))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\FunctionTok{describe}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+8×7 DataFrame
+ Row │ variable             mean     min      median   max     nmissing  eltyp ⋯
+     │ Symbol               Union…   Any      Union…   Any     Int64     Union ⋯
+─────┼──────────────────────────────────────────────────────────────────────────
+   1 │ country                       1.0               30.0           0  Union ⋯
+   2 │ HDI                  64.7667  33.0     70.0     87.0           0  Union
+   3 │ family               50.5     1.0      50.5     100.0          0  Union
+   4 │ id                            1.1               9.99           0  Union
+   5 │ group                         1.0               2.0            0  Union ⋯
+   6 │ physical_punishment  2.49467  0.0      3.0      5.0            0  Union
+   7 │ warmth               3.52433  0.0      4.0      7.0            0  Union
+   8 │ outcome              53.4676  33.3901  53.6426  76.751         0  Union
+                                                                1 column omitted
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
+\chapter{Unconditional Model}\label{unconditional-model}
+
+An \emph{unconditional} multilevel model is a model with no independent
+variables. One should always run an unconditional model as the first
+step of a multilevel model in order to get a sense of the way that
+variation is apportioned in the model across the different levels.
+
+\section{The Equation}\label{the-equation}
+
+\begin{equation}\phantomsection\label{eq-MLMunconditional}{\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}}\end{equation}
+
+The Intraclass Correlation Coefficient (ICC) is given by:
+
+\begin{equation}\phantomsection\label{eq-ICCunconditional}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}}\end{equation}
+
+In a two level multilevel model, the ICC provides a measure of the
+amount of variation attributable to Level 2.
+
+\section{Run Models}\label{run-models}
+
+\subsection{Stata}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{use}\NormalTok{ simulated\_multilevel\_data.dta }\CommentTok{// use data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{mixed outcome || country: }\CommentTok{// unconditional model}
+  
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -9856.1548  
+Iteration 1:  Log likelihood = -9856.1548  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                           Number of obs    = 3,000
+Group variable: country                               Number of groups =    30
+                                                      Obs per group:
+                                                                   min =   100
+                                                                   avg = 100.0
+                                                                   max =   100
+                                                      Wald chi2(0)     =     .
+Log likelihood = -9856.1548                           Prob > chi2      =     .
+
+------------------------------------------------------------------------------
+     outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       _cons |   53.46757   .3539097   151.08   0.000     52.77392    54.16122
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+country: Identity            |
+                  var(_cons) |   3.348734   .9702594      1.897816    5.908906
+-----------------------------+------------------------------------------------
+               var(Residual) |   40.88284   1.060908       38.8555    43.01597
+------------------------------------------------------------------------------
+LR test vs. linear model: chibar2(01) = 169.64        Prob >= chibar2 = 0.0000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  
+\KeywordTok{estat}\NormalTok{ icc }\CommentTok{// calculate icc}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Intraclass correlation
+
+------------------------------------------------------------------------------
+                       Level |        ICC   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+                     country |   .0757091   .0203761      .0442419    .1265931
+------------------------------------------------------------------------------
+\end{verbatim}
+
+\subsection{R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(haven)}
+
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"simulated\_multilevel\_data.dta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lme4) }\CommentTok{\# estimate multilevel models}
+
+\NormalTok{fit0 }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country),}
+             \AttributeTok{data =}\NormalTok{ df)}
+
+\FunctionTok{summary}\NormalTok{(fit0)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by REML ['lmerMod']
+Formula: outcome ~ (1 | country)
+   Data: df
+
+REML criterion at convergence: 19712.5
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.97650 -0.68006  0.00936  0.67580  3.03510 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ country  (Intercept)  3.478   1.865   
+ Residual             40.883   6.394   
+Number of obs: 3000, groups:  country, 30
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)    53.47       0.36   148.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(performance)}
+
+\NormalTok{performance}\SpecialCharTok{::}\FunctionTok{icc}\NormalTok{(fit0) }\CommentTok{\# calculate icc}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# Intraclass Correlation Coefficient
+
+    Adjusted ICC: 0.078
+  Unadjusted ICC: 0.078
+\end{verbatim}
+
+\subsection{Julia}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{using} \BuiltInTok{Tables}\NormalTok{, }\BuiltInTok{MixedModels}\NormalTok{, }\BuiltInTok{MixedModelsExtras}\NormalTok{, }\BuiltInTok{StatFiles}\NormalTok{, }\BuiltInTok{DataFrames}\NormalTok{, }\BuiltInTok{CategoricalArrays}\NormalTok{, }\BuiltInTok{DataFramesMeta}
+
+\NormalTok{df }\OperatorTok{=} \FunctionTok{DataFrame}\NormalTok{(}\FunctionTok{load}\NormalTok{(}\StringTok{"simulated\_multilevel\_data.dta"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{@transform}\NormalTok{!(df, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{m0 }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country)), df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + (1 | country)
+   logLik   -2 logLik     AIC       AICc        BIC    
+ -9856.1548 19712.3097 19718.3097 19718.3177 19736.3288
+
+Variance components:
+            Column   Variance Std.Dev.
+country  (Intercept)   3.34871 1.82995
+Residual              40.88285 6.39397
+ Number of obs: 3000; levels of grouping factors: 30
+
+  Fixed-effects parameters:
+──────────────────────────────────────────────────
+               Coef.  Std. Error       z  Pr(>|z|)
+──────────────────────────────────────────────────
+(Intercept)  53.4676    0.353908  151.08    <1e-99
+──────────────────────────────────────────────────
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\FunctionTok{icc}\NormalTok{(m0)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+0.07570852291396266
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
+\chapter{Cross Sectional Model}\label{cross-sectional-model}
+
+\section{The Equation}\label{the-equation-1}
+
+Recall the general model of Equation~\ref{eq-MLMsimple}, and the syntax
+outlined in Section~\ref{sec-syntax}. Below in
+Equation~\ref{eq-MLMsubstantive}, we consider a more substantive
+example.
+
+\begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}}\end{equation}
+
+\section{Stata}
+
+\subsection{Get The Data}\label{get-the-data}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -363,7 +668,7 @@ See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Graph}\label{graph}
+\subsection{Graph}\label{graph}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -385,7 +690,7 @@ See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
 
 \end{figure}%
 
-\subsubsection{Run The Model}\label{run-the-model}
+\subsection{Run The Model}\label{run-the-model}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -439,14 +744,9 @@ LR test vs. linear model: chi2(2) = 198.01                Prob > chi2 = 0.0000
 Note: LR test is conservative and provided only for reference.
 \end{verbatim}
 
-\subsection{R}
+\section{R}
 
-In R \texttt{lme4}, the general syntax for a multilevel model of the
-form described in Equation~\ref{eq-MLMsimple} is:
-
-\texttt{lmer(y\ \textasciitilde{}\ x\ +\ z\ +\ (1\ +\ x\ \textbar{}\textbar{}\ group),\ data\ =\ ...)}
-
-\subsubsection{Get The Data}\label{get-the-data-1}
+\subsection{Get The Data}\label{get-the-data-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -456,7 +756,7 @@ form described in Equation~\ref{eq-MLMsimple} is:
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Graph}\label{graph-1}
+\subsection{Graph}\label{graph-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -474,7 +774,7 @@ form described in Equation~\ref{eq-MLMsimple} is:
 
 \centering{
 
-\includegraphics{index_files/figure-pdf/fig-R-1.pdf}
+\includegraphics{cross-sectional-multilingual_files/figure-pdf/fig-R-1.pdf}
 
 }
 
@@ -482,7 +782,7 @@ form described in Equation~\ref{eq-MLMsimple} is:
 
 \end{figure}%
 
-\subsubsection{Run The Model}\label{run-the-model-1}
+\subsection{Run The Model}\label{run-the-model-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -530,14 +830,9 @@ group       -0.218 -0.010 -0.019
 HDI         -0.925 -0.006  0.008 -0.001
 \end{verbatim}
 
-\subsection{Julia}
+\section{Julia}
 
-In Julia \texttt{MixedModels}, the general syntax for a multilevel model
-of the form described in Equation~\ref{eq-MLMsimple} is:
-
-\texttt{fit(MixedModel,\ @formula(y\ \textasciitilde{}\ x\ +\ z\ +\ (1\ +\ x\ \textbar{}\ group)),\ data)}
-
-\subsubsection{Load The Needed Packages And Load The
+\subsection{Load The Needed Packages And Load The
 Data}\label{load-the-needed-packages-and-load-the-data}
 
 \begin{Shaded}
@@ -548,7 +843,7 @@ Data}\label{load-the-needed-packages-and-load-the-data}
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Graph}\label{graph-2}
+\subsection{Graph}\label{graph-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -565,7 +860,7 @@ Data}\label{load-the-needed-packages-and-load-the-data}
 
 \centering{
 
-\includegraphics{index_files/figure-pdf/fig-Julia-J1.pdf}
+\includegraphics{cross-sectional-multilingual_files/figure-pdf/fig-Julia-J1.pdf}
 
 }
 
@@ -573,7 +868,7 @@ Data}\label{load-the-needed-packages-and-load-the-data}
 
 \end{figure}%
 
-\subsubsection{Change Country To
+\subsection{Change Country To
 Categorical}\label{change-country-to-categorical}
 
 \begin{Shaded}
@@ -582,7 +877,7 @@ Categorical}\label{change-country-to-categorical}
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Run The Model}\label{run-the-model-2}
+\subsection{Run The Model}\label{run-the-model-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -616,364 +911,6 @@ physical_punishment  -0.845389    0.0798149  -10.59    <1e-25
 group                 1.08524     0.220055     4.93    <1e-06
 HDI                   0.0101984   0.0204401    0.50    0.6178
 ─────────────────────────────────────────────────────────────
-\end{verbatim}
-
-\bookmarksetup{startatroot}
-
-\chapter{Cross-Classified Models in Stata, R and
-Julia}\label{cross-classified-models-in-stata-r-and-julia}
-
-\section{Introduction}\label{introduction-1}
-
-A two level multilevel model imagines that \emph{Level 1} units are
-nested in \emph{Level 2} units. A three level multilevel model imagines
-that \emph{Level 1} units are nested in \emph{Level 2} units, which are
-in turn nested in \emph{Level 3}.
-
-A cross-classified model imagines that the nesting is not hierarchical,
-but rather that there are two sets of clusters or nestings in which
-individuals may be nested.
-
-In this data, \emph{events} are nested inside \emph{persons} which are
-in turn nested in \emph{countries}, since in this data, individuals
-never change countries. However, the use of a cross-classified framework
-would allow for a situation in which \emph{persons} moved from country
-to country, and experienced different \emph{events} in different
-\emph{countries}.
-
-Below, I describe the use of \href{https://www.stata.com/}{Stata},
-\href{https://www.r-project.org/}{R}, and
-\href{https://www.julialang.org/}{Julia} to estimate cross-classified
-models. Because this document is built by
-\href{https://quarto.org/}{\texttt{Quarto}}, I describe calling these
-programs from within a \texttt{Quarto} environment. However, each piece
-of software could be used individually and separately.
-
-\section{The Data}\label{the-data-1}
-
-The examples below use the
-\texttt{simulated\_multilevel\_longitudinal\_data.dta} file from
-\href{https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html}{\emph{Multilevel
-Thinking}}. Here is a
-\href{https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta}{direct
-link} to download the data.
-
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0952}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0476}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.2619}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
-
-\caption{\label{tbl-multilingual1}Sample of Simulated Multilevel
-Longitudinal Data}
-
-\tabularnewline
-
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-country
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-HDI
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-family
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-id
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-t
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-physical\_punishment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-warmth
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-outcome
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-1 & 69 & 1 & 1.1 & 2 & 1 & 2 & 3 & 59.18 \\
-1 & 69 & 1 & 1.1 & 2 & 2 & 2 & 2 & 58.29 \\
-1 & 69 & 1 & 1.1 & 2 & 3 & 3 & 3 & 60.58 \\
-1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
-1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
-1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
-
-\end{longtable}
-
-\section{The Equation}\label{the-equation-1}
-
-\begin{equation}\phantomsection\label{eq-crossclassifiedsubstantive}{\text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt}}\end{equation}
-
-\section{Setup}\label{setup-1}
-
-\subsection{Stata}
-
-I need to use the library \texttt{Statamarkdown} to call Stata, or I
-could run Stata on its own
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(Statamarkdown)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection{R}
-
-In R, I use the library \texttt{lme4} to run multilevel models.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(lme4)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection{Julia}
-
-I need to call Julia from R.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(JuliaCall)}
-
-\FunctionTok{julia\_setup}\NormalTok{(}\AttributeTok{JULIA\_HOME =} \StringTok{"/Applications/Julia{-}1.8.app/Contents/Resources/julia/bin"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\section{Get Data \& Run Models}\label{get-data-run-models-1}
-
-To explain statistical syntax for each software, I consider the more
-general case of a cross-classified model with dependent variable
-\texttt{y}, independent variables \texttt{x} and \texttt{z}, clustering
-variables \texttt{country} and \texttt{id}.
-
-\begin{equation}\phantomsection\label{eq-crossclassfiedsimple}{y = \beta_0 + \beta_1 x_{ijt} + \beta_2 z_{ijt} + u_{0j} + v_{0i} + e_{ijt}}\end{equation}
-
-\subsection{Stata}
-
-In Stata \texttt{mixed}, the syntax for a multilevel model of the form
-described in Equation~\ref{eq-crossclassfiedsimple} is:
-
-\texttt{mixed\ y\ x\ \textbar{}\textbar{}\ \_all:\ R.group1\ \textbar{}\textbar{}\ group2:}
-
-\subsubsection{Get The Data}\label{get-the-data-2}
-
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, opacitybacktitle=0.6, breakable, titlerule=0mm, bottomtitle=1mm, opacityback=0, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip For Running Stata From Quarto}, rightrule=.15mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, leftrule=.75mm, left=2mm]
-
-Because I am running Stata from inside a Quarto document, and running
-Stata in multiple chunks, I need to use the \texttt{collectcode=TRUE}
-option in the first Stata chunk. i.e.~my Quarto chunk needs to begin
-with ```\texttt{\{stata,\ collectcode=TRUE\}}
-
-See Doug Hemken's excellent documentation on \texttt{Statamarkdown}
-\href{https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/linking-code-blocks.html\#linking-code-blocks-1}{here}.
-
-\end{tcolorbox}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\KeywordTok{use}\NormalTok{ simulated\_multilevel\_longitudinal\_data.dta}
-\end{Highlighting}
-\end{Shaded}
-
-\subsubsection{Run The Model}\label{run-the-model-3}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome t warmth physical\_punishment }\FunctionTok{group}\NormalTok{ HDI || }\DataTypeTok{\_all}\NormalTok{: R.country || id:}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Performing EM optimization ...
-
-Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -28534.027  
-Iteration 1:  Log likelihood = -28533.997  
-Iteration 2:  Log likelihood = -28533.997  
-
-Computing standard errors ...
-
-Mixed-effects ML regression                            Number of obs =   9,000
-
-        Grouping information
-        -------------------------------------------------------------
-                        |     No. of       Observations per group
-         Group variable |     groups    Minimum    Average    Maximum
-        ----------------+--------------------------------------------
-                   _all |          1      9,000    9,000.0      9,000
-                     id |      3,000          3        3.0          3
-        -------------------------------------------------------------
-
-                                                       Wald chi2(5)  = 1206.21
-Log likelihood = -28533.997                            Prob > chi2   =  0.0000
-
--------------------------------------------------------------------------------------
-            outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
---------------------+----------------------------------------------------------------
-                  t |   .9879647   .0658315    15.01   0.000     .8589373    1.116992
-             warmth |   .9462548   .0381869    24.78   0.000     .8714098      1.0211
-physical_punishment |  -.9267739   .0499549   -18.55   0.000    -1.024684    -.828864
-              group |    .985819   .1534866     6.42   0.000     .6849908    1.286647
-                HDI |   .0075436   .0207106     0.36   0.716    -.0330485    .0481356
-              _cons |   49.49447   1.424253    34.75   0.000     46.70299    52.28596
--------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------
-  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
------------------------------+------------------------------------------------
-_all: Identity               |
-              var(R.country) |   3.650496   .9878413      2.147893    6.204274
------------------------------+------------------------------------------------
-id: Identity                 |
-                  var(_cons) |   8.852634   .4815279      7.957424    9.848556
------------------------------+------------------------------------------------
-               var(Residual) |   26.00093   .4747632      25.08686     26.9483
-------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 1328.22               Prob > chi2 = 0.0000
-
-Note: LR test is conservative and provided only for reference.
-\end{verbatim}
-
-\subsection{R}
-
-In R \texttt{lme4}, the general syntax for a multilevel model of the
-form described in Equation~\ref{eq-crossclassfiedsimple} is:
-
-\texttt{lmer(y\ \textasciitilde{}\ x\ +\ z\ +\ (1\ \textbar{}\ group1)\ +\ (1\ \textbar{}\ group2),\ data\ =\ ...)}
-
-\subsubsection{Get The Data}\label{get-the-data-3}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(haven)}
-
-\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"simulated\_multilevel\_longitudinal\_data.dta"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsubsection{Run The Model}\label{run-the-model-4}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{fit1 }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ t }\SpecialCharTok{+}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
-\NormalTok{               group }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+}
-\NormalTok{               (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ id) }\SpecialCharTok{+}
-\NormalTok{               (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country),}
-             \AttributeTok{data =}\NormalTok{ df)}
-
-\FunctionTok{summary}\NormalTok{(fit1)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linear mixed model fit by REML ['lmerMod']
-Formula: outcome ~ t + warmth + physical_punishment + group + HDI + (1 |  
-    id) + (1 | country)
-   Data: df
-
-REML criterion at convergence: 57088.4
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--3.4471 -0.6226  0.0081  0.6153  3.1993 
-
-Random effects:
- Groups   Name        Variance Std.Dev.
- id       (Intercept)  8.864   2.977   
- country  (Intercept)  3.924   1.981   
- Residual             26.008   5.100   
-Number of obs: 9000, groups:  id, 3000; country, 30
-
-Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)         49.494782   1.471780  33.629
-t                    0.987964   0.065840  15.005
-warmth               0.946259   0.038200  24.771
-physical_punishment -0.926880   0.049970 -18.549
-group                0.985786   0.153550   6.420
-HDI                  0.007543   0.021437   0.352
-
-Correlation of Fixed Effects:
-            (Intr) t      warmth physc_ group 
-t           -0.090                            
-warmth      -0.085  0.008                     
-physcl_pnsh -0.085  0.003 -0.019              
-group       -0.154  0.000 -0.013 -0.008       
-HDI         -0.943  0.000 -0.003  0.003  0.000
-\end{verbatim}
-
-\subsection{Julia}
-
-In Julia \texttt{MixedModels}, the general syntax for a multilevel model
-of the form described in Equation~\ref{eq-crossclassfiedsimple} is:
-
-\texttt{fit(MixedModel,\ @formula(y\ \textasciitilde{}\ x\ +\ z\ +\ (1\ \textbar{}\ group1)\ +\ (1\ \textbar{}\ group2)),\ data)}
-
-\subsubsection{Load The Needed Packages And Load The
-Data}\label{load-the-needed-packages-and-load-the-data-1}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{using} \BuiltInTok{Tables}\NormalTok{, }\BuiltInTok{MixedModels}\NormalTok{, }\BuiltInTok{StatFiles}\NormalTok{, }\BuiltInTok{DataFrames}\NormalTok{, }\BuiltInTok{CategoricalArrays}\NormalTok{, }\BuiltInTok{DataFramesMeta}
-
-\NormalTok{df }\OperatorTok{=} \FunctionTok{DataFrame}\NormalTok{(}\FunctionTok{load}\NormalTok{(}\StringTok{"simulated\_multilevel\_longitudinal\_data.dta"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\subsubsection{Change Country To
-Categorical}\label{change-country-to-categorical-1}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\PreprocessorTok{@transform}\NormalTok{!(df, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
-\end{Highlighting}
-\end{Shaded}
-
-\subsubsection{Run The Model}\label{run-the-model-5}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{m1 }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{+}\NormalTok{ warmth }\OperatorTok{+}\NormalTok{ physical\_punishment }\OperatorTok{+} 
-\NormalTok{                                group }\OperatorTok{+}\NormalTok{ HDI }\OperatorTok{+}
-\NormalTok{                                (}\FloatTok{1} \OperatorTok{|}\NormalTok{ id) }\OperatorTok{+}
-\NormalTok{                                (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country)), df)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linear mixed model fit by maximum likelihood
- outcome ~ 1 + t + warmth + physical_punishment + group + HDI + (1 | id) + (1 | country)
-    logLik   -2 logLik      AIC         AICc        BIC     
- -28533.9968  57067.9935  57085.9935  57086.0136  57149.9384
-
-Variance components:
-            Column   Variance Std.Dev.
-id       (Intercept)   8.85264 2.97534
-country  (Intercept)   3.65030 1.91058
-Residual              26.00093 5.09911
- Number of obs: 9000; levels of grouping factors: 3000, 30
-
-  Fixed-effects parameters:
-──────────────────────────────────────────────────────────────
-                           Coef.  Std. Error       z  Pr(>|z|)
-──────────────────────────────────────────────────────────────
-(Intercept)          49.4945       1.42422     34.75    <1e-99
-t                     0.987965     0.0658315   15.01    <1e-50
-warmth                0.946255     0.0381869   24.78    <1e-99
-physical_punishment  -0.926774     0.0499549  -18.55    <1e-76
-group                 0.985819     0.153487     6.42    <1e-09
-HDI                   0.00754357   0.0207101    0.36    0.7157
-──────────────────────────────────────────────────────────────
 \end{verbatim}
 
 
