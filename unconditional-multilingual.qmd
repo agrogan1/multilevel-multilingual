@@ -1,5 +1,7 @@
 # Unconditional Model
 
+An *unconditional* multilevel model is a model with no independent variables. One should always run an unconditional model as the first step of a multilevel model in order to get a sense of the way that variation is apportioned in the model across the different levels.
+
 ## The Equation
 
 $$\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}$$ {#eq-MLMunconditional}
@@ -7,6 +9,8 @@ $$\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}$$ {#eq-MLMunconditional}
 The Intraclass Correlation Coefficient (ICC) is given by:
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCunconditional}
+
+In a two level multilevel model, the ICC provides a measure of the amount of variation attributable to Level 2.
 
 ```{r}
 #| label: unconditionalsetup
@@ -60,6 +64,8 @@ df <- read_dta("simulated_multilevel_data.dta")
 ```{r}
 #| warning: false
 
+library(lme4) # estimate multilevel models
+
 fit0 <- lmer(outcome ~ (1 | country),
              data = df)
 
@@ -104,7 +110,5 @@ m0 = fit(MixedModel, @formula(outcome ~ (1 | country)), df)
 icc(m0)
 
 ```
-
-
 
 :::

@@ -1,4 +1,4 @@
-# Descriptive Statitics
+# Descriptive Statistics
 
 ```{r}
 #| label: unconditionalsetup
@@ -39,11 +39,15 @@ tabulate group
 
 ```{r}
 
-library(haven)
+library(haven) # read data in Stata format
 
 df <- read_dta("simulated_multilevel_data.dta")
 
 ```
+
+R's descriptive statistics functions rely heavily on whether a variable is a *numeric* variable, or a *factor* variable. Below, I convert two variables to factors (`factor`) before using `summary`[^skimr] to generate descriptive statistics.
+
+[^skimr]: `skimr` is an excellent new alternative library for generating descriptive statistics in R.
 
 ```{r}
 
@@ -51,7 +55,7 @@ df$country <- factor(df$country)
 
 df$group <- factor(df$group)
 
-skimr::skim(df)
+summary(df)
 
 ```
 
@@ -65,6 +69,8 @@ using Tables, MixedModels, MixedModelsExtras, StatFiles, DataFrames, Categorical
 df = DataFrame(load("simulated_multilevel_data.dta"))
 
 ```
+
+Similarly to R, Julia relies on the idea of *variable type*. I use `transform` to convert the appropriate variables to *categorical* variables. 
 
 ```{julia}
 #| output: false
