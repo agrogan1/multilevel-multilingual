@@ -48,7 +48,7 @@ switch(Sys.info()[['sysname']],
 
 ```
 
-## An Introduction To Equations and Syntax
+## An Introduction To Equations and Syntax {#sec-syntax}
 
 To explain statistical syntax for each software, I consider the general case of a multilevel model with dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`. *i* is the index for the person, while *j* is the index for the `group`.
 
