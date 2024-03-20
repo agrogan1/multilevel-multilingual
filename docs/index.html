@@ -309,7 +309,25 @@ Results Will Vary Slightly
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Estimating multilevel models is a complex endeavor. The details of how this is accomplished are beyond the purview of this book. Suffice it to say that across software packages there will be differences in estimation routines, resulting in some numerical differences in the results provided by different software packages. Substantively speaking, however, results should agree across software.</p>
+<p>Estimating multilevel models is a complex endeavor. The software details of how this is accomplished are beyond the purview of this book. Suffice it to say that across different software packages there will be differences in estimation routines, resulting in some numerical differences in the results provided by different software packages. Substantively speaking, however, results should agree across software.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Multi-Line Commands
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sometimes I have written commands out over multiple lines. I have done this for especially long commands, but have also sometimes done this simply for the sake of clarity. The different software packages have different approaches to multi-line commands.</p>
+<ol type="1">
+<li>By default, <em>Stata</em> ends a command at the end of a line. If you are going to write a multi-line command you should use the <code>///</code> line continuation characters.</li>
+<li><em>R</em> is the software that most naturally can be written using multiple lines, as R commands are usually clearly encased in parentheses (<code>()</code>) or continued with <code>+</code> signs.</li>
+<li>Like <em>Stata</em>, <em>Julia</em> expects commands to end at the end of a line. If you are going to write a mult-line command, all commands except for the last line should end in a character that clearly indicates continuation, like a <code>+</code> sign. An alternative is to encase the entire Julia command in an outer set of parentheses (<code>()</code>).</li>
+</ol>
 </div>
 </div>
 </section>
@@ -994,7 +1012,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

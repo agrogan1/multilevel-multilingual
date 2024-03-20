@@ -7,10 +7,20 @@ Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-
 ::: {.callout-tip}
 ## Results Will Vary Slightly
 
-Estimating multilevel models is a complex endeavor. The details of how this is accomplished are beyond the purview of this book. Suffice it to say that across software packages there will be differences in estimation routines, resulting in some numerical differences in the results provided by different software packages. Substantively speaking, however, results should agree across software. 
+Estimating multilevel models is a complex endeavor. The software details of how this is accomplished are beyond the purview of this book. Suffice it to say that across different software packages there will be differences in estimation routines, resulting in some numerical differences in the results provided by different software packages. Substantively speaking, however, results should agree across software. 
 :::
 
-## The Data
+::: {.callout-tip}
+## Multi-Line Commands
+
+Sometimes I have written commands out over multiple lines. I have done this for especially long commands, but have also sometimes done this simply for the sake of clarity. The different software packages have different approaches to multi-line commands.
+
+1. By default, *Stata* ends a command at the end of a line. If you are going to write a multi-line command you should use the `///` line continuation characters.
+2. *R* is the software that most naturally can be written using multiple lines, as R commands are usually clearly encased in parentheses (`()`) or continued with `+` signs.
+3. Like *Stata*, *Julia* expects commands to end at the end of a line. If you are going to write a mult-line command, all commands except for the last line should end in a character that clearly indicates continuation, like a `+` sign. An alternative is to encase the entire Julia command in an outer set of parentheses (`()`).
+:::
+
+## The Data {#sec-data}
 
 The examples use the `simulated_multilevel_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html). Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta) to download the data.
 
@@ -19,6 +29,10 @@ The examples use the `simulated_multilevel_data.dta` file from [*Multilevel Thin
 #| output: false
 
 file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta", 
+          ".",
+          overwrite = TRUE) # copy over most recent version
+
+file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta", 
           ".",
           overwrite = TRUE) # copy over most recent version
 

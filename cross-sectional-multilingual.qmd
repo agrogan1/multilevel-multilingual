@@ -1,4 +1,4 @@
-# Cross Sectional Model
+# Cross Sectional Multilevel Models
 
 ```{r}
 #| label: unconditionalsetup
