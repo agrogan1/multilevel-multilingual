@@ -47,7 +47,7 @@ mixed outcome || country: // unconditional model
 
 ```{stata}
   
-estat icc // calculate icc
+estat icc // ICC
 
 ```
 
@@ -67,7 +67,7 @@ df <- read_dta("simulated_multilevel_data.dta")
 library(lme4) # estimate multilevel models
 
 fit0 <- lmer(outcome ~ (1 | country),
-             data = df)
+             data = df) # unconditional model
 
 summary(fit0)
 
@@ -77,7 +77,7 @@ summary(fit0)
 
 library(performance)
 
-performance::icc(fit0) # calculate icc
+performance::icc(fit0) # ICC
 
 ```
 
@@ -86,7 +86,8 @@ performance::icc(fit0) # calculate icc
 ```{julia}
 #| output: false
 
-using Tables, MixedModels, MixedModelsExtras, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+using Tables, MixedModels, MixedModelsExtras, 
+StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 
 df = DataFrame(load("simulated_multilevel_data.dta"))
 
@@ -101,13 +102,14 @@ df = DataFrame(load("simulated_multilevel_data.dta"))
 
 ```{julia}
 
-m0 = fit(MixedModel, @formula(outcome ~ (1 | country)), df)
+m0 = fit(MixedModel, 
+         @formula(outcome ~ (1 | country)), df) # unconditional model
 
 ```
 
 ```{julia}
 
-icc(m0)
+icc(m0) # ICC
 
 ```
 

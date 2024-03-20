@@ -27,6 +27,8 @@ use simulated_multilevel_data.dta // use data
 
 ```
 
+We use `summarize` for *continuous* variables, and `tabulate` for *categorical* variables. 
+
 ```{stata, collectcode=TRUE}
 
 summarize outcome warmth physical_punishment HDI
@@ -83,7 +85,7 @@ Similarly to R, Julia relies on the idea of *variable type*. I use `transform` t
 
 ```{julia}
 
-describe(df)
+describe(df) # descriptive statistics
 
 ```
 

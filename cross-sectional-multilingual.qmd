@@ -38,7 +38,9 @@ use simulated_multilevel_data.dta
 ```{stata}
 #| fig-height: 3
 
-twoway scatter outcome warmth, xtitle("warmth") ytitle("outcome") title("Outcome by Parental Warmth") 
+twoway scatter outcome warmth, ///
+  xtitle("warmth") ytitle("outcome") ///
+  title("Outcome by Parental Warmth") 
 
 quietly graph export scatter.png, replace
 
@@ -56,7 +58,7 @@ mixed outcome warmth physical_punishment group HDI || country: warmth
 
 ## R
 
-### Get The Data
+### Load The Needed Packages And Get The Data
 
 ```{r}
 
@@ -99,7 +101,7 @@ summary(fit1)
 
 ## Julia
 
-### Load The Needed Packages And Load The Data
+### Load The Needed Packages And Get The Data
 
 ```{julia}
 #| output: false

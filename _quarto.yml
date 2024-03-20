@@ -42,6 +42,7 @@ format:
     lot: true
     lof: true
     keep-tex: true
+    fig-width: 6
     execute:
       echo: true
       warning: false   
