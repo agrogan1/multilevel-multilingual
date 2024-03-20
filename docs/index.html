@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-03-19">
+<meta name="dcterms.date" content="2024-03-20">
 
 <title>Multilevel Multilingual</title>
 <style>
@@ -148,10 +148,10 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Multilevel Multilingual">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-03-19">
-<meta name="citation_cover_date" content="2024-03-19">
+<meta name="citation_publication_date" content="2024-03-20">
+<meta name="citation_cover_date" content="2024-03-20">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-03-19">
+<meta name="citation_online_date" content="2024-03-20">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//">
 <meta name="citation_language" content="en">
 </head>
@@ -252,7 +252,8 @@ window.Quarto = {
   <li><a href="#multilevel-multilingual" id="toc-multilevel-multilingual" class="nav-link active" data-scroll-target="#multilevel-multilingual"><span class="header-section-number">1</span> Multilevel Multilingual</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
-  <li><a href="#sec-syntax" id="toc-sec-syntax" class="nav-link" data-scroll-target="#sec-syntax"><span class="header-section-number">1.2</span> An Introduction To Equations and Syntax</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">1.2</span> The Data</a></li>
+  <li><a href="#sec-syntax" id="toc-sec-syntax" class="nav-link" data-scroll-target="#sec-syntax"><span class="header-section-number">1.3</span> An Introduction To Equations and Syntax</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -280,7 +281,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 19, 2024</p>
+      <p class="date">March 20, 2024</p>
     </div>
   </div>
   
@@ -297,7 +298,23 @@ window.Quarto = {
 <h1 data-number="1"><span class="header-section-number">1</span> Multilevel Multilingual</h1>
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate multilevel models. ## The Data</p>
+<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate multilevel models.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Results Will Vary Slightly
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Estimating multilevel models is a complex endeavor. The details of how this is accomplished are beyond the purview of this book. Suffice it to say that across software packages there will be differences in estimation routines, resulting in some numerical differences in the results provided by different software packages. Substantively speaking, however, results should agree across software.</p>
+</div>
+</div>
+</section>
+<section id="the-data" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="the-data"><span class="header-section-number">1.2</span> The Data</h2>
 <p>The examples use the <code>simulated_multilevel_data.dta</code> file from <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html"><em>Multilevel Thinking</em></a>. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta">direct link</a> to download the data.</p>
 <div class="cell">
 <div id="tbl-multilingual1" class="cell quarto-float anchored">
@@ -399,8 +416,8 @@ Table&nbsp;1.1: Sample of Simulated Multilevel Data
 </div>
 </div>
 </section>
-<section id="sec-syntax" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sec-syntax"><span class="header-section-number">1.2</span> An Introduction To Equations and Syntax</h2>
+<section id="sec-syntax" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-syntax"><span class="header-section-number">1.3</span> An Introduction To Equations and Syntax</h2>
 <p>To explain statistical syntax for each software, I consider the general case of a multilevel model with dependent variable <code>y</code>, independent variables <code>x</code> and <code>z</code>, clustering variable <code>group</code>, and a random slope for <code>x</code>. <em>i</em> is the index for the person, while <em>j</em> is the index for the <code>group</code>.</p>
 <p><span id="eq-MLMsimple"><span class="math display">\[y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij} \tag{1.1}\]</span></span></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
@@ -415,13 +432,17 @@ Table&nbsp;1.1: Sample of Simulated Multilevel Data
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lmer</span>(y <span class="sc">~</span> x <span class="sc">+</span> z <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> x <span class="sc">||</span> group), <span class="at">data =</span> ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lmer</span>(y <span class="sc">~</span> x <span class="sc">+</span> z <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> x <span class="sc">||</span> group), <span class="at">data =</span> ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(y <span class="op">~</span> x <span class="op">+</span> z <span class="op">+</span> (<span class="fl">1</span> <span class="op">+</span> x <span class="op">|</span> group)), data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">MixedModels</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(y <span class="op">~</span> x <span class="op">+</span> z <span class="op">+</span> (<span class="fl">1</span> <span class="op">+</span> x <span class="op">|</span> group)), data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -973,7 +994,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
