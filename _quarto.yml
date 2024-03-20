@@ -47,5 +47,9 @@ format:
       echo: true
       warning: false   
       freeze: auto
-
+  docx:
+    reference-doc: markstat.docx
+    execute:
+      echo: true
+      warning: false
 
