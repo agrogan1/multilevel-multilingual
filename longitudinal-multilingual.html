@@ -165,6 +165,56 @@ Figure&nbsp;1: Outcome by Parental Warmth (Stata)
 </figure>
 </div>
 </section>
+<section id="run-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-model">Run The Model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood =  -28795.37  
+Iteration 1:  Log likelihood = -28795.232  
+Iteration 2:  Log likelihood = -28795.232  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                         Number of obs    =   9,000
+Group variable: country                             Number of groups =      30
+                                                    Obs per group:
+                                                                 min =     300
+                                                                 avg =   300.0
+                                                                 max =     300
+                                                    Wald chi2(5)     = 1366.93
+Log likelihood = -28795.232                         Prob &gt; chi2      =  0.0000
+
+-------------------------------------------------------------------------------------
+            outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+                  t |   .9882371   .0761439    12.98   0.000     .8389979    1.137476
+             warmth |   .9427117   .0342282    27.54   0.000     .8756256    1.009798
+physical_punishment |  -.9020727   .0452759   -19.92   0.000    -.9908119   -.8133336
+              group |   .9861238   .1249047     7.90   0.000     .7413151    1.230933
+                HDI |   .0073726    .020661     0.36   0.721    -.0331222    .0478674
+              _cons |   49.45537   1.414072    34.97   0.000     46.68384     52.2269
+-------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+country: Independent         |
+                 var(warmth) |   .0024684   .0082517      3.52e-06     1.72956
+                  var(_cons) |   3.663663   .9914845      2.155548     6.22692
+-----------------------------+------------------------------------------------
+               var(Residual) |   34.78483   .5200702       33.7803    35.81923
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 805.75                Prob &gt; chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.</code></pre>
+</div>
+</div>
+</section>
 </div>
 </div>
 </div>

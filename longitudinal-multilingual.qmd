@@ -62,6 +62,48 @@ quietly graph export lfitlongitudinal.png, replace
 
 ![Outcome by Parental Warmth (Stata)](lfitlongitudinal.png){#fig-Statalongitudinal}
 
+### Run The Model
+
+#### Main Effects Only
+
+```{stata}
+
+mixed outcome t warmth physical_punishment group HDI || country: warmth
+
+```
+
+#### Interactions With Time
+
+```{stata}
+
+mixed outcome c.t##(c.warmth c.physical_punishment i.group c.HDI) || country: warmth
+
+```
+
+## R
+
+### Get The Data
+
+### Graph
+
+### Run The Model
+
+#### Main Effects Only
+
+#### Interactions With Time
+
+## Julia
+
+### Get The Data
+
+### Graph
+
+### Run The Model
+
+#### Main Effects Only
+
+#### Interactions With Time
+
 :::
 
 
