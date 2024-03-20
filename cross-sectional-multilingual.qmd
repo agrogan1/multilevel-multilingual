@@ -58,7 +58,7 @@ mixed outcome warmth physical_punishment group HDI || country: warmth
 
 ## R
 
-### Load The Needed Packages And Get The Data
+### Get The Data
 
 ```{r}
 
@@ -101,7 +101,7 @@ summary(fit1)
 
 ## Julia
 
-### Load The Needed Packages And Get The Data
+### Get The Data
 
 ```{julia}
 #| output: false
