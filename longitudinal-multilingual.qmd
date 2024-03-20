@@ -1,0 +1,61 @@
+# Longitudinal Multilevel Models
+
+```{r}
+#| label: unconditionalsetup
+#| echo: false
+#| output: false
+
+library(Statamarkdown)
+
+library(lme4) 
+
+library(JuliaCall)
+
+julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
+
+```
+
+## The Data
+
+The data employed in these examples are a longitudinal extension of the data described in @sec-data.
+
+## The Equation
+
+$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
+
+$$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
+
+$$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
+
+$$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
+
+::: {.panel-tabset group="language"}
+
+## Stata
+
+### Get The Data 
+
+```{stata, collectcode=TRUE}
+
+use simulated_multilevel_longitudinal_data.dta
+
+```
+
+### Graph
+
+```{stata}
+#| fig-height: 3
+
+twoway lfit outcome t, ///
+  xtitle("time") ytitle("outcome") ///
+  title("Outcome by Time") 
+
+quietly graph export lfitlongitudinal.png, replace
+
+```
+
+![Outcome by Parental Warmth (Stata)](lfitlongitudinal.png){#fig-Statalongitudinal}
+
+:::
+
+
