@@ -1,4 +1,4 @@
-@inbook{Thoreau1975,
+@InCollection{Thoreau1975,
    author = {Henry David Thoreau},
    city = {Princeton, N.J.},
    editor = {Joseph J. Moldenhauer and Edwin Moser and Alexander C. Kern},
@@ -19,3 +19,41 @@
   title = {Stata 17 Multilevel Mixed Effects Reference Manual},
   year = {2021},
 }
+
+@Article{JSSv067i01,
+ title={Fitting Linear Mixed-Effects Models Using lme4},
+ volume={67},
+ url={https://www.jstatsoft.org/index.php/jss/article/view/v067i01},
+ doi={10.18637/jss.v067.i01},
+ abstract={Maximum likelihood or restricted maximum likelihood (REML) estimates of the parameters in linear mixed-effects models can be determined using the lmer function in the lme4 package for R. As for most model-fitting functions in R, the model is described in an lmer call by a formula, in this case including both fixed- and random-effects terms. The formula and data together determine a numerical representation of the model from which the profiled deviance or the profiled REML criterion can be evaluated as a function of some of the model parameters. The appropriate criterion is optimized, using one of the constrained optimization functions in R, to provide the parameter estimates. We describe the structure of the model, the steps in evaluating the profiled deviance or REML criterion, and the structure of classes or types that represents such a model. Sufficient detail is included to allow specialization of these structures by users who wish to write functions to fit specialized linear mixed models, such as models incorporating pedigrees or smoothing splines, that are not easily expressible in the formula language used by lmer.},
+ number={1},
+ journal={Journal of Statistical Software},
+ author={Bates, Douglas and Mächler, Martin and Bolker, Ben and Walker, Steve},
+ year={2015},
+ pages={1–48}
+}
+
+@Article{JuliaArticle,
+author = {Bezanson, Jeff and Edelman, Alan and Karpinski, Stefan and Shah, Viral B.},
+title = {Julia: A Fresh Approach to Numerical Computing},
+journal = {SIAM Review},
+volume = {59},
+number = {1},
+pages = {65-98},
+year = {2017},
+doi = {10.1137/141000671},
+URL = {https://doi.org/10.1137/141000671},
+eprint = {https://doi.org/10.1137/141000671},
+abstract = {Bridging cultures that have often been distant, Julia combines expertise from the diverse fields of computer science and computational science to create a new approach to numerical computing. Julia is designed to be easy and fast and questions notions generally held to be “laws of nature" by practitioners of numerical computing: \beginlist \item High-level dynamic programs have to be slow. \item One must prototype in one language and then rewrite in another language for speed or deployment. \item There are parts of a system appropriate for the programmer, and other parts that are best left untouched as they have been built by the experts. \endlist We introduce the Julia programming language and its design---a dance between specialization and abstraction. Specialization allows for custom treatment. Multiple dispatch, a technique from computer science, picks the right algorithm for the right circumstance. Abstraction, which is what good computation is really about, recognizes what remains the same after differences are stripped away. Abstractions in mathematics are captured as code through another technique from computer science, generic programming. Julia shows that one can achieve machine performance without sacrificing human convenience. }
+}
+
+@Misc{MixedModels,
+  title = {{MixedModels.jl Documentation}},
+  author = {Bates, Douglas},
+  year = {2024},
+  url = {https://juliastats.org/MixedModels.jl/stable/}
+}
+
+
+
+
