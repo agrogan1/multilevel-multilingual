@@ -88,7 +88,7 @@ mixed outcome c.t##(c.warmth c.physical_punishment i.group c.HDI) || country: wa
 
 library(haven)
 
-df <- read_dta("simulated_multilevel_longitudinal_data.dta")
+dfL <- read_dta("simulated_multilevel_longitudinal_data.dta")
 
 ```
 
@@ -101,8 +101,8 @@ df <- read_dta("simulated_multilevel_longitudinal_data.dta")
 
 library(ggplot2)
 
-ggplot(df,
-       aes(x = time,
+ggplot(dfL,
+       aes(x = t,
            y = outcome)) + 
   geom_smooth(method = "lm") +
   labs(title = "Outcome by Time")
@@ -113,19 +113,99 @@ ggplot(df,
 
 #### Main Effects Only
 
+```{r}
+
+fit2A <- lmer(outcome ~ t + warmth + physical_punishment + 
+               group + HDI +
+               (1 | country/id),
+             data = dfL)
+
+summary(fit2A)
+
+```
+
 #### Interactions With Time
+
+```{r}
+
+fit2B <- lmer(outcome ~ t *(warmth + physical_punishment + 
+               group + HDI) +
+               (1 | country/id),
+             data = dfL)
+
+summary(fit2B)
+
+```
+
 
 ## Julia
 
 ### Get The Data
 
+```{julia}
+#| output: false
+
+using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
+
+```
+
 ### Graph
+
+To make our plot with a smoother in Julia, we set the `markercolor` and `markerstrokecolor` to be *white*, and the `smooth` option to `:true`.
+
+```{julia}
+#| fig-height: 3
+#| label: fig-Julia
+#| fig-cap: "Outcome by Parental Warmth (Julia)"
+
+using StatsPlots
+
+@df dfL scatter(:outcome, :t, 
+               title = "Outcome by Parental Warmth",
+               ylabel = "outcome",
+               xlabel = "time",
+               markercolor = "white",
+               markerstrokecolor = "white",
+               smooth=:true)
+
+```
 
 ### Run The Model
 
+### Change Country To Categorical
+
+```{julia}
+#| output: false
+
+@transform!(dfL, :country = categorical(:country))
+
+```
+
 #### Main Effects Only
 
+```{julia}
+
+m2A = fit(MixedModel, @formula(outcome ~ t + warmth + 
+                                 physical_punishment + 
+                                 group + HDI +
+                                 (1 + warmth | country) +
+                                 (1 | id)), dfL)
+
+```
+
 #### Interactions With Time
+
+```{julia}
+
+m2B = fit(MixedModel, @formula(outcome ~ t * (warmth + 
+                                 physical_punishment + 
+                                 group + HDI) +
+                                 (1 + warmth | country) +
+                                 (1 | id)), dfL)
+
+```
 
 :::
 
