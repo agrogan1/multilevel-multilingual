@@ -49,21 +49,6 @@ use simulated_multilevel_longitudinal_data.dta
 
 ```
 
-#### Graph
-
-```{stata}
-#| fig-height: 3
-
-twoway lfit outcome t, ///
-  xtitle("time") ytitle("outcome") ///
-  title("Outcome by Time") 
-
-quietly graph export lfitlongitudinal.png, replace
-
-```
-
-![Outcome by Parental Warmth (Stata)](lfitlongitudinal.png){#fig-Statalongitudinal}
-
 #### Run The Model
 
 ##### Main Effects Only
@@ -91,23 +76,6 @@ mixed outcome c.t##(c.warmth c.physical_punishment i.group c.HDI) || country: wa
 library(haven)
 
 dfL <- read_dta("simulated_multilevel_longitudinal_data.dta")
-
-```
-
-#### Graph
-
-```{r}
-#| fig-height: 3
-#| label: fig-Rlongitudinal
-#| fig-cap: "Outcome by Parental Warmth (R)"
-
-library(ggplot2)
-
-ggplot(dfL,
-       aes(x = t,
-           y = outcome)) + 
-  geom_smooth(method = "lm") +
-  labs(title = "Outcome by Time")
 
 ```
 
@@ -150,27 +118,6 @@ summary(fit2B)
 using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 
 dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
-
-```
-
-#### Graph
-
-To make our plot with a smoother in Julia, we set the `markercolor` and `markerstrokecolor` to be *white*, and the `smooth` option to `:true`.
-
-```{julia}
-#| fig-height: 3
-#| label: fig-Julialongitudinal
-#| fig-cap: "Outcome by Parental Warmth (Julia)"
-
-using StatsPlots
-
-@df dfL scatter(:outcome, :t, 
-               title = "Outcome by Parental Warmth",
-               ylabel = "outcome",
-               xlabel = "time",
-               markercolor = "white",
-               markerstrokecolor = "white",
-               smooth=:true)
 
 ```
 

@@ -35,21 +35,6 @@ use simulated_multilevel_data.dta
 
 ```
 
-#### Graph
-
-```{stata}
-#| fig-height: 3
-
-twoway scatter outcome warmth, ///
-  xtitle("warmth") ytitle("outcome") ///
-  title("Outcome by Parental Warmth") 
-
-quietly graph export scatter.png, replace
-
-```
-
-![Outcome by Parental Warmth (Stata)](scatter.png){#fig-Stata}
-
 #### Run The Model
 
 ```{stata}
@@ -67,23 +52,6 @@ mixed outcome warmth physical_punishment group HDI || country: warmth
 library(haven)
 
 df <- read_dta("simulated_multilevel_data.dta")
-
-```
-
-#### Graph
-
-```{r}
-#| fig-height: 3
-#| label: fig-R
-#| fig-cap: "Outcome by Parental Warmth (R)"
-
-library(ggplot2)
-
-ggplot(df,
-       aes(x = warmth,
-           y = outcome)) +
-  geom_point() +
-  labs(title = "Outcome by Parental Warmth")
 
 ```
 
@@ -111,22 +79,6 @@ summary(fit1)
 using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 
 df = DataFrame(load("simulated_multilevel_data.dta"))
-
-```
-
-#### Graph
-
-```{julia}
-#| fig-height: 3
-#| label: fig-Julia
-#| fig-cap: "Outcome by Parental Warmth (Julia)"
-
-using StatsPlots
-
-@df df scatter(:outcome, :warmth, 
-               title = "Outcome by Parental Warmth",
-               ylabel = "outcome",
-               xlabel = "parental warmth")
 
 ```
 
