@@ -228,7 +228,7 @@ Below, I describe the use of \href{https://www.stata.com/}{Stata},
 \href{https://www.r-project.org/}{R}, and
 \href{https://www.julialang.org/}{Julia} to estimate multilevel models.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, toprule=.15mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, opacitybacktitle=0.6, coltitle=black, colback=white, opacityback=0, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, rightrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, titlerule=0mm, leftrule=.75mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -239,7 +239,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, toprule=.15mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, opacitybacktitle=0.6, coltitle=black, colback=white, opacityback=0, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, rightrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, titlerule=0mm, leftrule=.75mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -737,30 +737,6 @@ example.
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Graph}\label{graph}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{twoway} \KeywordTok{scatter}\NormalTok{ outcome warmth, }\CommentTok{///}
-  \BaseNTok{xtitle}\NormalTok{(}\StringTok{"warmth"}\NormalTok{) }\BaseNTok{ytitle}\NormalTok{(}\StringTok{"outcome"}\NormalTok{) }\CommentTok{///}
-  \BaseNTok{title}\NormalTok{(}\StringTok{"Outcome by Parental Warmth"}\NormalTok{) }
-
-\KeywordTok{quietly} \KeywordTok{graph} \KeywordTok{export} \KeywordTok{scatter}\NormalTok{.png, }\KeywordTok{replace}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-\centering{
-
-\includegraphics{scatter.png}
-
-}
-
-\caption{\label{fig-Stata}Outcome by Parental Warmth (Stata)}
-
-\end{figure}%
-
 \subsubsection{Run The Model}\label{run-the-model}
 
 \begin{Shaded}
@@ -827,32 +803,6 @@ Note: LR test is conservative and provided only for reference.
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Graph}\label{graph-1}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2)}
-
-\FunctionTok{ggplot}\NormalTok{(df,}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ warmth,}
-           \AttributeTok{y =}\NormalTok{ outcome)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Outcome by Parental Warmth"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}[H]
-
-\centering{
-
-\includegraphics{cross-sectional-multilingual_files/figure-pdf/fig-R-1.pdf}
-
-}
-
-\caption{\label{fig-R}Outcome by Parental Warmth (R)}
-
-\end{figure}%
-
 \subsubsection{Run The Model}\label{run-the-model-1}
 
 \begin{Shaded}
@@ -913,31 +863,6 @@ HDI         -0.925 -0.006  0.008 -0.001
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Graph}\label{graph-2}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{using} \BuiltInTok{StatsPlots}
-
-\PreprocessorTok{@df}\NormalTok{ df }\FunctionTok{scatter}\NormalTok{(}\OperatorTok{:}\NormalTok{outcome, }\OperatorTok{:}\NormalTok{warmth, }
-\NormalTok{               title }\OperatorTok{=} \StringTok{"Outcome by Parental Warmth"}\NormalTok{,}
-\NormalTok{               ylabel }\OperatorTok{=} \StringTok{"outcome"}\NormalTok{,}
-\NormalTok{               xlabel }\OperatorTok{=} \StringTok{"parental warmth"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}[H]
-
-\centering{
-
-\includegraphics{cross-sectional-multilingual_files/figure-pdf/fig-Julia-J1.pdf}
-
-}
-
-\caption{\label{fig-Julia}Outcome by Parental Warmth (Julia)}
-
-\end{figure}%
-
 \subsubsection{Change Country To
 Categorical}\label{change-country-to-categorical}
 
@@ -993,7 +918,7 @@ Models}\label{longitudinal-multilevel-models}
 The data employed in these examples are a longitudinal extension of the
 data described in Section~\ref{sec-data}.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, toprule=.15mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, opacitybacktitle=0.6, coltitle=black, colback=white, opacityback=0, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, rightrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, titlerule=0mm, leftrule=.75mm]
 
 In the section on \emph{cross-sectional} multilevel models, I employed
 \emph{scatterplots} to graph the data. In longitudinal models,
@@ -1026,31 +951,6 @@ makes more sense to use \emph{linear fit} plots, although a
 \KeywordTok{use}\NormalTok{ simulated\_multilevel\_longitudinal\_data.dta}
 \end{Highlighting}
 \end{Shaded}
-
-\subsubsection{Graph}\label{graph-3}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{twoway} \KeywordTok{lfit}\NormalTok{ outcome t, }\CommentTok{///}
-  \BaseNTok{xtitle}\NormalTok{(}\StringTok{"time"}\NormalTok{) }\BaseNTok{ytitle}\NormalTok{(}\StringTok{"outcome"}\NormalTok{) }\CommentTok{///}
-  \BaseNTok{title}\NormalTok{(}\StringTok{"Outcome by Time"}\NormalTok{) }
-
-\KeywordTok{quietly} \KeywordTok{graph} \KeywordTok{export}\NormalTok{ lfitlongitudinal.png, }\KeywordTok{replace}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-\centering{
-
-\includegraphics{lfitlongitudinal.png}
-
-}
-
-\caption{\label{fig-Statalongitudinal}Outcome by Parental Warmth
-(Stata)}
-
-\end{figure}%
 
 \subsubsection{Run The Model}\label{run-the-model-3}
 
@@ -1184,32 +1084,6 @@ Note: LR test is conservative and provided only for reference.
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Graph}\label{graph-4}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2)}
-
-\FunctionTok{ggplot}\NormalTok{(dfL,}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t,}
-           \AttributeTok{y =}\NormalTok{ outcome)) }\SpecialCharTok{+} 
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Outcome by Time"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}[H]
-
-\centering{
-
-\includegraphics{longitudinal-multilingual_files/figure-pdf/fig-Rlongitudinal-1.pdf}
-
-}
-
-\caption{\label{fig-Rlongitudinal}Outcome by Parental Warmth (R)}
-
-\end{figure}%
-
 \subsubsection{Run The Model}\label{run-the-model-4}
 
 \paragraph{Main Effects Only}\label{main-effects-only-1}
@@ -1331,39 +1205,6 @@ t:HDI        0.302 -0.676  0.018 -0.020  0.002 -0.336 -0.018  0.016 -0.002
 \NormalTok{dfL }\OperatorTok{=} \FunctionTok{DataFrame}\NormalTok{(}\FunctionTok{load}\NormalTok{(}\StringTok{"simulated\_multilevel\_longitudinal\_data.dta"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
-
-\subsubsection{Graph}\label{graph-5}
-
-To make our plot with a smoother in Julia, we set the
-\texttt{markercolor} and \texttt{markerstrokecolor} to be \emph{white},
-and the \texttt{smooth} option to \texttt{:true}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{using} \BuiltInTok{StatsPlots}
-
-\PreprocessorTok{@df}\NormalTok{ dfL }\FunctionTok{scatter}\NormalTok{(}\OperatorTok{:}\NormalTok{outcome, }\OperatorTok{:}\NormalTok{t, }
-\NormalTok{               title }\OperatorTok{=} \StringTok{"Outcome by Parental Warmth"}\NormalTok{,}
-\NormalTok{               ylabel }\OperatorTok{=} \StringTok{"outcome"}\NormalTok{,}
-\NormalTok{               xlabel }\OperatorTok{=} \StringTok{"time"}\NormalTok{,}
-\NormalTok{               markercolor }\OperatorTok{=} \StringTok{"white"}\NormalTok{,}
-\NormalTok{               markerstrokecolor }\OperatorTok{=} \StringTok{"white"}\NormalTok{,}
-\NormalTok{               smooth}\OperatorTok{=:}\ConstantTok{true}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}[H]
-
-\centering{
-
-\includegraphics{longitudinal-multilingual_files/figure-pdf/fig-Julialongitudinal-J1.pdf}
-
-}
-
-\caption{\label{fig-Julialongitudinal}Outcome by Parental Warmth
-(Julia)}
-
-\end{figure}%
 
 \subsubsection{Run The Model}\label{run-the-model-5}
 
