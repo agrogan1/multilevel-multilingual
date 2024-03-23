@@ -1,7 +1,7 @@
 # Longitudinal Multilevel Models
 
 ```{r}
-#| label: unconditionalsetup
+#| label: longitudinalsetup
 #| echo: false
 #| output: false
 
@@ -157,7 +157,7 @@ To make our plot with a smoother in Julia, we set the `markercolor` and `markers
 
 ```{julia}
 #| fig-height: 3
-#| label: fig-Julia
+#| label: fig-Julialongitudinal
 #| fig-cap: "Outcome by Parental Warmth (Julia)"
 
 using StatsPlots
@@ -174,7 +174,7 @@ using StatsPlots
 
 ### Run The Model
 
-### Change Country To Categorical
+#### Change Country To Categorical
 
 ```{julia}
 #| output: false

@@ -205,7 +205,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-03-20}
+\date{2024-03-22}
 
 \begin{document}
 \maketitle
@@ -228,18 +228,47 @@ Below, I describe the use of \href{https://www.stata.com/}{Stata},
 \href{https://www.r-project.org/}{R}, and
 \href{https://www.julialang.org/}{Julia} to estimate multilevel models.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toptitle=1mm, left=2mm, leftrule=.75mm, bottomrule=.15mm, rightrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Slightly}, colback=white, titlerule=0mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, left=2mm, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Slightly}, breakable, opacityback=0, toprule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white]
 
-Estimating multilevel models is a complex endeavor. The details of how
-this is accomplished are beyond the purview of this book. Suffice it to
-say that across software packages there will be differences in
-estimation routines, resulting in some numerical differences in the
-results provided by different software packages. Substantively speaking,
-however, results should agree across software.
+Estimating multilevel models is a complex endeavor. The software details
+of how this is accomplished are beyond the purview of this book. Suffice
+it to say that across different software packages there will be
+differences in estimation routines, resulting in some numerical
+differences in the results provided by different software packages.
+Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\section{The Data}\label{the-data}
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, left=2mm, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, breakable, opacityback=0, toprule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white]
+
+Sometimes I have written commands out over multiple lines. I have done
+this for especially long commands, but have also sometimes done this
+simply for the sake of clarity. The different software packages have
+different approaches to multi-line commands.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  By default, \emph{Stata} ends a command at the end of a line. If you
+  are going to write a multi-line command you should use the
+  \texttt{///} line continuation characters.
+\item
+  \emph{R} is the software that most naturally can be written using
+  multiple lines, as R commands are usually clearly encased in
+  parentheses (\texttt{()}) or continued with \texttt{+} signs.
+\item
+  Like \emph{Stata}, \emph{Julia} expects commands to end at the end of
+  a line. If you are going to write a mult-line command, all commands
+  except for the last line should end in a character that clearly
+  indicates continuation, like a \texttt{+} sign. An alternative is to
+  encase the entire Julia command in an outer set of parentheses
+  (\texttt{()}).
+\end{enumerate}
+
+\end{tcolorbox}
+
+\section{The Data}\label{sec-data}
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} file from
 \href{https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html}{\emph{Multilevel
@@ -683,7 +712,8 @@ Residual              40.88285 6.39397
 
 \bookmarksetup{startatroot}
 
-\chapter{Cross Sectional Model}\label{cross-sectional-model}
+\chapter{Cross Sectional Multilevel
+Models}\label{cross-sectional-multilevel-models}
 
 \section{The Equation}\label{the-equation-1}
 
@@ -785,8 +815,7 @@ Note: LR test is conservative and provided only for reference.
 
 \section{R}
 
-\subsection{Load The Needed Packages And Get The
-Data}\label{load-the-needed-packages-and-get-the-data}
+\subsection{Get The Data}\label{get-the-data-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -872,8 +901,7 @@ HDI         -0.925 -0.006  0.008 -0.001
 
 \section{Julia}
 
-\subsection{Load The Needed Packages And Get The
-Data}\label{load-the-needed-packages-and-get-the-data-1}
+\subsection{Get The Data}\label{get-the-data-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -951,6 +979,481 @@ physical_punishment  -0.845389    0.0798149  -10.59    <1e-25
 group                 1.08524     0.220055     4.93    <1e-06
 HDI                   0.0101984   0.0204401    0.50    0.6178
 ─────────────────────────────────────────────────────────────
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
+\chapter{Longitudinal Multilevel
+Models}\label{longitudinal-multilevel-models}
+
+\section{The Data}\label{the-data}
+
+The data employed in these examples are a longitudinal extension of the
+data described in Section~\ref{sec-data}.
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, left=2mm, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, breakable, opacityback=0, toprule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white]
+
+In the section on \emph{cross-sectional} multilevel models, I employed
+\emph{scatterplots} to graph the data. In longitudinal models,
+\emph{time} is a variable of special interest. Often, in graphing
+\emph{longitudinal} data--especially when graphing outcomes by time--it
+makes more sense to use \emph{linear fit} plots, although a
+\emph{scatterplot} could be employed as well.
+
+\end{tcolorbox}
+
+\section{The Equation}\label{the-equation-2}
+
+\begin{equation}\phantomsection\label{eq-MLM-longitudinal}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\end{equation}
+
+\[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]
+
+\[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]
+
+\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]
+
+\section{Stata}
+
+\subsection{Get The Data}\label{get-the-data-3}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{use}\NormalTok{ simulated\_multilevel\_longitudinal\_data.dta}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Graph}\label{graph-3}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{twoway} \KeywordTok{lfit}\NormalTok{ outcome t, }\CommentTok{///}
+  \BaseNTok{xtitle}\NormalTok{(}\StringTok{"time"}\NormalTok{) }\BaseNTok{ytitle}\NormalTok{(}\StringTok{"outcome"}\NormalTok{) }\CommentTok{///}
+  \BaseNTok{title}\NormalTok{(}\StringTok{"Outcome by Time"}\NormalTok{) }
+
+\KeywordTok{quietly} \KeywordTok{graph} \KeywordTok{export}\NormalTok{ lfitlongitudinal.png, }\KeywordTok{replace}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{lfitlongitudinal.png}
+
+}
+
+\caption{\label{fig-Statalongitudinal}Outcome by Parental Warmth
+(Stata)}
+
+\end{figure}%
+
+\subsection{Run The Model}\label{run-the-model-3}
+
+\subsubsection{Main Effects Only}\label{main-effects-only}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{mixed outcome t warmth physical\_punishment }\FunctionTok{group}\NormalTok{ HDI || country: warmth}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood =  -28795.37  
+Iteration 1:  Log likelihood = -28795.232  
+Iteration 2:  Log likelihood = -28795.232  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                         Number of obs    =   9,000
+Group variable: country                             Number of groups =      30
+                                                    Obs per group:
+                                                                 min =     300
+                                                                 avg =   300.0
+                                                                 max =     300
+                                                    Wald chi2(5)     = 1366.93
+Log likelihood = -28795.232                         Prob > chi2      =  0.0000
+
+-------------------------------------------------------------------------------------
+            outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+                  t |   .9882371   .0761439    12.98   0.000     .8389979    1.137476
+             warmth |   .9427117   .0342282    27.54   0.000     .8756256    1.009798
+physical_punishment |  -.9020727   .0452759   -19.92   0.000    -.9908119   -.8133336
+              group |   .9861238   .1249047     7.90   0.000     .7413151    1.230933
+                HDI |   .0073726    .020661     0.36   0.721    -.0331222    .0478674
+              _cons |   49.45537   1.414072    34.97   0.000     46.68384     52.2269
+-------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+country: Independent         |
+                 var(warmth) |   .0024684   .0082517      3.52e-06     1.72956
+                  var(_cons) |   3.663663   .9914845      2.155548     6.22692
+-----------------------------+------------------------------------------------
+               var(Residual) |   34.78483   .5200702       33.7803    35.81923
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 805.75                Prob > chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
+\end{verbatim}
+
+\subsubsection{Interactions With Time}\label{interactions-with-time}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{mixed outcome c.t\#\#(c.warmth c.physical\_punishment i.}\FunctionTok{group}\NormalTok{ c.HDI) || country: warmth}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood =  -28794.99  
+Iteration 1:  Log likelihood = -28794.855  
+Iteration 2:  Log likelihood = -28794.855  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                         Number of obs    =   9,000
+Group variable: country                             Number of groups =      30
+                                                    Obs per group:
+                                                                 min =     300
+                                                                 avg =   300.0
+                                                                 max =     300
+                                                    Wald chi2(9)     = 1365.73
+Log likelihood = -28794.855                         Prob > chi2      =  0.0000
+
+-------------------------------------------------------------------------------------
+            outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+                  t |   1.047448   .3619795     2.89   0.004     .3379816    1.756915
+             warmth |   .8869901   .0876058    10.12   0.000      .715286    1.058694
+physical_punishment |   -.893285   .1194705    -7.48   0.000    -1.127443    -.659127
+            2.group |   .9648545   .3292217     2.93   0.003     .3195918    1.610117
+                HDI |   .0120622    .022474     0.54   0.591    -.0319861    .0561104
+                    |
+       c.t#c.warmth |   .0277903   .0402665     0.69   0.490    -.0511306    .1067112
+                    |
+                c.t#|
+                 c. |
+physical_punishment |  -.0041479   .0553051    -0.08   0.940    -.1125439    .1042482
+                    |
+          group#c.t |
+                 2  |   .0105177   .1523009     0.07   0.945    -.2879865    .3090219
+                    |
+          c.t#c.HDI |   -.002342   .0044172    -0.53   0.596    -.0109996    .0063155
+                    |
+              _cons |   50.32233   1.572089    32.01   0.000      47.2411    53.40357
+-------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+country: Independent         |
+                 var(warmth) |   .0025661   .0083259      4.44e-06    1.482773
+                  var(_cons) |    3.66269    .991533      2.154617    6.226305
+-----------------------------+------------------------------------------------
+               var(Residual) |   34.78158   .5200283      33.77713     35.8159
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 805.90                Prob > chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
+\end{verbatim}
+
+\section{R}
+
+\subsection{Get The Data}\label{get-the-data-4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(haven)}
+
+\NormalTok{dfL }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"simulated\_multilevel\_longitudinal\_data.dta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Graph}\label{graph-4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\FunctionTok{ggplot}\NormalTok{(dfL,}
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t,}
+           \AttributeTok{y =}\NormalTok{ outcome)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Outcome by Time"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+\centering{
+
+\includegraphics{longitudinal-multilingual_files/figure-pdf/fig-Rlongitudinal-1.pdf}
+
+}
+
+\caption{\label{fig-Rlongitudinal}Outcome by Parental Warmth (R)}
+
+\end{figure}%
+
+\subsection{Run The Model}\label{run-the-model-4}
+
+\subsubsection{Main Effects Only}\label{main-effects-only-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit2A }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ t }\SpecialCharTok{+}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
+\NormalTok{               group }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+}
+\NormalTok{               (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country}\SpecialCharTok{/}\NormalTok{id),}
+             \AttributeTok{data =}\NormalTok{ dfL)}
+
+\FunctionTok{summary}\NormalTok{(fit2A)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by REML ['lmerMod']
+Formula: outcome ~ t + warmth + physical_punishment + group + HDI + (1 |  
+    country/id)
+   Data: dfL
+
+REML criterion at convergence: 57088.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4471 -0.6226  0.0081  0.6153  3.1993 
+
+Random effects:
+ Groups     Name        Variance Std.Dev.
+ id:country (Intercept)  8.864   2.977   
+ country    (Intercept)  3.924   1.981   
+ Residual               26.008   5.100   
+Number of obs: 9000, groups:  id:country, 3000; country, 30
+
+Fixed effects:
+                     Estimate Std. Error t value
+(Intercept)         49.494782   1.471780  33.629
+t                    0.987964   0.065840  15.005
+warmth               0.946259   0.038200  24.771
+physical_punishment -0.926880   0.049970 -18.549
+group                0.985786   0.153550   6.420
+HDI                  0.007543   0.021437   0.352
+
+Correlation of Fixed Effects:
+            (Intr) t      warmth physc_ group 
+t           -0.090                            
+warmth      -0.085  0.008                     
+physcl_pnsh -0.085  0.003 -0.019              
+group       -0.154  0.000 -0.013 -0.008       
+HDI         -0.943  0.000 -0.003  0.003  0.000
+\end{verbatim}
+
+\subsubsection{Interactions With Time}\label{interactions-with-time-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit2B }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ t }\SpecialCharTok{*}\NormalTok{(warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
+\NormalTok{               group }\SpecialCharTok{+}\NormalTok{ HDI) }\SpecialCharTok{+}
+\NormalTok{               (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country}\SpecialCharTok{/}\NormalTok{id),}
+             \AttributeTok{data =}\NormalTok{ dfL)}
+
+\FunctionTok{summary}\NormalTok{(fit2B)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by REML ['lmerMod']
+Formula: outcome ~ t * (warmth + physical_punishment + group + HDI) +  
+    (1 | country/id)
+   Data: dfL
+
+REML criterion at convergence: 57107.3
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4431 -0.6248  0.0071  0.6183  3.1961 
+
+Random effects:
+ Groups     Name        Variance Std.Dev.
+ id:country (Intercept)  8.868   2.978   
+ country    (Intercept)  3.925   1.981   
+ Residual               26.014   5.100   
+Number of obs: 9000, groups:  id:country, 3000; country, 30
+
+Fixed effects:
+                       Estimate Std. Error t value
+(Intercept)           49.453036   1.637740  30.196
+t                      1.008199   0.364915   2.763
+warmth                 0.865659   0.080487  10.755
+physical_punishment   -0.908148   0.110449  -8.222
+group                  0.966988   0.304936   3.171
+HDI                    0.012277   0.022761   0.539
+t:warmth               0.040170   0.035364   1.136
+t:physical_punishment -0.008932   0.049262  -0.181
+t:group                0.009180   0.131714   0.070
+t:HDI                 -0.002359   0.003820  -0.618
+
+Correlation of Fixed Effects:
+            (Intr) t      warmth physc_ group  HDI    t:wrmt t:phy_ t:grop
+t           -0.446                                                        
+warmth      -0.159  0.278                                                 
+physcl_pnsh -0.169  0.302 -0.022                                          
+group       -0.274  0.459 -0.010 -0.014                                   
+HDI         -0.900  0.227 -0.008  0.009 -0.001                            
+t:warmth     0.141 -0.316 -0.880  0.017  0.010  0.007                     
+t:physcl_pn  0.150 -0.338  0.017 -0.892  0.010 -0.007 -0.015              
+t:group      0.237 -0.532  0.009  0.012 -0.864  0.001 -0.012 -0.008       
+t:HDI        0.302 -0.676  0.018 -0.020  0.002 -0.336 -0.018  0.016 -0.002
+\end{verbatim}
+
+\section{Julia}
+
+\subsection{Get The Data}\label{get-the-data-5}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{using} \BuiltInTok{Tables}\NormalTok{, }\BuiltInTok{MixedModels}\NormalTok{, }\BuiltInTok{StatFiles}\NormalTok{, }\BuiltInTok{DataFrames}\NormalTok{, }\BuiltInTok{CategoricalArrays}\NormalTok{, }\BuiltInTok{DataFramesMeta}
+
+\NormalTok{dfL }\OperatorTok{=} \FunctionTok{DataFrame}\NormalTok{(}\FunctionTok{load}\NormalTok{(}\StringTok{"simulated\_multilevel\_longitudinal\_data.dta"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Graph}\label{graph-5}
+
+To make our plot with a smoother in Julia, we set the
+\texttt{markercolor} and \texttt{markerstrokecolor} to be \emph{white},
+and the \texttt{smooth} option to \texttt{:true}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{using} \BuiltInTok{StatsPlots}
+
+\PreprocessorTok{@df}\NormalTok{ dfL }\FunctionTok{scatter}\NormalTok{(}\OperatorTok{:}\NormalTok{outcome, }\OperatorTok{:}\NormalTok{t, }
+\NormalTok{               title }\OperatorTok{=} \StringTok{"Outcome by Parental Warmth"}\NormalTok{,}
+\NormalTok{               ylabel }\OperatorTok{=} \StringTok{"outcome"}\NormalTok{,}
+\NormalTok{               xlabel }\OperatorTok{=} \StringTok{"time"}\NormalTok{,}
+\NormalTok{               markercolor }\OperatorTok{=} \StringTok{"white"}\NormalTok{,}
+\NormalTok{               markerstrokecolor }\OperatorTok{=} \StringTok{"white"}\NormalTok{,}
+\NormalTok{               smooth}\OperatorTok{=:}\ConstantTok{true}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+\centering{
+
+\includegraphics{longitudinal-multilingual_files/figure-pdf/fig-Julialongitudinal-J1.pdf}
+
+}
+
+\caption{\label{fig-Julialongitudinal}Outcome by Parental Warmth
+(Julia)}
+
+\end{figure}%
+
+\subsection{Run The Model}\label{run-the-model-5}
+
+\subsection{Change Country To
+Categorical}\label{change-country-to-categorical-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{@transform}\NormalTok{!(dfL, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Main Effects Only}\label{main-effects-only-2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{m2A }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{+}\NormalTok{ warmth }\OperatorTok{+} 
+\NormalTok{                                 physical\_punishment }\OperatorTok{+} 
+\NormalTok{                                 group }\OperatorTok{+}\NormalTok{ HDI }\OperatorTok{+}
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{+}\NormalTok{ warmth }\OperatorTok{|}\NormalTok{ country) }\OperatorTok{+}
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ id)), dfL)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + t + warmth + physical_punishment + group + HDI + (1 + warmth | country) + (1 | id)
+    logLik   -2 logLik      AIC         AICc        BIC     
+ -28533.9236  57067.8472  57089.8472  57089.8765  57168.0019
+
+Variance components:
+            Column    Variance Std.Dev.   Corr.
+id       (Intercept)   8.851224 2.975101
+country  (Intercept)   3.451345 1.857780
+         warmth        0.000227 0.015065 +1.00
+Residual              26.001212 5.099138
+ Number of obs: 9000; levels of grouping factors: 3000, 30
+
+  Fixed-effects parameters:
+──────────────────────────────────────────────────────────────
+                           Coef.  Std. Error       z  Pr(>|z|)
+──────────────────────────────────────────────────────────────
+(Intercept)          49.5105       1.41854     34.90    <1e-99
+t                     0.98814      0.0658319   15.01    <1e-50
+warmth                0.946252     0.0382851   24.72    <1e-99
+physical_punishment  -0.926673     0.0499547  -18.55    <1e-76
+group                 0.98708      0.153484     6.43    <1e-09
+HDI                   0.00725703   0.0206549    0.35    0.7253
+──────────────────────────────────────────────────────────────
+\end{verbatim}
+
+\subsubsection{Interactions With Time}\label{interactions-with-time-2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{m2B }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{*}\NormalTok{ (warmth }\OperatorTok{+} 
+\NormalTok{                                 physical\_punishment }\OperatorTok{+} 
+\NormalTok{                                 group }\OperatorTok{+}\NormalTok{ HDI) }\OperatorTok{+}
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{+}\NormalTok{ warmth }\OperatorTok{|}\NormalTok{ country) }\OperatorTok{+}
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ id)), dfL)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + t + warmth + physical_punishment + group + HDI + t & warmth + t & physical_punishment + t & group + t & HDI + (1 + warmth | country) + (1 | id)
+    logLik   -2 logLik      AIC         AICc        BIC     
+ -28533.0810  57066.1620  57096.1620  57096.2154  57202.7367
+
+Variance components:
+            Column    Variance   Std.Dev.   Corr.
+id       (Intercept)   8.8593774 2.9764706
+country  (Intercept)   3.4464818 1.8564703
+         warmth        0.0002394 0.0154717 +1.00
+Residual              25.9905210 5.0980899
+ Number of obs: 9000; levels of grouping factors: 3000, 30
+
+  Fixed-effects parameters:
+─────────────────────────────────────────────────────────────────
+                               Coef.  Std. Error      z  Pr(>|z|)
+─────────────────────────────────────────────────────────────────
+(Intercept)              49.4696      1.59007     31.11    <1e-99
+t                         1.00761     0.36475      2.76    0.0057
+warmth                    0.865294    0.0804999   10.75    <1e-26
+physical_punishment      -0.907816    0.110399    -8.22    <1e-15
+group                     0.96908     0.304797     3.18    0.0015
+HDI                       0.0119739   0.0220306    0.54    0.5868
+t & warmth                0.0403499   0.0353477    1.14    0.2537
+t & physical_punishment  -0.00900605  0.0492392   -0.18    0.8549
+t & group                 0.00879803  0.131655     0.07    0.9467
+t & HDI                  -0.00234513  0.00381848  -0.61    0.5391
+─────────────────────────────────────────────────────────────────
 \end{verbatim}
 
 

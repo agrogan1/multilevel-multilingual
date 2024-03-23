@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Multilingual - 4&nbsp; Cross Sectional Multilevel Models</title>
+<title>Multilevel Multilingual - 5&nbsp; Longitudinal Multilevel Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./longitudinal-multilingual.html" rel="next">
-<link href="./unconditional-multilingual.html" rel="prev">
+<link href="./cross-sectional-multilingual.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -139,14 +138,14 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 4&nbsp; Cross Sectional Multilevel Models">
+<meta property="og:title" content="Multilevel Multilingual - 5&nbsp; Longitudinal Multilevel Models">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 4&nbsp; Cross Sectional Multilevel Models">
+<meta name="twitter:title" content="Multilevel Multilingual - 5&nbsp; Longitudinal Multilevel Models">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[4]{.chapter-number}&nbsp; [Cross Sectional Multilevel Models]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//cross-sectional-multilingual.html">
+<meta name="citation_title" content="[5]{.chapter-number}&nbsp; [Longitudinal Multilevel Models]{.chapter-title}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//longitudinal-multilingual.html">
 <meta name="citation_language" content="en">
 </head>
 
@@ -197,7 +196,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cross-sectional-multilingual.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./longitudinal-multilingual.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -229,13 +228,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link active">
+  <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./longitudinal-multilingual.html" class="sidebar-item-text sidebar-link">
+  <a href="./longitudinal-multilingual.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span></a>
   </div>
 </li>
@@ -249,7 +248,8 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-equation" id="toc-the-equation" class="nav-link active" data-scroll-target="#the-equation"><span class="header-section-number">4.1</span> The Equation</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data"><span class="header-section-number">5.1</span> The Data</a></li>
+  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">5.2</span> The Equation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -258,7 +258,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></h1>
 </div>
 
 
@@ -275,242 +275,437 @@ window.Quarto = {
 </header>
 
 
-<section id="the-equation" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">4.1</span> The Equation</h2>
-<p>Recall the general model of <a href="index.html#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a>, and the syntax outlined in <a href="index.html#sec-syntax" class="quarto-xref"><span>Section 1.3</span></a>. Below in <a href="#eq-MLMsubstantive" class="quarto-xref">Equation&nbsp;<span>4.1</span></a>, we consider a more substantive example.</p>
-<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij} \tag{4.1}\]</span></span></p>
+<section id="the-data" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="the-data"><span class="header-section-number">5.1</span> The Data</h2>
+<p>The data employed in these examples are a longitudinal extension of the data described in <a href="index.html#sec-data" class="quarto-xref"><span>Section 1.2</span></a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Graphing Longitudinal Data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the section on <em>cross-sectional</em> multilevel models, I employed <em>scatterplots</em> to graph the data. In longitudinal models, <em>time</em> is a variable of special interest. Often, in graphing <em>longitudinal</em> data–especially when graphing outcomes by time–it makes more sense to use <em>linear fit</em> plots, although a <em>scatterplot</em> could be employed as well.</p>
+</div>
+</div>
+</section>
+<section id="the-equation" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">5.2</span> The Equation</h2>
+<p><span id="eq-MLM-longitudinal"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{5.1}\]</span></span></p>
+<p><span class="math display">\[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]</span></p>
+<p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]</span></p>
+<p><span class="math display">\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]</span></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<section id="get-the-data" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">4.1.1</span> Get The Data</h3>
+<section id="get-the-data" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">5.2.1</span> Get The Data</h3>
 <div class="cell" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="graph" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">4.1.2</span> Graph</h3>
+<section id="graph" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">5.2.2</span> Graph</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">twoway</span> <span class="kw">scatter</span> outcome warmth, <span class="co">///</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bn">xtitle</span>(<span class="st">"warmth"</span>) <span class="bn">ytitle</span>(<span class="st">"outcome"</span>) <span class="co">///</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="bn">title</span>(<span class="st">"Outcome by Parental Warmth"</span>) </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">twoway</span> <span class="kw">lfit</span> outcome t, <span class="co">///</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bn">xtitle</span>(<span class="st">"time"</span>) <span class="bn">ytitle</span>(<span class="st">"outcome"</span>) <span class="co">///</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="bn">title</span>(<span class="st">"Outcome by Time"</span>) </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">graph</span> <span class="kw">export</span> <span class="kw">scatter</span>.png, <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">graph</span> <span class="kw">export</span> lfitlongitudinal.png, <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-Stata" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-Statalongitudinal" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Stata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="scatter.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="scatter.png" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-Statalongitudinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="lfitlongitudinal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="lfitlongitudinal.png" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Stata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Outcome by Parental Warmth (Stata)
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Statalongitudinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Outcome by Parental Warmth (Stata)
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="run-the-model" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">4.1.3</span> Run The Model</h3>
+<section id="run-the-model" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">5.2.3</span> Run The Model</h3>
+<section id="main-effects-only" class="level4" data-number="5.2.3.1">
+<h4 data-number="5.2.3.1" class="anchored" data-anchor-id="main-effects-only"><span class="header-section-number">5.2.3.1</span> Main Effects Only</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood =  -9668.198  
-Iteration 1:  Log likelihood = -9667.9551  
-Iteration 2:  Log likelihood = -9667.9534  
-Iteration 3:  Log likelihood = -9667.9533  
-Iteration 4:  Log likelihood = -9667.9532  
+Iteration 0:  Log likelihood =  -28795.37  
+Iteration 1:  Log likelihood = -28795.232  
+Iteration 2:  Log likelihood = -28795.232  
 
 Computing standard errors ...
 
-Mixed-effects ML regression                          Number of obs    =  3,000
-Group variable: country                              Number of groups =     30
-                                                     Obs per group:
-                                                                  min =    100
-                                                                  avg =  100.0
-                                                                  max =    100
-                                                     Wald chi2(4)     = 401.26
-Log likelihood = -9667.9532                          Prob &gt; chi2      = 0.0000
+Mixed-effects ML regression                         Number of obs    =   9,000
+Group variable: country                             Number of groups =      30
+                                                    Obs per group:
+                                                                 min =     300
+                                                                 avg =   300.0
+                                                                 max =     300
+                                                    Wald chi2(5)     = 1366.93
+Log likelihood = -28795.232                         Prob &gt; chi2      =  0.0000
 
 -------------------------------------------------------------------------------------
             outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
 --------------------+----------------------------------------------------------------
-             warmth |   .9616447   .0581825    16.53   0.000     .8476091     1.07568
-physical_punishment |  -.8453802   .0798155   -10.59   0.000    -1.001816   -.6889448
-              group |   1.084344   .2200539     4.93   0.000     .6530461    1.515642
-                HDI |    .010557   .0204522     0.52   0.606    -.0295286    .0506426
-              _cons |   49.87963   1.436612    34.72   0.000     47.06392    52.69534
+                  t |   .9882371   .0761439    12.98   0.000     .8389979    1.137476
+             warmth |   .9427117   .0342282    27.54   0.000     .8756256    1.009798
+physical_punishment |  -.9020727   .0452759   -19.92   0.000    -.9908119   -.8133336
+              group |   .9861238   .1249047     7.90   0.000     .7413151    1.230933
+                HDI |   .0073726    .020661     0.36   0.721    -.0331222    .0478674
+              _cons |   49.45537   1.414072    34.97   0.000     46.68384     52.2269
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Independent         |
-                 var(warmth) |   1.83e-06   .0000173      1.76e-14    190.9774
-                  var(_cons) |   3.370262   .9633726      1.924651    5.901676
+                 var(warmth) |   .0024684   .0082517      3.52e-06     1.72956
+                  var(_cons) |   3.663663   .9914845      2.155548     6.22692
 -----------------------------+------------------------------------------------
-               var(Residual) |   36.01906   .9346936      34.23291    37.89842
+               var(Residual) |   34.78483   .5200702       33.7803    35.81923
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 198.01                Prob &gt; chi2 = 0.0000
+LR test vs. linear model: chi2(2) = 805.75                Prob &gt; chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
 </div>
 </section>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<section id="get-the-data-1" class="level3" data-number="4.1.4">
-<h3 data-number="4.1.4" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">4.1.4</span> Get The Data</h3>
+<section id="interactions-with-time" class="level4" data-number="5.2.3.2">
+<h4 data-number="5.2.3.2" class="anchored" data-anchor-id="interactions-with-time"><span class="header-section-number">5.2.3.2</span> Interactions With Time</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mixed outcome c.t##(c.warmth c.physical_punishment i.<span class="fu">group</span> c.HDI) || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood =  -28794.99  
+Iteration 1:  Log likelihood = -28794.855  
+Iteration 2:  Log likelihood = -28794.855  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                         Number of obs    =   9,000
+Group variable: country                             Number of groups =      30
+                                                    Obs per group:
+                                                                 min =     300
+                                                                 avg =   300.0
+                                                                 max =     300
+                                                    Wald chi2(9)     = 1365.73
+Log likelihood = -28794.855                         Prob &gt; chi2      =  0.0000
+
+-------------------------------------------------------------------------------------
+            outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+                  t |   1.047448   .3619795     2.89   0.004     .3379816    1.756915
+             warmth |   .8869901   .0876058    10.12   0.000      .715286    1.058694
+physical_punishment |   -.893285   .1194705    -7.48   0.000    -1.127443    -.659127
+            2.group |   .9648545   .3292217     2.93   0.003     .3195918    1.610117
+                HDI |   .0120622    .022474     0.54   0.591    -.0319861    .0561104
+                    |
+       c.t#c.warmth |   .0277903   .0402665     0.69   0.490    -.0511306    .1067112
+                    |
+                c.t#|
+                 c. |
+physical_punishment |  -.0041479   .0553051    -0.08   0.940    -.1125439    .1042482
+                    |
+          group#c.t |
+                 2  |   .0105177   .1523009     0.07   0.945    -.2879865    .3090219
+                    |
+          c.t#c.HDI |   -.002342   .0044172    -0.53   0.596    -.0109996    .0063155
+                    |
+              _cons |   50.32233   1.572089    32.01   0.000      47.2411    53.40357
+-------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+country: Independent         |
+                 var(warmth) |   .0025661   .0083259      4.44e-06    1.482773
+                  var(_cons) |    3.66269    .991533      2.154617    6.226305
+-----------------------------+------------------------------------------------
+               var(Residual) |   34.78158   .5200283      33.77713     35.8159
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 805.90                Prob &gt; chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.</code></pre>
+</div>
 </div>
 </section>
-<section id="graph-1" class="level3" data-number="4.1.5">
-<h3 data-number="4.1.5" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">4.1.5</span> Graph</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> warmth,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> outcome)) <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Outcome by Parental Warmth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-R" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="cross-sectional-multilingual_files/figure-html/fig-R-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="cross-sectional-multilingual_files/figure-html/fig-R-1.png" class="img-fluid figure-img" width="672"></a>
+</section>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: Outcome by Parental Warmth (R)
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="get-the-data-1" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">5.2.4</span> Get The Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="graph-1" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">5.2.5</span> Graph</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dfL,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> t,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> outcome)) <span class="sc">+</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Outcome by Time"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-Rlongitudinal" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Rlongitudinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="longitudinal-multilingual_files/figure-html/fig-Rlongitudinal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="longitudinal-multilingual_files/figure-html/fig-Rlongitudinal-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Rlongitudinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Outcome by Parental Warmth (R)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="run-the-model-1" class="level3" data-number="4.1.6">
-<h3 data-number="4.1.6" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">4.1.6</span> Run The Model</h3>
+<section id="run-the-model-1" class="level3" data-number="5.2.6">
+<h3 data-number="5.2.6" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">5.2.6</span> Run The Model</h3>
+<section id="main-effects-only-1" class="level4" data-number="5.2.6.1">
+<h4 data-number="5.2.6.1" class="anchored" data-anchor-id="main-effects-only-1"><span class="header-section-number">5.2.6.1</span> Main Effects Only</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fit2A <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> t <span class="sc">+</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">|</span> country<span class="sc">/</span>id),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> dfL)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
-Formula: outcome ~ warmth + physical_punishment + group + HDI + ((1 |  
-    country) + (0 + warmth | country))
-   Data: df
+Formula: outcome ~ t + warmth + physical_punishment + group + HDI + (1 |  
+    country/id)
+   Data: dfL
 
-REML criterion at convergence: 19350.3
+REML criterion at convergence: 57088.4
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.4496 -0.6807  0.0016  0.6864  3.1792 
+-3.4471 -0.6226  0.0081  0.6153  3.1993 
 
 Random effects:
- Groups    Name        Variance  Std.Dev.
- country   (Intercept)  3.611568 1.90041 
- country.1 warmth       0.001876 0.04331 
- Residual              36.049124 6.00409 
-Number of obs: 3000, groups:  country, 30
+ Groups     Name        Variance Std.Dev.
+ id:country (Intercept)  8.864   2.977   
+ country    (Intercept)  3.924   1.981   
+ Residual               26.008   5.100   
+Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
-                    Estimate Std. Error t value
-(Intercept)         49.88754    1.48203  33.662
-warmth               0.96155    0.05875  16.367
-physical_punishment -0.84556    0.07986 -10.588
-group                1.08471    0.22017   4.927
-HDI                  0.01044    0.02116   0.493
+                     Estimate Std. Error t value
+(Intercept)         49.494782   1.471780  33.629
+t                    0.987964   0.065840  15.005
+warmth               0.946259   0.038200  24.771
+physical_punishment -0.926880   0.049970 -18.549
+group                0.985786   0.153550   6.420
+HDI                  0.007543   0.021437   0.352
 
 Correlation of Fixed Effects:
-            (Intr) warmth physc_ group 
-warmth      -0.126                     
-physcl_pnsh -0.135 -0.025              
-group       -0.218 -0.010 -0.019       
-HDI         -0.925 -0.006  0.008 -0.001</code></pre>
+            (Intr) t      warmth physc_ group 
+t           -0.090                            
+warmth      -0.085  0.008                     
+physcl_pnsh -0.085  0.003 -0.019              
+group       -0.154  0.000 -0.013 -0.008       
+HDI         -0.943  0.000 -0.003  0.003  0.000</code></pre>
 </div>
 </div>
+</section>
+<section id="interactions-with-time-1" class="level4" data-number="5.2.6.2">
+<h4 data-number="5.2.6.2" class="anchored" data-anchor-id="interactions-with-time-1"><span class="header-section-number">5.2.6.2</span> Interactions With Time</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fit2B <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> t <span class="sc">*</span>(warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">|</span> country<span class="sc">/</span>id),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> dfL)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: outcome ~ t * (warmth + physical_punishment + group + HDI) +  
+    (1 | country/id)
+   Data: dfL
+
+REML criterion at convergence: 57107.3
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4431 -0.6248  0.0071  0.6183  3.1961 
+
+Random effects:
+ Groups     Name        Variance Std.Dev.
+ id:country (Intercept)  8.868   2.978   
+ country    (Intercept)  3.925   1.981   
+ Residual               26.014   5.100   
+Number of obs: 9000, groups:  id:country, 3000; country, 30
+
+Fixed effects:
+                       Estimate Std. Error t value
+(Intercept)           49.453036   1.637740  30.196
+t                      1.008199   0.364915   2.763
+warmth                 0.865659   0.080487  10.755
+physical_punishment   -0.908148   0.110449  -8.222
+group                  0.966988   0.304936   3.171
+HDI                    0.012277   0.022761   0.539
+t:warmth               0.040170   0.035364   1.136
+t:physical_punishment -0.008932   0.049262  -0.181
+t:group                0.009180   0.131714   0.070
+t:HDI                 -0.002359   0.003820  -0.618
+
+Correlation of Fixed Effects:
+            (Intr) t      warmth physc_ group  HDI    t:wrmt t:phy_ t:grop
+t           -0.446                                                        
+warmth      -0.159  0.278                                                 
+physcl_pnsh -0.169  0.302 -0.022                                          
+group       -0.274  0.459 -0.010 -0.014                                   
+HDI         -0.900  0.227 -0.008  0.009 -0.001                            
+t:warmth     0.141 -0.316 -0.880  0.017  0.010  0.007                     
+t:physcl_pn  0.150 -0.338  0.017 -0.892  0.010 -0.007 -0.015              
+t:group      0.237 -0.532  0.009  0.012 -0.864  0.001 -0.012 -0.008       
+t:HDI        0.302 -0.676  0.018 -0.020  0.002 -0.336 -0.018  0.016 -0.002</code></pre>
+</div>
+</div>
+</section>
 </section>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<section id="get-the-data-2" class="level3" data-number="4.1.7">
-<h3 data-number="4.1.7" class="anchored" data-anchor-id="get-the-data-2"><span class="header-section-number">4.1.7</span> Get The Data</h3>
+<section id="get-the-data-2" class="level3" data-number="5.2.7">
+<h3 data-number="5.2.7" class="anchored" data-anchor-id="get-the-data-2"><span class="header-section-number">5.2.7</span> Get The Data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="graph-2" class="level3" data-number="4.1.8">
-<h3 data-number="4.1.8" class="anchored" data-anchor-id="graph-2"><span class="header-section-number">4.1.8</span> Graph</h3>
+<section id="graph-2" class="level3" data-number="5.2.8">
+<h3 data-number="5.2.8" class="anchored" data-anchor-id="graph-2"><span class="header-section-number">5.2.8</span> Graph</h3>
+<p>To make our plot with a smoother in Julia, we set the <code>markercolor</code> and <code>markerstrokecolor</code> to be <em>white</em>, and the <code>smooth</code> option to <code>:true</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> df <span class="fu">scatter</span>(<span class="op">:</span>outcome, <span class="op">:</span>warmth, </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>               title <span class="op">=</span> <span class="st">"Outcome by Parental Warmth"</span>,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>               ylabel <span class="op">=</span> <span class="st">"outcome"</span>,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>               xlabel <span class="op">=</span> <span class="st">"parental warmth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> dfL <span class="fu">scatter</span>(<span class="op">:</span>outcome, <span class="op">:</span>t, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>               title <span class="op">=</span> <span class="st">"Outcome by Parental Warmth"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>               ylabel <span class="op">=</span> <span class="st">"outcome"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>               xlabel <span class="op">=</span> <span class="st">"time"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>               markercolor <span class="op">=</span> <span class="st">"white"</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>               markerstrokecolor <span class="op">=</span> <span class="st">"white"</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>               smooth<span class="op">=:</span><span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-Julia" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-Julialongitudinal" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Julia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="cross-sectional-multilingual_files/figure-html/fig-Julia-J1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="cross-sectional-multilingual_files/figure-html/fig-Julia-J1.png" class="img-fluid figure-img" width="300"></a>
+<div aria-describedby="fig-Julialongitudinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="longitudinal-multilingual_files/figure-html/fig-Julialongitudinal-J1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="longitudinal-multilingual_files/figure-html/fig-Julialongitudinal-J1.png" class="img-fluid figure-img" width="300"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Julia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: Outcome by Parental Warmth (Julia)
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Julialongitudinal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Outcome by Parental Warmth (Julia)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="change-country-to-categorical" class="level3" data-number="4.1.9">
-<h3 data-number="4.1.9" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">4.1.9</span> Change Country To Categorical</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="run-the-model-2" class="level3" data-number="5.2.9">
+<h3 data-number="5.2.9" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">5.2.9</span> Run The Model</h3>
 </section>
-<section id="run-the-model-2" class="level3" data-number="4.1.10">
-<h3 data-number="4.1.10" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">4.1.10</span> Run The Model</h3>
+<section id="change-country-to-categorical" class="level3" data-number="5.2.10">
+<h3 data-number="5.2.10" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">5.2.10</span> Change Country To Categorical</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>               group <span class="op">+</span> HDI <span class="op">+</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(dfL, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="main-effects-only-2" class="level4" data-number="5.2.10.1">
+<h4 data-number="5.2.10.1" class="anchored" data-anchor-id="main-effects-only-2"><span class="header-section-number">5.2.10.1</span> Main Effects Only</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>m2A <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> t <span class="op">+</span> warmth <span class="op">+</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                                 physical_punishment <span class="op">+</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                                 group <span class="op">+</span> HDI <span class="op">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">+</span> warmth <span class="op">|</span> country) <span class="op">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
- outcome ~ 1 + warmth + physical_punishment + group + HDI + (1 + warmth | country)
-   logLik   -2 logLik     AIC       AICc        BIC    
- -9667.9392 19335.8783 19353.8783 19353.9385 19407.9357
+ outcome ~ 1 + t + warmth + physical_punishment + group + HDI + (1 + warmth | country) + (1 | id)
+    logLik   -2 logLik      AIC         AICc        BIC     
+ -28533.9236  57067.8472  57089.8472  57089.8765  57168.0019
+
+Variance components:
+            Column    Variance Std.Dev.   Corr.
+id       (Intercept)   8.851224 2.975101
+country  (Intercept)   3.451345 1.857780
+         warmth        0.000227 0.015065 +1.00
+Residual              26.001212 5.099138
+ Number of obs: 9000; levels of grouping factors: 3000, 30
+
+  Fixed-effects parameters:
+──────────────────────────────────────────────────────────────
+                           Coef.  Std. Error       z  Pr(&gt;|z|)
+──────────────────────────────────────────────────────────────
+(Intercept)          49.5105       1.41854     34.90    &lt;1e-99
+t                     0.98814      0.0658319   15.01    &lt;1e-50
+warmth                0.946252     0.0382851   24.72    &lt;1e-99
+physical_punishment  -0.926673     0.0499547  -18.55    &lt;1e-76
+group                 0.98708      0.153484     6.43    &lt;1e-09
+HDI                   0.00725703   0.0206549    0.35    0.7253
+──────────────────────────────────────────────────────────────</code></pre>
+</div>
+</div>
+</section>
+<section id="interactions-with-time-2" class="level4" data-number="5.2.10.2">
+<h4 data-number="5.2.10.2" class="anchored" data-anchor-id="interactions-with-time-2"><span class="header-section-number">5.2.10.2</span> Interactions With Time</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>m2B <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> t <span class="op">*</span> (warmth <span class="op">+</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                                 physical_punishment <span class="op">+</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                                 group <span class="op">+</span> HDI) <span class="op">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">+</span> warmth <span class="op">|</span> country) <span class="op">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + t + warmth + physical_punishment + group + HDI + t &amp; warmth + t &amp; physical_punishment + t &amp; group + t &amp; HDI + (1 + warmth | country) + (1 | id)
+    logLik   -2 logLik      AIC         AICc        BIC     
+ -28533.0810  57066.1620  57096.1620  57096.2154  57202.7367
 
 Variance components:
             Column    Variance   Std.Dev.   Corr.
-country  (Intercept)   3.2369484 1.7991521
-         warmth        0.0001080 0.0103903 +1.00
-Residual              36.0187144 6.0015593
- Number of obs: 3000; levels of grouping factors: 30
+id       (Intercept)   8.8593774 2.9764706
+country  (Intercept)   3.4464818 1.8564703
+         warmth        0.0002394 0.0154717 +1.00
+Residual              25.9905210 5.0980899
+ Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
-─────────────────────────────────────────────────────────────
-                          Coef.  Std. Error       z  Pr(&gt;|z|)
-─────────────────────────────────────────────────────────────
-(Intercept)          49.9018      1.43435     34.79    &lt;1e-99
-warmth                0.961545    0.0582135   16.52    &lt;1e-60
-physical_punishment  -0.845389    0.0798149  -10.59    &lt;1e-25
-group                 1.08524     0.220055     4.93    &lt;1e-06
-HDI                   0.0101984   0.0204401    0.50    0.6178
-─────────────────────────────────────────────────────────────</code></pre>
+─────────────────────────────────────────────────────────────────
+                               Coef.  Std. Error      z  Pr(&gt;|z|)
+─────────────────────────────────────────────────────────────────
+(Intercept)              49.4696      1.59007     31.11    &lt;1e-99
+t                         1.00761     0.36475      2.76    0.0057
+warmth                    0.865294    0.0804999   10.75    &lt;1e-26
+physical_punishment      -0.907816    0.110399    -8.22    &lt;1e-15
+group                     0.96908     0.304797     3.18    0.0015
+HDI                       0.0119739   0.0220306    0.54    0.5868
+t &amp; warmth                0.0403499   0.0353477    1.14    0.2537
+t &amp; physical_punishment  -0.00900605  0.0492392   -0.18    0.8549
+t &amp; group                 0.00879803  0.131655     0.07    0.9467
+t &amp; HDI                  -0.00234513  0.00381848  -0.61    0.5391
+─────────────────────────────────────────────────────────────────</code></pre>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -518,9 +713,9 @@ HDI                   0.0101984   0.0204401    0.50    0.6178
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;4.1: Outcome by Parental Warmth (Stata)</span>
-<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;4.2: Outcome by Parental Warmth (R)</span>
-<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;4.3: Outcome by Parental Warmth (Julia)</span>
+<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;5.1: Outcome by Parental Warmth (Stata)</span>
+<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;5.2: Outcome by Parental Warmth (R)</span>
+<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;5.3: Outcome by Parental Warmth (Julia)</span>
 </div>
 </section>
 
@@ -1058,18 +1253,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./unconditional-multilingual.html" class="pagination-link  aria-label=" &lt;span="" model&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span>
+      <a href="./cross-sectional-multilingual.html" class="pagination-link  aria-label=" &lt;span="" sectional="" multilevel="" models&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./longitudinal-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Longitudinal Multilevel Models</span>">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
