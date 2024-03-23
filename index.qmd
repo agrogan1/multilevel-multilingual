@@ -5,7 +5,7 @@
 Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate multilevel models. 
 
 ::: {.callout-tip}
-## Results Will Vary Slightly
+## Results Will Vary Somewhat
 
 Estimating multilevel models is a complex endeavor. The software details of how this is accomplished are beyond the purview of this book. Suffice it to say that across different software packages there will be differences in estimation routines, resulting in some numerical differences in the results provided by different software packages. Substantively speaking, however, results should agree across software. 
 :::

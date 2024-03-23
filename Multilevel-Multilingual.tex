@@ -205,7 +205,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-03-22}
+\date{2024-03-23}
 
 \begin{document}
 \maketitle
@@ -228,7 +228,7 @@ Below, I describe the use of \href{https://www.stata.com/}{Stata},
 \href{https://www.r-project.org/}{R}, and
 \href{https://www.julialang.org/}{Julia} to estimate multilevel models.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, left=2mm, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Slightly}, breakable, opacityback=0, toprule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Slightly}, breakable, colback=white, arc=.35mm, opacityback=0, toptitle=1mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -239,7 +239,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, left=2mm, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, breakable, opacityback=0, toprule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, breakable, colback=white, arc=.35mm, opacityback=0, toptitle=1mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -724,9 +724,11 @@ example.
 
 \begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}}\end{equation}
 
-\section{Stata}
+\section{Run Models}
 
-\subsection{Get The Data}\label{get-the-data}
+\subsection{Stata}\label{stata-3}
+
+\subsubsection{Get The Data}\label{get-the-data}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -735,7 +737,7 @@ example.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Graph}\label{graph}
+\subsubsection{Graph}\label{graph}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -759,7 +761,7 @@ example.
 
 \end{figure}%
 
-\subsection{Run The Model}\label{run-the-model}
+\subsubsection{Run The Model}\label{run-the-model}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -813,9 +815,9 @@ LR test vs. linear model: chi2(2) = 198.01                Prob > chi2 = 0.0000
 Note: LR test is conservative and provided only for reference.
 \end{verbatim}
 
-\section{R}
+\subsection{R}\label{r-3}
 
-\subsection{Get The Data}\label{get-the-data-1}
+\subsubsection{Get The Data}\label{get-the-data-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -825,7 +827,7 @@ Note: LR test is conservative and provided only for reference.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Graph}\label{graph-1}
+\subsubsection{Graph}\label{graph-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -851,7 +853,7 @@ Note: LR test is conservative and provided only for reference.
 
 \end{figure}%
 
-\subsection{Run The Model}\label{run-the-model-1}
+\subsubsection{Run The Model}\label{run-the-model-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -899,9 +901,9 @@ group       -0.218 -0.010 -0.019
 HDI         -0.925 -0.006  0.008 -0.001
 \end{verbatim}
 
-\section{Julia}
+\subsection{Julia}\label{julia-3}
 
-\subsection{Get The Data}\label{get-the-data-2}
+\subsubsection{Get The Data}\label{get-the-data-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -911,7 +913,7 @@ HDI         -0.925 -0.006  0.008 -0.001
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Graph}\label{graph-2}
+\subsubsection{Graph}\label{graph-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -936,7 +938,7 @@ HDI         -0.925 -0.006  0.008 -0.001
 
 \end{figure}%
 
-\subsection{Change Country To
+\subsubsection{Change Country To
 Categorical}\label{change-country-to-categorical}
 
 \begin{Shaded}
@@ -945,7 +947,7 @@ Categorical}\label{change-country-to-categorical}
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Run The Model}\label{run-the-model-2}
+\subsubsection{Run The Model}\label{run-the-model-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -991,7 +993,7 @@ Models}\label{longitudinal-multilevel-models}
 The data employed in these examples are a longitudinal extension of the
 data described in Section~\ref{sec-data}.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, left=2mm, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, breakable, opacityback=0, toprule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, breakable, colback=white, arc=.35mm, opacityback=0, toptitle=1mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame]
 
 In the section on \emph{cross-sectional} multilevel models, I employed
 \emph{scatterplots} to graph the data. In longitudinal models,
@@ -1010,11 +1012,11 @@ makes more sense to use \emph{linear fit} plots, although a
 
 \[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]
 
-\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]
+\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\] \#\# Run Models
 
-\section{Stata}
+\subsection{Stata}
 
-\subsection{Get The Data}\label{get-the-data-3}
+\subsubsection{Get The Data}\label{get-the-data-3}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1023,7 +1025,7 @@ makes more sense to use \emph{linear fit} plots, although a
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Graph}\label{graph-3}
+\subsubsection{Graph}\label{graph-3}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1048,9 +1050,9 @@ makes more sense to use \emph{linear fit} plots, although a
 
 \end{figure}%
 
-\subsection{Run The Model}\label{run-the-model-3}
+\subsubsection{Run The Model}\label{run-the-model-3}
 
-\subsubsection{Main Effects Only}\label{main-effects-only}
+\paragraph{Main Effects Only}\label{main-effects-only}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1103,7 +1105,7 @@ LR test vs. linear model: chi2(2) = 805.75                Prob > chi2 = 0.0000
 Note: LR test is conservative and provided only for reference.
 \end{verbatim}
 
-\subsubsection{Interactions With Time}\label{interactions-with-time}
+\paragraph{Interactions With Time}\label{interactions-with-time}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1168,9 +1170,9 @@ LR test vs. linear model: chi2(2) = 805.90                Prob > chi2 = 0.0000
 Note: LR test is conservative and provided only for reference.
 \end{verbatim}
 
-\section{R}
+\subsection{R}
 
-\subsection{Get The Data}\label{get-the-data-4}
+\subsubsection{Get The Data}\label{get-the-data-4}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1180,7 +1182,7 @@ Note: LR test is conservative and provided only for reference.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Graph}\label{graph-4}
+\subsubsection{Graph}\label{graph-4}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1206,9 +1208,9 @@ Note: LR test is conservative and provided only for reference.
 
 \end{figure}%
 
-\subsection{Run The Model}\label{run-the-model-4}
+\subsubsection{Run The Model}\label{run-the-model-4}
 
-\subsubsection{Main Effects Only}\label{main-effects-only-1}
+\paragraph{Main Effects Only}\label{main-effects-only-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1258,7 +1260,7 @@ group       -0.154  0.000 -0.013 -0.008
 HDI         -0.943  0.000 -0.003  0.003  0.000
 \end{verbatim}
 
-\subsubsection{Interactions With Time}\label{interactions-with-time-1}
+\paragraph{Interactions With Time}\label{interactions-with-time-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1316,9 +1318,9 @@ t:group      0.237 -0.532  0.009  0.012 -0.864  0.001 -0.012 -0.008
 t:HDI        0.302 -0.676  0.018 -0.020  0.002 -0.336 -0.018  0.016 -0.002
 \end{verbatim}
 
-\section{Julia}
+\subsection{Julia}
 
-\subsection{Get The Data}\label{get-the-data-5}
+\subsubsection{Get The Data}\label{get-the-data-5}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1328,7 +1330,7 @@ t:HDI        0.302 -0.676  0.018 -0.020  0.002 -0.336 -0.018  0.016 -0.002
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Graph}\label{graph-5}
+\subsubsection{Graph}\label{graph-5}
 
 To make our plot with a smoother in Julia, we set the
 \texttt{markercolor} and \texttt{markerstrokecolor} to be \emph{white},
@@ -1361,9 +1363,9 @@ and the \texttt{smooth} option to \texttt{:true}.
 
 \end{figure}%
 
-\subsection{Run The Model}\label{run-the-model-5}
+\subsubsection{Run The Model}\label{run-the-model-5}
 
-\subsection{Change Country To
+\paragraph{Change Country To
 Categorical}\label{change-country-to-categorical-1}
 
 \begin{Shaded}
@@ -1372,7 +1374,7 @@ Categorical}\label{change-country-to-categorical-1}
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Main Effects Only}\label{main-effects-only-2}
+\paragraph{Main Effects Only}\label{main-effects-only-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1412,7 +1414,7 @@ HDI                   0.00725703   0.0206549    0.35    0.7253
 ──────────────────────────────────────────────────────────────
 \end{verbatim}
 
-\subsubsection{Interactions With Time}\label{interactions-with-time-2}
+\paragraph{Interactions With Time}\label{interactions-with-time-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]

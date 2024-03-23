@@ -280,18 +280,20 @@ window.Quarto = {
 <p>Recall the general model of <a href="index.html#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a>, and the syntax outlined in <a href="index.html#sec-syntax" class="quarto-xref"><span>Section 1.3</span></a>. Below in <a href="#eq-MLMsubstantive" class="quarto-xref">Equation&nbsp;<span>4.1</span></a>, we consider a more substantive example.</p>
 <p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij} \tag{4.1}\]</span></span></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Run Models</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<section id="get-the-data" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">4.1.1</span> Get The Data</h3>
+<section id="stata" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="stata"><span class="header-section-number">4.1.1</span> Stata</h3>
+<section id="get-the-data" class="level4" data-number="4.1.1.1">
+<h4 data-number="4.1.1.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">4.1.1.1</span> Get The Data</h4>
 <div class="cell" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="graph" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">4.1.2</span> Graph</h3>
+<section id="graph" class="level4" data-number="4.1.1.2">
+<h4 data-number="4.1.1.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">4.1.1.2</span> Graph</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">twoway</span> <span class="kw">scatter</span> outcome warmth, <span class="co">///</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bn">xtitle</span>(<span class="st">"warmth"</span>) <span class="bn">ytitle</span>(<span class="st">"outcome"</span>) <span class="co">///</span></span>
@@ -310,8 +312,8 @@ Figure&nbsp;4.1: Outcome by Parental Warmth (Stata)
 </figure>
 </div>
 </section>
-<section id="run-the-model" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">4.1.3</span> Run The Model</h3>
+<section id="run-the-model" class="level4" data-number="4.1.1.3">
+<h4 data-number="4.1.1.3" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">4.1.1.3</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -361,18 +363,19 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
 </div>
 </section>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<section id="get-the-data-1" class="level3" data-number="4.1.4">
-<h3 data-number="4.1.4" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">4.1.4</span> Get The Data</h3>
+</section>
+<section id="r" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="r"><span class="header-section-number">4.1.2</span> R</h3>
+<section id="get-the-data-1" class="level4" data-number="4.1.2.1">
+<h4 data-number="4.1.2.1" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">4.1.2.1</span> Get The Data</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="graph-1" class="level3" data-number="4.1.5">
-<h3 data-number="4.1.5" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">4.1.5</span> Graph</h3>
+<section id="graph-1" class="level4" data-number="4.1.2.2">
+<h4 data-number="4.1.2.2" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">4.1.2.2</span> Graph</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -395,8 +398,8 @@ Figure&nbsp;4.2: Outcome by Parental Warmth (R)
 </div>
 </div>
 </section>
-<section id="run-the-model-1" class="level3" data-number="4.1.6">
-<h3 data-number="4.1.6" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">4.1.6</span> Run The Model</h3>
+<section id="run-the-model-1" class="level4" data-number="4.1.2.3">
+<h4 data-number="4.1.2.3" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">4.1.2.3</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
@@ -440,18 +443,19 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 </div>
 </div>
 </section>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<section id="get-the-data-2" class="level3" data-number="4.1.7">
-<h3 data-number="4.1.7" class="anchored" data-anchor-id="get-the-data-2"><span class="header-section-number">4.1.7</span> Get The Data</h3>
+</section>
+<section id="julia" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="julia"><span class="header-section-number">4.1.3</span> Julia</h3>
+<section id="get-the-data-2" class="level4" data-number="4.1.3.1">
+<h4 data-number="4.1.3.1" class="anchored" data-anchor-id="get-the-data-2"><span class="header-section-number">4.1.3.1</span> Get The Data</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="graph-2" class="level3" data-number="4.1.8">
-<h3 data-number="4.1.8" class="anchored" data-anchor-id="graph-2"><span class="header-section-number">4.1.8</span> Graph</h3>
+<section id="graph-2" class="level4" data-number="4.1.3.2">
+<h4 data-number="4.1.3.2" class="anchored" data-anchor-id="graph-2"><span class="header-section-number">4.1.3.2</span> Graph</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -473,14 +477,14 @@ Figure&nbsp;4.3: Outcome by Parental Warmth (Julia)
 </div>
 </div>
 </section>
-<section id="change-country-to-categorical" class="level3" data-number="4.1.9">
-<h3 data-number="4.1.9" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">4.1.9</span> Change Country To Categorical</h3>
+<section id="change-country-to-categorical" class="level4" data-number="4.1.3.3">
+<h4 data-number="4.1.3.3" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">4.1.3.3</span> Change Country To Categorical</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model-2" class="level3" data-number="4.1.10">
-<h3 data-number="4.1.10" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">4.1.10</span> Run The Model</h3>
+<section id="run-the-model-2" class="level4" data-number="4.1.3.4">
+<h4 data-number="4.1.3.4" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">4.1.3.4</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
@@ -511,6 +515,7 @@ HDI                   0.0101984   0.0204401    0.50    0.6178
 ─────────────────────────────────────────────────────────────</code></pre>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -1069,7 +1074,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
