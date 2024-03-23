@@ -228,7 +228,7 @@ Below, I describe the use of \href{https://www.stata.com/}{Stata},
 \href{https://www.r-project.org/}{R}, and
 \href{https://www.julialang.org/}{Julia} to estimate multilevel models.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Slightly}, breakable, colback=white, arc=.35mm, opacityback=0, toptitle=1mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, toprule=.15mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -239,7 +239,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, breakable, colback=white, arc=.35mm, opacityback=0, toptitle=1mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, toprule=.15mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -724,9 +724,9 @@ example.
 
 \begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}}\end{equation}
 
-\section{Run Models}
+\section{Run Models}\label{run-models-1}
 
-\subsection{Stata}\label{stata-3}
+\subsection{Stata}
 
 \subsubsection{Get The Data}\label{get-the-data}
 
@@ -815,7 +815,7 @@ LR test vs. linear model: chi2(2) = 198.01                Prob > chi2 = 0.0000
 Note: LR test is conservative and provided only for reference.
 \end{verbatim}
 
-\subsection{R}\label{r-3}
+\subsection{R}
 
 \subsubsection{Get The Data}\label{get-the-data-1}
 
@@ -901,7 +901,7 @@ group       -0.218 -0.010 -0.019
 HDI         -0.925 -0.006  0.008 -0.001
 \end{verbatim}
 
-\subsection{Julia}\label{julia-3}
+\subsection{Julia}
 
 \subsubsection{Get The Data}\label{get-the-data-2}
 
@@ -993,7 +993,7 @@ Models}\label{longitudinal-multilevel-models}
 The data employed in these examples are a longitudinal extension of the
 data described in Section~\ref{sec-data}.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, breakable, colback=white, arc=.35mm, opacityback=0, toptitle=1mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, toprule=.15mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}]
 
 In the section on \emph{cross-sectional} multilevel models, I employed
 \emph{scatterplots} to graph the data. In longitudinal models,
@@ -1012,7 +1012,9 @@ makes more sense to use \emph{linear fit} plots, although a
 
 \[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]
 
-\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\] \#\# Run Models
+\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]
+
+\section{Run Models}\label{run-models-2}
 
 \subsection{Stata}
 
