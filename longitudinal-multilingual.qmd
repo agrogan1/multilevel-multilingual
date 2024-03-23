@@ -34,6 +34,7 @@ $$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
 $$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
+
 ## Run Models
 
 ::: {.panel-tabset group="language"}
