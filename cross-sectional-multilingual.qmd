@@ -23,9 +23,11 @@ $$\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{phys
 
 ::: {.panel-tabset group="language"}
 
-## Stata
+## Run Models
 
-### Get The Data 
+### Stata
+
+#### Get The Data 
 
 ```{stata, collectcode=TRUE}
 
@@ -33,7 +35,7 @@ use simulated_multilevel_data.dta
 
 ```
 
-### Graph
+#### Graph
 
 ```{stata}
 #| fig-height: 3
@@ -48,7 +50,7 @@ quietly graph export scatter.png, replace
 
 ![Outcome by Parental Warmth (Stata)](scatter.png){#fig-Stata}
 
-### Run The Model
+#### Run The Model
 
 ```{stata}
 
@@ -56,9 +58,9 @@ mixed outcome warmth physical_punishment group HDI || country: warmth
 
 ```
 
-## R
+### R
 
-### Get The Data
+#### Get The Data
 
 ```{r}
 
@@ -68,7 +70,7 @@ df <- read_dta("simulated_multilevel_data.dta")
 
 ```
 
-### Graph
+#### Graph
 
 ```{r}
 #| fig-height: 3
@@ -85,7 +87,7 @@ ggplot(df,
 
 ```
 
-### Run The Model
+#### Run The Model
 
 ```{r}
 #| warning: false
@@ -99,9 +101,9 @@ summary(fit1)
 
 ```
 
-## Julia
+### Julia
 
-### Get The Data
+#### Get The Data
 
 ```{julia}
 #| output: false
@@ -112,7 +114,7 @@ df = DataFrame(load("simulated_multilevel_data.dta"))
 
 ```
 
-### Graph
+#### Graph
 
 ```{julia}
 #| fig-height: 3
@@ -128,7 +130,7 @@ using StatsPlots
 
 ```
 
-### Change Country To Categorical
+#### Change Country To Categorical
 
 ```{julia}
 #| output: false
@@ -137,7 +139,7 @@ using StatsPlots
 
 ```
 
-### Run The Model
+#### Run The Model
 
 ```{julia}
 
