@@ -1,5 +1,7 @@
 # Multilevel Multilingual
 
+> "This curious world which we inhabit is more wonderful than it is convenient..." [@Thoreau1975]
+
 ## Introduction
 
 Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate multilevel models. 
