@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-03-23">
+<meta name="dcterms.date" content="2024-03-28">
 
 <title>Multilevel Multilingual</title>
 <style>
@@ -56,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -148,12 +168,17 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Multilevel Multilingual">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-03-23">
-<meta name="citation_cover_date" content="2024-03-23">
+<meta name="citation_publication_date" content="2024-03-28">
+<meta name="citation_cover_date" content="2024-03-28">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-03-23">
+<meta name="citation_online_date" content="2024-03-28">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//">
 <meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
+<meta name="citation_reference" content="citation_title=Fitting linear mixed-effects models using lme4;,citation_abstract=Maximum likelihood or restricted maximum likelihood (REML) estimates of the parameters in linear mixed-effects models can be determined using the lmer function in the lme4 package for R. As for most model-fitting functions in R, the model is described in an lmer call by a formula, in this case including both fixed- and random-effects terms. The formula and data together determine a numerical representation of the model from which the profiled deviance or the profiled REML criterion can be evaluated as a function of some of the model parameters. The appropriate criterion is optimized, using one of the constrained optimization functions in R, to provide the parameter estimates. We describe the structure of the model, the steps in evaluating the profiled deviance or REML criterion, and the structure of classes or types that represents such a model. Sufficient detail is included to allow specialization of these structures by users who wish to write functions to fit specialized linear mixed models, such as models incorporating pedigrees or smoothing splines, that are not easily expressible in the formula language used by lmer.;,citation_author=Douglas Bates;,citation_author=Martin Mächler;,citation_author=Ben Bolker;,citation_author=Steve Walker;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=https://www.jstatsoft.org/index.php/jss/article/view/v067i01;,citation_issue=1;,citation_doi=10.18637/jss.v067.i01;,citation_volume=67;,citation_journal_title=Journal of Statistical Software;">
+<meta name="citation_reference" content="citation_title=Julia: A fresh approach to numerical computing;,citation_abstract=Bridging cultures that have often been distant, Julia combines expertise from the diverse fields of computer science and computational science to create a new approach to numerical computing. Julia is designed to be easy and fast and questions notions generally held to be “laws of nature&amp;amp;amp;quot; by practitioners of numerical computing: High-level dynamic programs have to be slow.One must prototype in one language and then rewrite in another language for speed or deployment.There are parts of a system appropriate for the programmer, and other parts that are best left untouched as they have been built by the experts. We introduce the Julia programming language and its design—a dance between specialization and abstraction. Specialization allows for custom treatment. Multiple dispatch, a technique from computer science, picks the right algorithm for the right circumstance. Abstraction, which is what good computation is really about, recognizes what remains the same after differences are stripped away. Abstractions in mathematics are captured as code through another technique from computer science, generic programming. Julia shows that one can achieve machine performance without sacrificing human convenience.;,citation_author=Jeff Bezanson;,citation_author=Alan Edelman;,citation_author=Stefan Karpinski;,citation_author=Viral B. Shah;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_fulltext_html_url=https://doi.org/10.1137/141000671;,citation_issue=1;,citation_doi=10.1137/141000671;,citation_volume=59;,citation_journal_title=SIAM Review;">
+<meta name="citation_reference" content="citation_title=Stata 17 multilevel mixed effects reference manual;,citation_author=StataCorp;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;">
+<meta name="citation_reference" content="citation_title=The commercial spirit of modern times;,citation_author=Henry David Thoreau;,citation_editor=Joseph J. Moldenhauer;,citation_editor=Edwin Moser;,citation_editor=Alexander C. Kern;,citation_publication_date=1975;,citation_cover_date=1975;,citation_year=1975;,citation_isbn=0691062862 :;,citation_inbook_title=Early essays and miscellanies;">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -287,7 +312,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 23, 2024</p>
+      <p class="date">March 28, 2024</p>
     </div>
   </div>
   
@@ -302,6 +327,9 @@ window.Quarto = {
 <p><a href="multilevel-multilingual.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="multilevel-multilingual.png" title="Multilevel Multilingual" class="quarto-cover-image img-fluid"></a></p>
 <section id="multilevel-multilingual" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Multilevel Multilingual</h1>
+<blockquote class="blockquote">
+<p>“This curious world which we inhabit is more wonderful than it is convenient…” <span class="citation" data-cites="Thoreau1975">(<a href="#ref-Thoreau1975" role="doc-biblioref">Thoreau, 1975</a>)</span></p>
+</blockquote>
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
 <p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, and <a href="https://www.julialang.org/">Julia</a> to estimate multilevel models.</p>
@@ -473,6 +501,11 @@ Table&nbsp;1.1: Sample of Simulated Multilevel Data
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Thoreau1975" class="csl-entry" role="listitem">
+Thoreau, H. D. (1975). The commercial spirit of modern times. In J. J. Moldenhauer, E. Moser, &amp; A. C. Kern (Eds.), <em>Early essays and miscellanies</em>. Princeton University Press.
+</div>
+</div>
 </section>
 </section>
 
@@ -1018,7 +1051,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
