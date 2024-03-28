@@ -24,6 +24,10 @@ book:
     - longitudinal-multilingual.qmd
   navbar:
     background: primary
+
+bibliography: multilevel-multilingual.bib
+
+csl: apa.csl
       
 google-scholar: true
 
