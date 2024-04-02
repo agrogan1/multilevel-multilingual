@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate multilevel models. 
+Below, I describe the use of [Stata](https://www.stata.com/) [@StataCorp2021:2], [R](https://www.r-project.org/) [@RProgram; @JSSv067i01], and [Julia](https://www.julialang.org/) [@JuliaArticle; @MixedModels] to estimate multilevel models. 
 
 ::: {.callout-tip}
 ## Results Will Vary Somewhat
