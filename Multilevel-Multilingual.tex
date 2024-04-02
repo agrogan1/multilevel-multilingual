@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-03-28}
+\date{2024-04-02}
 
 \begin{document}
 \maketitle
@@ -260,13 +260,19 @@
 convenient\ldots{}'' (Thoreau, 1975)
 \end{quote}
 
+\begin{quote}
+``Mathematics is my secret. My secret weakness. I feel like a stubborn,
+helpless fool in the middle of a problem. Trapped and crazed. Also,
+thrilled.'' (Schanen, 2021)
+\end{quote}
+
 \section{Introduction}\label{introduction}
 
 Below, I describe the use of \href{https://www.stata.com/}{Stata},
 \href{https://www.r-project.org/}{R}, and
 \href{https://www.julialang.org/}{Julia} to estimate multilevel models.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, coltitle=black, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colback=white, left=2mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, rightrule=.15mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, toprule=.15mm, coltitle=black, leftrule=.75mm, breakable, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, toptitle=1mm, left=2mm, opacitybacktitle=0.6]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -277,7 +283,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, coltitle=black, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colback=white, left=2mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, rightrule=.15mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, toprule=.15mm, coltitle=black, leftrule=.75mm, breakable, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, toptitle=1mm, left=2mm, opacitybacktitle=0.6]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -956,7 +962,7 @@ Models}\label{longitudinal-multilevel-models}
 The data employed in these examples are a longitudinal extension of the
 data described in Section~\ref{sec-data}.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, coltitle=black, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colback=white, left=2mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, rightrule=.15mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, toprule=.15mm, coltitle=black, leftrule=.75mm, breakable, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, toptitle=1mm, left=2mm, opacitybacktitle=0.6]
 
 In the section on \emph{cross-sectional} multilevel models, I employed
 \emph{scatterplots} to graph the data. In longitudinal models,
@@ -1341,6 +1347,10 @@ t & HDI                  -0.00234513  0.00381848  -0.61    0.5391
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-Schanen2021}
+Schanen, J. (2021). \emph{Math person (strogatz prize entry)}. National
+Museum of Mathematics.
+
 \bibitem[\citeproctext]{ref-Thoreau1975}
 Thoreau, H. D. (1975). The commercial spirit of modern times. In J. J.
 Moldenhauer, E. Moser, \& A. C. Kern (Eds.), \emph{Early essays and
