@@ -2,6 +2,8 @@
 
 > "This curious world which we inhabit is more wonderful than it is convenient..." [@Thoreau1975]
 
+> "Mathematics is my secret. My secret weakness. I feel like a stubborn, helpless fool in the middle of a problem. Trapped and crazed. Also, thrilled." [@Schanen2021]
+
 ## Introduction
 
 Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate multilevel models. 
