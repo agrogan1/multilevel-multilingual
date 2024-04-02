@@ -268,11 +268,12 @@ thrilled.'' (Schanen, 2021)
 
 \section{Introduction}\label{introduction}
 
-Below, I describe the use of \href{https://www.stata.com/}{Stata},
-\href{https://www.r-project.org/}{R}, and
-\href{https://www.julialang.org/}{Julia} to estimate multilevel models.
+Below, I describe the use of \href{https://www.stata.com/}{Stata}
+(StataCorp, 2021), \href{https://www.r-project.org/}{R} (Bates et al.,
+2015; R Core Team, 2023), and \href{https://www.julialang.org/}{Julia}
+(Bates, 2024; Bezanson et al., 2017) to estimate multilevel models.
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, toprule=.15mm, coltitle=black, leftrule=.75mm, breakable, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, toptitle=1mm, left=2mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toprule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black, rightrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, arc=.35mm, bottomrule=.15mm, opacityback=0, colback=white, breakable]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -283,7 +284,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, toprule=.15mm, coltitle=black, leftrule=.75mm, breakable, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, toptitle=1mm, left=2mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toprule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black, rightrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, arc=.35mm, bottomrule=.15mm, opacityback=0, colback=white, breakable]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -962,7 +963,7 @@ Models}\label{longitudinal-multilevel-models}
 The data employed in these examples are a longitudinal extension of the
 data described in Section~\ref{sec-data}.
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, toprule=.15mm, coltitle=black, leftrule=.75mm, breakable, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, toptitle=1mm, left=2mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toprule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black, rightrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, arc=.35mm, bottomrule=.15mm, opacityback=0, colback=white, breakable]
 
 In the section on \emph{cross-sectional} multilevel models, I employed
 \emph{scatterplots} to graph the data. In longitudinal models,
@@ -1347,9 +1348,32 @@ t & HDI                  -0.00234513  0.00381848  -0.61    0.5391
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-MixedModels}
+Bates, D. (2024). \emph{{MixedModels.jl Documentation}}.
+\url{https://juliastats.org/MixedModels.jl/stable/}
+
+\bibitem[\citeproctext]{ref-JSSv067i01}
+Bates, D., Mächler, M., Bolker, B., \& Walker, S. (2015). Fitting linear
+mixed-effects models using lme4. \emph{Journal of Statistical Software},
+\emph{67}(1), 1--48. \url{https://doi.org/10.18637/jss.v067.i01}
+
+\bibitem[\citeproctext]{ref-JuliaArticle}
+Bezanson, J., Edelman, A., Karpinski, S., \& Shah, V. B. (2017). Julia:
+A fresh approach to numerical computing. \emph{SIAM Review},
+\emph{59}(1), 65--98. \url{https://doi.org/10.1137/141000671}
+
+\bibitem[\citeproctext]{ref-RProgram}
+R Core Team. (2023). \emph{R: A language and environment for statistical
+computing}. R Foundation for Statistical Computing.
+\url{https://www.R-project.org/}
+
 \bibitem[\citeproctext]{ref-Schanen2021}
-Schanen, J. (2021). \emph{Math person (strogatz prize entry)}. National
-Museum of Mathematics.
+Schanen, J. (2021). \emph{Math person ({Strogatz Prize} entry)}.
+National Museum of Mathematics.
+
+\bibitem[\citeproctext]{ref-StataCorp2021:2}
+StataCorp. (2021). \emph{Stata 17 multilevel mixed effects reference
+manual}. Stata Press.
 
 \bibitem[\citeproctext]{ref-Thoreau1975}
 Thoreau, H. D. (1975). The commercial spirit of modern times. In J. J.
