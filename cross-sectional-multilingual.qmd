@@ -36,7 +36,7 @@ var(u_{0j}) & 0 \\
 0 & var(u_{1j}) 
 \end{bmatrix}$$ {#eq-varcovar}
 
-As discussed in Chapter 6, however, one can consider a multilevel model in which the random effects are correlated, as is the case in @eq-varcovaruns.
+As discussed in the Chapter on multilevel models with cross-sectional data, however, one can consider a multilevel model in which the random effects are correlated, as is the case in @eq-varcovaruns.
 
 $$\begin{bmatrix}
 var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
