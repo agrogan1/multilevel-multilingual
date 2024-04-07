@@ -46,7 +46,6 @@ format:
       freeze: auto
   pdf:
     lot: true
-    lof: true
     keep-tex: true
     fig-width: 6
     execute:
