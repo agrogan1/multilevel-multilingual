@@ -21,6 +21,45 @@ Recall the general model of @eq-MLMsimple, and the syntax outlined in @sec-synta
 
 $$\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}$$ {#eq-MLMsubstantive}
 
+## Correlated and Uncorrelated Random Effects
+
+Consider the covariance matrix of random effects (e.g. $u_{0j}$ and $u_{1j}$). In @eq-varcovar the covariances of the random effects are constrained to be zero.
+
+$$\begin{bmatrix}
+var(u_{0j}) & 0 \\
+0 & var(u_{1j}) 
+\end{bmatrix}$$ {#eq-varcovar}
+
+As discussed in Chapter 6, however, one can consider a multilevel model in which the random effects are correlated, as is the case in @eq-varcovaruns.
+
+$$\begin{bmatrix}
+var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
+cov(u_{0j}, u_{1j}) & var(u_{1j}) 
+\end{bmatrix}$$ {#eq-varcovaruns}
+
+Procedures for estimating models with uncorrelated and correlated random effects are detailed below. [@StataCorp2021:2, @JSSv067i01, @MixedModels]
+
+-------------------------------------------------------------
+Software    Uncorrelated          Correlated
+            Random                Random
+            Effects               Effects
+----------- --------------------- ---------------------------
+Stata       default               add option: `, cov(uns)`
+
+R           separate random       separate random 
+            effects from          effects from
+            grouping variable     grouping variable
+            with `||`             with `|`
+
+Julia       separate terms        separate random 
+            for each random       effects from
+            effect e.g.           grouping variable
+            `(1 | group) +`       with `|`.
+            `(0 + x | group)`
+-------------------------------------------------------------
+
+All models in the examples below are run with *uncorrelated* random effects, but could just as easily be run with *correlated* random effects. 
+
 ## Run Models
 
 ::: {.panel-tabset group="language"}
@@ -97,7 +136,8 @@ df = DataFrame(load("simulated_multilevel_data.dta"))
 
 m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment + 
                group + HDI +
-               (1 + warmth | country)), df)
+               (1 | country) +
+               (0 + warmth | country)), df)
 
 ```
 
