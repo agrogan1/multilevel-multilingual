@@ -19,7 +19,13 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 Recall the general model of @eq-MLMsimple, and the syntax outlined in @sec-syntax. Below in @eq-MLMsubstantive, we consider a more substantive example.
 
-$$\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}$$ {#eq-MLMsubstantive}
+$$\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} +$$ {#eq-MLMsubstantive}
+
+$$\beta_2 \text{physical punishment}_{ij} +$$
+
+$$\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} +$$
+
+$$u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}$$ 
 
 ## Correlated and Uncorrelated Random Effects
 
@@ -37,7 +43,7 @@ var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) & var(u_{1j}) 
 \end{bmatrix}$$ {#eq-varcovaruns}
 
-Procedures for estimating models with uncorrelated and correlated random effects are detailed below. [@StataCorp2021:2, @JSSv067i01, @MixedModels]
+Procedures for estimating models with uncorrelated and correlated random effects are detailed below [@StataCorp2021:2; @JSSv067i01; @MixedModels].
 
 -------------------------------------------------------------
 Software    Uncorrelated          Correlated
@@ -57,6 +63,8 @@ Julia       separate terms        separate random
             `(1 | group) +`       with `|`.
             `(0 + x | group)`
 -------------------------------------------------------------
+
+: Correlated and Uncorrelated Random Effects {#tbl-REs}
 
 All models in the examples below are run with *uncorrelated* random effects, but could just as easily be run with *correlated* random effects. 
 

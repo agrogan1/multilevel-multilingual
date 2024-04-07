@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-04-02}
+\date{2024-04-07}
 
 \begin{document}
 \maketitle
@@ -273,7 +273,55 @@ Below, I describe the use of \href{https://www.stata.com/}{Stata}
 2015; R Core Team, 2023), and \href{https://www.julialang.org/}{Julia}
 (Bates, 2024; Bezanson et al., 2017) to estimate multilevel models.
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toprule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black, rightrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, arc=.35mm, bottomrule=.15mm, opacityback=0, colback=white, breakable]
+All of these software packages can estimate multilevel models. However,
+there are substantial differences between the different packages: Stata
+is proprietary \emph{for cost} software, which is very well documented
+and very intuitive. R is free open source software which is less
+intuitive, but there are many excellent resources for learning R. Julia
+is newer open source software, and ostensibly much faster than either
+Stata or R, which may be an important advantage when running multilevel
+models with very large data sets. At this point in time, both Stata and
+R feel much more \emph{stable} than Julia which is still evolving
+software.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1528}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5417}}@{}}
+\caption{Software for Multilevel
+Modeling}\label{tbl-software}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Software
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cost
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Ease of Use
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Software
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cost
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Ease of Use
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stata & some cost & learning curve, but intuitive for both multilevel
+modeling and graphing. \\
+R & free & learning curve: intuitive for multilevel modeling; but
+steeper learning curve for graphing. \\
+Julia & free & learning curve: steeper learning curve for multilevel
+modeling; and very steep learning curve for graphing. Graphics libraries
+are very much under development and in flux. \\
+\end{longtable}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, leftrule=.75mm, colback=white, left=2mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, bottomtitle=1mm, toptitle=1mm, opacityback=0, toprule=.15mm, breakable, coltitle=black, rightrule=.15mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -284,7 +332,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toprule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black, rightrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, arc=.35mm, bottomrule=.15mm, opacityback=0, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, leftrule=.75mm, colback=white, left=2mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, bottomtitle=1mm, toptitle=1mm, opacityback=0, toprule=.15mm, breakable, coltitle=black, rightrule=.15mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -767,7 +815,80 @@ outlined in Section~\ref{sec-syntax}. Below in
 Equation~\ref{eq-MLMsubstantive}, we consider a more substantive
 example.
 
-\begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} +}\end{equation}
+
+\[\beta_2 \text{physical punishment}_{ij} +\]
+
+\[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} +\]
+
+\[u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}\]
+
+\section{Correlated and Uncorrelated Random
+Effects}\label{correlated-and-uncorrelated-random-effects}
+
+Consider the covariance matrix of random effects (e.g.~\(u_{0j}\) and
+\(u_{1j}\)). In Equation~\ref{eq-varcovar} the covariances of the random
+effects are constrained to be zero.
+
+\begin{equation}\phantomsection\label{eq-varcovar}{\begin{bmatrix}
+var(u_{0j}) & 0 \\
+0 & var(u_{1j}) 
+\end{bmatrix}}\end{equation}
+
+As discussed in Chapter 6, however, one can consider a multilevel model
+in which the random effects are correlated, as is the case in
+Equation~\ref{eq-varcovaruns}.
+
+\begin{equation}\phantomsection\label{eq-varcovaruns}{\begin{bmatrix}
+var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
+cov(u_{0j}, u_{1j}) & var(u_{1j}) 
+\end{bmatrix}}\end{equation}
+
+Procedures for estimating models with uncorrelated and correlated random
+effects are detailed below (Bates et al., 2015; Bates, 2024; StataCorp,
+2021).
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3056}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3889}}@{}}
+\caption{Correlated and Uncorrelated Random
+Effects}\label{tbl-REs}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Software
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Uncorrelated Random Effects
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Correlated Random Effects
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Software
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Uncorrelated Random Effects
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Correlated Random Effects
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stata & default & add option: \texttt{,\ cov(uns)} \\
+R & separate random effects from grouping variable with
+\texttt{\textbar{}\textbar{}} & separate random effects from grouping
+variable with \texttt{\textbar{}} \\
+Julia & separate terms for each random effect e.g.
+\texttt{(1\ \textbar{}\ group)\ +} \texttt{(0\ +\ x\ \textbar{}\ group)}
+& separate random effects from grouping variable with
+\texttt{\textbar{}}. \\
+\end{longtable}
+
+All models in the examples below are run with \emph{uncorrelated} random
+effects, but could just as easily be run with \emph{correlated} random
+effects.
 
 \section{Run Models}\label{run-models-1}
 
@@ -924,32 +1045,33 @@ Categorical}\label{change-country-to-categorical}
 
 \NormalTok{m1 }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ warmth }\OperatorTok{+}\NormalTok{ physical\_punishment }\OperatorTok{+} 
 \NormalTok{               group }\OperatorTok{+}\NormalTok{ HDI }\OperatorTok{+}
-\NormalTok{               (}\FloatTok{1} \OperatorTok{+}\NormalTok{ warmth }\OperatorTok{|}\NormalTok{ country)), df)}
+\NormalTok{               (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country) }\OperatorTok{+}
+\NormalTok{               (}\FloatTok{0} \OperatorTok{+}\NormalTok{ warmth }\OperatorTok{|}\NormalTok{ country)), df)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 Linear mixed model fit by maximum likelihood
- outcome ~ 1 + warmth + physical_punishment + group + HDI + (1 + warmth | country)
+ outcome ~ 1 + warmth + physical_punishment + group + HDI + (1 | country) + (0 + warmth | country)
    logLik   -2 logLik     AIC       AICc        BIC    
- -9667.9392 19335.8783 19353.8783 19353.9385 19407.9357
+ -9667.9532 19335.9065 19351.9065 19351.9546 19399.9574
 
 Variance components:
-            Column    Variance   Std.Dev.   Corr.
-country  (Intercept)   3.2369484 1.7991521
-         warmth        0.0001080 0.0103903 +1.00
-Residual              36.0187144 6.0015593
+            Column   Variance Std.Dev.  Corr.
+country  (Intercept)   3.36982 1.83571
+         warmth        0.00000 0.00000   .  
+Residual              36.01912 6.00159
  Number of obs: 3000; levels of grouping factors: 30
 
   Fixed-effects parameters:
 ─────────────────────────────────────────────────────────────
                           Coef.  Std. Error       z  Pr(>|z|)
 ─────────────────────────────────────────────────────────────
-(Intercept)          49.9018      1.43435     34.79    <1e-99
-warmth                0.961545    0.0582135   16.52    <1e-60
-physical_punishment  -0.845389    0.0798149  -10.59    <1e-25
-group                 1.08524     0.220055     4.93    <1e-06
-HDI                   0.0101984   0.0204401    0.50    0.6178
+(Intercept)          49.8796      1.43653     34.72    <1e-99
+warmth                0.961645    0.058182    16.53    <1e-60
+physical_punishment  -0.84538     0.0798155  -10.59    <1e-25
+group                 1.08434     0.220054     4.93    <1e-06
+HDI                   0.0105571   0.0204509    0.52    0.6057
 ─────────────────────────────────────────────────────────────
 \end{verbatim}
 
@@ -962,17 +1084,6 @@ Models}\label{longitudinal-multilevel-models}
 
 The data employed in these examples are a longitudinal extension of the
 data described in Section~\ref{sec-data}.
-
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toprule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black, rightrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Graphing Longitudinal Data}, arc=.35mm, bottomrule=.15mm, opacityback=0, colback=white, breakable]
-
-In the section on \emph{cross-sectional} multilevel models, I employed
-\emph{scatterplots} to graph the data. In longitudinal models,
-\emph{time} is a variable of special interest. Often, in graphing
-\emph{longitudinal} data--especially when graphing outcomes by time--it
-makes more sense to use \emph{linear fit} plots, although a
-\emph{scatterplot} could be employed as well.
-
-\end{tcolorbox}
 
 \section{The Equation}\label{the-equation-2}
 
@@ -1080,28 +1191,27 @@ Group variable: country                             Number of groups =      30
                                                     Wald chi2(9)     = 1365.73
 Log likelihood = -28794.855                         Prob > chi2      =  0.0000
 
--------------------------------------------------------------------------------------
-            outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
---------------------+----------------------------------------------------------------
-                  t |   1.047448   .3619795     2.89   0.004     .3379816    1.756915
-             warmth |   .8869901   .0876058    10.12   0.000      .715286    1.058694
-physical_punishment |   -.893285   .1194705    -7.48   0.000    -1.127443    -.659127
-            2.group |   .9648545   .3292217     2.93   0.003     .3195918    1.610117
-                HDI |   .0120622    .022474     0.54   0.591    -.0319861    .0561104
-                    |
-       c.t#c.warmth |   .0277903   .0402665     0.69   0.490    -.0511306    .1067112
-                    |
-                c.t#|
-                 c. |
-physical_punishment |  -.0041479   .0553051    -0.08   0.940    -.1125439    .1042482
-                    |
-          group#c.t |
-                 2  |   .0105177   .1523009     0.07   0.945    -.2879865    .3090219
-                    |
-          c.t#c.HDI |   -.002342   .0044172    -0.53   0.596    -.0109996    .0063155
-                    |
-              _cons |   50.32233   1.572089    32.01   0.000      47.2411    53.40357
--------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+              outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+----------------------+----------------------------------------------------------------
+                    t |   1.047448   .3619795     2.89   0.004     .3379816    1.756915
+               warmth |   .8869901   .0876058    10.12   0.000      .715286    1.058694
+  physical_punishment |   -.893285   .1194705    -7.48   0.000    -1.127443    -.659127
+              2.group |   .9648545   .3292217     2.93   0.003     .3195918    1.610117
+                  HDI |   .0120622    .022474     0.54   0.591    -.0319861    .0561104
+                      |
+         c.t#c.warmth |   .0277903   .0402665     0.69   0.490    -.0511306    .1067112
+                      |
+                  c.t#|
+c.physical_punishment |  -.0041479   .0553051    -0.08   0.940    -.1125439    .1042482
+                      |
+            group#c.t |
+                   2  |   .0105177   .1523009     0.07   0.945    -.2879865    .3090219
+                      |
+            c.t#c.HDI |   -.002342   .0044172    -0.53   0.596    -.0109996    .0063155
+                      |
+                _cons |   50.32233   1.572089    32.01   0.000      47.2411    53.40357
+---------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
@@ -1270,35 +1380,36 @@ Categorical}\label{change-country-to-categorical-1}
 \NormalTok{m2A }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{+}\NormalTok{ warmth }\OperatorTok{+} 
 \NormalTok{                                 physical\_punishment }\OperatorTok{+} 
 \NormalTok{                                 group }\OperatorTok{+}\NormalTok{ HDI }\OperatorTok{+}
-\NormalTok{                                 (}\FloatTok{1} \OperatorTok{+}\NormalTok{ warmth }\OperatorTok{|}\NormalTok{ country) }\OperatorTok{+}
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country) }\OperatorTok{+} 
+\NormalTok{                                 (}\FloatTok{0} \OperatorTok{+}\NormalTok{ warmth }\OperatorTok{|}\NormalTok{ country) }\OperatorTok{+}
 \NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ id)), dfL)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 Linear mixed model fit by maximum likelihood
- outcome ~ 1 + t + warmth + physical_punishment + group + HDI + (1 + warmth | country) + (1 | id)
+ outcome ~ 1 + t + warmth + physical_punishment + group + HDI + (1 | country) + (0 + warmth | country) + (1 | id)
     logLik   -2 logLik      AIC         AICc        BIC     
- -28533.9236  57067.8472  57089.8472  57089.8765  57168.0019
+ -28533.9968  57067.9935  57087.9935  57088.0180  57159.0433
 
 Variance components:
-            Column    Variance Std.Dev.   Corr.
-id       (Intercept)   8.851224 2.975101
-country  (Intercept)   3.451345 1.857780
-         warmth        0.000227 0.015065 +1.00
-Residual              26.001212 5.099138
+            Column   Variance Std.Dev.  Corr.
+id       (Intercept)   8.85263 2.97534
+country  (Intercept)   3.65031 1.91058
+         warmth        0.00000 0.00000   .  
+Residual              26.00093 5.09911
  Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
 ──────────────────────────────────────────────────────────────
                            Coef.  Std. Error       z  Pr(>|z|)
 ──────────────────────────────────────────────────────────────
-(Intercept)          49.5105       1.41854     34.90    <1e-99
-t                     0.98814      0.0658319   15.01    <1e-50
-warmth                0.946252     0.0382851   24.72    <1e-99
-physical_punishment  -0.926673     0.0499547  -18.55    <1e-76
-group                 0.98708      0.153484     6.43    <1e-09
-HDI                   0.00725703   0.0206549    0.35    0.7253
+(Intercept)          49.4945       1.42422     34.75    <1e-99
+t                     0.987965     0.0658315   15.01    <1e-50
+warmth                0.946255     0.0381869   24.78    <1e-99
+physical_punishment  -0.926774     0.0499549  -18.55    <1e-76
+group                 0.985819     0.153487     6.42    <1e-09
+HDI                   0.00754357   0.0207101    0.36    0.7157
 ──────────────────────────────────────────────────────────────
 \end{verbatim}
 
@@ -1310,41 +1421,49 @@ HDI                   0.00725703   0.0206549    0.35    0.7253
 \NormalTok{m2B }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{*}\NormalTok{ (warmth }\OperatorTok{+} 
 \NormalTok{                                 physical\_punishment }\OperatorTok{+} 
 \NormalTok{                                 group }\OperatorTok{+}\NormalTok{ HDI) }\OperatorTok{+}
-\NormalTok{                                 (}\FloatTok{1} \OperatorTok{+}\NormalTok{ warmth }\OperatorTok{|}\NormalTok{ country) }\OperatorTok{+}
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country) }\OperatorTok{+}
+\NormalTok{                                 (}\FloatTok{0} \OperatorTok{+}\NormalTok{ warmth }\OperatorTok{|}\NormalTok{ country) }\OperatorTok{+}
 \NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ id)), dfL)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 Linear mixed model fit by maximum likelihood
- outcome ~ 1 + t + warmth + physical_punishment + group + HDI + t & warmth + t & physical_punishment + t & group + t & HDI + (1 + warmth | country) + (1 | id)
+ outcome ~ 1 + t + warmth + physical_punishment + group + HDI + t & warmth + t & physical_punishment + t & group + t & HDI + (1 | country) + (0 + warmth | country) + (1 | id)
     logLik   -2 logLik      AIC         AICc        BIC     
- -28533.0810  57066.1620  57096.1620  57096.2154  57202.7367
+ -28533.1579  57066.3158  57094.3158  57094.3626  57193.7855
 
 Variance components:
-            Column    Variance   Std.Dev.   Corr.
-id       (Intercept)   8.8593774 2.9764706
-country  (Intercept)   3.4464818 1.8564703
-         warmth        0.0002394 0.0154717 +1.00
-Residual              25.9905210 5.0980899
+            Column   Variance Std.Dev.  Corr.
+id       (Intercept)   8.86088 2.97672
+country  (Intercept)   3.65109 1.91078
+         warmth        0.00000 0.00000   .  
+Residual              25.99020 5.09806
  Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
 ─────────────────────────────────────────────────────────────────
                                Coef.  Std. Error      z  Pr(>|z|)
 ─────────────────────────────────────────────────────────────────
-(Intercept)              49.4696      1.59007     31.11    <1e-99
-t                         1.00761     0.36475      2.76    0.0057
-warmth                    0.865294    0.0804999   10.75    <1e-26
-physical_punishment      -0.907816    0.110399    -8.22    <1e-15
-group                     0.96908     0.304797     3.18    0.0015
-HDI                       0.0119739   0.0220306    0.54    0.5868
-t & warmth                0.0403499   0.0353477    1.14    0.2537
-t & physical_punishment  -0.00900605  0.0492392   -0.18    0.8549
-t & group                 0.00879803  0.131655     0.07    0.9467
-t & HDI                  -0.00234513  0.00381848  -0.61    0.5391
+(Intercept)              49.4526      1.59495     31.01    <1e-99
+t                         1.00828     0.364747     2.76    0.0057
+warmth                    0.865674    0.0804504   10.76    <1e-26
+physical_punishment      -0.908024    0.110399    -8.22    <1e-15
+group                     0.967016    0.304798     3.17    0.0015
+HDI                       0.0122774   0.0220761    0.56    0.5781
+t & warmth                0.0401613   0.0353475    1.14    0.2559
+t & physical_punishment  -0.00895284  0.0492392   -0.18    0.8557
+t & group                 0.00918249  0.131654     0.07    0.9444
+t & HDI                  -0.00235908  0.00381845  -0.62    0.5367
 ─────────────────────────────────────────────────────────────────
 \end{verbatim}
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}

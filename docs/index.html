@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-04-02">
+<meta name="dcterms.date" content="2024-04-07">
 
 <title>Multilevel Multilingual</title>
 <style>
@@ -168,10 +168,10 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Multilevel Multilingual">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-04-02">
-<meta name="citation_cover_date" content="2024-04-02">
+<meta name="citation_publication_date" content="2024-04-07">
+<meta name="citation_cover_date" content="2024-04-07">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-04-02">
+<meta name="citation_online_date" content="2024-04-07">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
@@ -272,6 +272,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -314,7 +320,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 2, 2024</p>
+      <p class="date">April 7, 2024</p>
     </div>
   </div>
   
@@ -330,14 +336,55 @@ window.Quarto = {
 <section id="multilevel-multilingual" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Multilevel Multilingual</h1>
 <blockquote class="blockquote">
-<p>“This curious world which we inhabit is more wonderful than it is convenient…” <span class="citation" data-cites="Thoreau1975">(<a href="#ref-Thoreau1975" role="doc-biblioref">Thoreau, 1975</a>)</span></p>
+<p>“This curious world which we inhabit is more wonderful than it is convenient…” <span class="citation" data-cites="Thoreau1975">(<a href="references.html#ref-Thoreau1975" role="doc-biblioref">Thoreau, 1975</a>)</span></p>
 </blockquote>
 <blockquote class="blockquote">
-<p>“Mathematics is my secret. My secret weakness. I feel like a stubborn, helpless fool in the middle of a problem. Trapped and crazed. Also, thrilled.” <span class="citation" data-cites="Schanen2021">(<a href="#ref-Schanen2021" role="doc-biblioref">Schanen, 2021</a>)</span></p>
+<p>“Mathematics is my secret. My secret weakness. I feel like a stubborn, helpless fool in the middle of a problem. Trapped and crazed. Also, thrilled.” <span class="citation" data-cites="Schanen2021">(<a href="references.html#ref-Schanen2021" role="doc-biblioref">Schanen, 2021</a>)</span></p>
 </blockquote>
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a> <span class="citation" data-cites="StataCorp2021:2">(<a href="#ref-StataCorp2021:2" role="doc-biblioref">StataCorp, 2021</a>)</span>, <a href="https://www.r-project.org/">R</a> <span class="citation" data-cites="RProgram JSSv067i01">(<a href="#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="#ref-RProgram" role="doc-biblioref">R Core Team, 2023</a>)</span>, and <a href="https://www.julialang.org/">Julia</a> <span class="citation" data-cites="JuliaArticle MixedModels">(<a href="#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="#ref-JuliaArticle" role="doc-biblioref">Bezanson et al., 2017</a>)</span> to estimate multilevel models.</p>
+<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a> <span class="citation" data-cites="StataCorp2021:2">(<a href="references.html#ref-StataCorp2021:2" role="doc-biblioref">StataCorp, 2021</a>)</span>, <a href="https://www.r-project.org/">R</a> <span class="citation" data-cites="RProgram JSSv067i01">(<a href="references.html#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="references.html#ref-RProgram" role="doc-biblioref">R Core Team, 2023</a>)</span>, and <a href="https://www.julialang.org/">Julia</a> <span class="citation" data-cites="JuliaArticle MixedModels">(<a href="references.html#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="references.html#ref-JuliaArticle" role="doc-biblioref">Bezanson et al., 2017</a>)</span> to estimate multilevel models.</p>
+<p>All of these software packages can estimate multilevel models. However, there are substantial differences between the different packages: Stata is proprietary <em>for cost</em> software, which is very well documented and very intuitive. R is free open source software which is less intuitive, but there are many excellent resources for learning R. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more <em>stable</em> than Julia which is still evolving software.</p>
+<div id="tbl-software" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-software-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.1: Software for Multilevel Modeling
+</figcaption>
+<div aria-describedby="tbl-software-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Software</th>
+<th style="text-align: left;">Cost</th>
+<th style="text-align: left;">Ease of Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Stata</td>
+<td style="text-align: left;">some cost</td>
+<td style="text-align: left;">learning curve, but intuitive for both multilevel modeling and graphing.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R</td>
+<td style="text-align: left;">free</td>
+<td style="text-align: left;">learning curve: intuitive for multilevel modeling; but steeper learning curve for graphing.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Julia</td>
+<td style="text-align: left;">free</td>
+<td style="text-align: left;">learning curve: steeper learning curve for multilevel modeling; and very steep learning curve for graphing. Graphics libraries are very much under development and in flux.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -377,7 +424,7 @@ Multi-Line Commands
 <div id="tbl-multilingual1" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-multilingual1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.1: Sample of Simulated Multilevel Data
+Table&nbsp;1.2: Sample of Simulated Multilevel Data
 </figcaption>
 <div aria-describedby="tbl-multilingual1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -506,7 +553,7 @@ Table&nbsp;1.1: Sample of Simulated Multilevel Data
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-MixedModels" class="csl-entry" role="listitem">
 Bates, D. (2024). <em><span class="nocase">MixedModels.jl Documentation</span></em>. <a href="https://juliastats.org/MixedModels.jl/stable/">https://juliastats.org/MixedModels.jl/stable/</a>
 </div>
@@ -1074,7 +1121,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

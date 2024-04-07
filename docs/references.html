@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Multilingual - 3&nbsp; Unconditional Model</title>
+<title>Multilevel Multilingual - References</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,8 +49,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cross-sectional-multilingual.html" rel="next">
-<link href="./descriptives-multilingual.html" rel="prev">
+<link href="./longitudinal-multilingual.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -105,45 +89,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 3&nbsp; Unconditional Model">
-<meta property="og:description" content="">
+<meta property="og:title" content="Multilevel Multilingual - References">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 3&nbsp; Unconditional Model">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Multilevel Multilingual - References">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[3]{.chapter-number}&nbsp; [Unconditional Model]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//unconditional-multilingual.html">
+<meta name="citation_title" content="References">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//references.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
 <meta name="citation_reference" content="citation_title=Fitting linear mixed-effects models using lme4;,citation_abstract=Maximum likelihood or restricted maximum likelihood (REML) estimates of the parameters in linear mixed-effects models can be determined using the lmer function in the lme4 package for R. As for most model-fitting functions in R, the model is described in an lmer call by a formula, in this case including both fixed- and random-effects terms. The formula and data together determine a numerical representation of the model from which the profiled deviance or the profiled REML criterion can be evaluated as a function of some of the model parameters. The appropriate criterion is optimized, using one of the constrained optimization functions in R, to provide the parameter estimates. We describe the structure of the model, the steps in evaluating the profiled deviance or REML criterion, and the structure of classes or types that represents such a model. Sufficient detail is included to allow specialization of these structures by users who wish to write functions to fit specialized linear mixed models, such as models incorporating pedigrees or smoothing splines, that are not easily expressible in the formula language used by lmer.;,citation_author=Douglas Bates;,citation_author=Martin Mächler;,citation_author=Ben Bolker;,citation_author=Steve Walker;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=https://www.jstatsoft.org/index.php/jss/article/view/v067i01;,citation_issue=1;,citation_doi=10.18637/jss.v067.i01;,citation_volume=67;,citation_journal_title=Journal of Statistical Software;">
@@ -201,7 +154,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unconditional-multilingual.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -227,7 +180,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link active">
+  <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span></a>
   </div>
 </li>
@@ -245,7 +198,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -255,21 +208,14 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#the-equation" id="toc-the-equation" class="nav-link active" data-scroll-target="#the-equation"><span class="header-section-number">3.1</span> The Equation</a></li>
-  <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">3.2</span> Run Models</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -286,171 +232,41 @@ window.Quarto = {
 </header>
 
 
-<p>An <em>unconditional</em> multilevel model is a model with no independent variables. One should always run an unconditional model as the first step of a multilevel model in order to get a sense of the way that variation is apportioned in the model across the different levels.</p>
-<section id="the-equation" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">3.1</span> The Equation</h2>
-<p><span id="eq-MLMunconditional"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij} \tag{3.1}\]</span></span></p>
-<p>The Intraclass Correlation Coefficient (ICC) is given by:</p>
-<p><span id="eq-ICCunconditional"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{3.2}\]</span></span></p>
-<p>In a two level multilevel model, the ICC provides a measure of the amount of variation attributable to Level 2.</p>
-</section>
-<section id="run-models" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="run-models"><span class="header-section-number">3.2</span> Run Models</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
-<div class="tab-content" data-group="language">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta <span class="co">// use data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-MixedModels" class="csl-entry" role="listitem">
+Bates, D. (2024). <em><span class="nocase">MixedModels.jl
+Documentation</span></em>. <a href="https://juliastats.org/MixedModels.jl/stable/">https://juliastats.org/MixedModels.jl/stable/</a>
 </div>
-<div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: <span class="co">// unconditional model</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Performing EM optimization ...
-
-Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -9856.1548  
-Iteration 1:  Log likelihood = -9856.1548  
-
-Computing standard errors ...
-
-Mixed-effects ML regression                           Number of obs    = 3,000
-Group variable: country                               Number of groups =    30
-                                                      Obs per group:
-                                                                   min =   100
-                                                                   avg = 100.0
-                                                                   max =   100
-                                                      Wald chi2(0)     =     .
-Log likelihood = -9856.1548                           Prob &gt; chi2      =     .
-
-------------------------------------------------------------------------------
-     outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
--------------+----------------------------------------------------------------
-       _cons |   53.46757   .3539097   151.08   0.000     52.77392    54.16122
-------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------
-  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
------------------------------+------------------------------------------------
-country: Identity            |
-                  var(_cons) |   3.348734   .9702594      1.897816    5.908906
------------------------------+------------------------------------------------
-               var(Residual) |   40.88284   1.060908       38.8555    43.01597
-------------------------------------------------------------------------------
-LR test vs. linear model: chibar2(01) = 169.64        Prob &gt;= chibar2 = 0.0000</code></pre>
+<div id="ref-JSSv067i01" class="csl-entry" role="listitem">
+Bates, D., Mächler, M., Bolker, B., &amp; Walker, S. (2015). Fitting
+linear mixed-effects models using lme4. <em>Journal of Statistical
+Software</em>, <em>67</em>(1), 1–48. <a href="https://doi.org/10.18637/jss.v067.i01">https://doi.org/10.18637/jss.v067.i01</a>
 </div>
+<div id="ref-JuliaArticle" class="csl-entry" role="listitem">
+Bezanson, J., Edelman, A., Karpinski, S., &amp; Shah, V. B. (2017).
+Julia: A fresh approach to numerical computing. <em>SIAM Review</em>,
+<em>59</em>(1), 65–98. <a href="https://doi.org/10.1137/141000671">https://doi.org/10.1137/141000671</a>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Intraclass correlation
-
-------------------------------------------------------------------------------
-                       Level |        ICC   Std. err.     [95% conf. interval]
------------------------------+------------------------------------------------
-                     country |   .0757091   .0203761      .0442419    .1265931
-------------------------------------------------------------------------------</code></pre>
+<div id="ref-RProgram" class="csl-entry" role="listitem">
+R Core Team. (2023). <em>R: A language and environment for statistical
+computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
+<div id="ref-Schanen2021" class="csl-entry" role="listitem">
+Schanen, J. (2021). <em>Math person (<span>Strogatz Prize</span>
+entry)</em>. National Museum of Mathematics.
 </div>
+<div id="ref-StataCorp2021:2" class="csl-entry" role="listitem">
+StataCorp. (2021). <em>Stata 17 multilevel mixed effects reference
+manual</em>. Stata Press.
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fit0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df) <span class="co"># unconditional model</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed model fit by REML ['lmerMod']
-Formula: outcome ~ (1 | country)
-   Data: df
-
-REML criterion at convergence: 19712.5
-
-Scaled residuals: 
-     Min       1Q   Median       3Q      Max 
--2.97650 -0.68006  0.00936  0.67580  3.03510 
-
-Random effects:
- Groups   Name        Variance Std.Dev.
- country  (Intercept)  3.478   1.865   
- Residual             40.883   6.394   
-Number of obs: 3000, groups:  country, 30
-
-Fixed effects:
-            Estimate Std. Error t value
-(Intercept)    53.47       0.36   148.5</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>performance<span class="sc">::</span><span class="fu">icc</span>(fit0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># Intraclass Correlation Coefficient
-
-    Adjusted ICC: 0.078
-  Unadjusted ICC: 0.078</code></pre>
-</div>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">MixedModelsExtras</span>, </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>m0 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         <span class="pp">@formula</span>(outcome <span class="op">~</span> (<span class="fl">1</span> <span class="op">|</span> country)), df) <span class="co"># unconditional model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed model fit by maximum likelihood
- outcome ~ 1 + (1 | country)
-   logLik   -2 logLik     AIC       AICc        BIC    
- -9856.1548 19712.3097 19718.3097 19718.3177 19736.3288
-
-Variance components:
-            Column   Variance Std.Dev.
-country  (Intercept)   3.34871 1.82995
-Residual              40.88285 6.39397
- Number of obs: 3000; levels of grouping factors: 30
-
-  Fixed-effects parameters:
-──────────────────────────────────────────────────
-               Coef.  Std. Error       z  Pr(&gt;|z|)
-──────────────────────────────────────────────────
-(Intercept)  53.4676    0.353908  151.08    &lt;1e-99
-──────────────────────────────────────────────────</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icc</span>(m0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>0.07570852291396266</code></pre>
-</div>
-</div>
-</div>
+<div id="ref-Thoreau1975" class="csl-entry" role="listitem">
+Thoreau, H. D. (1975). The commercial spirit of modern times. In J. J.
+Moldenhauer, E. Moser, &amp; A. C. Kern (Eds.), <em>Early essays and
+miscellanies</em>. Princeton University Press.
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -986,14 +802,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./descriptives-multilingual.html" class="pagination-link  aria-label=" &lt;span="" statistics&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span>
+      <a href="./longitudinal-multilingual.html" class="pagination-link  aria-label=" &lt;span="" multilevel="" models&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cross-sectional-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Cross Sectional Multilevel Models</span>">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1001,4 +814,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

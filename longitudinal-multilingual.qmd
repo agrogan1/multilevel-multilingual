@@ -19,12 +19,6 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 The data employed in these examples are a longitudinal extension of the data described in @sec-data.
 
-::: {.callout-tip}
-## Graphing Longitudinal Data
-
-In the section on *cross-sectional* multilevel models, I employed *scatterplots* to graph the data. In longitudinal models, *time* is a variable of special interest. Often, in graphing *longitudinal* data--especially when graphing outcomes by time--it makes more sense to use *linear fit* plots, although a *scatterplot* could be employed as well. 
-:::
-
 ## The Equation
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
