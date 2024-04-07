@@ -8,6 +8,28 @@
 
 Below, I describe the use of [Stata](https://www.stata.com/) [@StataCorp2021:2], [R](https://www.r-project.org/) [@RProgram; @JSSv067i01], and [Julia](https://www.julialang.org/) [@JuliaArticle; @MixedModels] to estimate multilevel models. 
 
+All of these software packages can estimate multilevel models. However, there are substantial differences between the different packages: Stata is proprietary *for cost* software, which is very well documented and very intuitive. R is free open source software which is less intuitive, but there are many excellent resources for learning R. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more *stable* than Julia which is still evolving software.
+
+-------------------------------------------------------------
+Software    Cost       Ease of Use
+----------- ---------- --------------------------------------
+Stata       some cost  learning curve, but intuitive
+                       for both multilevel modeling and
+                       graphing.
+
+R           free       learning curve: intuitive for 
+                       multilevel modeling; but steeper
+                       learning curve for graphing.
+
+Julia       free       learning curve: steeper learning curve
+                       for multilevel modeling; and very steep
+                       learning curve for graphing. Graphics
+                       libraries are very much under development
+                       and in flux.
+-------------------------------------------------------------
+
+: Software for Multilevel Modeling {#tbl-software}
+
 ::: {.callout-tip}
 ## Results Will Vary Somewhat
 
