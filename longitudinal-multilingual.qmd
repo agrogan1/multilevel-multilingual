@@ -139,7 +139,8 @@ dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
 m2A = fit(MixedModel, @formula(outcome ~ t + warmth + 
                                  physical_punishment + 
                                  group + HDI +
-                                 (1 + warmth | country) +
+                                 (1 | country) + 
+                                 (0 + warmth | country) +
                                  (1 | id)), dfL)
 
 ```
@@ -151,7 +152,8 @@ m2A = fit(MixedModel, @formula(outcome ~ t + warmth +
 m2B = fit(MixedModel, @formula(outcome ~ t * (warmth + 
                                  physical_punishment + 
                                  group + HDI) +
-                                 (1 + warmth | country) +
+                                 (1 | country) +
+                                 (0 + warmth | country) +
                                  (1 | id)), dfL)
 
 ```
