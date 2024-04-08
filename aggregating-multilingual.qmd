@@ -1,0 +1,107 @@
+# Aggregating Data
+
+```{r}
+#| label: unconditionalsetup
+#| echo: false
+#| output: false
+
+library(Statamarkdown)
+
+library(lme4) 
+
+library(JuliaCall)
+
+julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
+
+```
+
+In many instances, we may wish to aggregate data. For example, we may wish to create variables representing the average level of an indicator across a group. Aggregating data can also be useful in creating group level means, and is an important part of the correlated random effects model.
+
+In the examples below, I create a group level variable for `warmth`, representing the average level of warmth in each group. If warmth is denoted by $\text{warmth}_{ij}$ then the group level variable is denoted by $\overline{warmth}_{.j}$.
+
+::: {.panel-tabset group="language"}
+
+### Stata
+
+#### Get The Data
+
+```{stata, collectcode=TRUE}
+
+use simulated_multilevel_data.dta
+
+```
+
+#### Create A Group Level Variable
+
+```{stata, collectcode=TRUE}
+
+bysort country: egen mean_warmth = mean(warmth)
+
+```
+
+### R
+
+#### Get The Data
+
+```{r}
+
+library(haven)
+
+df <- read_dta("simulated_multilevel_data.dta")
+
+```
+
+#### Create A Group Level Variable
+
+```{r}
+#| output: false
+
+library(dplyr) 
+
+df <- df %>% 
+  group_by(country) %>%
+  mutate(mean_warmth = mean(warmth))
+
+```
+
+### Julia
+
+#### Get The Data
+
+```{julia}
+#| output: false
+
+using Tables, MixedModels, MixedModelsExtras, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+df = DataFrame(load("simulated_multilevel_data.dta"))
+
+```
+
+#### Change Country To Categorical
+
+```{julia}
+#| output: false
+
+@transform!(df, :country = categorical(:country))
+
+```
+
+#### Create A Group Level Variable
+
+```{julia}
+#| output: false
+
+transform(groupby(df, :country), :warmth => mean)
+
+```
+
+```{julia}
+
+describe(df)
+
+```
+
+:::
+
+
+
