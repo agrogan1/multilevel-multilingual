@@ -269,22 +269,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">summarize</span> outcome warmth physical_punishment HDI</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">tabulate</span> <span class="fu">group</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">tabulate</span> <span class="kw">identity</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">tabulate</span> intervention</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Variable |        Obs        Mean    Std. dev.       Min        Max
 -------------+---------------------------------------------------------
-     outcome |      3,000    53.46757     6.65179   33.39014   76.75101
-      warmth |      3,000    3.524333    1.889956          0          7
-physical_p~t |      3,000    2.494667    1.380075          0          5
+     outcome |      3,000    53.43327    6.530996   30.60798   75.83553
+      warmth |      3,000    3.521667    1.888399          0          7
+physical_p~t |      3,000    2.478667    1.360942          0          5
          HDI |      3,000    64.76667    17.24562         33         87
 
 
-  arbitrary |
+hypothetica |
+ l identity |
       group |
    variable |      Freq.     Percent        Cum.
 ------------+-----------------------------------
           1 |      1,507       50.23       50.23
           2 |      1,493       49.77      100.00
+------------+-----------------------------------
+      Total |      3,000      100.00
+
+
+   recieved |
+interventio |
+          n |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |      1,547       51.57       51.57
+          2 |      1,453       48.43      100.00
 ------------+-----------------------------------
       Total |      3,000      100.00</code></pre>
 </div>
@@ -300,11 +313,13 @@ physical_p~t |      3,000    2.494667    1.380075          0          5
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>country)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>group <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>group)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>identity <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>identity)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>intervention <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>intervention)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    country          HDI            family            id            group   
+<pre><code>    country          HDI            family            id            identity
  1      : 100   Min.   :33.00   Min.   :  1.00   Length:3000        1:1507  
  2      : 100   1st Qu.:53.00   1st Qu.: 25.75   Class :character   2:1493  
  3      : 100   Median :70.00   Median : 50.50   Mode  :character           
@@ -312,14 +327,14 @@ physical_p~t |      3,000    2.494667    1.380075          0          5
  5      : 100   3rd Qu.:81.00   3rd Qu.: 75.25                              
  6      : 100   Max.   :87.00   Max.   :100.00                              
  (Other):2400                                                               
- physical_punishment     warmth         outcome     
- Min.   :0.000       Min.   :0.000   Min.   :33.39  
- 1st Qu.:2.000       1st Qu.:2.000   1st Qu.:48.78  
- Median :3.000       Median :4.000   Median :53.64  
- Mean   :2.495       Mean   :3.524   Mean   :53.47  
- 3rd Qu.:3.250       3rd Qu.:5.000   3rd Qu.:58.06  
- Max.   :5.000       Max.   :7.000   Max.   :76.75  
-                                                    </code></pre>
+ intervention physical_punishment     warmth         outcome     
+ 1:1547       Min.   :0.000       Min.   :0.000   Min.   :30.61  
+ 2:1453       1st Qu.:2.000       1st Qu.:2.000   1st Qu.:49.02  
+              Median :2.000       Median :4.000   Median :53.45  
+              Mean   :2.479       Mean   :3.522   Mean   :53.43  
+              3rd Qu.:3.000       3rd Qu.:5.000   3rd Qu.:57.86  
+              Max.   :5.000       Max.   :7.000   Max.   :75.84  
+                                                                 </code></pre>
 </div>
 </div>
 </div>
@@ -333,24 +348,27 @@ physical_p~t |      3,000    2.494667    1.380075          0          5
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>group <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>group))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>identity <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>identity))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>intervention <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>intervention))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(df) <span class="co"># descriptive statistics</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>8×7 DataFrame
- Row │ variable             mean     min      median   max     nmissing  eltyp ⋯
-     │ Symbol               Union…   Any      Union…   Any     Int64     Union ⋯
+<pre><code>9×7 DataFrame
+ Row │ variable             mean     min     median  max      nmissing  eltype ⋯
+     │ Symbol               Union…   Any     Union…  Any      Int64     Union  ⋯
 ─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ country                       1.0               30.0           0  Union ⋯
-   2 │ HDI                  64.7667  33.0     70.0     87.0           0  Union
-   3 │ family               50.5     1.0      50.5     100.0          0  Union
-   4 │ id                            1.1               9.99           0  Union
-   5 │ group                         1.0               2.0            0  Union ⋯
-   6 │ physical_punishment  2.49467  0.0      3.0      5.0            0  Union
-   7 │ warmth               3.52433  0.0      4.0      7.0            0  Union
-   8 │ outcome              53.4676  33.3901  53.6426  76.751         0  Union
+   1 │ country                       1.0             30.0            0  Union{ ⋯
+   2 │ HDI                  64.7667  33.0    70.0    87.0            0  Union{
+   3 │ family               50.5     1.0     50.5    100.0           0  Union{
+   4 │ id                            1.1             9.99            0  Union{
+   5 │ identity                      1.0             2.0             0  Union{ ⋯
+   6 │ intervention                  1.0             2.0             0  Union{
+   7 │ physical_punishment  2.47867  0.0     2.0     5.0             0  Union{
+   8 │ warmth               3.52167  0.0     4.0     7.0             0  Union{
+   9 │ outcome              53.4333  30.608  53.449  75.8355         0  Union{ ⋯
                                                                 1 column omitted</code></pre>
 </div>
 </div>

@@ -33,7 +33,9 @@ We use `summarize` for *continuous* variables, and `tabulate` for *categorical* 
 
 summarize outcome warmth physical_punishment HDI
 
-tabulate group
+tabulate identity
+
+tabulate intervention
 
 ```
 
@@ -55,7 +57,9 @@ R's descriptive statistics functions rely heavily on whether a variable is a *nu
 
 df$country <- factor(df$country)
 
-df$group <- factor(df$group)
+df$identity <- factor(df$identity)
+
+df$intervention <- factor(df$intervention)
 
 summary(df)
 
@@ -79,7 +83,9 @@ Similarly to R, Julia relies on the idea of *variable type*. I use `transform` t
 
 @transform!(df, :country = categorical(:country))
 
-@transform!(df, :group = categorical(:group))
+@transform!(df, :identity = categorical(:identity))
+
+@transform!(df, :intervention = categorical(:intervention))
 
 ```
 

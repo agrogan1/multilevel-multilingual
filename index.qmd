@@ -19,9 +19,10 @@ Stata       some cost  learning curve, but intuitive
 
 R           free       learning curve: intuitive for 
                        multilevel modeling; but steeper
-                       learning curve for graphing.
+                       learning curve for graphing (`ggplot`).
 
-Julia       free       learning curve: steeper learning curve
+Julia       free       steep learning curve in general: 
+                       steep learning curve
                        for multilevel modeling; and very steep
                        learning curve for graphing. Graphics
                        libraries are very much under development
@@ -44,6 +45,14 @@ Sometimes I have written commands out over multiple lines. I have done this for 
 1. By default, *Stata* ends a command at the end of a line. If you are going to write a multi-line command you should use the `///` line continuation characters.
 2. *R* is the software that most naturally can be written using multiple lines, as R commands are usually clearly encased in parentheses (`()`) or continued with `+` signs.
 3. Like *Stata*, *Julia* expects commands to end at the end of a line. If you are going to write a mult-line command, all commands except for the last line should end in a character that clearly indicates continuation, like a `+` sign. An alternative is to encase the entire Julia command in an outer set of parentheses (`()`).
+:::
+
+::: {.callout-tip}
+## Running Statistical Packages in Quarto
+
+I used Quarto ([https://quarto.org/](https://quarto.org/)) to create this Appendix. Quarto is a programming and publishing environment that can run multiple programming languages, including Stata, R and Julia, and that can write to multiple output formats including HTML, PDF, and MS Word. To run Stata, I used the `Statamarkdown` library in R to connect Stata to Quarto. Quarto has a built in connection to R, and runs R without issue. To run Julia, I used the `JuliaCall` library in R to connect Quarto to Julia.
+
+Of course, each of these programs can be run by itself, if you have them installed on your computer.
 :::
 
 ## The Data {#sec-data}
