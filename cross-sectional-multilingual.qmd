@@ -23,7 +23,7 @@ $$\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} +$$ {#eq-MLMsubstant
 
 $$\beta_2 \text{physical punishment}_{ij} +$$
 
-$$\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} +$$
+$$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} +$$
 
 $$u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}$$ 
 
@@ -86,7 +86,7 @@ use simulated_multilevel_data.dta
 
 ```{stata}
 
-mixed outcome warmth physical_punishment group HDI || country: warmth
+mixed outcome warmth physical_punishment i.identity i.intervention HDI || country: warmth
 
 ```
 
@@ -108,7 +108,7 @@ df <- read_dta("simulated_multilevel_data.dta")
 #| warning: false
 
 fit1 <- lmer(outcome ~ warmth + physical_punishment + 
-               group + HDI +
+               identity + intervention + HDI +
                (1 + warmth || country),
              data = df)
 
@@ -143,7 +143,7 @@ df = DataFrame(load("simulated_multilevel_data.dta"))
 ```{julia}
 
 m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment + 
-               group + HDI +
+               identity + intervention + HDI +
                (1 | country) +
                (0 + warmth | country)), df)
 

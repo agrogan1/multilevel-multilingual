@@ -23,7 +23,7 @@ The data employed in these examples are a longitudinal extension of the data des
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
 
-$$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
+$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
 
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
@@ -49,7 +49,7 @@ use simulated_multilevel_longitudinal_data.dta
 
 ```{stata}
 
-mixed outcome t warmth physical_punishment group HDI || country: warmth
+mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth
 
 ```
 
@@ -57,7 +57,7 @@ mixed outcome t warmth physical_punishment group HDI || country: warmth
 
 ```{stata}
 
-mixed outcome c.t##(c.warmth c.physical_punishment i.group c.HDI) || country: warmth
+mixed outcome c.t##(c.warmth c.physical_punishment i.identity i.intervention c.HDI) || country: warmth
 
 ```
 
@@ -80,7 +80,7 @@ dfL <- read_dta("simulated_multilevel_longitudinal_data.dta")
 ```{r}
 
 fit2A <- lmer(outcome ~ t + warmth + physical_punishment + 
-               group + HDI +
+               identity + intervention + HDI +
                (1 | country/id),
              data = dfL)
 
@@ -93,7 +93,7 @@ summary(fit2A)
 ```{r}
 
 fit2B <- lmer(outcome ~ t *(warmth + physical_punishment + 
-               group + HDI) +
+               identity + intervention + HDI) +
                (1 | country/id),
              data = dfL)
 
@@ -132,7 +132,8 @@ dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
 
 m2A = fit(MixedModel, @formula(outcome ~ t + warmth + 
                                  physical_punishment + 
-                                 group + HDI +
+                                 identity + intervention + 
+                                 HDI +
                                  (1 | country) + 
                                  (0 + warmth | country) +
                                  (1 | id)), dfL)
@@ -145,7 +146,8 @@ m2A = fit(MixedModel, @formula(outcome ~ t + warmth +
 
 m2B = fit(MixedModel, @formula(outcome ~ t * (warmth + 
                                  physical_punishment + 
-                                 group + HDI) +
+                                 identity + intervention + 
+                                   HDI) +
                                  (1 | country) +
                                  (0 + warmth | country) +
                                  (1 | id)), dfL)

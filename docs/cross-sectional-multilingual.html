@@ -312,7 +312,7 @@ window.Quarto = {
 <p>Recall the general model of <a href="index.html#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a>, and the syntax outlined in <a href="index.html#sec-syntax" class="quarto-xref"><span>Section 1.3</span></a>. Below in <a href="#eq-MLMsubstantive" class="quarto-xref">Equation&nbsp;<span>4.1</span></a>, we consider a more substantive example.</p>
 <p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \tag{4.1}\]</span></span></p>
 <p><span class="math display">\[\beta_2 \text{physical punishment}_{ij} +\]</span></p>
-<p><span class="math display">\[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} +\]</span></p>
+<p><span class="math display">\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} +\]</span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}\]</span></p>
 </section>
 <section id="correlated-and-uncorrelated-random-effects" class="level2" data-number="4.2">
@@ -322,7 +322,7 @@ window.Quarto = {
 var(u_{0j}) &amp; 0 \\
 0 &amp; var(u_{1j})
 \end{bmatrix} \tag{4.2}\]</span></span></p>
-<p>As discussed in Chapter 6, however, one can consider a multilevel model in which the random effects are correlated, as is the case in <a href="#eq-varcovaruns" class="quarto-xref">Equation&nbsp;<span>4.3</span></a>.</p>
+<p>As discussed in the Chapter on multilevel models with cross-sectional data, however, one can consider a multilevel model in which the random effects are correlated, as is the case in <a href="#eq-varcovaruns" class="quarto-xref">Equation&nbsp;<span>4.3</span></a>.</p>
 <p><span id="eq-varcovaruns"><span class="math display">\[\begin{bmatrix}
 var(u_{0j}) &amp; cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
@@ -387,16 +387,14 @@ Table&nbsp;4.1: Correlated and Uncorrelated Random Effects
 <h4 data-number="4.3.0.2" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">4.3.0.2</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood =  -9668.198  
-Iteration 1:  Log likelihood = -9667.9551  
-Iteration 2:  Log likelihood = -9667.9534  
-Iteration 3:  Log likelihood = -9667.9533  
-Iteration 4:  Log likelihood = -9667.9532  
+Iteration 0:  Log likelihood = -9626.6279  
+Iteration 1:  Log likelihood =  -9626.607  
+Iteration 2:  Log likelihood =  -9626.607  
 
 Computing standard errors ...
 
@@ -406,29 +404,30 @@ Group variable: country                              Number of groups =     30
                                                                   min =    100
                                                                   avg =  100.0
                                                                   max =    100
-                                                     Wald chi2(4)     = 401.26
-Log likelihood = -9667.9532                          Prob &gt; chi2      = 0.0000
+                                                     Wald chi2(5)     = 334.14
+Log likelihood =  -9626.607                          Prob &gt; chi2      = 0.0000
 
 -------------------------------------------------------------------------------------
             outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
 --------------------+----------------------------------------------------------------
-             warmth |   .9616447   .0581825    16.53   0.000     .8476091     1.07568
-physical_punishment |  -.8453802   .0798155   -10.59   0.000    -1.001816   -.6889448
-              group |   1.084344   .2200539     4.93   0.000     .6530461    1.515642
-                HDI |    .010557   .0204522     0.52   0.606    -.0295286    .0506426
-              _cons |   49.87963   1.436612    34.72   0.000     47.06392    52.69534
+             warmth |   .8345368   .0637213    13.10   0.000     .7096453    .9594282
+physical_punishment |  -.9916657   .0797906   -12.43   0.000    -1.148052   -.8352791
+         2.identity |  -.3004767   .2170295    -1.38   0.166    -.7258466    .1248933
+     2.intervention |   .6396427   .2174519     2.94   0.003     .2134448    1.065841
+                HDI |   -.003228   .0199257    -0.16   0.871    -.0422817    .0358256
+              _cons |   52.99991   1.371257    38.65   0.000      50.3123    55.68753
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Independent         |
-                 var(warmth) |   1.83e-06   .0000173      1.76e-14    190.9774
-                  var(_cons) |   3.370262   .9633726      1.924651    5.901676
+                 var(warmth) |   .0227504   .0257784      .0024689    .2096436
+                  var(_cons) |   2.963975   .9737647      1.556777    5.643163
 -----------------------------+------------------------------------------------
-               var(Residual) |   36.01906   .9346936      34.23291    37.89842
+               var(Residual) |   34.97499   .9097109      33.23668    36.80422
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 198.01                Prob &gt; chi2 = 0.0000
+LR test vs. linear model: chi2(2) = 205.74                Prob &gt; chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
@@ -448,44 +447,46 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <h4 data-number="4.3.0.4" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">4.3.0.4</span> Run The Model</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
-Formula: outcome ~ warmth + physical_punishment + group + HDI + ((1 |  
-    country) + (0 + warmth | country))
+Formula: outcome ~ warmth + physical_punishment + identity + intervention +  
+    HDI + ((1 | country) + (0 + warmth | country))
    Data: df
 
-REML criterion at convergence: 19350.3
+REML criterion at convergence: 19268.8
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.4496 -0.6807  0.0016  0.6864  3.1792 
+-3.9774 -0.6563  0.0187  0.6645  3.6730 
 
 Random effects:
- Groups    Name        Variance  Std.Dev.
- country   (Intercept)  3.611568 1.90041 
- country.1 warmth       0.001876 0.04331 
- Residual              36.049124 6.00409 
+ Groups    Name        Variance Std.Dev.
+ country   (Intercept)  3.19056 1.786   
+ country.1 warmth       0.02465 0.157   
+ Residual              35.01782 5.918   
 Number of obs: 3000, groups:  country, 30
 
 Fixed effects:
-                    Estimate Std. Error t value
-(Intercept)         49.88754    1.48203  33.662
-warmth               0.96155    0.05875  16.367
-physical_punishment -0.84556    0.07986 -10.588
-group                1.08471    0.22017   4.927
-HDI                  0.01044    0.02116   0.493
+                     Estimate Std. Error t value
+(Intercept)         52.672655   1.479571  35.600
+warmth               0.834562   0.064252  12.989
+physical_punishment -0.991892   0.079845 -12.423
+identity            -0.300350   0.217179  -1.383
+intervention         0.639059   0.217603   2.937
+HDI                 -0.003395   0.020596  -0.165
 
 Correlation of Fixed Effects:
-            (Intr) warmth physc_ group 
-warmth      -0.126                     
-physcl_pnsh -0.135 -0.025              
-group       -0.218 -0.010 -0.019       
-HDI         -0.925 -0.006  0.008 -0.001</code></pre>
+            (Intr) warmth physc_ idntty intrvn
+warmth      -0.121                            
+physcl_pnsh -0.145 -0.003                     
+identity    -0.213 -0.012 -0.003              
+interventin -0.223  0.034  0.022 -0.018       
+HDI         -0.902 -0.006  0.009 -0.001  0.000</code></pre>
 </div>
 </div>
 </section>
@@ -510,31 +511,32 @@ HDI         -0.925 -0.006  0.008 -0.001</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>               group <span class="op">+</span> HDI <span class="op">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>               identity <span class="op">+</span> intervention <span class="op">+</span> HDI <span class="op">+</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">0</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
- outcome ~ 1 + warmth + physical_punishment + group + HDI + (1 | country) + (0 + warmth | country)
+ outcome ~ 1 + warmth + physical_punishment + identity + intervention + HDI + (1 | country) + (0 + warmth | country)
    logLik   -2 logLik     AIC       AICc        BIC    
- -9667.9532 19335.9065 19351.9065 19351.9546 19399.9574
+ -9626.6070 19253.2140 19271.2140 19271.2742 19325.2713
 
 Variance components:
-            Column   Variance Std.Dev.  Corr.
-country  (Intercept)   3.36982 1.83571
-         warmth        0.00000 0.00000   .  
-Residual              36.01912 6.00159
+            Column    Variance Std.Dev.   Corr.
+country  (Intercept)   2.963849 1.721583
+         warmth        0.022756 0.150852   .  
+Residual              34.974984 5.913965
  Number of obs: 3000; levels of grouping factors: 30
 
   Fixed-effects parameters:
 ─────────────────────────────────────────────────────────────
                           Coef.  Std. Error       z  Pr(&gt;|z|)
 ─────────────────────────────────────────────────────────────
-(Intercept)          49.8796      1.43653     34.72    &lt;1e-99
-warmth                0.961645    0.058182    16.53    &lt;1e-60
-physical_punishment  -0.84538     0.0798155  -10.59    &lt;1e-25
-group                 1.08434     0.220054     4.93    &lt;1e-06
-HDI                   0.0105571   0.0204509    0.52    0.6057
+(Intercept)          52.6608      1.43785     36.62    &lt;1e-99
+warmth                0.834537    0.0637228   13.10    &lt;1e-38
+physical_punishment  -0.991665    0.0797906  -12.43    &lt;1e-34
+identity             -0.300475    0.217029    -1.38    0.1662
+intervention          0.639641    0.217452     2.94    0.0033
+HDI                  -0.0032286   0.0199255   -0.16    0.8713
 ─────────────────────────────────────────────────────────────</code></pre>
 </div>
 </div>

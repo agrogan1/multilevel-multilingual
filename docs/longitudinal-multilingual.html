@@ -294,7 +294,7 @@ window.Quarto = {
 <section id="the-equation" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">5.2</span> The Equation</h2>
 <p><span id="eq-MLM-longitudinal"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{5.1}\]</span></span></p>
-<p><span class="math display">\[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]</span></p>
+<p><span class="math display">\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]</span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]</span></p>
 <p><span class="math display">\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]</span></p>
 </section>
@@ -317,14 +317,13 @@ window.Quarto = {
 <h5 data-number="5.3.0.2.1" class="anchored" data-anchor-id="main-effects-only"><span class="header-section-number">5.3.0.2.1</span> Main Effects Only</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood =  -28795.37  
-Iteration 1:  Log likelihood = -28795.232  
-Iteration 2:  Log likelihood = -28795.232  
+Iteration 0:  Log likelihood = -28739.506  
+Iteration 1:  Log likelihood = -28739.506  
 
 Computing standard errors ...
 
@@ -334,30 +333,31 @@ Group variable: country                             Number of groups =      30
                                                                  min =     300
                                                                  avg =   300.0
                                                                  max =     300
-                                                    Wald chi2(5)     = 1366.93
-Log likelihood = -28795.232                         Prob &gt; chi2      =  0.0000
+                                                    Wald chi2(6)     = 1119.81
+Log likelihood = -28739.506                         Prob &gt; chi2      =  0.0000
 
 -------------------------------------------------------------------------------------
             outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
 --------------------+----------------------------------------------------------------
-                  t |   .9882371   .0761439    12.98   0.000     .8389979    1.137476
-             warmth |   .9427117   .0342282    27.54   0.000     .8756256    1.009798
-physical_punishment |  -.9020727   .0452759   -19.92   0.000    -.9908119   -.8133336
-              group |   .9861238   .1249047     7.90   0.000     .7413151    1.230933
-                HDI |   .0073726    .020661     0.36   0.721    -.0331222    .0478674
-              _cons |   49.45537   1.414072    34.97   0.000     46.68384     52.2269
+                  t |   .9443446   .0756408    12.48   0.000     .7960914    1.092598
+             warmth |   .9123903   .0430042    21.22   0.000     .8281035     .996677
+physical_punishment |  -.9881587   .0451732   -21.87   0.000    -1.076696   -.8996209
+         2.identity |  -.1241465   .1242225    -1.00   0.318     -.367618    .1193251
+     2.intervention |   .8575839   .1245179     6.89   0.000     .6135332    1.101635
+                HDI |  -.0025173   .0191696    -0.13   0.896    -.0400891    .0350544
+              _cons |   51.54528   1.304146    39.52   0.000      48.9892    54.10136
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Independent         |
-                 var(warmth) |   .0024684   .0082517      3.52e-06     1.72956
-                  var(_cons) |   3.663663   .9914845      2.155548     6.22692
+                 var(warmth) |   .0229349   .0135353      .0072136    .0729194
+                  var(_cons) |     3.0009   .8550708      1.716768    5.245553
 -----------------------------+------------------------------------------------
-               var(Residual) |   34.78483   .5200702       33.7803    35.81923
+               var(Residual) |   34.31935   .5130963       33.3283    35.33988
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 805.75                Prob &gt; chi2 = 0.0000
+LR test vs. linear model: chi2(2) = 767.22                Prob &gt; chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
@@ -367,14 +367,13 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <h5 data-number="5.3.0.2.2" class="anchored" data-anchor-id="interactions-with-time"><span class="header-section-number">5.3.0.2.2</span> Interactions With Time</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mixed outcome c.t##(c.warmth c.physical_punishment i.<span class="fu">group</span> c.HDI) || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mixed outcome c.t##(c.warmth c.physical_punishment i.<span class="kw">identity</span> i.intervention c.HDI) || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood =  -28794.99  
-Iteration 1:  Log likelihood = -28794.855  
-Iteration 2:  Log likelihood = -28794.855  
+Iteration 0:  Log likelihood = -28738.554  
+Iteration 1:  Log likelihood = -28738.554  
 
 Computing standard errors ...
 
@@ -384,41 +383,45 @@ Group variable: country                             Number of groups =      30
                                                                  min =     300
                                                                  avg =   300.0
                                                                  max =     300
-                                                    Wald chi2(9)     = 1365.73
-Log likelihood = -28794.855                         Prob &gt; chi2      =  0.0000
+                                                    Wald chi2(11)    = 1122.75
+Log likelihood = -28738.554                         Prob &gt; chi2      =  0.0000
 
 ---------------------------------------------------------------------------------------
               outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
 ----------------------+----------------------------------------------------------------
-                    t |   1.047448   .3619795     2.89   0.004     .3379816    1.756915
-               warmth |   .8869901   .0876058    10.12   0.000      .715286    1.058694
-  physical_punishment |   -.893285   .1194705    -7.48   0.000    -1.127443    -.659127
-              2.group |   .9648545   .3292217     2.93   0.003     .3195918    1.610117
-                  HDI |   .0120622    .022474     0.54   0.591    -.0319861    .0561104
+                    t |   .7537359   .3719996     2.03   0.043     .0246302    1.482842
+               warmth |   .8198365   .0911059     9.00   0.000     .6412723    .9984008
+  physical_punishment |  -1.000348   .1198049    -8.35   0.000    -1.235162   -.7655353
+           2.identity |  -.2340191   .3271243    -0.72   0.474     -.875171    .4071328
+       2.intervention |   .6597456   .3275877     2.01   0.044     .0176856    1.301806
+                  HDI |  -.0005531   .0210866    -0.03   0.979     -.041882    .0407757
                       |
-         c.t#c.warmth |   .0277903   .0402665     0.69   0.490    -.0511306    .1067112
+         c.t#c.warmth |   .0463746   .0402459     1.15   0.249    -.0325059    .1252551
                       |
                   c.t#|
-c.physical_punishment |  -.0041479   .0553051    -0.08   0.940    -.1125439    .1042482
+c.physical_punishment |   .0061255   .0551491     0.11   0.912    -.1019647    .1142157
                       |
-            group#c.t |
-                   2  |   .0105177   .1523009     0.07   0.945    -.2879865    .3090219
+         identity#c.t |
+                   2  |   .0548965   .1513015     0.36   0.717     -.241649    .3514421
                       |
-            c.t#c.HDI |   -.002342   .0044172    -0.53   0.596    -.0109996    .0063155
+     intervention#c.t |
+                   2  |   .0990704    .151503     0.65   0.513      -.19787    .3960108
                       |
-                _cons |   50.32233   1.572089    32.01   0.000      47.2411    53.40357
+            c.t#c.HDI |  -.0009791   .0043888    -0.22   0.823    -.0095811    .0076229
+                      |
+                _cons |   51.92503   1.494157    34.75   0.000     48.99654    54.85352
 ---------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Independent         |
-                 var(warmth) |   .0025661   .0083259      4.44e-06    1.482773
-                  var(_cons) |    3.66269    .991533      2.154617    6.226305
+                 var(warmth) |   .0228292   .0135078      .0071588    .0728013
+                  var(_cons) |   3.001849   .8552796       1.71738    5.247001
 -----------------------------+------------------------------------------------
-               var(Residual) |   34.78158   .5200283      33.77713     35.8159
+               var(Residual) |   34.31227   .5129896      33.32141    35.33258
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 805.90                Prob &gt; chi2 = 0.0000
+LR test vs. linear model: chi2(2) = 767.35                Prob &gt; chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
@@ -441,46 +444,49 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <h5 data-number="5.3.0.4.1" class="anchored" data-anchor-id="main-effects-only-1"><span class="header-section-number">5.3.0.4.1</span> Main Effects Only</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit2A <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> t <span class="sc">+</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">|</span> country<span class="sc">/</span>id),</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> dfL)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
-Formula: outcome ~ t + warmth + physical_punishment + group + HDI + (1 |  
-    country/id)
+Formula: 
+outcome ~ t + warmth + physical_punishment + identity + intervention +  
+    HDI + (1 | country/id)
    Data: dfL
 
-REML criterion at convergence: 57088.4
+REML criterion at convergence: 57022.7
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.4471 -0.6226  0.0081  0.6153  3.1993 
+-3.6850 -0.6094 -0.0035  0.6133  3.6792 
 
 Random effects:
  Groups     Name        Variance Std.Dev.
- id:country (Intercept)  8.864   2.977   
- country    (Intercept)  3.924   1.981   
- Residual               26.008   5.100   
+ id:country (Intercept)  8.438   2.905   
+ country    (Intercept)  3.675   1.917   
+ Residual               26.036   5.103   
 Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)         49.494782   1.471780  33.629
-t                    0.987964   0.065840  15.005
-warmth               0.946259   0.038200  24.771
-physical_punishment -0.926880   0.049970 -18.549
-group                0.985786   0.153550   6.420
-HDI                  0.007543   0.021437   0.352
+                      Estimate Std. Error t value
+(Intercept)         50.6570397  1.4460656  35.031
+t                    0.9433806  0.0658755  14.321
+warmth               0.9140307  0.0379336  24.096
+physical_punishment -1.0087537  0.0497972 -20.257
+identity            -0.1319548  0.1517350  -0.870
+intervention         0.8591495  0.1520510   5.650
+HDI                  0.0007909  0.0207656   0.038
 
 Correlation of Fixed Effects:
-            (Intr) t      warmth physc_ group 
-t           -0.090                            
-warmth      -0.085  0.008                     
-physcl_pnsh -0.085  0.003 -0.019              
-group       -0.154  0.000 -0.013 -0.008       
-HDI         -0.943  0.000 -0.003  0.003  0.000</code></pre>
+            (Intr) t      warmth physc_ idntty intrvn
+t           -0.090                                   
+warmth      -0.091 -0.002                            
+physcl_pnsh -0.091 -0.007 -0.012                     
+identity    -0.152  0.000 -0.013 -0.003              
+interventin -0.160  0.000  0.039  0.019 -0.018       
+HDI         -0.930  0.000 -0.004  0.005  0.000  0.002</code></pre>
 </div>
 </div>
 </section>
@@ -488,54 +494,71 @@ HDI         -0.943  0.000 -0.003  0.003  0.000</code></pre>
 <h5 data-number="5.3.0.4.2" class="anchored" data-anchor-id="interactions-with-time-1"><span class="header-section-number">5.3.0.4.2</span> Interactions With Time</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fit2B <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> t <span class="sc">*</span>(warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>               group <span class="sc">+</span> HDI) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI) <span class="sc">+</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">|</span> country<span class="sc">/</span>id),</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> dfL)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
-Formula: outcome ~ t * (warmth + physical_punishment + group + HDI) +  
-    (1 | country/id)
+Formula: 
+outcome ~ t * (warmth + physical_punishment + identity + intervention +  
+    HDI) + (1 | country/id)
    Data: dfL
 
-REML criterion at convergence: 57107.3
+REML criterion at convergence: 57042.8
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.4431 -0.6248  0.0071  0.6183  3.1961 
+-3.7118 -0.6092 -0.0024  0.6150  3.6779 
 
 Random effects:
  Groups     Name        Variance Std.Dev.
- id:country (Intercept)  8.868   2.978   
- country    (Intercept)  3.925   1.981   
- Residual               26.014   5.100   
+ id:country (Intercept)  8.436   2.905   
+ country    (Intercept)  3.675   1.917   
+ Residual               26.046   5.104   
 Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
-                       Estimate Std. Error t value
-(Intercept)           49.453036   1.637740  30.196
-t                      1.008199   0.364915   2.763
-warmth                 0.865659   0.080487  10.755
-physical_punishment   -0.908148   0.110449  -8.222
-group                  0.966988   0.304936   3.171
-HDI                    0.012277   0.022761   0.539
-t:warmth               0.040170   0.035364   1.136
-t:physical_punishment -0.008932   0.049262  -0.181
-t:group                0.009180   0.131714   0.070
-t:HDI                 -0.002359   0.003820  -0.618
+                        Estimate Std. Error t value
+(Intercept)           51.3432052  1.6670196  30.799
+t                      0.5994732  0.4199189   1.428
+warmth                 0.8170912  0.0805355  10.146
+physical_punishment   -1.0097729  0.1113557  -9.068
+identity              -0.2446453  0.3041604  -0.804
+intervention           0.6604672  0.3046286   2.168
+HDI                    0.0026692  0.0221295   0.121
+t:warmth               0.0486211  0.0356217   1.365
+t:physical_punishment  0.0004964  0.0494590   0.010
+t:identity             0.0563140  0.1318043   0.427
+t:intervention         0.0995037  0.1319917   0.754
+t:HDI                 -0.0009379  0.0038233  -0.245
 
 Correlation of Fixed Effects:
-            (Intr) t      warmth physc_ group  HDI    t:wrmt t:phy_ t:grop
-t           -0.446                                                        
-warmth      -0.159  0.278                                                 
-physcl_pnsh -0.169  0.302 -0.022                                          
-group       -0.274  0.459 -0.010 -0.014                                   
-HDI         -0.900  0.227 -0.008  0.009 -0.001                            
-t:warmth     0.141 -0.316 -0.880  0.017  0.010  0.007                     
-t:physcl_pn  0.150 -0.338  0.017 -0.892  0.010 -0.007 -0.015              
-t:group      0.237 -0.532  0.009  0.012 -0.864  0.001 -0.012 -0.008       
-t:HDI        0.302 -0.676  0.018 -0.020  0.002 -0.336 -0.018  0.016 -0.002</code></pre>
+            (Intr) t      warmth physc_ idntty intrvn HDI    t:wrmt t:phy_
+t           -0.504                                                        
+warmth      -0.170  0.265                                                 
+physcl_pnsh -0.180  0.285 -0.005                                          
+identity    -0.266  0.397 -0.013 -0.002                                   
+interventin -0.279  0.417  0.039  0.019 -0.017                            
+HDI         -0.861  0.206 -0.007  0.012 -0.001  0.003                     
+t:warmth     0.151 -0.302 -0.882  0.001  0.011 -0.035  0.006              
+t:physcl_pn  0.161 -0.319  0.004 -0.894 -0.001 -0.017 -0.010 -0.003       
+t:identity   0.230 -0.458  0.011  0.000 -0.867  0.014  0.001 -0.013  0.002
+t:intervntn  0.242 -0.481 -0.035 -0.017  0.014 -0.867 -0.003  0.041  0.019
+t:HDI        0.301 -0.596  0.015 -0.027  0.002 -0.007 -0.346 -0.016  0.029
+            t:dntt t:ntrv
+t                        
+warmth                   
+physcl_pnsh              
+identity                 
+interventin              
+HDI                      
+t:warmth                 
+t:physcl_pn              
+t:identity               
+t:intervntn -0.016       
+t:HDI       -0.002  0.008</code></pre>
 </div>
 </div>
 </section>
@@ -564,35 +587,37 @@ t:HDI        0.302 -0.676  0.018 -0.020  0.002 -0.336 -0.018  0.016 -0.002</code
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>m2A <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> t <span class="op">+</span> warmth <span class="op">+</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                                 physical_punishment <span class="op">+</span> </span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                                 group <span class="op">+</span> HDI <span class="op">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span> </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">0</span> <span class="op">+</span> warmth <span class="op">|</span> country) <span class="op">+</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                                 identity <span class="op">+</span> intervention <span class="op">+</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                                 HDI <span class="op">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">0</span> <span class="op">+</span> warmth <span class="op">|</span> country) <span class="op">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
- outcome ~ 1 + t + warmth + physical_punishment + group + HDI + (1 | country) + (0 + warmth | country) + (1 | id)
+ outcome ~ 1 + t + warmth + physical_punishment + identity + intervention + HDI + (1 | country) + (0 + warmth | country) + (1 | id)
     logLik   -2 logLik      AIC         AICc        BIC     
- -28533.9968  57067.9935  57087.9935  57088.0180  57159.0433
+ -28499.6031  56999.2062  57021.2062  57021.2356  57099.3610
 
 Variance components:
-            Column   Variance Std.Dev.  Corr.
-id       (Intercept)   8.85263 2.97534
-country  (Intercept)   3.65031 1.91058
-         warmth        0.00000 0.00000   .  
-Residual              26.00093 5.09911
+            Column    Variance Std.Dev.   Corr.
+id       (Intercept)   8.387258 2.896076
+country  (Intercept)   3.166920 1.779584
+         warmth        0.010761 0.103736   .  
+Residual              26.027344 5.101700
  Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
-──────────────────────────────────────────────────────────────
-                           Coef.  Std. Error       z  Pr(&gt;|z|)
-──────────────────────────────────────────────────────────────
-(Intercept)          49.4945       1.42422     34.75    &lt;1e-99
-t                     0.987965     0.0658315   15.01    &lt;1e-50
-warmth                0.946255     0.0381869   24.78    &lt;1e-99
-physical_punishment  -0.926774     0.0499549  -18.55    &lt;1e-76
-group                 0.985819     0.153487     6.42    &lt;1e-09
-HDI                   0.00754357   0.0207101    0.36    0.7157
-──────────────────────────────────────────────────────────────</code></pre>
+───────────────────────────────────────────────────────────────
+                            Coef.  Std. Error       z  Pr(&gt;|z|)
+───────────────────────────────────────────────────────────────
+(Intercept)          50.7359        1.37201     36.98    &lt;1e-99
+t                     0.943864      0.0658716   14.33    &lt;1e-45
+warmth                0.913496      0.0423741   21.56    &lt;1e-99
+physical_punishment  -1.0079        0.0497622  -20.25    &lt;1e-90
+identity             -0.127692      0.151583    -0.84    0.3996
+intervention          0.858997      0.151909     5.65    &lt;1e-07
+HDI                  -0.000565959   0.0196433   -0.03    0.9770
+───────────────────────────────────────────────────────────────</code></pre>
 </div>
 </div>
 </section>
@@ -602,39 +627,42 @@ HDI                   0.00754357   0.0207101    0.36    0.7157
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>m2B <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> t <span class="op">*</span> (warmth <span class="op">+</span> </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                                 physical_punishment <span class="op">+</span> </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                 group <span class="op">+</span> HDI) <span class="op">+</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">0</span> <span class="op">+</span> warmth <span class="op">|</span> country) <span class="op">+</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                 identity <span class="op">+</span> intervention <span class="op">+</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                   HDI) <span class="op">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">0</span> <span class="op">+</span> warmth <span class="op">|</span> country) <span class="op">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
- outcome ~ 1 + t + warmth + physical_punishment + group + HDI + t &amp; warmth + t &amp; physical_punishment + t &amp; group + t &amp; HDI + (1 | country) + (0 + warmth | country) + (1 | id)
+ outcome ~ 1 + t + warmth + physical_punishment + identity + intervention + HDI + t &amp; warmth + t &amp; physical_punishment + t &amp; identity + t &amp; intervention + t &amp; HDI + (1 | country) + (0 + warmth | country) + (1 | id)
     logLik   -2 logLik      AIC         AICc        BIC     
- -28533.1579  57066.3158  57094.3158  57094.3626  57193.7855
+ -28498.3091  56996.6182  57028.6182  57028.6788  57142.2979
 
 Variance components:
-            Column   Variance Std.Dev.  Corr.
-id       (Intercept)   8.86088 2.97672
-country  (Intercept)   3.65109 1.91078
-         warmth        0.00000 0.00000   .  
-Residual              25.99020 5.09806
+            Column    Variance Std.Dev.   Corr.
+id       (Intercept)   8.391748 2.896851
+country  (Intercept)   3.170040 1.780461
+         warmth        0.010609 0.102999   .  
+Residual              26.015905 5.100579
  Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
-─────────────────────────────────────────────────────────────────
-                               Coef.  Std. Error      z  Pr(&gt;|z|)
-─────────────────────────────────────────────────────────────────
-(Intercept)              49.4526      1.59495     31.01    &lt;1e-99
-t                         1.00828     0.364747     2.76    0.0057
-warmth                    0.865674    0.0804504   10.76    &lt;1e-26
-physical_punishment      -0.908024    0.110399    -8.22    &lt;1e-15
-group                     0.967016    0.304798     3.17    0.0015
-HDI                       0.0122774   0.0220761    0.56    0.5781
-t &amp; warmth                0.0401613   0.0353475    1.14    0.2559
-t &amp; physical_punishment  -0.00895284  0.0492392   -0.18    0.8557
-t &amp; group                 0.00918249  0.131654     0.07    0.9444
-t &amp; HDI                  -0.00235908  0.00381845  -0.62    0.5367
-─────────────────────────────────────────────────────────────────</code></pre>
+──────────────────────────────────────────────────────────────────
+                                Coef.  Std. Error      z  Pr(&gt;|z|)
+──────────────────────────────────────────────────────────────────
+(Intercept)              51.4143       1.60324     32.07    &lt;1e-99
+t                         0.60349      0.419741     1.44    0.1505
+warmth                    0.817076     0.0826636    9.88    &lt;1e-22
+physical_punishment      -1.00903      0.111293    -9.07    &lt;1e-18
+identity                 -0.238714     0.303996    -0.79    0.4323
+intervention              0.660761     0.30445      2.17    0.0300
+HDI                       0.00136065   0.0210842    0.06    0.9485
+t &amp; warmth                0.0483635    0.0356074    1.36    0.1744
+t &amp; physical_punishment   0.0005422    0.0494355    0.01    0.9912
+t &amp; identity              0.0554384    0.131745     0.42    0.6739
+t &amp; intervention          0.0992809    0.131925     0.75    0.4517
+t &amp; HDI                  -0.000955067  0.00382162  -0.25    0.8027
+──────────────────────────────────────────────────────────────────</code></pre>
 </div>
 </div>
 </section>
