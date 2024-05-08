@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>    Variable |        Obs        Mean    Std. dev.       Min        Max
 -------------+---------------------------------------------------------
-     outcome |      3,000    53.43327    6.530996   30.60798   75.83553
+     outcome |      3,000    52.43327    6.530996   29.60798   74.83553
       warmth |      3,000    3.521667    1.888399          0          7
 physical_p~t |      3,000    2.478667    1.360942          0          5
          HDI |      3,000    64.76667    17.24562         33         87
@@ -296,8 +296,8 @@ hypothetica |
 interventio |
           n |      Freq.     Percent        Cum.
 ------------+-----------------------------------
-          1 |      1,547       51.57       51.57
-          2 |      1,453       48.43      100.00
+          0 |      1,547       51.57       51.57
+          1 |      1,453       48.43      100.00
 ------------+-----------------------------------
       Total |      3,000      100.00</code></pre>
 </div>
@@ -328,12 +328,12 @@ interventio |
  6      : 100   Max.   :87.00   Max.   :100.00                              
  (Other):2400                                                               
  intervention physical_punishment     warmth         outcome     
- 1:1547       Min.   :0.000       Min.   :0.000   Min.   :30.61  
- 2:1453       1st Qu.:2.000       1st Qu.:2.000   1st Qu.:49.02  
-              Median :2.000       Median :4.000   Median :53.45  
-              Mean   :2.479       Mean   :3.522   Mean   :53.43  
-              3rd Qu.:3.000       3rd Qu.:5.000   3rd Qu.:57.86  
-              Max.   :5.000       Max.   :7.000   Max.   :75.84  
+ 0:1547       Min.   :0.000       Min.   :0.000   Min.   :29.61  
+ 1:1453       1st Qu.:2.000       1st Qu.:2.000   1st Qu.:48.02  
+              Median :2.000       Median :4.000   Median :52.45  
+              Mean   :2.479       Mean   :3.522   Mean   :52.43  
+              3rd Qu.:3.000       3rd Qu.:5.000   3rd Qu.:56.86  
+              Max.   :5.000       Max.   :7.000   Max.   :74.84  
                                                                  </code></pre>
 </div>
 </div>
@@ -365,10 +365,10 @@ interventio |
    3 │ family               50.5     1.0     50.5    100.0           0  Union{
    4 │ id                            1.1             9.99            0  Union{
    5 │ identity                      1.0             2.0             0  Union{ ⋯
-   6 │ intervention                  1.0             2.0             0  Union{
+   6 │ intervention                  0.0             1.0             0  Union{
    7 │ physical_punishment  2.47867  0.0     2.0     5.0             0  Union{
    8 │ warmth               3.52167  0.0     4.0     7.0             0  Union{
-   9 │ outcome              53.4333  30.608  53.449  75.8355         0  Union{ ⋯
+   9 │ outcome              52.4333  29.608  52.449  74.8355         0  Union{ ⋯
                                                                 1 column omitted</code></pre>
 </div>
 </div>
