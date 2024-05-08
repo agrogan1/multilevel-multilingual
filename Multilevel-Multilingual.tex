@@ -275,13 +275,22 @@ Below, I describe the use of \href{https://www.stata.com/}{Stata}
 All of these software packages can estimate multilevel models. However,
 there are substantial differences between the different packages: Stata
 is proprietary \emph{for cost} software, which is very well documented
-and very intuitive. R is free open source software which is less
-intuitive, but there are many excellent resources for learning R. Julia
-is newer open source software, and ostensibly much faster than either
-Stata or R, which may be an important advantage when running multilevel
-models with very large data sets. At this point in time, both Stata and
-R feel much more \emph{stable} than Julia which is still evolving
-software.
+and very intuitive. While it costs money to purchase Stata, the price is
+often very reasonal for academic and educational use. R is free open
+source software which is less intuitive, but there are many excellent
+resources for learning R. There is often a cost associated with
+purchasing books and other materials for learning R. Julia is newer open
+source software, and ostensibly much faster than either Stata or R,
+which may be an important advantage when running multilevel models with
+very large data sets. At this point in time, both Stata and R feel much
+more \emph{stable} than Julia which is still evolving software.
+
+While any of these software packages can be used for learning and
+estimating multilevel models, I will offer my own opinion--based upon 15
+years of teaching multilevel models at the doctoral level--that Stata
+offers the quickest pathway for learning the basic and advanced uses of
+multilevel models. I also believe the intuitive nature of Stata syntax
+contributes to accurate and replicable work in this area.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1667}}
@@ -311,8 +320,8 @@ Ease of Use
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Stata & some cost & learning curve, but intuitive for both multilevel
-modeling and graphing. \\
+Stata & some cost & learning curve, but very intuitive for both
+multilevel modeling and graphing. \\
 R & free & learning curve: intuitive for multilevel modeling; but
 steeper learning curve for graphing (\texttt{ggplot}). \\
 Julia & free & steep learning curve in general: steep learning curve for
@@ -320,7 +329,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, toprule=.15mm, toptitle=1mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, breakable, opacityback=0, coltitle=black, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, colback=white, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, toprule=.15mm, opacityback=0, rightrule=.15mm, leftrule=.75mm, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, arc=.35mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -331,7 +340,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, toprule=.15mm, toptitle=1mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, breakable, opacityback=0, coltitle=black, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, colback=white, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, toprule=.15mm, opacityback=0, rightrule=.15mm, leftrule=.75mm, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, arc=.35mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -360,7 +369,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, toprule=.15mm, toptitle=1mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, breakable, opacityback=0, coltitle=black, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, colback=white, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, toprule=.15mm, opacityback=0, rightrule=.15mm, leftrule=.75mm, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, arc=.35mm]
 
 I used Quarto (\url{https://quarto.org/}) to create this Appendix.
 Quarto is a programming and publishing environment that can run multiple
@@ -436,12 +445,12 @@ physical\_punishment
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1 & 69 & 1 & 1.1 & 2 & 1 & 3 \\
-1 & 69 & 2 & 1.2 & 2 & 2 & 2 \\
-1 & 69 & 3 & 1.3 & 1 & 2 & 3 \\
-1 & 69 & 4 & 1.4 & 2 & 1 & 0 \\
-1 & 69 & 5 & 1.5 & 2 & 1 & 4 \\
-1 & 69 & 6 & 1.6 & 1 & 2 & 5 \\
+1 & 69 & 1 & 1.1 & 2 & 0 & 3 \\
+1 & 69 & 2 & 1.2 & 2 & 1 & 2 \\
+1 & 69 & 3 & 1.3 & 1 & 1 & 3 \\
+1 & 69 & 4 & 1.4 & 2 & 0 & 0 \\
+1 & 69 & 5 & 1.5 & 2 & 0 & 4 \\
+1 & 69 & 6 & 1.6 & 1 & 1 & 5 \\
 
 \end{longtable}
 
@@ -463,12 +472,12 @@ outcome
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-3 & 58.47 \\
-1 & 51.1 \\
-2 & 53.92 \\
-5 & 61.17 \\
-4 & 56.05 \\
-3 & 50.81 \\
+3 & 57.47 \\
+1 & 50.1 \\
+2 & 52.92 \\
+5 & 60.17 \\
+4 & 55.05 \\
+3 & 49.81 \\
 
 \end{longtable}
 

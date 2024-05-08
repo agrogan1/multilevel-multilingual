@@ -344,7 +344,8 @@ window.Quarto = {
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
 <p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a> <span class="citation" data-cites="StataCorp2021:2">(<a href="references.html#ref-StataCorp2021:2" role="doc-biblioref">StataCorp, 2021</a>)</span>, <a href="https://www.r-project.org/">R</a> <span class="citation" data-cites="RProgram JSSv067i01">(<a href="references.html#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="references.html#ref-RProgram" role="doc-biblioref">R Core Team, 2023</a>)</span>, and <a href="https://www.julialang.org/">Julia</a> <span class="citation" data-cites="JuliaArticle MixedModels">(<a href="references.html#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="references.html#ref-JuliaArticle" role="doc-biblioref">Bezanson et al., 2017</a>)</span> to estimate multilevel models.</p>
-<p>All of these software packages can estimate multilevel models. However, there are substantial differences between the different packages: Stata is proprietary <em>for cost</em> software, which is very well documented and very intuitive. R is free open source software which is less intuitive, but there are many excellent resources for learning R. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more <em>stable</em> than Julia which is still evolving software.</p>
+<p>All of these software packages can estimate multilevel models. However, there are substantial differences between the different packages: Stata is proprietary <em>for cost</em> software, which is very well documented and very intuitive. While it costs money to purchase Stata, the price is often very reasonal for academic and educational use. R is free open source software which is less intuitive, but there are many excellent resources for learning R. There is often a cost associated with purchasing books and other materials for learning R. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more <em>stable</em> than Julia which is still evolving software.</p>
+<p>While any of these software packages can be used for learning and estimating multilevel models, I will offer my own opinion–based upon 15 years of teaching multilevel models at the doctoral level–that Stata offers the quickest pathway for learning the basic and advanced uses of multilevel models. I also believe the intuitive nature of Stata syntax contributes to accurate and replicable work in this area.</p>
 <div id="tbl-software" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-software-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -368,7 +369,7 @@ Table&nbsp;1.1: Software for Multilevel Modeling
 <tr class="odd">
 <td style="text-align: left;">Stata</td>
 <td style="text-align: left;">some cost</td>
-<td style="text-align: left;">learning curve, but intuitive for both multilevel modeling and graphing.</td>
+<td style="text-align: left;">learning curve, but very intuitive for both multilevel modeling and graphing.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">R</td>
@@ -1166,7 +1167,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

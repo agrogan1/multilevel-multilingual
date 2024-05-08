@@ -8,12 +8,14 @@
 
 Below, I describe the use of [Stata](https://www.stata.com/) [@StataCorp2021:2], [R](https://www.r-project.org/) [@RProgram; @JSSv067i01], and [Julia](https://www.julialang.org/) [@JuliaArticle; @MixedModels] to estimate multilevel models. 
 
-All of these software packages can estimate multilevel models. However, there are substantial differences between the different packages: Stata is proprietary *for cost* software, which is very well documented and very intuitive. R is free open source software which is less intuitive, but there are many excellent resources for learning R. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more *stable* than Julia which is still evolving software.
+All of these software packages can estimate multilevel models. However, there are substantial differences between the different packages: Stata is proprietary *for cost* software, which is very well documented and very intuitive. While it costs money to purchase Stata, the price is often very reasonal for academic and educational use. R is free open source software which is less intuitive, but there are many excellent resources for learning R. There is often a cost associated with purchasing books and other materials for learning R. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more *stable* than Julia which is still evolving software.
+
+While any of these software packages can be used for learning and estimating multilevel models, I will offer my own opinion--based upon 15 years of teaching multilevel models at the doctoral level--that Stata offers the quickest pathway for learning the basic and advanced uses of multilevel models. I also believe the intuitive nature of Stata syntax contributes to accurate and replicable work in this area.
 
 -------------------------------------------------------------
 Software    Cost       Ease of Use
 ----------- ---------- --------------------------------------
-Stata       some cost  learning curve, but intuitive
+Stata       some cost  learning curve, but very intuitive
                        for both multilevel modeling and
                        graphing.
 
