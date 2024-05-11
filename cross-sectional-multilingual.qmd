@@ -104,8 +104,16 @@ df <- read_dta("simulated_multilevel_data.dta")
 
 #### Run The Model
 
+::: {.callout-caution collapse="false"}
+`lme4` does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library `lmerTest` to provide p values for `lme4` results.
+:::
+
 ```{r}
 #| warning: false
+
+library(lme4) 
+
+library(lmerTest)
 
 fit1 <- lmer(outcome ~ warmth + physical_punishment + 
                identity + intervention + HDI +
@@ -151,6 +159,10 @@ m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment +
 
 
 :::
+
+## Interpretation
+
+Models suggest that parental warmth is associated with increases in the beneficial outcome, while physical punishment is associated with decreases in the beneficial outcome. Membership in the group represented by `identity` is not associated with the outcome. The intervention is associated with increases in the outcome. The Human Development Index is not associated with the outcome.
 
 
 
