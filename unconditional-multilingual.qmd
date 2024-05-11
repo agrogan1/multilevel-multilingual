@@ -114,3 +114,12 @@ icc(m0) # ICC
 ```
 
 :::
+
+## Interpretation
+
+In each case, the software finds that nearly 8% of the variation in the outcome is explainable by the clustering of the observations in each country.
+
+
+
+
+
