@@ -96,3 +96,22 @@ describe(df) # descriptive statistics
 ```
 
 :::
+
+## Interpretation
+
+Examining descriptive statistics is an important first step in any analysis. It is important to examine your descriptive statistics first, before skipping ahead to more sophisticated analyses, such as multilevel models.
+
+In examining the descriptive statistics for this data, we get a sense of the data.
+
+* `outcome` has a mean of approximately 52 and ranges from approximately 30 to 75.
+* `warmth` and `physical punishment` are both variables that represent the number of times that parents use each of these forms of discipline in a week. The average of the former is about 3.5, while the average of the latter is about 2.5.
+* `HDI`, the Human Development Index has an average of about 65, and a wide range.
+* `identity` is a categorical variable for a hypothetical identity group, and has values of 1 and 2.
+* `intervention` is also a categorical variable, and has values of 0 and 1.
+
+
+
+
+
+
+
