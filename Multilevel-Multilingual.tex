@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-05-08}
+\date{2024-05-11}
 
 \begin{document}
 \maketitle
@@ -329,7 +329,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, colback=white, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, toprule=.15mm, opacityback=0, rightrule=.15mm, leftrule=.75mm, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colback=white, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, colframe=quarto-callout-tip-color-frame, toprule=.15mm, coltitle=black, arc=.35mm, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, rightrule=.15mm, toptitle=1mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -340,7 +340,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, colback=white, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, toprule=.15mm, opacityback=0, rightrule=.15mm, leftrule=.75mm, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colback=white, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, colframe=quarto-callout-tip-color-frame, toprule=.15mm, coltitle=black, arc=.35mm, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, rightrule=.15mm, toptitle=1mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -369,7 +369,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, colback=white, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, toprule=.15mm, opacityback=0, rightrule=.15mm, leftrule=.75mm, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colback=white, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, colframe=quarto-callout-tip-color-frame, toprule=.15mm, coltitle=black, arc=.35mm, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, rightrule=.15mm, toptitle=1mm]
 
 I used Quarto (\url{https://quarto.org/}) to create this Appendix.
 Quarto is a programming and publishing environment that can run multiple
@@ -560,7 +560,7 @@ We use \texttt{summarize} for \emph{continuous} variables, and
 \begin{verbatim}
     Variable |        Obs        Mean    Std. dev.       Min        Max
 -------------+---------------------------------------------------------
-     outcome |      3,000    53.43327    6.530996   30.60798   75.83553
+     outcome |      3,000    52.43327    6.530996   29.60798   74.83553
       warmth |      3,000    3.521667    1.888399          0          7
 physical_p~t |      3,000    2.478667    1.360942          0          5
          HDI |      3,000    64.76667    17.24562         33         87
@@ -581,8 +581,8 @@ hypothetica |
 interventio |
           n |      Freq.     Percent        Cum.
 ------------+-----------------------------------
-          1 |      1,547       51.57       51.57
-          2 |      1,453       48.43      100.00
+          0 |      1,547       51.57       51.57
+          1 |      1,453       48.43      100.00
 ------------+-----------------------------------
       Total |      3,000      100.00
 \end{verbatim}
@@ -626,12 +626,12 @@ descriptive statistics.
  6      : 100   Max.   :87.00   Max.   :100.00                              
  (Other):2400                                                               
  intervention physical_punishment     warmth         outcome     
- 1:1547       Min.   :0.000       Min.   :0.000   Min.   :30.61  
- 2:1453       1st Qu.:2.000       1st Qu.:2.000   1st Qu.:49.02  
-              Median :2.000       Median :4.000   Median :53.45  
-              Mean   :2.479       Mean   :3.522   Mean   :53.43  
-              3rd Qu.:3.000       3rd Qu.:5.000   3rd Qu.:57.86  
-              Max.   :5.000       Max.   :7.000   Max.   :75.84  
+ 0:1547       Min.   :0.000       Min.   :0.000   Min.   :29.61  
+ 1:1453       1st Qu.:2.000       1st Qu.:2.000   1st Qu.:48.02  
+              Median :2.000       Median :4.000   Median :52.45  
+              Mean   :2.479       Mean   :3.522   Mean   :52.43  
+              3rd Qu.:3.000       3rd Qu.:5.000   3rd Qu.:56.86  
+              Max.   :5.000       Max.   :7.000   Max.   :74.84  
                                                                  
 \end{verbatim}
 
@@ -676,12 +676,43 @@ Similarly to R, Julia relies on the idea of \emph{variable type}. I use
    3 │ family               50.5     1.0     50.5    100.0           0  Union{
    4 │ id                            1.1             9.99            0  Union{
    5 │ identity                      1.0             2.0             0  Union{ ⋯
-   6 │ intervention                  1.0             2.0             0  Union{
+   6 │ intervention                  0.0             1.0             0  Union{
    7 │ physical_punishment  2.47867  0.0     2.0     5.0             0  Union{
    8 │ warmth               3.52167  0.0     4.0     7.0             0  Union{
-   9 │ outcome              53.4333  30.608  53.449  75.8355         0  Union{ ⋯
+   9 │ outcome              52.4333  29.608  52.449  74.8355         0  Union{ ⋯
                                                                 1 column omitted
 \end{verbatim}
+
+\section{Interpretation}\label{interpretation}
+
+Examining descriptive statistics is an important first step in any
+analysis. It is important to examine your descriptive statistics first,
+before skipping ahead to more sophisticated analyses, such as multilevel
+models.
+
+In examining the descriptive statistics for this data, we get a sense of
+the data.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{outcome} has a mean of approximately 52 and ranges from
+  approximately 30 to 75.
+\item
+  \texttt{warmth} and \texttt{physical\ punishment} are both variables
+  that represent the number of times that parents use each of these
+  forms of discipline in a week. The average of the former is about 3.5,
+  while the average of the latter is about 2.5.
+\item
+  \texttt{HDI}, the Human Development Index has an average of about 65,
+  and a wide range.
+\item
+  \texttt{identity} is a categorical variable for a hypothetical
+  identity group, and has values of 1 and 2.
+\item
+  \texttt{intervention} is also a categorical variable, and has values
+  of 0 and 1.
+\end{itemize}
 
 \bookmarksetup{startatroot}
 
@@ -726,8 +757,8 @@ amount of variation attributable to Level 2.
 Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -9856.1548  
-Iteration 1:  Log likelihood = -9856.1548  
+Iteration 0:  Log likelihood = -9802.8371  
+Iteration 1:  Log likelihood = -9802.8371  
 
 Computing standard errors ...
 
@@ -738,23 +769,23 @@ Group variable: country                               Number of groups =    30
                                                                    avg = 100.0
                                                                    max =   100
                                                       Wald chi2(0)     =     .
-Log likelihood = -9856.1548                           Prob > chi2      =     .
+Log likelihood = -9802.8371                           Prob > chi2      =     .
 
 ------------------------------------------------------------------------------
      outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-       _cons |   53.46757   .3539097   151.08   0.000     52.77392    54.16122
+       _cons |   52.43327   .3451217   151.93   0.000     51.75685     53.1097
 ------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Identity            |
-                  var(_cons) |   3.348734   .9702594      1.897816    5.908906
+                  var(_cons) |   3.178658   .9226737      1.799552    5.614658
 -----------------------------+------------------------------------------------
-               var(Residual) |   40.88284   1.060908       38.8555    43.01597
+               var(Residual) |   39.46106   1.024013      37.50421       41.52
 ------------------------------------------------------------------------------
-LR test vs. linear model: chibar2(01) = 169.64        Prob >= chibar2 = 0.0000
+LR test vs. linear model: chibar2(01) = 166.31        Prob >= chibar2 = 0.0000
 \end{verbatim}
 
 \begin{Shaded}
@@ -770,7 +801,7 @@ Intraclass correlation
 ------------------------------------------------------------------------------
                        Level |        ICC   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
-                     country |   .0757091   .0203761      .0442419    .1265931
+                     country |   .0745469   .0201254      .0434963    .1248696
 ------------------------------------------------------------------------------
 \end{verbatim}
 
@@ -800,21 +831,21 @@ Linear mixed model fit by REML ['lmerMod']
 Formula: outcome ~ (1 | country)
    Data: df
 
-REML criterion at convergence: 19712.5
+REML criterion at convergence: 19605.9
 
 Scaled residuals: 
-     Min       1Q   Median       3Q      Max 
--2.97650 -0.68006  0.00936  0.67580  3.03510 
+    Min      1Q  Median      3Q     Max 
+-3.3844 -0.6655 -0.0086  0.6725  3.6626 
 
 Random effects:
  Groups   Name        Variance Std.Dev.
- country  (Intercept)  3.478   1.865   
- Residual             40.883   6.394   
+ country  (Intercept)  3.302   1.817   
+ Residual             39.461   6.282   
 Number of obs: 3000, groups:  country, 30
 
 Fixed effects:
             Estimate Std. Error t value
-(Intercept)    53.47       0.36   148.5
+(Intercept)   52.433      0.351   149.4
 \end{verbatim}
 
 \begin{Shaded}
@@ -828,8 +859,8 @@ Fixed effects:
 \begin{verbatim}
 # Intraclass Correlation Coefficient
 
-    Adjusted ICC: 0.078
-  Unadjusted ICC: 0.078
+    Adjusted ICC: 0.077
+  Unadjusted ICC: 0.077
 \end{verbatim}
 
 \subsection{Julia}
@@ -861,19 +892,19 @@ Fixed effects:
 Linear mixed model fit by maximum likelihood
  outcome ~ 1 + (1 | country)
    logLik   -2 logLik     AIC       AICc        BIC    
- -9856.1548 19712.3097 19718.3097 19718.3177 19736.3288
+ -9802.8371 19605.6742 19611.6742 19611.6822 19629.6933
 
 Variance components:
             Column   Variance Std.Dev.
-country  (Intercept)   3.34871 1.82995
-Residual              40.88285 6.39397
+country  (Intercept)   3.17863 1.78287
+Residual              39.46106 6.28180
  Number of obs: 3000; levels of grouping factors: 30
 
   Fixed-effects parameters:
 ──────────────────────────────────────────────────
                Coef.  Std. Error       z  Pr(>|z|)
 ──────────────────────────────────────────────────
-(Intercept)  53.4676    0.353908  151.08    <1e-99
+(Intercept)  52.4333    0.345121  151.93    <1e-99
 ──────────────────────────────────────────────────
 \end{verbatim}
 
@@ -885,8 +916,14 @@ Residual              40.88285 6.39397
 \end{Shaded}
 
 \begin{verbatim}
-0.07570852291396266
+0.07454637475695493
 \end{verbatim}
+
+\section{Interpretation}\label{interpretation-1}
+
+In each case, the software finds that nearly 8\% of the variation in the
+outcome is explainable by the clustering of the observations in each
+country.
 
 \bookmarksetup{startatroot}
 
@@ -1022,9 +1059,9 @@ Log likelihood =  -9626.607                          Prob > chi2      = 0.0000
              warmth |   .8345368   .0637213    13.10   0.000     .7096453    .9594282
 physical_punishment |  -.9916657   .0797906   -12.43   0.000    -1.148052   -.8352791
          2.identity |  -.3004767   .2170295    -1.38   0.166    -.7258466    .1248933
-     2.intervention |   .6396427   .2174519     2.94   0.003     .2134448    1.065841
+     1.intervention |   .6396427   .2174519     2.94   0.003     .2134448    1.065841
                 HDI |   -.003228   .0199257    -0.16   0.871    -.0422817    .0358256
-              _cons |   52.99991   1.371257    38.65   0.000      50.3123    55.68753
+              _cons |   51.99991   1.371257    37.92   0.000      49.3123    54.68753
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
@@ -1055,8 +1092,21 @@ Note: LR test is conservative and provided only for reference.
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colback=white, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, titlerule=0mm, left=2mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colframe=quarto-callout-caution-color-frame, toprule=.15mm, coltitle=black, arc=.35mm, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, rightrule=.15mm, toptitle=1mm]
+
+\texttt{lme4} does not directly provide p values in results, because of
+some disagreement over exactly how these p values should be calculated.
+Therefore, in this Appendix, I also call library \texttt{lmerTest} to
+provide p values for \texttt{lme4} results.
+
+\end{tcolorbox}
+
 \begin{Shaded}
 \begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lme4) }
+
+\FunctionTok{library}\NormalTok{(lmerTest)}
+
 \NormalTok{fit1 }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
 \NormalTok{               identity }\SpecialCharTok{+}\NormalTok{ intervention }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+}
 \NormalTok{               (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ warmth }\SpecialCharTok{||}\NormalTok{ country),}
@@ -1067,9 +1117,10 @@ Note: LR test is conservative and provided only for reference.
 \end{Shaded}
 
 \begin{verbatim}
-Linear mixed model fit by REML ['lmerMod']
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
 Formula: outcome ~ warmth + physical_punishment + identity + intervention +  
-    HDI + ((1 | country) + (0 + warmth | country))
+    HDI + (1 + warmth || country)
    Data: df
 
 REML criterion at convergence: 19268.8
@@ -1086,21 +1137,23 @@ Random effects:
 Number of obs: 3000, groups:  country, 30
 
 Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)         52.672655   1.479571  35.600
-warmth               0.834562   0.064252  12.989
-physical_punishment -0.991892   0.079845 -12.423
-identity            -0.300350   0.217179  -1.383
-intervention         0.639059   0.217603   2.937
-HDI                 -0.003395   0.020596  -0.165
+                      Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)          5.231e+01  1.447e+00  3.311e+01  36.158  < 2e-16 ***
+warmth               8.346e-01  6.425e-02  4.190e+01  12.989 2.77e-16 ***
+physical_punishment -9.919e-01  7.984e-02  2.968e+03 -12.423  < 2e-16 ***
+identity            -3.004e-01  2.172e-01  2.970e+03  -1.383  0.16678    
+intervention         6.391e-01  2.176e-01  2.971e+03   2.937  0.00334 ** 
+HDI                 -3.395e-03  2.060e-02  2.760e+01  -0.165  0.87027    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) warmth physc_ idntty intrvn
-warmth      -0.121                            
+warmth      -0.119                            
 physcl_pnsh -0.145 -0.003                     
-identity    -0.213 -0.012 -0.003              
-interventin -0.223  0.034  0.022 -0.018       
-HDI         -0.902 -0.006  0.009 -0.001  0.000
+identity    -0.220 -0.012 -0.003              
+interventin -0.077  0.034  0.022 -0.018       
+HDI         -0.922 -0.006  0.009 -0.001  0.000
 \end{verbatim}
 
 \subsection{Julia}
@@ -1153,7 +1206,7 @@ Residual              34.974984 5.913965
 ─────────────────────────────────────────────────────────────
                           Coef.  Std. Error       z  Pr(>|z|)
 ─────────────────────────────────────────────────────────────
-(Intercept)          52.6608      1.43785     36.62    <1e-99
+(Intercept)          52.3004      1.40406     37.25    <1e-99
 warmth                0.834537    0.0637228   13.10    <1e-38
 physical_punishment  -0.991665    0.0797906  -12.43    <1e-34
 identity             -0.300475    0.217029    -1.38    0.1662
@@ -1161,6 +1214,15 @@ intervention          0.639641    0.217452     2.94    0.0033
 HDI                  -0.0032286   0.0199255   -0.16    0.8713
 ─────────────────────────────────────────────────────────────
 \end{verbatim}
+
+\section{Interpretation}\label{interpretation-2}
+
+Models suggest that parental warmth is associated with increases in the
+beneficial outcome, while physical punishment is associated with
+decreases in the beneficial outcome. Membership in the group represented
+by \texttt{identity} is not associated with the outcome. The
+intervention is associated with increases in the outcome. The Human
+Development Index is not associated with the outcome.
 
 \bookmarksetup{startatroot}
 
@@ -1231,9 +1293,9 @@ Log likelihood = -28739.506                         Prob > chi2      =  0.0000
              warmth |   .9123903   .0430042    21.22   0.000     .8281035     .996677
 physical_punishment |  -.9881587   .0451732   -21.87   0.000    -1.076696   -.8996209
          2.identity |  -.1241465   .1242225    -1.00   0.318     -.367618    .1193251
-     2.intervention |   .8575839   .1245179     6.89   0.000     .6135332    1.101635
+     1.intervention |   .8575839   .1245179     6.89   0.000     .6135332    1.101635
                 HDI |  -.0025173   .0191696    -0.13   0.896    -.0400891    .0350544
-              _cons |   51.54528   1.304146    39.52   0.000      48.9892    54.10136
+              _cons |   50.54528   1.304146    38.76   0.000      47.9892    53.10136
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
@@ -1280,11 +1342,11 @@ Log likelihood = -28738.554                         Prob > chi2      =  0.0000
 ---------------------------------------------------------------------------------------
               outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ----------------------+----------------------------------------------------------------
-                    t |   .7537359   .3719996     2.03   0.043     .0246302    1.482842
+                    t |   .7537359   .3719996     2.03   0.043     .0246301    1.482842
                warmth |   .8198365   .0911059     9.00   0.000     .6412723    .9984008
   physical_punishment |  -1.000348   .1198049    -8.35   0.000    -1.235162   -.7655353
-           2.identity |  -.2340191   .3271243    -0.72   0.474     -.875171    .4071328
-       2.intervention |   .6597456   .3275877     2.01   0.044     .0176856    1.301806
+           2.identity |  -.2340191   .3271243    -0.72   0.474     -.875171    .4071327
+       1.intervention |   .6597456   .3275877     2.01   0.044     .0176856    1.301806
                   HDI |  -.0005531   .0210866    -0.03   0.979     -.041882    .0407757
                       |
          c.t#c.warmth |   .0463746   .0402459     1.15   0.249    -.0325059    .1252551
@@ -1296,11 +1358,11 @@ c.physical_punishment |   .0061255   .0551491     0.11   0.912    -.1019647    .
                    2  |   .0548965   .1513015     0.36   0.717     -.241649    .3514421
                       |
      intervention#c.t |
-                   2  |   .0990704    .151503     0.65   0.513      -.19787    .3960108
+                   1  |   .0990704    .151503     0.65   0.513      -.19787    .3960108
                       |
             c.t#c.HDI |  -.0009791   .0043888    -0.22   0.823    -.0095811    .0076229
                       |
-                _cons |   51.92503   1.494157    34.75   0.000     48.99654    54.85352
+                _cons |   50.92503   1.494157    34.08   0.000     47.99654    53.85352
 ---------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
@@ -1335,6 +1397,10 @@ Note: LR test is conservative and provided only for reference.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lme4) }
+
+\FunctionTok{library}\NormalTok{(lmerTest)}
+
 \NormalTok{fit2A }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ t }\SpecialCharTok{+}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
 \NormalTok{               identity }\SpecialCharTok{+}\NormalTok{ intervention }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+}
 \NormalTok{               (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country}\SpecialCharTok{/}\NormalTok{id),}
@@ -1345,7 +1411,8 @@ Note: LR test is conservative and provided only for reference.
 \end{Shaded}
 
 \begin{verbatim}
-Linear mixed model fit by REML ['lmerMod']
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
 Formula: 
 outcome ~ t + warmth + physical_punishment + identity + intervention +  
     HDI + (1 | country/id)
@@ -1365,23 +1432,25 @@ Random effects:
 Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
-                      Estimate Std. Error t value
-(Intercept)         50.6570397  1.4460656  35.031
-t                    0.9433806  0.0658755  14.321
-warmth               0.9140307  0.0379336  24.096
-physical_punishment -1.0087537  0.0497972 -20.257
-identity            -0.1319548  0.1517350  -0.870
-intervention         0.8591495  0.1520510   5.650
-HDI                  0.0007909  0.0207656   0.038
+                      Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)          5.052e+01  1.430e+00  3.117e+01  35.335  < 2e-16 ***
+t                    9.434e-01  6.588e-02  5.998e+03  14.321  < 2e-16 ***
+warmth               9.140e-01  3.793e-02  4.745e+03  24.096  < 2e-16 ***
+physical_punishment -1.009e+00  4.980e-02  6.484e+03 -20.257  < 2e-16 ***
+identity            -1.320e-01  1.517e-01  2.969e+03  -0.870    0.385    
+intervention         8.591e-01  1.521e-01  2.972e+03   5.650 1.75e-08 ***
+HDI                  7.909e-04  2.077e-02  2.800e+01   0.038    0.970    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) t      warmth physc_ idntty intrvn
-t           -0.090                                   
-warmth      -0.091 -0.002                            
-physcl_pnsh -0.091 -0.007 -0.012                     
-identity    -0.152  0.000 -0.013 -0.003              
-interventin -0.160  0.000  0.039  0.019 -0.018       
-HDI         -0.930  0.000 -0.004  0.005  0.000  0.002
+t           -0.091                                   
+warmth      -0.088 -0.002                            
+physcl_pnsh -0.090 -0.007 -0.012                     
+identity    -0.156  0.000 -0.013 -0.003              
+interventin -0.055  0.000  0.039  0.019 -0.018       
+HDI         -0.941  0.000 -0.004  0.005  0.000  0.002
 \end{verbatim}
 
 \paragraph{Interactions With Time}\label{interactions-with-time-1}
@@ -1398,7 +1467,8 @@ HDI         -0.930  0.000 -0.004  0.005  0.000  0.002
 \end{Shaded}
 
 \begin{verbatim}
-Linear mixed model fit by REML ['lmerMod']
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
 Formula: 
 outcome ~ t * (warmth + physical_punishment + identity + intervention +  
     HDI) + (1 | country/id)
@@ -1418,33 +1488,35 @@ Random effects:
 Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
-                        Estimate Std. Error t value
-(Intercept)           51.3432052  1.6670196  30.799
-t                      0.5994732  0.4199189   1.428
-warmth                 0.8170912  0.0805355  10.146
-physical_punishment   -1.0097729  0.1113557  -9.068
-identity              -0.2446453  0.3041604  -0.804
-intervention           0.6604672  0.3046286   2.168
-HDI                    0.0026692  0.0221295   0.121
-t:warmth               0.0486211  0.0356217   1.365
-t:physical_punishment  0.0004964  0.0494590   0.010
-t:identity             0.0563140  0.1318043   0.427
-t:intervention         0.0995037  0.1319917   0.754
-t:HDI                 -0.0009379  0.0038233  -0.245
+                        Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)            5.100e+01  1.609e+00  4.996e+01  31.703   <2e-16 ***
+t                      6.990e-01  3.747e-01  6.131e+03   1.865   0.0622 .  
+warmth                 8.171e-01  8.054e-02  8.275e+03  10.146   <2e-16 ***
+physical_punishment   -1.010e+00  1.114e-01  8.085e+03  -9.068   <2e-16 ***
+identity              -2.446e-01  3.042e-01  8.696e+03  -0.804   0.4212    
+intervention           6.605e-01  3.046e-01  8.697e+03   2.168   0.0302 *  
+HDI                    2.669e-03  2.213e-02  3.610e+01   0.121   0.9047    
+t:warmth               4.862e-02  3.562e-02  6.405e+03   1.365   0.1723    
+t:physical_punishment  4.964e-04  4.946e-02  6.753e+03   0.010   0.9920    
+t:identity             5.631e-02  1.318e-01  5.993e+03   0.427   0.6692    
+t:intervention         9.950e-02  1.320e-01  5.994e+03   0.754   0.4510    
+t:HDI                 -9.379e-04  3.823e-03  5.994e+03  -0.245   0.8062    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) t      warmth physc_ idntty intrvn HDI    t:wrmt t:phy_
-t           -0.504                                                        
-warmth      -0.170  0.265                                                 
-physcl_pnsh -0.180  0.285 -0.005                                          
-identity    -0.266  0.397 -0.013 -0.002                                   
-interventin -0.279  0.417  0.039  0.019 -0.017                            
-HDI         -0.861  0.206 -0.007  0.012 -0.001  0.003                     
-t:warmth     0.151 -0.302 -0.882  0.001  0.011 -0.035  0.006              
-t:physcl_pn  0.161 -0.319  0.004 -0.894 -0.001 -0.017 -0.010 -0.003       
-t:identity   0.230 -0.458  0.011  0.000 -0.867  0.014  0.001 -0.013  0.002
-t:intervntn  0.242 -0.481 -0.035 -0.017  0.014 -0.867 -0.003  0.041  0.019
-t:HDI        0.301 -0.596  0.015 -0.027  0.002 -0.007 -0.346 -0.016  0.029
+t           -0.466                                                        
+warmth      -0.169  0.285                                                 
+physcl_pnsh -0.183  0.313 -0.005                                          
+identity    -0.278  0.450 -0.013 -0.002                                   
+interventin -0.100  0.162  0.039  0.019 -0.017                            
+HDI         -0.892  0.230 -0.007  0.012 -0.001  0.003                     
+t:warmth     0.150 -0.324 -0.882  0.001  0.011 -0.035  0.006              
+t:physcl_pn  0.164 -0.351  0.004 -0.894 -0.001 -0.017 -0.010 -0.003       
+t:identity   0.242 -0.519  0.011  0.000 -0.867  0.014  0.001 -0.013  0.002
+t:intervntn  0.087 -0.187 -0.035 -0.017  0.014 -0.867 -0.003  0.041  0.019
+t:HDI        0.310 -0.666  0.015 -0.027  0.002 -0.007 -0.346 -0.016  0.029
             t:dntt t:ntrv
 t                        
 warmth                   
@@ -1501,27 +1573,27 @@ Categorical}\label{change-country-to-categorical-1}
 Linear mixed model fit by maximum likelihood
  outcome ~ 1 + t + warmth + physical_punishment + identity + intervention + HDI + (1 | country) + (0 + warmth | country) + (1 | id)
     logLik   -2 logLik      AIC         AICc        BIC     
- -28499.6031  56999.2062  57021.2062  57021.2356  57099.3610
+ -28499.6031  56999.2063  57021.2063  57021.2356  57099.3610
 
 Variance components:
             Column    Variance Std.Dev.   Corr.
-id       (Intercept)   8.387258 2.896076
-country  (Intercept)   3.166920 1.779584
-         warmth        0.010761 0.103736   .  
-Residual              26.027344 5.101700
+id       (Intercept)   8.387351 2.896092
+country  (Intercept)   3.166939 1.779590
+         warmth        0.010760 0.103732   .  
+Residual              26.027290 5.101695
  Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
 ───────────────────────────────────────────────────────────────
                             Coef.  Std. Error       z  Pr(>|z|)
 ───────────────────────────────────────────────────────────────
-(Intercept)          50.7359        1.37201     36.98    <1e-99
+(Intercept)          50.5949        1.35491     37.34    <1e-99
 t                     0.943864      0.0658716   14.33    <1e-45
-warmth                0.913496      0.0423741   21.56    <1e-99
+warmth                0.913496      0.0423739   21.56    <1e-99
 physical_punishment  -1.0079        0.0497622  -20.25    <1e-90
-identity             -0.127692      0.151583    -0.84    0.3996
-intervention          0.858997      0.151909     5.65    <1e-07
-HDI                  -0.000565959   0.0196433   -0.03    0.9770
+identity             -0.127692      0.151584    -0.84    0.3996
+intervention          0.858997      0.15191      5.65    <1e-07
+HDI                  -0.000565882   0.0196433   -0.03    0.9770
 ───────────────────────────────────────────────────────────────
 \end{verbatim}
 
@@ -1548,30 +1620,60 @@ Linear mixed model fit by maximum likelihood
 
 Variance components:
             Column    Variance Std.Dev.   Corr.
-id       (Intercept)   8.391748 2.896851
-country  (Intercept)   3.170040 1.780461
+id       (Intercept)   8.391746 2.896851
+country  (Intercept)   3.170031 1.780458
          warmth        0.010609 0.102999   .  
-Residual              26.015905 5.100579
+Residual              26.015906 5.100579
  Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
 ──────────────────────────────────────────────────────────────────
                                 Coef.  Std. Error      z  Pr(>|z|)
 ──────────────────────────────────────────────────────────────────
-(Intercept)              51.4143       1.60324     32.07    <1e-99
-t                         0.60349      0.419741     1.44    0.1505
+(Intercept)              51.0751       1.54284     33.10    <1e-99
+t                         0.702771     0.374539     1.88    0.0606
 warmth                    0.817076     0.0826636    9.88    <1e-22
 physical_punishment      -1.00903      0.111293    -9.07    <1e-18
 identity                 -0.238714     0.303996    -0.79    0.4323
 intervention              0.660761     0.30445      2.17    0.0300
 HDI                       0.00136065   0.0210842    0.06    0.9485
 t & warmth                0.0483635    0.0356074    1.36    0.1744
-t & physical_punishment   0.0005422    0.0494355    0.01    0.9912
-t & identity              0.0554384    0.131745     0.42    0.6739
+t & physical_punishment   0.000542203  0.0494355    0.01    0.9912
+t & identity              0.0554385    0.131745     0.42    0.6739
 t & intervention          0.0992809    0.131925     0.75    0.4517
 t & HDI                  -0.000955067  0.00382162  -0.25    0.8027
 ──────────────────────────────────────────────────────────────────
 \end{verbatim}
+
+\section{Interpretation of Results}\label{interpretation-of-results}
+
+The \emph{main effects only model} suggests that time is associated with
+increases in the outcome. In the main effects model, main effects other
+than time, indicate whether a particular variable is associated with
+higher or lower intercepts of the time trajectory, at the beginning of
+the study time. Warmth is again associated with increases in the
+outcome, while physical punishment is associated with decreases in the
+outcome. Identity is again not associated with the outcome, while the
+intervention is associated with higher levels of the outcome. The Human
+Development Index is again not associated with the outcome.
+
+The second model adds interactions with time to the first model. Results
+are largly similar to the prior model. However, here we not only examine
+whether main effects other than time are associated with higher or lower
+time trajectories, but also whether particular variables are associated
+with differences in the slope of the time trajectory. In this case, we
+find that no independent variable is associated with changes in the
+slope of the time trajectory.
+
+However, it may be illustrative to imagine how we would interpret the
+results had a particular interaction term been statistically
+significant. Let us consider one of the interaction terms with the
+largest coefficient, \texttt{intervention\#time}. The interaction of the
+intervention with time is positive. Had this coefficient been
+statistically signifcant, it would have indicated that the intervention
+was associated with more rapid increases in the outcome over time
+\emph{in addition to} the fact that the intervention is associated with
+higher initial levels of the outcome.
 
 \bookmarksetup{startatroot}
 

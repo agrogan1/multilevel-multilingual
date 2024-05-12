@@ -282,6 +282,7 @@ window.Quarto = {
   <li><a href="#the-equation" id="toc-the-equation" class="nav-link active" data-scroll-target="#the-equation"><span class="header-section-number">4.1</span> The Equation</a></li>
   <li><a href="#correlated-and-uncorrelated-random-effects" id="toc-correlated-and-uncorrelated-random-effects" class="nav-link" data-scroll-target="#correlated-and-uncorrelated-random-effects"><span class="header-section-number">4.2</span> Correlated and Uncorrelated Random Effects</a></li>
   <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">4.3</span> Run Models</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">4.4</span> Interpretation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -413,9 +414,9 @@ Log likelihood =  -9626.607                          Prob &gt; chi2      = 0.000
              warmth |   .8345368   .0637213    13.10   0.000     .7096453    .9594282
 physical_punishment |  -.9916657   .0797906   -12.43   0.000    -1.148052   -.8352791
          2.identity |  -.3004767   .2170295    -1.38   0.166    -.7258466    .1248933
-     2.intervention |   .6396427   .2174519     2.94   0.003     .2134448    1.065841
+     1.intervention |   .6396427   .2174519     2.94   0.003     .2134448    1.065841
                 HDI |   -.003228   .0199257    -0.16   0.871    -.0422817    .0358256
-              _cons |   52.99991   1.371257    38.65   0.000      50.3123    55.68753
+              _cons |   51.99991   1.371257    37.92   0.000      49.3123    54.68753
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
@@ -445,17 +446,38 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 </section>
 <section id="run-the-model-1" class="level4" data-number="4.3.0.4">
 <h4 data-number="4.3.0.4" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">4.3.0.4</span> Run The Model</h4>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><code>lme4</code> does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library <code>lmerTest</code> to provide p values for <code>lme4</code> results.</p>
+</div>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmerTest)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed model fit by REML ['lmerMod']
+<pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
 Formula: outcome ~ warmth + physical_punishment + identity + intervention +  
-    HDI + ((1 | country) + (0 + warmth | country))
+    HDI + (1 + warmth || country)
    Data: df
 
 REML criterion at convergence: 19268.8
@@ -472,21 +494,23 @@ Random effects:
 Number of obs: 3000, groups:  country, 30
 
 Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)         52.672655   1.479571  35.600
-warmth               0.834562   0.064252  12.989
-physical_punishment -0.991892   0.079845 -12.423
-identity            -0.300350   0.217179  -1.383
-intervention         0.639059   0.217603   2.937
-HDI                 -0.003395   0.020596  -0.165
+                      Estimate Std. Error         df t value Pr(&gt;|t|)    
+(Intercept)          5.231e+01  1.447e+00  3.311e+01  36.158  &lt; 2e-16 ***
+warmth               8.346e-01  6.425e-02  4.190e+01  12.989 2.77e-16 ***
+physical_punishment -9.919e-01  7.984e-02  2.968e+03 -12.423  &lt; 2e-16 ***
+identity            -3.004e-01  2.172e-01  2.970e+03  -1.383  0.16678    
+intervention         6.391e-01  2.176e-01  2.971e+03   2.937  0.00334 ** 
+HDI                 -3.395e-03  2.060e-02  2.760e+01  -0.165  0.87027    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) warmth physc_ idntty intrvn
-warmth      -0.121                            
+warmth      -0.119                            
 physcl_pnsh -0.145 -0.003                     
-identity    -0.213 -0.012 -0.003              
-interventin -0.223  0.034  0.022 -0.018       
-HDI         -0.902 -0.006  0.009 -0.001  0.000</code></pre>
+identity    -0.220 -0.012 -0.003              
+interventin -0.077  0.034  0.022 -0.018       
+HDI         -0.922 -0.006  0.009 -0.001  0.000</code></pre>
 </div>
 </div>
 </section>
@@ -531,7 +555,7 @@ Residual              34.974984 5.913965
 ─────────────────────────────────────────────────────────────
                           Coef.  Std. Error       z  Pr(&gt;|z|)
 ─────────────────────────────────────────────────────────────
-(Intercept)          52.6608      1.43785     36.62    &lt;1e-99
+(Intercept)          52.3004      1.40406     37.25    &lt;1e-99
 warmth                0.834537    0.0637228   13.10    &lt;1e-38
 physical_punishment  -0.991665    0.0797906  -12.43    &lt;1e-34
 identity             -0.300475    0.217029    -1.38    0.1662
@@ -544,6 +568,10 @@ HDI                  -0.0032286   0.0199255   -0.16    0.8713
 </div>
 </div>
 </div>
+</section>
+<section id="interpretation" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">4.4</span> Interpretation</h2>
+<p>Models suggest that parental warmth is associated with increases in the beneficial outcome, while physical punishment is associated with decreases in the beneficial outcome. Membership in the group represented by <code>identity</code> is not associated with the outcome. The intervention is associated with increases in the outcome. The Human Development Index is not associated with the outcome.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">

@@ -75,9 +75,17 @@ dfL <- read_dta("simulated_multilevel_longitudinal_data.dta")
 
 #### Run The Model
 
+::: {.callout-caution collapse="false"}
+`lme4` does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library `lmerTest` to provide p values for `lme4` results.
+:::
+
 ##### Main Effects Only
 
 ```{r}
+
+library(lme4) 
+
+library(lmerTest)
 
 fit2A <- lmer(outcome ~ t + warmth + physical_punishment + 
                identity + intervention + HDI +
@@ -156,7 +164,7 @@ m2B = fit(MixedModel, @formula(outcome ~ t * (warmth +
 
 :::
 
-## Interpretation of Results
+## Interpretation
 
 The *main effects only model* suggests that time is associated with increases in the outcome. In the main effects model, main effects other than time, indicate whether a particular variable is associated with higher or lower intercepts of the time trajectory, at the beginning of the study time. Warmth is again associated with increases in the outcome, while physical punishment is associated with decreases in the outcome. Identity is again not associated with the outcome, while the intervention is associated with higher levels of the outcome. The Human Development Index is again not associated with the outcome.
 

@@ -261,6 +261,7 @@ window.Quarto = {
   <ul>
   <li><a href="#the-equation" id="toc-the-equation" class="nav-link active" data-scroll-target="#the-equation"><span class="header-section-number">3.1</span> The Equation</a></li>
   <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">3.2</span> Run Models</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">3.3</span> Interpretation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -312,8 +313,8 @@ window.Quarto = {
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -9856.1548  
-Iteration 1:  Log likelihood = -9856.1548  
+Iteration 0:  Log likelihood = -9802.8371  
+Iteration 1:  Log likelihood = -9802.8371  
 
 Computing standard errors ...
 
@@ -324,23 +325,23 @@ Group variable: country                               Number of groups =    30
                                                                    avg = 100.0
                                                                    max =   100
                                                       Wald chi2(0)     =     .
-Log likelihood = -9856.1548                           Prob &gt; chi2      =     .
+Log likelihood = -9802.8371                           Prob &gt; chi2      =     .
 
 ------------------------------------------------------------------------------
      outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-       _cons |   53.46757   .3539097   151.08   0.000     52.77392    54.16122
+       _cons |   52.43327   .3451217   151.93   0.000     51.75685     53.1097
 ------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Identity            |
-                  var(_cons) |   3.348734   .9702594      1.897816    5.908906
+                  var(_cons) |   3.178658   .9226737      1.799552    5.614658
 -----------------------------+------------------------------------------------
-               var(Residual) |   40.88284   1.060908       38.8555    43.01597
+               var(Residual) |   39.46106   1.024013      37.50421       41.52
 ------------------------------------------------------------------------------
-LR test vs. linear model: chibar2(01) = 169.64        Prob &gt;= chibar2 = 0.0000</code></pre>
+LR test vs. linear model: chibar2(01) = 166.31        Prob &gt;= chibar2 = 0.0000</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -352,7 +353,7 @@ LR test vs. linear model: chibar2(01) = 169.64        Prob &gt;= chibar2 = 0.000
 ------------------------------------------------------------------------------
                        Level |        ICC   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
-                     country |   .0757091   .0203761      .0442419    .1265931
+                     country |   .0745469   .0201254      .0434963    .1248696
 ------------------------------------------------------------------------------</code></pre>
 </div>
 </div>
@@ -375,21 +376,21 @@ LR test vs. linear model: chibar2(01) = 169.64        Prob &gt;= chibar2 = 0.000
 Formula: outcome ~ (1 | country)
    Data: df
 
-REML criterion at convergence: 19712.5
+REML criterion at convergence: 19605.9
 
 Scaled residuals: 
-     Min       1Q   Median       3Q      Max 
--2.97650 -0.68006  0.00936  0.67580  3.03510 
+    Min      1Q  Median      3Q     Max 
+-3.3844 -0.6655 -0.0086  0.6725  3.6626 
 
 Random effects:
  Groups   Name        Variance Std.Dev.
- country  (Intercept)  3.478   1.865   
- Residual             40.883   6.394   
+ country  (Intercept)  3.302   1.817   
+ Residual             39.461   6.282   
 Number of obs: 3000, groups:  country, 30
 
 Fixed effects:
             Estimate Std. Error t value
-(Intercept)    53.47       0.36   148.5</code></pre>
+(Intercept)   52.433      0.351   149.4</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -399,8 +400,8 @@ Fixed effects:
 <div class="cell-output cell-output-stdout">
 <pre><code># Intraclass Correlation Coefficient
 
-    Adjusted ICC: 0.078
-  Unadjusted ICC: 0.078</code></pre>
+    Adjusted ICC: 0.077
+  Unadjusted ICC: 0.077</code></pre>
 </div>
 </div>
 </div>
@@ -422,19 +423,19 @@ Fixed effects:
 <pre><code>Linear mixed model fit by maximum likelihood
  outcome ~ 1 + (1 | country)
    logLik   -2 logLik     AIC       AICc        BIC    
- -9856.1548 19712.3097 19718.3097 19718.3177 19736.3288
+ -9802.8371 19605.6742 19611.6742 19611.6822 19629.6933
 
 Variance components:
             Column   Variance Std.Dev.
-country  (Intercept)   3.34871 1.82995
-Residual              40.88285 6.39397
+country  (Intercept)   3.17863 1.78287
+Residual              39.46106 6.28180
  Number of obs: 3000; levels of grouping factors: 30
 
   Fixed-effects parameters:
 ──────────────────────────────────────────────────
                Coef.  Std. Error       z  Pr(&gt;|z|)
 ──────────────────────────────────────────────────
-(Intercept)  53.4676    0.353908  151.08    &lt;1e-99
+(Intercept)  52.4333    0.345121  151.93    &lt;1e-99
 ──────────────────────────────────────────────────</code></pre>
 </div>
 </div>
@@ -442,12 +443,16 @@ Residual              40.88285 6.39397
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icc</span>(m0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.07570852291396266</code></pre>
+<pre><code>0.07454637475695493</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
+</section>
+<section id="interpretation" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">3.3</span> Interpretation</h2>
+<p>In each case, the software finds that nearly 8% of the variation in the outcome is explainable by the clustering of the observations in each country.</p>
 
 
 </section>
