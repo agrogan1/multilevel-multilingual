@@ -262,7 +262,7 @@ window.Quarto = {
   <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data"><span class="header-section-number">5.1</span> The Data</a></li>
   <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">5.2</span> The Equation</a></li>
   <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">5.3</span> Run Models</a></li>
-  <li><a href="#interpretation-of-results" id="toc-interpretation-of-results" class="nav-link" data-scroll-target="#interpretation-of-results"><span class="header-section-number">5.4</span> Interpretation of Results</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">5.4</span> Interpretation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -441,6 +441,22 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 </section>
 <section id="run-the-model-1" class="level4" data-number="5.3.0.4">
 <h4 data-number="5.3.0.4" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">5.3.0.4</span> Run The Model</h4>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><code>lme4</code> does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library <code>lmerTest</code> to provide p values for <code>lme4</code> results.</p>
+</div>
+</div>
+</div>
 <section id="main-effects-only-1" class="level5" data-number="5.3.0.4.1">
 <h5 data-number="5.3.0.4.1" class="anchored" data-anchor-id="main-effects-only-1"><span class="header-section-number">5.3.0.4.1</span> Main Effects Only</h5>
 <div class="cell">
@@ -682,8 +698,8 @@ t &amp; HDI                  -0.000955067  0.00382162  -0.25    0.8027
 </div>
 </div>
 </section>
-<section id="interpretation-of-results" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="interpretation-of-results"><span class="header-section-number">5.4</span> Interpretation of Results</h2>
+<section id="interpretation" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">5.4</span> Interpretation</h2>
 <p>The <em>main effects only model</em> suggests that time is associated with increases in the outcome. In the main effects model, main effects other than time, indicate whether a particular variable is associated with higher or lower intercepts of the time trajectory, at the beginning of the study time. Warmth is again associated with increases in the outcome, while physical punishment is associated with decreases in the outcome. Identity is again not associated with the outcome, while the intervention is associated with higher levels of the outcome. The Human Development Index is again not associated with the outcome.</p>
 <p>The second model adds interactions with time to the first model. Results are largly similar to the prior model. However, here we not only examine whether main effects other than time are associated with higher or lower time trajectories, but also whether particular variables are associated with differences in the slope of the time trajectory. In this case, we find that no independent variable is associated with changes in the slope of the time trajectory.</p>
 <p>However, it may be illustrative to imagine how we would interpret the results had a particular interaction term been statistically significant. Let us consider one of the interaction terms with the largest coefficient, <code>intervention#time</code>. The interaction of the intervention with time is positive. Had this coefficient been statistically signifcant, it would have indicated that the intervention was associated with more rapid increases in the outcome over time <em>in addition to</em> the fact that the intervention is associated with higher initial levels of the outcome.</p>
