@@ -30,6 +30,7 @@ use simulated_multilevel_data.dta // use data
 We use `summarize` for *continuous* variables, and `tabulate` for *categorical* variables. 
 
 ```{stata, collectcode=TRUE}
+#| label: stata-descriptives
 
 summarize outcome warmth physical_punishment HDI
 
@@ -54,6 +55,7 @@ R's descriptive statistics functions rely heavily on whether a variable is a *nu
 [^skimr]: `skimr` is an excellent new alternative library for generating descriptive statistics in R.
 
 ```{r}
+#| label: R-descriptives
 
 df$country <- factor(df$country)
 
@@ -69,6 +71,7 @@ summary(df)
 
 ```{julia}
 #| output: false
+#| label: Julia-descriptives
 
 using Tables, MixedModels, MixedModelsExtras, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 

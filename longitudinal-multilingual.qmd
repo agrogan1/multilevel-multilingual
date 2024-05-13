@@ -48,6 +48,7 @@ use simulated_multilevel_longitudinal_data.dta
 ##### Main Effects Only
 
 ```{stata}
+#| label: Stata-maineffects
 
 mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth
 
@@ -56,6 +57,7 @@ mixed outcome t warmth physical_punishment i.identity i.intervention HDI || coun
 ##### Interactions With Time
 
 ```{stata}
+#| label: Stata-interactions
 
 mixed outcome c.t##(c.warmth c.physical_punishment i.identity i.intervention c.HDI) || country: warmth
 
@@ -82,6 +84,7 @@ dfL <- read_dta("simulated_multilevel_longitudinal_data.dta")
 ##### Main Effects Only
 
 ```{r}
+#| label: R-maineffects
 
 library(lme4) 
 
@@ -99,6 +102,7 @@ summary(fit2A)
 ##### Interactions With Time
 
 ```{r}
+#| label: R-interactions
 
 fit2B <- lmer(outcome ~ t *(warmth + physical_punishment + 
                identity + intervention + HDI) +
@@ -137,6 +141,7 @@ dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
 ##### Main Effects Only
 
 ```{julia}
+#| label: Julia-maineffects
 
 m2A = fit(MixedModel, @formula(outcome ~ t + warmth + 
                                  physical_punishment + 
@@ -151,6 +156,7 @@ m2A = fit(MixedModel, @formula(outcome ~ t + warmth +
 ##### Interactions With Time
 
 ```{julia}
+#| label: Julia-interactions
 
 m2B = fit(MixedModel, @formula(outcome ~ t * (warmth + 
                                  physical_punishment + 

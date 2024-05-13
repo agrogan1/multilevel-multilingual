@@ -85,6 +85,7 @@ use simulated_multilevel_data.dta
 #### Run The Model
 
 ```{stata}
+#| label: Stata-cross-sectional
 
 mixed outcome warmth physical_punishment i.identity i.intervention HDI || country: warmth
 
@@ -110,6 +111,7 @@ df <- read_dta("simulated_multilevel_data.dta")
 
 ```{r}
 #| warning: false
+#| label: R-cross-sectional
 
 library(lme4) 
 
@@ -130,6 +132,7 @@ summary(fit1)
 
 ```{julia}
 #| output: false
+#| label: Julia-cross-sectional
 
 using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 

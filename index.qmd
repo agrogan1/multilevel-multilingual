@@ -64,6 +64,7 @@ The examples use the `simulated_multilevel_data.dta` file from [*Multilevel Thin
 ```{r}
 #| echo: false
 #| output: false
+#| label: file-copy
 
 file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta", 
           ".",
