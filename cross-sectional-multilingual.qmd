@@ -109,6 +109,10 @@ df <- read_dta("simulated_multilevel_data.dta")
 `lme4` does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library `lmerTest` to provide p values for `lme4` results.
 :::
 
+::: {.callout-tip}
+R prefers to use scientific notation when possible. I find that the use of scientific notation can be confusing in reading results. I turn off scientific notation by setting a penalty for its use:  `options(scipen = 999)`.  
+:::
+
 ```{r}
 #| warning: false
 #| label: R-cross-sectional
@@ -116,6 +120,8 @@ df <- read_dta("simulated_multilevel_data.dta")
 library(lme4) 
 
 library(lmerTest)
+
+options(scipen = 999) 
 
 fit1 <- lmer(outcome ~ warmth + physical_punishment + 
                identity + intervention + HDI +
