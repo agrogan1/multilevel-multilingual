@@ -29,6 +29,25 @@ $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
 $$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
 
+## Growth Trajectories
+
+Remember, following Section 6.4, that in longitudinal multilevel models, the variable for *time* assumes a special role as we are often thinking of a *growth trajectory* over time.
+
+As discussed in Section 6.4, think about a model where *identity* is a (1/0) variable for membership in one of two groups:
+
+$$\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{identity} \text{identity} + \beta_\text{interaction} \text{identity} \times \text{time} + u_{0i} + e_{it}$$
+
+Then, each identity group has its own intercept and time trajectory:
+
+| Group | Intercept                         |  Slope (Time Trajectory)             |
+|-------|-----------------------------------|--------------------------------------|
+| 0     | $\beta_0$                         | $\beta_t$                            |
+| 1     | $\beta_0 + \beta_\text{identity}$ | $\beta_t + \beta_\text{interaction}$ |
+
+: Slope and Intercept for Each Group {#tbl-trajectory}
+
+> Thus, again following Section 6.4, in longitudinal multilevel models, *main effects* modify the *intercept* of the time trajectory, while *interactions with time*, modify the *slope* of the time trajectory. Below, we run models with main effects only, then models with main effects, and interactions with time.
+
 ## Run Models
 
 ::: {.panel-tabset group="language"}
