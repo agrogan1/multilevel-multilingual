@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-05-13}
+\date{2024-05-15}
 
 \begin{document}
 \maketitle
@@ -329,7 +329,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, titlerule=0mm, bottomrule=.15mm, coltitle=black, leftrule=.75mm, left=2mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, opacityback=0, arc=.35mm, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, breakable, bottomrule=.15mm, leftrule=.75mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, colback=white, coltitle=black, arc=.35mm, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -340,7 +340,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, titlerule=0mm, bottomrule=.15mm, coltitle=black, leftrule=.75mm, left=2mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, opacityback=0, arc=.35mm, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, breakable, bottomrule=.15mm, leftrule=.75mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, colback=white, coltitle=black, arc=.35mm, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -369,7 +369,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, titlerule=0mm, bottomrule=.15mm, coltitle=black, leftrule=.75mm, left=2mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, opacityback=0, arc=.35mm, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, breakable, bottomrule=.15mm, leftrule=.75mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, colback=white, coltitle=black, arc=.35mm, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6]
 
 I used Quarto (\url{https://quarto.org/}) to create this Appendix.
 Quarto is a programming and publishing environment that can run multiple
@@ -548,7 +548,6 @@ We use \texttt{summarize} for \emph{continuous} variables, and
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \KeywordTok{summarize}\NormalTok{ outcome warmth physical\_punishment HDI}
 
 \KeywordTok{tabulate} \KeywordTok{identity}
@@ -1029,7 +1028,6 @@ effects.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \NormalTok{mixed outcome warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || country: warmth}
 \end{Highlighting}
 \end{Shaded}
@@ -1092,7 +1090,7 @@ Note: LR test is conservative and provided only for reference.
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, titlerule=0mm, bottomrule=.15mm, coltitle=black, leftrule=.75mm, left=2mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, opacityback=0, arc=.35mm, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, opacityback=0, breakable, bottomrule=.15mm, leftrule=.75mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colback=white, coltitle=black, arc=.35mm, bottomtitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1101,11 +1099,22 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, breakable, bottomrule=.15mm, leftrule=.75mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, coltitle=black, arc=.35mm, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6]
+
+R prefers to use scientific notation when possible. I find that the use
+of scientific notation can be confusing in reading results. I turn off
+scientific notation by setting a penalty for its use:
+\texttt{options(scipen\ =\ 999)}.
+
+\end{tcolorbox}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(lme4) }
 
 \FunctionTok{library}\NormalTok{(lmerTest)}
+
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{999}\NormalTok{) }
 
 \NormalTok{fit1 }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
 \NormalTok{               identity }\SpecialCharTok{+}\NormalTok{ intervention }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+}
@@ -1137,13 +1146,20 @@ Random effects:
 Number of obs: 3000, groups:  country, 30
 
 Fixed effects:
-                      Estimate Std. Error         df t value Pr(>|t|)    
-(Intercept)          5.231e+01  1.447e+00  3.311e+01  36.158  < 2e-16 ***
-warmth               8.346e-01  6.425e-02  4.190e+01  12.989 2.77e-16 ***
-physical_punishment -9.919e-01  7.984e-02  2.968e+03 -12.423  < 2e-16 ***
-identity            -3.004e-01  2.172e-01  2.970e+03  -1.383  0.16678    
-intervention         6.391e-01  2.176e-01  2.971e+03   2.937  0.00334 ** 
-HDI                 -3.395e-03  2.060e-02  2.760e+01  -0.165  0.87027    
+                       Estimate  Std. Error          df t value
+(Intercept)           52.311714    1.446735   33.113738  36.158
+warmth                 0.834562    0.064252   41.896966  12.989
+physical_punishment   -0.991892    0.079845 2968.010901 -12.423
+identity              -0.300350    0.217179 2970.106304  -1.383
+intervention           0.639059    0.217603 2971.185215   2.937
+HDI                   -0.003395    0.020596   27.598517  -0.165
+                                Pr(>|t|)    
+(Intercept)         < 0.0000000000000002 ***
+warmth              0.000000000000000277 ***
+physical_punishment < 0.0000000000000002 ***
+identity                         0.16678    
+intervention                     0.00334 ** 
+HDI                              0.87027    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -1263,7 +1279,6 @@ data described in Section~\ref{sec-data}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \NormalTok{mixed outcome t warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || country: warmth}
 \end{Highlighting}
 \end{Shaded}
@@ -1316,7 +1331,6 @@ Note: LR test is conservative and provided only for reference.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \NormalTok{mixed outcome c.t\#\#(c.warmth c.physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention c.HDI) || country: warmth}
 \end{Highlighting}
 \end{Shaded}
@@ -1393,12 +1407,21 @@ Note: LR test is conservative and provided only for reference.
 
 \subsubsection{Run The Model}\label{run-the-model-4}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, titlerule=0mm, bottomrule=.15mm, coltitle=black, leftrule=.75mm, left=2mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, opacityback=0, arc=.35mm, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, rightrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, opacityback=0, breakable, bottomrule=.15mm, leftrule=.75mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colback=white, coltitle=black, arc=.35mm, bottomtitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
 Therefore, in this Appendix, I also call library \texttt{lmerTest} to
 provide p values for \texttt{lme4} results.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, breakable, bottomrule=.15mm, leftrule=.75mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, coltitle=black, arc=.35mm, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6]
+
+R prefers to use scientific notation when possible. I find that the use
+of scientific notation can be confusing in reading results. I turn off
+scientific notation by setting a penalty for its use:
+\texttt{options(scipen\ =\ 999)}.
 
 \end{tcolorbox}
 
@@ -1409,6 +1432,8 @@ provide p values for \texttt{lme4} results.
 \FunctionTok{library}\NormalTok{(lme4) }
 
 \FunctionTok{library}\NormalTok{(lmerTest)}
+
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{999}\NormalTok{) }
 
 \NormalTok{fit2A }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ t }\SpecialCharTok{+}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
 \NormalTok{               identity }\SpecialCharTok{+}\NormalTok{ intervention }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+}
@@ -1441,14 +1466,22 @@ Random effects:
 Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
-                      Estimate Std. Error         df t value Pr(>|t|)    
-(Intercept)          5.052e+01  1.430e+00  3.117e+01  35.335  < 2e-16 ***
-t                    9.434e-01  6.588e-02  5.998e+03  14.321  < 2e-16 ***
-warmth               9.140e-01  3.793e-02  4.745e+03  24.096  < 2e-16 ***
-physical_punishment -1.009e+00  4.980e-02  6.484e+03 -20.257  < 2e-16 ***
-identity            -1.320e-01  1.517e-01  2.969e+03  -0.870    0.385    
-intervention         8.591e-01  1.521e-01  2.972e+03   5.650 1.75e-08 ***
-HDI                  7.909e-04  2.077e-02  2.800e+01   0.038    0.970    
+                        Estimate   Std. Error           df t value
+(Intercept)           50.5161891    1.4296454   31.1737942  35.335
+t                      0.9433806    0.0658755 5998.3764616  14.321
+warmth                 0.9140307    0.0379336 4745.3496835  24.096
+physical_punishment   -1.0087537    0.0497972 6483.6770989 -20.257
+identity              -0.1319548    0.1517350 2968.7829265  -0.870
+intervention           0.8591494    0.1520510 2971.8112001   5.650
+HDI                    0.0007909    0.0207656   28.0001836   0.038
+                                Pr(>|t|)    
+(Intercept)         < 0.0000000000000002 ***
+t                   < 0.0000000000000002 ***
+warmth              < 0.0000000000000002 ***
+physical_punishment < 0.0000000000000002 ***
+identity                           0.385    
+intervention                0.0000000175 ***
+HDI                                0.970    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -1497,19 +1530,32 @@ Random effects:
 Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
-                        Estimate Std. Error         df t value Pr(>|t|)    
-(Intercept)            5.100e+01  1.609e+00  4.996e+01  31.703   <2e-16 ***
-t                      6.990e-01  3.747e-01  6.131e+03   1.865   0.0622 .  
-warmth                 8.171e-01  8.054e-02  8.275e+03  10.146   <2e-16 ***
-physical_punishment   -1.010e+00  1.114e-01  8.085e+03  -9.068   <2e-16 ***
-identity              -2.446e-01  3.042e-01  8.696e+03  -0.804   0.4212    
-intervention           6.605e-01  3.046e-01  8.697e+03   2.168   0.0302 *  
-HDI                    2.669e-03  2.213e-02  3.610e+01   0.121   0.9047    
-t:warmth               4.862e-02  3.562e-02  6.405e+03   1.365   0.1723    
-t:physical_punishment  4.964e-04  4.946e-02  6.753e+03   0.010   0.9920    
-t:identity             5.631e-02  1.318e-01  5.993e+03   0.427   0.6692    
-t:intervention         9.950e-02  1.320e-01  5.994e+03   0.754   0.4510    
-t:HDI                 -9.379e-04  3.823e-03  5.994e+03  -0.245   0.8062    
+                          Estimate   Std. Error           df t value
+(Intercept)             51.0036725    1.6087742   49.9583024  31.703
+t                        0.6989769    0.3746882 6131.2125222   1.865
+warmth                   0.8170912    0.0805355 8274.9994610  10.146
+physical_punishment     -1.0097729    0.1113557 8084.6085126  -9.068
+identity                -0.2446453    0.3041604 8695.8966126  -0.804
+intervention             0.6604671    0.3046286 8697.0843469   2.168
+HDI                      0.0026692    0.0221295   36.1037721   0.121
+t:warmth                 0.0486211    0.0356217 6404.8722416   1.365
+t:physical_punishment    0.0004964    0.0494590 6753.0158846   0.010
+t:identity               0.0563140    0.1318043 5993.4518199   0.427
+t:intervention           0.0995037    0.1319917 5994.1433047   0.754
+t:HDI                   -0.0009379    0.0038233 5993.9091197  -0.245
+                                 Pr(>|t|)    
+(Intercept)           <0.0000000000000002 ***
+t                                  0.0622 .  
+warmth                <0.0000000000000002 ***
+physical_punishment   <0.0000000000000002 ***
+identity                           0.4212    
+intervention                       0.0302 *  
+HDI                                0.9047    
+t:warmth                           0.1723    
+t:physical_punishment              0.9920    
+t:identity                         0.6692    
+t:intervention                     0.4510    
+t:HDI                              0.8062    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -1567,7 +1613,6 @@ Categorical}\label{change-country-to-categorical-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \NormalTok{m2A }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{+}\NormalTok{ warmth }\OperatorTok{+} 
 \NormalTok{                                 physical\_punishment }\OperatorTok{+} 
 \NormalTok{                                 identity }\OperatorTok{+}\NormalTok{ intervention }\OperatorTok{+} 
@@ -1610,7 +1655,6 @@ HDI                  -0.000565882   0.0196433   -0.03    0.9770
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \NormalTok{m2B }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{*}\NormalTok{ (warmth }\OperatorTok{+} 
 \NormalTok{                                 physical\_punishment }\OperatorTok{+} 
 \NormalTok{                                 identity }\OperatorTok{+}\NormalTok{ intervention }\OperatorTok{+} 

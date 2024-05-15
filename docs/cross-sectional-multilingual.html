@@ -387,8 +387,7 @@ Table&nbsp;4.1: Correlated and Uncorrelated Random Effects
 <section id="run-the-model" class="level4" data-number="4.3.0.2">
 <h4 data-number="4.3.0.2" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">4.3.0.2</span> Run The Model</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
@@ -462,17 +461,32 @@ Caution
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R prefers to use scientific notation when possible. I find that the use of scientific notation can be confusing in reading results. I turn off scientific notation by setting a penalty for its use: <code>options(scipen = 999)</code>.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmerTest)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite's method [
 lmerModLmerTest]
@@ -494,13 +508,20 @@ Random effects:
 Number of obs: 3000, groups:  country, 30
 
 Fixed effects:
-                      Estimate Std. Error         df t value Pr(&gt;|t|)    
-(Intercept)          5.231e+01  1.447e+00  3.311e+01  36.158  &lt; 2e-16 ***
-warmth               8.346e-01  6.425e-02  4.190e+01  12.989 2.77e-16 ***
-physical_punishment -9.919e-01  7.984e-02  2.968e+03 -12.423  &lt; 2e-16 ***
-identity            -3.004e-01  2.172e-01  2.970e+03  -1.383  0.16678    
-intervention         6.391e-01  2.176e-01  2.971e+03   2.937  0.00334 ** 
-HDI                 -3.395e-03  2.060e-02  2.760e+01  -0.165  0.87027    
+                       Estimate  Std. Error          df t value
+(Intercept)           52.311714    1.446735   33.113738  36.158
+warmth                 0.834562    0.064252   41.896966  12.989
+physical_punishment   -0.991892    0.079845 2968.010901 -12.423
+identity              -0.300350    0.217179 2970.106304  -1.383
+intervention           0.639059    0.217603 2971.185215   2.937
+HDI                   -0.003395    0.020596   27.598517  -0.165
+                                Pr(&gt;|t|)    
+(Intercept)         &lt; 0.0000000000000002 ***
+warmth              0.000000000000000277 ***
+physical_punishment &lt; 0.0000000000000002 ***
+identity                         0.16678    
+intervention                     0.00334 ** 
+HDI                              0.87027    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
