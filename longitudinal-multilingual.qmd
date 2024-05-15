@@ -31,7 +31,7 @@ $$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
 
 ## Growth Trajectories
 
-Remember, following Section 6.4, that in longitudinal multilevel models, the variable for *time* assumes a special role as we are often thinking of a *growth trajectory* over time.
+Remember, following Section 6.4, that in longitudinal multilevel models, the variable for *time* assumes an important role as we are often thinking of a *growth trajectory* over time.
 
 As discussed in Section 6.4, think about a model where *identity* is a (1/0) variable for membership in one of two groups:
 
@@ -46,7 +46,12 @@ Then, each identity group has its own intercept and time trajectory:
 
 : Slope and Intercept for Each Group {#tbl-trajectory}
 
-> Thus, again following Section 6.4, in longitudinal multilevel models, *main effects* modify the *intercept* of the time trajectory, while *interactions with time*, modify the *slope* of the time trajectory. Below, we run models with main effects only, then models with main effects, and interactions with time.
+
+::: {.callout-tip}
+## Main Effects and Interactions
+
+Thus, again following Section 6.4, in longitudinal multilevel models, *main effects* modify the *intercept* of the time trajectory, while *interactions with time*, modify the *slope* of the time trajectory. Below, we run models with *main effects only*, then models with *main effects, and interactions with time*.
+:::
 
 ## Run Models
 
@@ -145,6 +150,7 @@ summary(fit2B)
 
 ```{julia}
 #| output: false
+#| label: Julia-getdata
 
 using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 
