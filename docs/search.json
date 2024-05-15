@@ -170,6 +170,16 @@
     ]
   },
   {
+    "objectID": "longitudinal-multilingual.html#growth-trajectories",
+    "href": "longitudinal-multilingual.html#growth-trajectories",
+    "title": "5  Longitudinal Multilevel Models",
+    "section": "5.3 Growth Trajectories",
+    "text": "5.3 Growth Trajectories\nRemember, following Section 6.4, that in longitudinal multilevel models, the variable for time assumes an important role as we are often thinking of a growth trajectory over time.\nAs discussed in Section 6.4, think about a model where identity is a (1/0) variable for membership in one of two groups:\n\\[\\text{outcome} = \\beta_0 + \\beta_t \\text{time} + \\beta_\\text{identity} \\text{identity} + \\beta_\\text{interaction} \\text{identity} \\times \\text{time} + u_{0i} + e_{it}\\]\nThen, each identity group has its own intercept and time trajectory:\n\n\n\nTable 5.1: Slope and Intercept for Each Group\n\n\n\n\n\n\n\n\n\n\nGroup\nIntercept\nSlope (Time Trajectory)\n\n\n\n\n0\n\\(\\beta_0\\)\n\\(\\beta_t\\)\n\n\n1\n\\(\\beta_0 + \\beta_\\text{identity}\\)\n\\(\\beta_t + \\beta_\\text{interaction}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nMain Effects and Interactions\n\n\n\nThus, again following Section 6.4, in longitudinal multilevel models, main effects modify the intercept of the time trajectory, while interactions with time, modify the slope of the time trajectory. Below, we run models with main effects only, then models with main effects, and interactions with time.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Longitudinal Multilevel Models</span>"
+    ]
+  },
+  {
     "objectID": "longitudinal-multilingual.html#run-models",
     "href": "longitudinal-multilingual.html#run-models",
     "title": "5  Longitudinal Multilevel Models",
@@ -197,16 +207,6 @@
     "text": "Bates, D. (2024). MixedModels.jl\nDocumentation. https://juliastats.org/MixedModels.jl/stable/\n\n\nBates, D., Mächler, M., Bolker, B., & Walker, S. (2015). Fitting\nlinear mixed-effects models using lme4. Journal of Statistical\nSoftware, 67(1), 1–48. https://doi.org/10.18637/jss.v067.i01\n\n\nBezanson, J., Edelman, A., Karpinski, S., & Shah, V. B. (2017).\nJulia: A fresh approach to numerical computing. SIAM Review,\n59(1), 65–98. https://doi.org/10.1137/141000671\n\n\nR Core Team. (2023). R: A language and environment for statistical\ncomputing. R Foundation for Statistical Computing. https://www.R-project.org/\n\n\nSchanen, J. (2021). Math person (Strogatz Prize\nentry). National Museum of Mathematics.\n\n\nStataCorp. (2021). Stata 17 multilevel mixed effects reference\nmanual. Stata Press.\n\n\nThoreau, H. D. (1975). The commercial spirit of modern times [1837]. In\nJ. J. Moldenhauer, E. Moser, & A. C. Kern (Eds.), Early essays\nand miscellanies. Princeton University Press.",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "longitudinal-multilingual.html#growth-trajectories",
-    "href": "longitudinal-multilingual.html#growth-trajectories",
-    "title": "5  Longitudinal Multilevel Models",
-    "section": "5.3 Growth Trajectories",
-    "text": "5.3 Growth Trajectories\nRemember, following Section 6.4, that in longitudinal multilevel models, the variable for time assumes an important role as we are often thinking of a growth trajectory over time.\nAs discussed in Section 6.4, think about a model where identity is a (1/0) variable for membership in one of two groups:\n\\[\\text{outcome} = \\beta_0 + \\beta_t \\text{time} + \\beta_\\text{identity} \\text{identity} + \\beta_\\text{interaction} \\text{identity} \\times \\text{time} + u_{0i} + e_{it}\\]\nThen, each identity group has its own intercept and time trajectory:\n\n\n\nTable 5.1: Slope and Intercept for Each Group\n\n\n\n\n\n\n\n\n\n\nGroup\nIntercept\nSlope (Time Trajectory)\n\n\n\n\n0\n\\(\\beta_0\\)\n\\(\\beta_t\\)\n\n\n1\n\\(\\beta_0 + \\beta_\\text{identity}\\)\n\\(\\beta_t + \\beta_\\text{interaction}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nMain Effects and Interactions\n\n\n\nThus, again following Section 6.4, in longitudinal multilevel models, main effects modify the intercept of the time trajectory, while interactions with time, modify the slope of the time trajectory. Below, we run models with main effects only, then models with main effects, and interactions with time.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Longitudinal Multilevel Models</span>"
     ]
   }
 ]
