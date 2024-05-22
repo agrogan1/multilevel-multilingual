@@ -288,8 +288,8 @@ hypothetica |
       group |
    variable |      Freq.     Percent        Cum.
 ------------+-----------------------------------
-          1 |      1,507       50.23       50.23
-          2 |      1,493       49.77      100.00
+          0 |      1,507       50.23       50.23
+          1 |      1,493       49.77      100.00
 ------------+-----------------------------------
       Total |      3,000      100.00
 
@@ -322,8 +322,8 @@ interventio |
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    country          HDI            family            id            identity
- 1      : 100   Min.   :33.00   Min.   :  1.00   Length:3000        1:1507  
- 2      : 100   1st Qu.:53.00   1st Qu.: 25.75   Class :character   2:1493  
+ 1      : 100   Min.   :33.00   Min.   :  1.00   Length:3000        0:1507  
+ 2      : 100   1st Qu.:53.00   1st Qu.: 25.75   Class :character   1:1493  
  3      : 100   Median :70.00   Median : 50.50   Mode  :character           
  4      : 100   Mean   :64.77   Mean   : 50.50                              
  5      : 100   3rd Qu.:81.00   3rd Qu.: 75.25                              
@@ -366,7 +366,7 @@ interventio |
    2 │ HDI                  64.7667  33.0    70.0    87.0            0  Union{
    3 │ family               50.5     1.0     50.5    100.0           0  Union{
    4 │ id                            1.1             9.99            0  Union{
-   5 │ identity                      1.0             2.0             0  Union{ ⋯
+   5 │ identity                      0.0             1.0             0  Union{ ⋯
    6 │ intervention                  0.0             1.0             0  Union{
    7 │ physical_punishment  2.47867  0.0     2.0     5.0             0  Union{
    8 │ warmth               3.52167  0.0     4.0     7.0             0  Union{
@@ -386,7 +386,7 @@ interventio |
 <li><code>outcome</code> has a mean of approximately 52 and ranges from approximately 30 to 75.</li>
 <li><code>warmth</code> and <code>physical punishment</code> are both variables that represent the number of times that parents use each of these forms of discipline in a week. The average of the former is about 3.5, while the average of the latter is about 2.5.</li>
 <li><code>HDI</code>, the Human Development Index has an average of about 65, and a wide range.</li>
-<li><code>identity</code> is a categorical variable for a hypothetical identity group, and has values of 1 and 2.</li>
+<li><code>identity</code> is a categorical variable for a hypothetical identity group, and has values of 0 and 1.</li>
 <li><code>intervention</code> is also a categorical variable, and has values of 0 and 1.</li>
 </ul>
 

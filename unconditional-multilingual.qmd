@@ -10,7 +10,7 @@ The Intraclass Correlation Coefficient (ICC) is given by:
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCunconditional}
 
-In a two level multilevel model, the ICC provides a measure of the amount of variation attributable to Level 2.
+In a two level multilevel model, the ICC provides a measure of the proportion of variation attributable to Level 2.
 
 ```{r}
 #| label: unconditionalsetup

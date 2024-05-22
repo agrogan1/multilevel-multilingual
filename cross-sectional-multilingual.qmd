@@ -23,7 +23,7 @@ $$\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} +$$ {#eq-MLMsubstant
 
 $$\beta_2 \text{physical punishment}_{ij} +$$
 
-$$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} +$$
+$$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{j} +$$
 
 $$u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}$$ 
 
@@ -171,9 +171,7 @@ m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment +
 
 ## Interpretation
 
-Models suggest that parental warmth is associated with increases in the beneficial outcome, while physical punishment is associated with decreases in the beneficial outcome. Membership in the group represented by `identity` is not associated with the outcome. The intervention is associated with increases in the outcome. The Human Development Index is not associated with the outcome.
-
-
+Models suggest that parental warmth is associated with increases in the beneficial outcome, while physical punishment is associated with decreases in the beneficial outcome. The intervention is associated with increases in the outcome. There is insufficient evidence that either identity group or the Human Development Index are associated with the outcome.
 
 
 

@@ -59,7 +59,7 @@ Of course, each of these programs can be run by itself, if you have them install
 
 ## The Data {#sec-data}
 
-The examples use the `simulated_multilevel_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html). Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta) to download the data.
+The examples use the `simulated_multilevel_data.dta` and `simulated_multilevel_longitudinal_data.dta` files. Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta) to download the cross-sectional data. Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta) to download the longitudinal data.
 
 ```{r}
 #| echo: false
@@ -123,7 +123,7 @@ In Stata `mixed`, the syntax for a multilevel model of the form described in @eq
 #| echo: true
 #| eval: false
 
-mixed y x || group: x
+mixed y x z || group: x
 
 ```
 
