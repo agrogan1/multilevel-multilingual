@@ -23,11 +23,11 @@ The data employed in these examples are a longitudinal extension of the data des
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
 
-$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
+$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{j} +$$
 
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
-$$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
+$$v_{0ij} + v_{1ij} \times \text{time}_{itj} + e_{itj}$$
 
 ## Growth Trajectories
 
@@ -74,7 +74,7 @@ use simulated_multilevel_longitudinal_data.dta
 ```{stata}
 #| label: Stata-maineffects
 
-mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth
+mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth || family: t
 
 ```
 
@@ -83,7 +83,7 @@ mixed outcome t warmth physical_punishment i.identity i.intervention HDI || coun
 ```{stata}
 #| label: Stata-interactions
 
-mixed outcome c.t##(c.warmth c.physical_punishment i.identity i.intervention c.HDI) || country: warmth
+mixed outcome c.t##(c.warmth c.physical_punishment i.identity i.intervention c.HDI) || country: warmth || family: t
 
 ```
 
@@ -205,7 +205,7 @@ m2B = fit(MixedModel, @formula(outcome ~ t * (warmth +
 
 The *main effects only model* suggests that time is associated with increases in the outcome. In the main effects model, main effects other than time, indicate whether a particular variable is associated with higher or lower intercepts of the time trajectory, at the beginning of the study time. Warmth is again associated with increases in the outcome, while physical punishment is associated with decreases in the outcome. Identity is again not associated with the outcome, while the intervention is associated with higher levels of the outcome. The Human Development Index is again not associated with the outcome.
 
-The second model adds interactions with time to the first model. Results are largly similar to the prior model. However, here we not only examine whether main effects other than time are associated with higher or lower time trajectories, but also whether particular variables are associated with differences in the slope of the time trajectory. In this case, we find that no independent variable is associated with changes in the slope of the time trajectory.
+The second model adds interactions with time to the first model. Results are largly similar to the prior model. However, here we not only examine whether main effects other than time are associated with higher or lower time trajectories, but also whether particular variables are associated with differences in the slope of the time trajectory. In this case, we find insufficient evidence that any independent variable is associated with changes in the slope of the time trajectory.
 
 However, it may be illustrative to imagine how we would interpret the results had a particular interaction term been statistically significant. Let us consider one of the interaction terms with the largest coefficient, `intervention#time`. The interaction of the intervention with time is positive. Had this coefficient been statistically signifcant, it would have indicated that the intervention was associated with more rapid increases in the outcome over time *in addition to* the fact that the intervention is associated with higher initial levels of the outcome.
 
