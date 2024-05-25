@@ -296,9 +296,9 @@ window.Quarto = {
 <section id="the-equation" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">5.2</span> The Equation</h2>
 <p><span id="eq-MLM-longitudinal"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{5.1}\]</span></span></p>
-<p><span class="math display">\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]</span></p>
+<p><span class="math display">\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{j} +\]</span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]</span></p>
-<p><span class="math display">\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]</span></p>
+<p><span class="math display">\[v_{0ij} + v_{1ij} \times \text{time}_{itj} + e_{itj}\]</span></p>
 </section>
 <section id="growth-trajectories" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="growth-trajectories"><span class="header-section-number">5.3</span> Growth Trajectories</h2>
@@ -373,47 +373,59 @@ Main Effects and Interactions
 <section id="main-effects-only" class="level5" data-number="5.4.0.2.1">
 <h5 data-number="5.4.0.2.1" class="anchored" data-anchor-id="main-effects-only"><span class="header-section-number">5.4.0.2.1</span> Main Effects Only</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || country: warmth || <span class="kw">family</span>: t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -28739.506  
-Iteration 1:  Log likelihood = -28739.506  
+Iteration 0:  Log likelihood =  -28523.49  
+Iteration 1:  Log likelihood = -28499.987  
+Iteration 2:  Log likelihood = -28499.737  
+Iteration 3:  Log likelihood = -28499.604  
+Iteration 4:  Log likelihood = -28499.603  
 
 Computing standard errors ...
 
-Mixed-effects ML regression                         Number of obs    =   9,000
-Group variable: country                             Number of groups =      30
-                                                    Obs per group:
-                                                                 min =     300
-                                                                 avg =   300.0
-                                                                 max =     300
-                                                    Wald chi2(6)     = 1119.81
-Log likelihood = -28739.506                         Prob &gt; chi2      =  0.0000
+Mixed-effects ML regression                            Number of obs =   9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+                country |         30        300      300.0        300
+                 family |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                       Wald chi2(6)  = 1096.15
+Log likelihood = -28499.603                            Prob &gt; chi2   =  0.0000
 
 -------------------------------------------------------------------------------------
             outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
 --------------------+----------------------------------------------------------------
-                  t |   .9443446   .0756408    12.48   0.000     .7960914    1.092598
-             warmth |   .9123903   .0430042    21.22   0.000     .8281035     .996677
-physical_punishment |  -.9881587   .0451732   -21.87   0.000    -1.076696   -.8996209
-         2.identity |  -.1241465   .1242225    -1.00   0.318     -.367618    .1193251
-     1.intervention |   .8575839   .1245179     6.89   0.000     .6135332    1.101635
-                HDI |  -.0025173   .0191696    -0.13   0.896    -.0400891    .0350544
-              _cons |   50.54528   1.304146    38.76   0.000      47.9892    53.10136
+                  t |    .943864   .0658716    14.33   0.000      .814758     1.07297
+             warmth |    .913496   .0423731    21.56   0.000     .8304462    .9965457
+physical_punishment |  -1.007897   .0497622   -20.25   0.000    -1.105429   -.9103647
+         1.identity |  -.1276926   .1515835    -0.84   0.400    -.4247909    .1694056
+     1.intervention |   .8589966   .1519095     5.65   0.000     .5612596    1.156734
+                HDI |  -.0005657   .0196437    -0.03   0.977    -.0390666    .0379352
+              _cons |   50.46724   1.338318    37.71   0.000     47.84418    53.09029
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Independent         |
-                 var(warmth) |   .0229349   .0135353      .0072136    .0729194
-                  var(_cons) |     3.0009   .8550708      1.716768    5.245553
+                 var(warmth) |   .0107584   .0127845      .0010477    .1104715
+                  var(_cons) |   3.167089   .9146768      1.798157    5.578187
 -----------------------------+------------------------------------------------
-               var(Residual) |   34.31935   .5130963       33.3283    35.33988
+family: Independent          |
+                      var(t) |   3.74e-09   7.36e-07      1.4e-176    9.7e+158
+                  var(_cons) |   8.387276    .472419      7.510631    9.366243
+-----------------------------+------------------------------------------------
+               var(Residual) |   26.02733   .4753702      25.11211    26.97592
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 767.22                Prob &gt; chi2 = 0.0000
+LR test vs. linear model: chi2(4) = 1247.03               Prob &gt; chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
@@ -422,61 +434,73 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <section id="interactions-with-time" class="level5" data-number="5.4.0.2.2">
 <h5 data-number="5.4.0.2.2" class="anchored" data-anchor-id="interactions-with-time"><span class="header-section-number">5.4.0.2.2</span> Interactions With Time</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mixed outcome c.t##(c.warmth c.physical_punishment i.<span class="kw">identity</span> i.intervention c.HDI) || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mixed outcome c.t##(c.warmth c.physical_punishment i.<span class="kw">identity</span> i.intervention c.HDI) || country: warmth || <span class="kw">family</span>: t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -28738.554  
-Iteration 1:  Log likelihood = -28738.554  
+Iteration 0:  Log likelihood =  -28522.21  
+Iteration 1:  Log likelihood = -28498.685  
+Iteration 2:  Log likelihood = -28498.469  
+Iteration 3:  Log likelihood =  -28498.31  
+Iteration 4:  Log likelihood = -28498.309  
 
 Computing standard errors ...
 
-Mixed-effects ML regression                         Number of obs    =   9,000
-Group variable: country                             Number of groups =      30
-                                                    Obs per group:
-                                                                 min =     300
-                                                                 avg =   300.0
-                                                                 max =     300
-                                                    Wald chi2(11)    = 1122.75
-Log likelihood = -28738.554                         Prob &gt; chi2      =  0.0000
+Mixed-effects ML regression                            Number of obs =   9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+                country |         30        300      300.0        300
+                 family |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                       Wald chi2(11) = 1100.25
+Log likelihood = -28498.309                            Prob &gt; chi2   =  0.0000
 
 ---------------------------------------------------------------------------------------
               outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
 ----------------------+----------------------------------------------------------------
-                    t |   .7537359   .3719996     2.03   0.043     .0246301    1.482842
-               warmth |   .8198365   .0911059     9.00   0.000     .6412723    .9984008
-  physical_punishment |  -1.000348   .1198049    -8.35   0.000    -1.235162   -.7655353
-           2.identity |  -.2340191   .3271243    -0.72   0.474     -.875171    .4071327
-       1.intervention |   .6597456   .3275877     2.01   0.044     .0176856    1.301806
-                  HDI |  -.0005531   .0210866    -0.03   0.979     -.041882    .0407757
+                    t |   .7582075    .326177     2.32   0.020     .1189122    1.397503
+               warmth |   .8170757    .082662     9.88   0.000     .6550611    .9790903
+  physical_punishment |  -1.009031   .1112932    -9.07   0.000    -1.227162   -.7909007
+           1.identity |  -.2387167   .3039964    -0.79   0.432    -.8345387    .3571053
+       1.intervention |   .6607606   .3044503     2.17   0.030      .064049    1.257472
+                  HDI |   .0013614   .0210842     0.06   0.949    -.0399628    .0426856
                       |
-         c.t#c.warmth |   .0463746   .0402459     1.15   0.249    -.0325059    .1252551
+         c.t#c.warmth |   .0483637   .0356074     1.36   0.174    -.0214255    .1181529
                       |
                   c.t#|
-c.physical_punishment |   .0061255   .0551491     0.11   0.912    -.1019647    .1142157
+c.physical_punishment |   .0005421   .0494355     0.01   0.991    -.0963496    .0974338
                       |
          identity#c.t |
-                   2  |   .0548965   .1513015     0.36   0.717     -.241649    .3514421
+                   1  |   .0554389   .1317444     0.42   0.674    -.2027754    .3136532
                       |
      intervention#c.t |
-                   1  |   .0990704    .151503     0.65   0.513      -.19787    .3960108
+                   1  |   .0992811    .131925     0.75   0.452    -.1592872    .3578493
                       |
-            c.t#c.HDI |  -.0009791   .0043888    -0.22   0.823    -.0095811    .0076229
+            c.t#c.HDI |  -.0009551   .0038216    -0.25   0.803    -.0084453    .0065352
                       |
-                _cons |   50.92503   1.494157    34.08   0.000     47.99654    53.85352
+                _cons |   50.83632   1.483548    34.27   0.000     47.92862    53.74402
 ---------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Independent         |
-                 var(warmth) |   .0228292   .0135078      .0071588    .0728013
-                  var(_cons) |   3.001849   .8552796       1.71738    5.247001
+                 var(warmth) |   .0106014   .0127458      .0010046    .1118779
+                  var(_cons) |   3.170089   .9153354      1.800091    5.582753
 -----------------------------+------------------------------------------------
-               var(Residual) |   34.31227   .5129896      33.32141    35.33258
+family: Independent          |
+                      var(t) |   1.36e-09   2.89e-07      1.7e-190    1.1e+172
+                  var(_cons) |   8.391888   .4724105      7.515232    9.370806
+-----------------------------+------------------------------------------------
+               var(Residual) |   26.01583   .4751604      25.10101      26.964
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 767.35                Prob &gt; chi2 = 0.0000
+LR test vs. linear model: chi2(4) = 1247.84               Prob &gt; chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
@@ -562,13 +586,13 @@ Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
                         Estimate   Std. Error           df t value
-(Intercept)           50.5161891    1.4296454   31.1737942  35.335
-t                      0.9433806    0.0658755 5998.3764616  14.321
-warmth                 0.9140307    0.0379336 4745.3496835  24.096
-physical_punishment   -1.0087537    0.0497972 6483.6770989 -20.257
-identity              -0.1319548    0.1517350 2968.7829265  -0.870
-intervention           0.8591494    0.1520510 2971.8112001   5.650
-HDI                    0.0007909    0.0207656   28.0001836   0.038
+(Intercept)           50.3842343    1.4139114   29.8246912  35.635
+t                      0.9433806    0.0658755 5998.3764548  14.321
+warmth                 0.9140307    0.0379336 4745.3497493  24.096
+physical_punishment   -1.0087537    0.0497972 6483.6771808 -20.257
+identity              -0.1319548    0.1517350 2968.7828107  -0.870
+intervention           0.8591494    0.1520510 2971.8111995   5.650
+HDI                    0.0007909    0.0207656   28.0001855   0.038
                                 Pr(&gt;|t|)    
 (Intercept)         &lt; 0.0000000000000002 ***
 t                   &lt; 0.0000000000000002 ***
@@ -582,12 +606,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) t      warmth physc_ idntty intrvn
-t           -0.091                                   
-warmth      -0.088 -0.002                            
-physcl_pnsh -0.090 -0.007 -0.012                     
-identity    -0.156  0.000 -0.013 -0.003              
-interventin -0.055  0.000  0.039  0.019 -0.018       
-HDI         -0.941  0.000 -0.004  0.005  0.000  0.002</code></pre>
+t           -0.092                                   
+warmth      -0.091 -0.002                            
+physcl_pnsh -0.092 -0.007 -0.012                     
+identity    -0.051  0.000 -0.013 -0.003              
+interventin -0.058  0.000  0.039  0.019 -0.018       
+HDI         -0.951  0.000 -0.004  0.005  0.000  0.002</code></pre>
 </div>
 </div>
 </section>
@@ -623,21 +647,21 @@ Number of obs: 9000, groups:  id:country, 3000; country, 30
 
 Fixed effects:
                           Estimate   Std. Error           df t value
-(Intercept)             51.0036725    1.6087742   49.9583024  31.703
-t                        0.6989769    0.3746882 6131.2125222   1.865
-warmth                   0.8170912    0.0805355 8274.9994610  10.146
-physical_punishment     -1.0097729    0.1113557 8084.6085126  -9.068
-identity                -0.2446453    0.3041604 8695.8966126  -0.804
-intervention             0.6604671    0.3046286 8697.0843469   2.168
-HDI                      0.0026692    0.0221295   36.1037721   0.121
-t:warmth                 0.0486211    0.0356217 6404.8722416   1.365
-t:physical_punishment    0.0004964    0.0494590 6753.0158846   0.010
-t:identity               0.0563140    0.1318043 5993.4518199   0.427
-t:intervention           0.0995037    0.1319917 5994.1433047   0.754
-t:HDI                   -0.0009379    0.0038233 5993.9091197  -0.245
+(Intercept)             50.7590272    1.5518360   43.2608620  32.709
+t                        0.7552909    0.3263028 6176.7440549   2.315
+warmth                   0.8170912    0.0805355 8274.9995422  10.146
+physical_punishment     -1.0097729    0.1113557 8084.6084915  -9.068
+identity                -0.2446453    0.3041604 8695.8966197  -0.804
+intervention             0.6604671    0.3046286 8697.0843430   2.168
+HDI                      0.0026692    0.0221295   36.1037733   0.121
+t:warmth                 0.0486211    0.0356217 6404.8723333   1.365
+t:physical_punishment    0.0004964    0.0494590 6753.0158441   0.010
+t:identity               0.0563140    0.1318043 5993.4518022   0.427
+t:intervention           0.0995037    0.1319917 5994.1433001   0.754
+t:HDI                   -0.0009379    0.0038233 5993.9090880  -0.245
                                  Pr(&gt;|t|)    
 (Intercept)           &lt;0.0000000000000002 ***
-t                                  0.0622 .  
+t                                  0.0207 *  
 warmth                &lt;0.0000000000000002 ***
 physical_punishment   &lt;0.0000000000000002 ***
 identity                           0.4212    
@@ -653,17 +677,17 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) t      warmth physc_ idntty intrvn HDI    t:wrmt t:phy_
-t           -0.466                                                        
-warmth      -0.169  0.285                                                 
-physcl_pnsh -0.183  0.313 -0.005                                          
-identity    -0.278  0.450 -0.013 -0.002                                   
-interventin -0.100  0.162  0.039  0.019 -0.017                            
-HDI         -0.892  0.230 -0.007  0.012 -0.001  0.003                     
-t:warmth     0.150 -0.324 -0.882  0.001  0.011 -0.035  0.006              
-t:physcl_pn  0.164 -0.351  0.004 -0.894 -0.001 -0.017 -0.010 -0.003       
-t:identity   0.242 -0.519  0.011  0.000 -0.867  0.014  0.001 -0.013  0.002
-t:intervntn  0.087 -0.187 -0.035 -0.017  0.014 -0.867 -0.003  0.041  0.019
-t:HDI        0.310 -0.666  0.015 -0.027  0.002 -0.007 -0.346 -0.016  0.029
+t           -0.421                                                        
+warmth      -0.178  0.331                                                 
+physcl_pnsh -0.190  0.360 -0.005                                          
+identity    -0.093  0.166 -0.013 -0.002                                   
+interventin -0.107  0.192  0.039  0.019 -0.017                            
+HDI         -0.925  0.264 -0.007  0.012 -0.001  0.003                     
+t:warmth     0.158 -0.377 -0.882  0.001  0.011 -0.035  0.006              
+t:physcl_pn  0.170 -0.402  0.004 -0.894 -0.001 -0.017 -0.010 -0.003       
+t:identity   0.081 -0.192  0.011  0.000 -0.867  0.014  0.001 -0.013  0.002
+t:intervntn  0.093 -0.222 -0.035 -0.017  0.014 -0.867 -0.003  0.041  0.019
+t:HDI        0.322 -0.765  0.015 -0.027  0.002 -0.007 -0.346 -0.016  0.029
             t:dntt t:ntrv
 t                        
 warmth                   
@@ -716,23 +740,23 @@ t:HDI       -0.002  0.008</code></pre>
 
 Variance components:
             Column    Variance Std.Dev.   Corr.
-id       (Intercept)   8.387351 2.896092
-country  (Intercept)   3.166939 1.779590
-         warmth        0.010760 0.103732   .  
-Residual              26.027290 5.101695
+id       (Intercept)   8.387216 2.896069
+country  (Intercept)   3.167143 1.779647
+         warmth        0.010762 0.103739   .  
+Residual              26.027362 5.101702
  Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
 ───────────────────────────────────────────────────────────────
                             Coef.  Std. Error       z  Pr(&gt;|z|)
 ───────────────────────────────────────────────────────────────
-(Intercept)          50.5949        1.35491     37.34    &lt;1e-99
-t                     0.943864      0.0658716   14.33    &lt;1e-45
-warmth                0.913496      0.0423739   21.56    &lt;1e-99
+(Intercept)          50.4673        1.33833     37.71    &lt;1e-99
+t                     0.943864      0.0658717   14.33    &lt;1e-45
+warmth                0.913496      0.0423744   21.56    &lt;1e-99
 physical_punishment  -1.0079        0.0497622  -20.25    &lt;1e-90
-identity             -0.127692      0.151584    -0.84    0.3996
-intervention          0.858997      0.15191      5.65    &lt;1e-07
-HDI                  -0.000565882   0.0196433   -0.03    0.9770
+identity             -0.127692      0.151583    -0.84    0.3996
+intervention          0.858997      0.151909     5.65    &lt;1e-07
+HDI                  -0.000566029   0.0196439   -0.03    0.9770
 ───────────────────────────────────────────────────────────────</code></pre>
 </div>
 </div>
@@ -756,7 +780,7 @@ HDI                  -0.000565882   0.0196433   -0.03    0.9770
 Variance components:
             Column    Variance Std.Dev.   Corr.
 id       (Intercept)   8.391746 2.896851
-country  (Intercept)   3.170031 1.780458
+country  (Intercept)   3.170026 1.780457
          warmth        0.010609 0.102999   .  
 Residual              26.015906 5.100579
  Number of obs: 9000; levels of grouping factors: 3000, 30
@@ -765,13 +789,13 @@ Residual              26.015906 5.100579
 ──────────────────────────────────────────────────────────────────
                                 Coef.  Std. Error      z  Pr(&gt;|z|)
 ──────────────────────────────────────────────────────────────────
-(Intercept)              51.0751       1.54284     33.10    &lt;1e-99
-t                         0.702771     0.374539     1.88    0.0606
+(Intercept)              50.8364       1.48355     34.27    &lt;1e-99
+t                         0.758209     0.326177     2.32    0.0201
 warmth                    0.817076     0.0826636    9.88    &lt;1e-22
 physical_punishment      -1.00903      0.111293    -9.07    &lt;1e-18
 identity                 -0.238714     0.303996    -0.79    0.4323
 intervention              0.660761     0.30445      2.17    0.0300
-HDI                       0.00136065   0.0210842    0.06    0.9485
+HDI                       0.00136064   0.0210842    0.06    0.9485
 t &amp; warmth                0.0483635    0.0356074    1.36    0.1744
 t &amp; physical_punishment   0.000542203  0.0494355    0.01    0.9912
 t &amp; identity              0.0554385    0.131745     0.42    0.6739
@@ -789,7 +813,7 @@ t &amp; HDI                  -0.000955067  0.00382162  -0.25    0.8027
 <section id="interpretation" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">5.5</span> Interpretation</h2>
 <p>The <em>main effects only model</em> suggests that time is associated with increases in the outcome. In the main effects model, main effects other than time, indicate whether a particular variable is associated with higher or lower intercepts of the time trajectory, at the beginning of the study time. Warmth is again associated with increases in the outcome, while physical punishment is associated with decreases in the outcome. Identity is again not associated with the outcome, while the intervention is associated with higher levels of the outcome. The Human Development Index is again not associated with the outcome.</p>
-<p>The second model adds interactions with time to the first model. Results are largly similar to the prior model. However, here we not only examine whether main effects other than time are associated with higher or lower time trajectories, but also whether particular variables are associated with differences in the slope of the time trajectory. In this case, we find that no independent variable is associated with changes in the slope of the time trajectory.</p>
+<p>The second model adds interactions with time to the first model. Results are largly similar to the prior model. However, here we not only examine whether main effects other than time are associated with higher or lower time trajectories, but also whether particular variables are associated with differences in the slope of the time trajectory. In this case, we find insufficient evidence that any independent variable is associated with changes in the slope of the time trajectory.</p>
 <p>However, it may be illustrative to imagine how we would interpret the results had a particular interaction term been statistically significant. Let us consider one of the interaction terms with the largest coefficient, <code>intervention#time</code>. The interaction of the intervention with time is positive. Had this coefficient been statistically signifcant, it would have indicated that the intervention was associated with more rapid increases in the outcome over time <em>in addition to</em> the fact that the intervention is associated with higher initial levels of the outcome.</p>
 
 

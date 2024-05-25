@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-05-21}
+\date{2024-05-25}
 
 \begin{document}
 \maketitle
@@ -332,7 +332,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toprule=.15mm, titlerule=0mm, left=2mm, leftrule=.75mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, arc=.35mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, colback=white, opacityback=0, coltitle=black, toptitle=1mm, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, bottomrule=.15mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -343,7 +343,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toprule=.15mm, titlerule=0mm, left=2mm, leftrule=.75mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, arc=.35mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, colback=white, opacityback=0, coltitle=black, toptitle=1mm, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, bottomrule=.15mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -372,7 +372,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toprule=.15mm, titlerule=0mm, left=2mm, leftrule=.75mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, arc=.35mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, colback=white, opacityback=0, coltitle=black, toptitle=1mm, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, bottomrule=.15mm]
 
 I used Quarto (\url{https://quarto.org/}) to create this Appendix.
 Quarto is a programming and publishing environment that can run multiple
@@ -390,11 +390,12 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-The examples use the \texttt{simulated\_multilevel\_data.dta} file from
-\href{https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html}{\emph{Multilevel
-Thinking}}. Here is a
+The examples use the \texttt{simulated\_multilevel\_data.dta} and
+\texttt{simulated\_multilevel\_longitudinal\_data.dta} files. Here is a
 \href{https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta}{direct
-link} to download the data.
+link} to download the cross-sectional data. Here is a
+\href{https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta}{direct
+link} to download the longitudinal data.
 
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1266}}
@@ -501,7 +502,7 @@ described in Equation~\ref{eq-MLMsimple} is:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mixed }\FunctionTok{y}\NormalTok{ x || }\FunctionTok{group}\NormalTok{: x}
+\NormalTok{mixed }\FunctionTok{y}\NormalTok{ x z || }\FunctionTok{group}\NormalTok{: x}
 \end{Highlighting}
 \end{Shaded}
 
@@ -573,8 +574,8 @@ hypothetica |
       group |
    variable |      Freq.     Percent        Cum.
 ------------+-----------------------------------
-          1 |      1,507       50.23       50.23
-          2 |      1,493       49.77      100.00
+          0 |      1,507       50.23       50.23
+          1 |      1,493       49.77      100.00
 ------------+-----------------------------------
       Total |      3,000      100.00
 
@@ -620,8 +621,8 @@ descriptive statistics.
 
 \begin{verbatim}
     country          HDI            family            id            identity
- 1      : 100   Min.   :33.00   Min.   :  1.00   Length:3000        1:1507  
- 2      : 100   1st Qu.:53.00   1st Qu.: 25.75   Class :character   2:1493  
+ 1      : 100   Min.   :33.00   Min.   :  1.00   Length:3000        0:1507  
+ 2      : 100   1st Qu.:53.00   1st Qu.: 25.75   Class :character   1:1493  
  3      : 100   Median :70.00   Median : 50.50   Mode  :character           
  4      : 100   Mean   :64.77   Mean   : 50.50                              
  5      : 100   3rd Qu.:81.00   3rd Qu.: 75.25                              
@@ -677,7 +678,7 @@ Similarly to R, Julia relies on the idea of \emph{variable type}. I use
    2 │ HDI                  64.7667  33.0    70.0    87.0            0  Union{
    3 │ family               50.5     1.0     50.5    100.0           0  Union{
    4 │ id                            1.1             9.99            0  Union{
-   5 │ identity                      1.0             2.0             0  Union{ ⋯
+   5 │ identity                      0.0             1.0             0  Union{ ⋯
    6 │ intervention                  0.0             1.0             0  Union{
    7 │ physical_punishment  2.47867  0.0     2.0     5.0             0  Union{
    8 │ warmth               3.52167  0.0     4.0     7.0             0  Union{
@@ -710,7 +711,7 @@ the data.
   and a wide range.
 \item
   \texttt{identity} is a categorical variable for a hypothetical
-  identity group, and has values of 1 and 2.
+  identity group, and has values of 0 and 1.
 \item
   \texttt{intervention} is also a categorical variable, and has values
   of 0 and 1.
@@ -734,7 +735,7 @@ The Intraclass Correlation Coefficient (ICC) is given by:
 \begin{equation}\phantomsection\label{eq-ICCunconditional}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}}\end{equation}
 
 In a two level multilevel model, the ICC provides a measure of the
-amount of variation attributable to Level 2.
+proportion of variation attributable to Level 2.
 
 \section{Run Models}\label{run-models}
 
@@ -943,7 +944,7 @@ example.
 
 \[\beta_2 \text{physical punishment}_{ij} +\]
 
-\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} +\]
+\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{j} +\]
 
 \[u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}\]
 
@@ -1059,7 +1060,7 @@ Log likelihood =  -9626.607                          Prob > chi2      = 0.0000
 --------------------+----------------------------------------------------------------
              warmth |   .8345368   .0637213    13.10   0.000     .7096453    .9594282
 physical_punishment |  -.9916657   .0797906   -12.43   0.000    -1.148052   -.8352791
-         2.identity |  -.3004767   .2170295    -1.38   0.166    -.7258466    .1248933
+         1.identity |  -.3004767   .2170295    -1.38   0.166    -.7258466    .1248933
      1.intervention |   .6396427   .2174519     2.94   0.003     .2134448    1.065841
                 HDI |   -.003228   .0199257    -0.16   0.871    -.0422817    .0358256
               _cons |   51.99991   1.371257    37.92   0.000      49.3123    54.68753
@@ -1093,7 +1094,7 @@ Note: LR test is conservative and provided only for reference.
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toprule=.15mm, titlerule=0mm, left=2mm, leftrule=.75mm, toptitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, opacityback=0, arc=.35mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-caution-color-frame, opacitybacktitle=0.6, colback=white, opacityback=0, coltitle=black, toptitle=1mm, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-caution-color!10!white, leftrule=.75mm, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1102,7 +1103,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toprule=.15mm, titlerule=0mm, left=2mm, leftrule=.75mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, arc=.35mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, colback=white, opacityback=0, coltitle=black, toptitle=1mm, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1139,40 +1140,40 @@ REML criterion at convergence: 19268.8
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.9774 -0.6563  0.0187  0.6645  3.6730 
+-3.9774 -0.6563  0.0186  0.6645  3.6730 
 
 Random effects:
  Groups    Name        Variance Std.Dev.
- country   (Intercept)  3.19056 1.786   
- country.1 warmth       0.02465 0.157   
- Residual              35.01782 5.918   
+ country   (Intercept)  3.19120 1.786   
+ country.1 warmth       0.02464 0.157   
+ Residual              35.01779 5.918   
 Number of obs: 3000, groups:  country, 30
 
 Fixed effects:
                        Estimate  Std. Error          df t value
-(Intercept)           52.311714    1.446735   33.113738  36.158
-warmth                 0.834562    0.064252   41.896966  12.989
-physical_punishment   -0.991892    0.079845 2968.010901 -12.423
-identity              -0.300350    0.217179 2970.106304  -1.383
-intervention           0.639059    0.217603 2971.185215   2.937
-HDI                   -0.003395    0.020596   27.598517  -0.165
+(Intercept)           52.011324    1.414976   30.293141  36.758
+warmth                 0.834562    0.064250   41.896457  12.989
+physical_punishment   -0.991893    0.079845 2968.012381 -12.423
+identity              -0.300354    0.217179 2970.108153  -1.383
+intervention           0.639060    0.217603 2971.186718   2.937
+HDI                   -0.003394    0.020598   27.592814  -0.165
                                 Pr(>|t|)    
 (Intercept)         < 0.0000000000000002 ***
 warmth              0.000000000000000277 ***
 physical_punishment < 0.0000000000000002 ***
 identity                         0.16678    
 intervention                     0.00334 ** 
-HDI                              0.87027    
+HDI                              0.87030    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) warmth physc_ idntty intrvn
-warmth      -0.119                            
-physcl_pnsh -0.145 -0.003                     
-identity    -0.220 -0.012 -0.003              
-interventin -0.077  0.034  0.022 -0.018       
-HDI         -0.922 -0.006  0.009 -0.001  0.000
+warmth      -0.124                            
+physcl_pnsh -0.149 -0.003                     
+identity    -0.072 -0.012 -0.003              
+interventin -0.082  0.034  0.022 -0.018       
+HDI         -0.943 -0.006  0.009 -0.001  0.000
 \end{verbatim}
 
 \subsection{Julia}
@@ -1225,7 +1226,7 @@ Residual              34.974984 5.913965
 ─────────────────────────────────────────────────────────────
                           Coef.  Std. Error       z  Pr(>|z|)
 ─────────────────────────────────────────────────────────────
-(Intercept)          52.3004      1.40406     37.25    <1e-99
+(Intercept)          51.9999      1.37124     37.92    <1e-99
 warmth                0.834537    0.0637228   13.10    <1e-38
 physical_punishment  -0.991665    0.0797906  -12.43    <1e-34
 identity             -0.300475    0.217029    -1.38    0.1662
@@ -1238,10 +1239,10 @@ HDI                  -0.0032286   0.0199255   -0.16    0.8713
 
 Models suggest that parental warmth is associated with increases in the
 beneficial outcome, while physical punishment is associated with
-decreases in the beneficial outcome. Membership in the group represented
-by \texttt{identity} is not associated with the outcome. The
-intervention is associated with increases in the outcome. The Human
-Development Index is not associated with the outcome.
+decreases in the beneficial outcome. The intervention is associated with
+increases in the outcome. There is insufficient evidence that either
+identity group or the Human Development Index are associated with the
+outcome.
 
 \bookmarksetup{startatroot}
 
@@ -1257,11 +1258,11 @@ data described in Section~\ref{sec-data}.
 
 \begin{equation}\phantomsection\label{eq-MLM-longitudinal}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\end{equation}
 
-\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]
+\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{j} +\]
 
 \[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]
 
-\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]
+\[v_{0ij} + v_{1ij} \times \text{time}_{itj} + e_{itj}\]
 
 \section{Growth Trajectories}\label{growth-trajectories}
 
@@ -1309,7 +1310,7 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toprule=.15mm, titlerule=0mm, left=2mm, leftrule=.75mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, arc=.35mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, colback=white, opacityback=0, coltitle=black, toptitle=1mm, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, bottomrule=.15mm]
 
 Thus, again following Section 6.4, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
@@ -1338,7 +1339,7 @@ models with \emph{main effects, and interactions with time}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mixed outcome t warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || country: warmth}
+\NormalTok{mixed outcome t warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || country: warmth || }\KeywordTok{family}\NormalTok{: t}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1346,42 +1347,54 @@ models with \emph{main effects, and interactions with time}.
 Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -28739.506  
-Iteration 1:  Log likelihood = -28739.506  
+Iteration 0:  Log likelihood =  -28523.49  
+Iteration 1:  Log likelihood = -28499.987  
+Iteration 2:  Log likelihood = -28499.737  
+Iteration 3:  Log likelihood = -28499.604  
+Iteration 4:  Log likelihood = -28499.603  
 
 Computing standard errors ...
 
-Mixed-effects ML regression                         Number of obs    =   9,000
-Group variable: country                             Number of groups =      30
-                                                    Obs per group:
-                                                                 min =     300
-                                                                 avg =   300.0
-                                                                 max =     300
-                                                    Wald chi2(6)     = 1119.81
-Log likelihood = -28739.506                         Prob > chi2      =  0.0000
+Mixed-effects ML regression                            Number of obs =   9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+                country |         30        300      300.0        300
+                 family |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                       Wald chi2(6)  = 1096.15
+Log likelihood = -28499.603                            Prob > chi2   =  0.0000
 
 -------------------------------------------------------------------------------------
             outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 --------------------+----------------------------------------------------------------
-                  t |   .9443446   .0756408    12.48   0.000     .7960914    1.092598
-             warmth |   .9123903   .0430042    21.22   0.000     .8281035     .996677
-physical_punishment |  -.9881587   .0451732   -21.87   0.000    -1.076696   -.8996209
-         1.identity |  -.1241465   .1242225    -1.00   0.318     -.367618    .1193251
-     1.intervention |   .8575839   .1245179     6.89   0.000     .6135332    1.101635
-                HDI |  -.0025173   .0191696    -0.13   0.896    -.0400891    .0350544
-              _cons |   50.54528   1.304146    38.76   0.000      47.9892    53.10136
+                  t |    .943864   .0658716    14.33   0.000      .814758     1.07297
+             warmth |    .913496   .0423731    21.56   0.000     .8304462    .9965457
+physical_punishment |  -1.007897   .0497622   -20.25   0.000    -1.105429   -.9103647
+         1.identity |  -.1276926   .1515835    -0.84   0.400    -.4247909    .1694056
+     1.intervention |   .8589966   .1519095     5.65   0.000     .5612596    1.156734
+                HDI |  -.0005657   .0196437    -0.03   0.977    -.0390666    .0379352
+              _cons |   50.46724   1.338318    37.71   0.000     47.84418    53.09029
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Independent         |
-                 var(warmth) |   .0229349   .0135353      .0072136    .0729194
-                  var(_cons) |     3.0009   .8550708      1.716768    5.245553
+                 var(warmth) |   .0107584   .0127845      .0010477    .1104715
+                  var(_cons) |   3.167089   .9146768      1.798157    5.578187
 -----------------------------+------------------------------------------------
-               var(Residual) |   34.31935   .5130963       33.3283    35.33988
+family: Independent          |
+                      var(t) |   3.74e-09   7.36e-07      1.4e-176    9.7e+158
+                  var(_cons) |   8.387276    .472419      7.510631    9.366243
+-----------------------------+------------------------------------------------
+               var(Residual) |   26.02733   .4753702      25.11211    26.97592
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 767.22                Prob > chi2 = 0.0000
+LR test vs. linear model: chi2(4) = 1247.03               Prob > chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.
 \end{verbatim}
@@ -1390,7 +1403,7 @@ Note: LR test is conservative and provided only for reference.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mixed outcome c.t\#\#(c.warmth c.physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention c.HDI) || country: warmth}
+\NormalTok{mixed outcome c.t\#\#(c.warmth c.physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention c.HDI) || country: warmth || }\KeywordTok{family}\NormalTok{: t}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1398,56 +1411,68 @@ Note: LR test is conservative and provided only for reference.
 Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -28738.554  
-Iteration 1:  Log likelihood = -28738.554  
+Iteration 0:  Log likelihood =  -28522.21  
+Iteration 1:  Log likelihood = -28498.685  
+Iteration 2:  Log likelihood = -28498.469  
+Iteration 3:  Log likelihood =  -28498.31  
+Iteration 4:  Log likelihood = -28498.309  
 
 Computing standard errors ...
 
-Mixed-effects ML regression                         Number of obs    =   9,000
-Group variable: country                             Number of groups =      30
-                                                    Obs per group:
-                                                                 min =     300
-                                                                 avg =   300.0
-                                                                 max =     300
-                                                    Wald chi2(11)    = 1122.75
-Log likelihood = -28738.554                         Prob > chi2      =  0.0000
+Mixed-effects ML regression                            Number of obs =   9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+                country |         30        300      300.0        300
+                 family |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                       Wald chi2(11) = 1100.25
+Log likelihood = -28498.309                            Prob > chi2   =  0.0000
 
 ---------------------------------------------------------------------------------------
               outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ----------------------+----------------------------------------------------------------
-                    t |   .7537359   .3719996     2.03   0.043     .0246301    1.482842
-               warmth |   .8198365   .0911059     9.00   0.000     .6412723    .9984008
-  physical_punishment |  -1.000348   .1198049    -8.35   0.000    -1.235162   -.7655353
-           1.identity |  -.2340191   .3271243    -0.72   0.474     -.875171    .4071327
-       1.intervention |   .6597456   .3275877     2.01   0.044     .0176856    1.301806
-                  HDI |  -.0005531   .0210866    -0.03   0.979     -.041882    .0407757
+                    t |   .7582075    .326177     2.32   0.020     .1189122    1.397503
+               warmth |   .8170757    .082662     9.88   0.000     .6550611    .9790903
+  physical_punishment |  -1.009031   .1112932    -9.07   0.000    -1.227162   -.7909007
+           1.identity |  -.2387167   .3039964    -0.79   0.432    -.8345387    .3571053
+       1.intervention |   .6607606   .3044503     2.17   0.030      .064049    1.257472
+                  HDI |   .0013614   .0210842     0.06   0.949    -.0399628    .0426856
                       |
-         c.t#c.warmth |   .0463746   .0402459     1.15   0.249    -.0325059    .1252551
+         c.t#c.warmth |   .0483637   .0356074     1.36   0.174    -.0214255    .1181529
                       |
                   c.t#|
-c.physical_punishment |   .0061255   .0551491     0.11   0.912    -.1019647    .1142157
+c.physical_punishment |   .0005421   .0494355     0.01   0.991    -.0963496    .0974338
                       |
          identity#c.t |
-                   1  |   .0548965   .1513015     0.36   0.717     -.241649    .3514421
+                   1  |   .0554389   .1317444     0.42   0.674    -.2027754    .3136532
                       |
      intervention#c.t |
-                   1  |   .0990704    .151503     0.65   0.513      -.19787    .3960108
+                   1  |   .0992811    .131925     0.75   0.452    -.1592872    .3578493
                       |
-            c.t#c.HDI |  -.0009791   .0043888    -0.22   0.823    -.0095811    .0076229
+            c.t#c.HDI |  -.0009551   .0038216    -0.25   0.803    -.0084453    .0065352
                       |
-                _cons |   50.92503   1.494157    34.08   0.000     47.99654    53.85352
+                _cons |   50.83632   1.483548    34.27   0.000     47.92862    53.74402
 ---------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
 country: Independent         |
-                 var(warmth) |   .0228292   .0135078      .0071588    .0728013
-                  var(_cons) |   3.001849   .8552796       1.71738    5.247001
+                 var(warmth) |   .0106014   .0127458      .0010046    .1118779
+                  var(_cons) |   3.170089   .9153354      1.800091    5.582753
 -----------------------------+------------------------------------------------
-               var(Residual) |   34.31227   .5129896      33.32141    35.33258
+family: Independent          |
+                      var(t) |   1.36e-09   2.89e-07      1.7e-190    1.1e+172
+                  var(_cons) |   8.391888   .4724105      7.515232    9.370806
+-----------------------------+------------------------------------------------
+               var(Residual) |   26.01583   .4751604      25.10101      26.964
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 767.35                Prob > chi2 = 0.0000
+LR test vs. linear model: chi2(4) = 1247.84               Prob > chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.
 \end{verbatim}
@@ -1466,7 +1491,7 @@ Note: LR test is conservative and provided only for reference.
 
 \subsubsection{Run The Model}\label{run-the-model-4}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toprule=.15mm, titlerule=0mm, left=2mm, leftrule=.75mm, toptitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, opacityback=0, arc=.35mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-caution-color-frame, opacitybacktitle=0.6, colback=white, opacityback=0, coltitle=black, toptitle=1mm, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-caution-color!10!white, leftrule=.75mm, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1475,7 +1500,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, breakable, bottomtitle=1mm, toprule=.15mm, titlerule=0mm, left=2mm, leftrule=.75mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, arc=.35mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, colback=white, opacityback=0, coltitle=black, toptitle=1mm, toprule=.15mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1774,8 +1799,8 @@ are largly similar to the prior model. However, here we not only examine
 whether main effects other than time are associated with higher or lower
 time trajectories, but also whether particular variables are associated
 with differences in the slope of the time trajectory. In this case, we
-find that no independent variable is associated with changes in the
-slope of the time trajectory.
+find insufficient evidence that any independent variable is associated
+with changes in the slope of the time trajectory.
 
 However, it may be illustrative to imagine how we would interpret the
 results had a particular interaction term been statistically
