@@ -24,7 +24,7 @@
     "href": "index.html#sec-data",
     "title": "Multilevel Multilingual",
     "section": "1.2 The Data",
-    "text": "1.2 The Data\nThe examples use the simulated_multilevel_data.dta and simulated_multilevel_longitudinal_data.dta files. Here is a direct link to download the cross-sectional data. Here is a direct link to download the longitudinal data.\n\n\n\n\nTable 1.2: Sample of Simulated Multilevel Data\n\n\n\n\nTable continues below\n\n\n\n\n\n\n\n\n\n\n\ncountry\nHDI\nfamily\nid\nidentity\nintervention\nphysical_punishment\n\n\n\n\n1\n69\n1\n1.1\n1\n0\n3\n\n\n1\n69\n2\n1.2\n1\n1\n2\n\n\n1\n69\n3\n1.3\n0\n1\n3\n\n\n1\n69\n4\n1.4\n1\n0\n0\n\n\n1\n69\n5\n1.5\n1\n0\n4\n\n\n1\n69\n6\n1.6\n0\n1\n5\n\n\n\n\n\n\n\n\n\n\nwarmth\noutcome\n\n\n\n\n3\n57.47\n\n\n1\n50.1\n\n\n2\n52.92\n\n\n5\n60.17\n\n\n4\n55.05\n\n\n3\n49.81",
+    "text": "1.2 The Data\n\n\n\n\n\n\nDatasets\n\n\n\nThe examples use the simulated_multilevel_data.dta and simulated_multilevel_longitudinal_data.dta files. Here is a direct link to download the cross-sectional data. Here is a direct link to download the longitudinal data.\n\n\n\n\n\n\nTable 1.2: Sample of Simulated Multilevel Data\n\n\n\n\nTable continues below\n\n\n\n\n\n\n\n\n\n\n\ncountry\nHDI\nfamily\nid\nidentity\nintervention\nphysical_punishment\n\n\n\n\n1\n69\n1\n1.1\n1\n0\n3\n\n\n1\n69\n2\n1.2\n1\n1\n2\n\n\n1\n69\n3\n1.3\n0\n1\n3\n\n\n1\n69\n4\n1.4\n1\n0\n0\n\n\n1\n69\n5\n1.5\n1\n0\n4\n\n\n1\n69\n6\n1.6\n0\n1\n5\n\n\n\n\n\n\n\n\n\n\nwarmth\noutcome\n\n\n\n\n3\n57.47\n\n\n1\n50.1\n\n\n2\n52.92\n\n\n5\n60.17\n\n\n4\n55.05\n\n\n3\n49.81",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Multilevel Multilingual</span>"
     ]
