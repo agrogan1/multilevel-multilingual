@@ -103,11 +103,13 @@ pander(head(df)) # nice table
 
 library(JuliaCall)
 
+julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/bin")
+
 # OS dependent location of Julia
 
-switch(Sys.info()[['sysname']],
-       Windows= {julia_setup(JULIA_HOME = "C:/Users/agrogan/AppData/Local/Programs/Julia-1.10.2/bin/")},
-       Darwin = {julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/bin")})
+# switch(Sys.info()[['sysname']],
+#        Windows= {julia_setup(JULIA_HOME = "C:/Users/agrogan/AppData/Local/Programs/Julia-1.10.2/bin/")},
+#        Darwin = {julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/bin")})
 
 ```
 

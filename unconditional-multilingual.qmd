@@ -23,7 +23,7 @@ library(lme4)
 
 library(JuliaCall)
 
-julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
+julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/bin")
 
 ```
 
