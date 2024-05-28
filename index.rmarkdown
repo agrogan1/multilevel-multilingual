@@ -65,6 +65,7 @@ Of course, each of these programs can be run by itself, if you have them install
 The examples use the `simulated_multilevel_data.dta` and `simulated_multilevel_longitudinal_data.dta` files. Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta) to download the cross-sectional data. Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta) to download the longitudinal data.
 :::
 
+
 ```{r}
 #| echo: false
 #| output: false
@@ -111,6 +112,7 @@ switch(Sys.info()[['sysname']],
 
 ```
 
+
 ## An Introduction To Equations and Syntax {#sec-syntax}
 
 To explain statistical syntax for each software, I consider the general case of a multilevel model with dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`. *i* is the index for the person, while *j* is the index for the `group`.
@@ -123,6 +125,7 @@ $$y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} 
 
 In Stata `mixed`, the syntax for a multilevel model of the form described in @eq-MLMsimple is:
 
+
 ```{stata}
 #| echo: true
 #| eval: false
@@ -131,9 +134,11 @@ mixed y x z || group: x
 
 ```
 
+
 ### R
 
 In R `lme4`, the general syntax for a multilevel model of the form described in @eq-MLMsimple is:
+
 
 ```{r}
 #| echo: true
@@ -145,9 +150,11 @@ lmer(y ~ x + z + (1 + x || group), data = ...)
 
 ```
 
+
 ### Julia
 
 In Julia `MixedModels`, the general syntax for a multilevel model of the form described in @eq-MLMsimple is:
+
 
 ```{julia}
 #| echo: true
@@ -159,5 +166,7 @@ fit(MixedModel, @formula(y ~ x + z + (1 + x | group)), data)
 
 ```
 
+
 :::
+
 
