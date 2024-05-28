@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-05-28">
 
-<title>Multilevel Multilingual</title>
+<title>Multilevel Multilingual - 3&nbsp; Unconditional Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,27 +54,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -86,7 +64,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./descriptives-multilingual.html" rel="next">
+<link href="./cross-sectional-multilingual.html" rel="next">
+<link href="./descriptives-multilingual.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,9 +77,6 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -160,19 +136,14 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual">
-<meta property="og:description" content="Multilevel Models in Stata, R and Julia">
+<meta property="og:title" content="Multilevel Multilingual - 3&nbsp; Unconditional Model">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual">
-<meta name="twitter:description" content="Multilevel Models in Stata, R and Julia">
+<meta name="twitter:title" content="Multilevel Multilingual - 3&nbsp; Unconditional Model">
+<meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="Multilevel Multilingual">
-<meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-05-28">
-<meta name="citation_cover_date" content="2024-05-28">
-<meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-05-28">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//">
+<meta name="citation_title" content="[3]{.chapter-number}&nbsp; [Unconditional Model]{.chapter-title}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//unconditional-multilingual.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
 <meta name="citation_reference" content="citation_title=Fitting linear mixed-effects models using lme4;,citation_abstract=Maximum likelihood or restricted maximum likelihood (REML) estimates of the parameters in linear mixed-effects models can be determined using the lmer function in the lme4 package for R. As for most model-fitting functions in R, the model is described in an lmer call by a formula, in this case including both fixed- and random-effects terms. The formula and data together determine a numerical representation of the model from which the profiled deviance or the profiled REML criterion can be evaluated as a function of some of the model parameters. The appropriate criterion is optimized, using one of the constrained optimization functions in R, to provide the parameter estimates. We describe the structure of the model, the steps in evaluating the profiled deviance or REML criterion, and the structure of classes or types that represents such a model. Sufficient detail is included to allow specialization of these structures by users who wish to write functions to fit specialized linear mixed models, such as models incorporating pedigrees or smoothing splines, that are not easily expressible in the formula language used by lmer.;,citation_author=Douglas Bates;,citation_author=Martin Mächler;,citation_author=Ben Bolker;,citation_author=Steve Walker;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=https://www.jstatsoft.org/index.php/jss/article/view/v067i01;,citation_issue=1;,citation_doi=10.18637/jss.v067.i01;,citation_volume=67;,citation_journal_title=Journal of Statistical Software;">
@@ -231,7 +202,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilevel Multilingual</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unconditional-multilingual.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -245,7 +216,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilevel Multilingual</span></span></a>
   </div>
 </li>
@@ -257,7 +228,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link">
+  <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span></a>
   </div>
 </li>
@@ -289,12 +260,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#multilevel-multilingual" id="toc-multilevel-multilingual" class="nav-link active" data-scroll-target="#multilevel-multilingual"><span class="header-section-number">1</span> Multilevel Multilingual</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
-  <li><a href="#sec-data" id="toc-sec-data" class="nav-link" data-scroll-target="#sec-data"><span class="header-section-number">1.2</span> The Data</a></li>
-  <li><a href="#sec-syntax" id="toc-sec-syntax" class="nav-link" data-scroll-target="#sec-syntax"><span class="header-section-number">1.3</span> An Introduction To Equations and Syntax</a></li>
-  </ul></li>
+  <li><a href="#the-equation" id="toc-the-equation" class="nav-link active" data-scroll-target="#the-equation"><span class="header-section-number">3.1</span> The Equation</a></li>
+  <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">3.2</span> Run Models</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">3.3</span> Interpretation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -303,27 +271,14 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Multilevel Multilingual</h1>
-<p class="subtitle lead">Multilevel Models in Stata, R and Julia</p>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Andrew Grogan-Kaylor </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 28, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -333,309 +288,174 @@ window.Quarto = {
 </header>
 
 
-<p><a href="multilevel-multilingual.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="multilevel-multilingual.png" title="Multilevel Multilingual" class="quarto-cover-image img-fluid"></a></p>
-<section id="multilevel-multilingual" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Multilevel Multilingual</h1>
-<blockquote class="blockquote">
-<p>“This curious world which we inhabit is more wonderful than it is convenient…” <span class="citation" data-cites="Thoreau1975">(<a href="references.html#ref-Thoreau1975" role="doc-biblioref">Thoreau, 1975</a>)</span></p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Mathematics is my secret. My secret weakness. I feel like a stubborn, helpless fool in the middle of a problem. Trapped and crazed. Also, thrilled.” <span class="citation" data-cites="Schanen2021">(<a href="references.html#ref-Schanen2021" role="doc-biblioref">Schanen, 2021</a>)</span></p>
-</blockquote>
-<section id="introduction" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a> <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>, <a href="https://www.r-project.org/">R</a> <span class="citation" data-cites="RProgram JSSv067i01">(<a href="references.html#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="references.html#ref-RProgram" role="doc-biblioref">R Core Team, 2023</a>)</span>, and <a href="https://www.julialang.org/">Julia</a> <span class="citation" data-cites="JuliaArticle MixedModels">(<a href="references.html#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="references.html#ref-JuliaArticle" role="doc-biblioref">Bezanson et al., 2017</a>)</span> to estimate multilevel models and to visualize data.</p>
-<p>All of these software packages can estimate multilevel models and can visualize relationships in the data. However, there are substantial differences between the different packages: Stata is proprietary <em>for cost</em> software, which is very well documented and very intuitive. While it costs money to purchase Stata, the price is often very reasonable for academic and educational use. R is free open source software which is less intuitive, but there are many excellent resources for learning R. There is often a cost associated with purchasing books and other materials for learning R, which sometimes feels like it offsets the fact that R is free. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more <em>stable</em> than Julia which is still evolving software.</p>
-<p>While any of these software packages can be used for learning and estimating multilevel models, I will offer my own opinion–based upon 15 years of teaching multilevel models at the doctoral level–that Stata offers the quickest pathway for learning the basic and advanced uses of multilevel models. I also believe the intuitive nature of Stata syntax contributes to accurate and replicable work in this area.</p>
-<div id="tbl-software" class="quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-software-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.1: Software for Multilevel Modeling
-</figcaption>
-<div aria-describedby="tbl-software-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 15%">
-<col style="width: 54%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Software</th>
-<th style="text-align: left;">Cost</th>
-<th style="text-align: left;">Ease of Use</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Stata</td>
-<td style="text-align: left;">some cost</td>
-<td style="text-align: left;">learning curve, but very intuitive for both multilevel modeling and graphing.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">free</td>
-<td style="text-align: left;">learning curve: intuitive for multilevel modeling; but steeper learning curve for graphing (<code>ggplot</code>).</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Julia</td>
-<td style="text-align: left;">free</td>
-<td style="text-align: left;">steep learning curve in general: steep learning curve for multilevel modeling; and very steep learning curve for graphing. Graphics libraries are very much under development and in flux.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Results Will Vary Somewhat
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Estimating multilevel models is a complex endeavor. The software details of how this is accomplished are beyond the purview of this book. Suffice it to say that across different software packages there will be differences in estimation routines, resulting in some numerical differences in the results provided by different software packages. Substantively speaking, however, results should agree across software.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Multi-Line Commands
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Sometimes I have written commands out over multiple lines. I have done this for especially long commands, but have also sometimes done this simply for the sake of clarity. The different software packages have different approaches to multi-line commands.</p>
-<ol type="1">
-<li>By default, <em>Stata</em> ends a command at the end of a line. If you are going to write a multi-line command you should use the <code>///</code> line continuation characters.</li>
-<li><em>R</em> is the software that most naturally can be written using multiple lines, as R commands are usually clearly encased in parentheses (<code>()</code>) or continued with <code>+</code> signs.</li>
-<li>Like <em>Stata</em>, <em>Julia</em> expects commands to end at the end of a line. If you are going to write a mult-line command, all commands except for the last line should end in a character that clearly indicates continuation, like a <code>+</code> sign. An alternative is to encase the entire Julia command in an outer set of parentheses (<code>()</code>).</li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Running Statistical Packages in Quarto
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I used Quarto (<a href="https://quarto.org/">https://quarto.org/</a>) to create this Appendix. Quarto is a programming and publishing environment that can run multiple programming languages, including Stata, R and Julia, and that can write to multiple output formats including HTML, PDF, and MS Word. To run Stata, I used the <code>Statamarkdown</code> library in R to connect Stata to Quarto. Quarto has a built in connection to R, and runs R without issue. To run Julia, I used the <code>JuliaCall</code> library in R to connect Quarto to Julia.</p>
-<p>Of course, each of these programs can be run by itself, if you have them installed on your computer.</p>
-</div>
-</div>
+<p>An <em>unconditional</em> multilevel model is a model with no independent variables. One should always run an unconditional model as the first step of a multilevel model in order to get a sense of the way that variation is apportioned in the model across the different levels.</p>
+<section id="the-equation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">3.1</span> The Equation</h2>
+<p><span id="eq-MLMunconditional"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij} \tag{3.1}\]</span></span></p>
+<p>The Intraclass Correlation Coefficient (ICC) is given by:</p>
+<p><span id="eq-ICCunconditional"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{3.2}\]</span></span></p>
+<p>In a two level multilevel model, the ICC provides a measure of the proportion of variation attributable to Level 2.</p>
 </section>
-<section id="sec-data" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sec-data"><span class="header-section-number">1.2</span> The Data</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Datasets
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The examples use the <code>simulated_multilevel_data.dta</code> and <code>simulated_multilevel_longitudinal_data.dta</code> files. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta">direct link</a> to download the cross-sectional data. Here is a <a href="https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta">direct link</a> to download the longitudinal data.</p>
-</div>
-</div>
-<div class="cell">
-<div id="tbl-multilingual1" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-multilingual1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.2: Sample of Simulated Multilevel Data
-</figcaption>
-<div aria-describedby="tbl-multilingual1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<caption>Table continues below</caption>
-<colgroup>
-<col style="width: 12%">
-<col style="width: 7%">
-<col style="width: 11%">
-<col style="width: 7%">
-<col style="width: 13%">
-<col style="width: 18%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">country</th>
-<th style="text-align: center;">HDI</th>
-<th style="text-align: center;">family</th>
-<th style="text-align: center;">id</th>
-<th style="text-align: center;">identity</th>
-<th style="text-align: center;">intervention</th>
-<th style="text-align: center;">physical_punishment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1.1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1.2</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">1.3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">1.4</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1.6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">5</td>
-</tr>
-</tbody>
-</table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">warmth</th>
-<th style="text-align: center;">outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">57.47</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">50.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">52.92</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">60.17</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">55.05</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">49.81</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-</section>
-<section id="sec-syntax" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="sec-syntax"><span class="header-section-number">1.3</span> An Introduction To Equations and Syntax</h2>
-<p>To explain statistical syntax for each software, I consider the general case of a multilevel model with dependent variable <code>y</code>, independent variables <code>x</code> and <code>z</code>, clustering variable <code>group</code>, and a random slope for <code>x</code>. <em>i</em> is the index for the person, while <em>j</em> is the index for the <code>group</code>.</p>
-<p><span id="eq-MLMsimple"><span class="math display">\[y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij} \tag{1.1}\]</span></span></p>
+<section id="run-models" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="run-models"><span class="header-section-number">3.2</span> Run Models</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
+<div class="cell" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta <span class="co">// use data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: <span class="co">// unconditional model</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -9802.8371  
+Iteration 1:  Log likelihood = -9802.8371  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                           Number of obs    = 3,000
+Group variable: country                               Number of groups =    30
+                                                      Obs per group:
+                                                                   min =   100
+                                                                   avg = 100.0
+                                                                   max =   100
+                                                      Wald chi2(0)     =     .
+Log likelihood = -9802.8371                           Prob &gt; chi2      =     .
+
+------------------------------------------------------------------------------
+     outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       _cons |   52.43327   .3451217   151.93   0.000     51.75685     53.1097
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+country: Identity            |
+                  var(_cons) |   3.178658   .9226737      1.799552    5.614658
+-----------------------------+------------------------------------------------
+               var(Residual) |   39.46106   1.024013      37.50421       41.52
+------------------------------------------------------------------------------
+LR test vs. linear model: chibar2(01) = 166.31        Prob &gt;= chibar2 = 0.0000</code></pre>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mixed <span class="fu">y</span> x z || <span class="fu">group</span>: x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Intraclass correlation
+
+------------------------------------------------------------------------------
+                       Level |        ICC   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+                     country |   .0745469   .0201254      .0434963    .1248696
+------------------------------------------------------------------------------</code></pre>
+</div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lmer</span>(y <span class="sc">~</span> x <span class="sc">+</span> z <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> x <span class="sc">||</span> group), <span class="at">data =</span> ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fit0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df) <span class="co"># unconditional model</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: outcome ~ (1 | country)
+   Data: df
+
+REML criterion at convergence: 19605.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3844 -0.6655 -0.0086  0.6725  3.6626 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ country  (Intercept)  3.302   1.817   
+ Residual             39.461   6.282   
+Number of obs: 3000, groups:  country, 30
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)   52.433      0.351   149.4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>performance<span class="sc">::</span><span class="fu">icc</span>(fit0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Intraclass Correlation Coefficient
+
+    Adjusted ICC: 0.077
+  Unadjusted ICC: 0.077</code></pre>
+</div>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">MixedModels</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(y <span class="op">~</span> x <span class="op">+</span> z <span class="op">+</span> (<span class="fl">1</span> <span class="op">+</span> x <span class="op">|</span> group)), data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">MixedModelsExtras</span>, </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>m0 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         <span class="pp">@formula</span>(outcome <span class="op">~</span> (<span class="fl">1</span> <span class="op">|</span> country)), df) <span class="co"># unconditional model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + (1 | country)
+   logLik   -2 logLik     AIC       AICc        BIC    
+ -9802.8371 19605.6742 19611.6742 19611.6822 19629.6933
 
+Variance components:
+            Column   Variance Std.Dev.
+country  (Intercept)   3.17863 1.78287
+Residual              39.46106 6.28180
+ Number of obs: 3000; levels of grouping factors: 30
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-MixedModels" class="csl-entry" role="listitem">
-Bates, D. (2024). <em><span class="nocase">MixedModels.jl Documentation</span></em>. <a href="https://juliastats.org/MixedModels.jl/stable/">https://juliastats.org/MixedModels.jl/stable/</a>
+  Fixed-effects parameters:
+──────────────────────────────────────────────────
+               Coef.  Std. Error       z  Pr(&gt;|z|)
+──────────────────────────────────────────────────
+(Intercept)  52.4333    0.345121  151.93    &lt;1e-99
+──────────────────────────────────────────────────</code></pre>
 </div>
-<div id="ref-JSSv067i01" class="csl-entry" role="listitem">
-Bates, D., Mächler, M., Bolker, B., &amp; Walker, S. (2015). Fitting linear mixed-effects models using lme4. <em>Journal of Statistical Software</em>, <em>67</em>(1), 1–48. <a href="https://doi.org/10.18637/jss.v067.i01">https://doi.org/10.18637/jss.v067.i01</a>
 </div>
-<div id="ref-JuliaArticle" class="csl-entry" role="listitem">
-Bezanson, J., Edelman, A., Karpinski, S., &amp; Shah, V. B. (2017). Julia: A fresh approach to numerical computing. <em>SIAM Review</em>, <em>59</em>(1), 65–98. <a href="https://doi.org/10.1137/141000671">https://doi.org/10.1137/141000671</a>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icc</span>(m0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.07454637475695493</code></pre>
 </div>
-<div id="ref-RProgram" class="csl-entry" role="listitem">
-R Core Team. (2023). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
-<div id="ref-Schanen2021" class="csl-entry" role="listitem">
-Schanen, J. (2021). <em>Math person (<span>Strogatz Prize</span> entry)</em>. National Museum of Mathematics.
 </div>
-<div id="ref-StataCorp2023" class="csl-entry" role="listitem">
-StataCorp. (2023). <em>Stata 18 mixed effects reference manual</em>. Stata Press.
-</div>
-<div id="ref-Thoreau1975" class="csl-entry" role="listitem">
-Thoreau, H. D. (1975). The commercial spirit of modern times [1837]. In J. J. Moldenhauer, E. Moser, &amp; A. C. Kern (Eds.), <em>Early essays and miscellanies</em>. Princeton University Press.
 </div>
 </div>
 </section>
+<section id="interpretation" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">3.3</span> Interpretation</h2>
+<p>In each case, the software finds that nearly 8% of the variation in the outcome is explainable by the clustering of the observations in each country.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1172,41 +992,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./descriptives-multilingual.html" class="pagination-link  aria-label=" &lt;span="" statistics&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./descriptives-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Descriptive Statistics</span>">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cross-sectional-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Cross Sectional Multilevel Models</span>">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":false});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

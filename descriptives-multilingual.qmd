@@ -1,7 +1,7 @@
 # Descriptive Statistics
 
 ```{r}
-#| label: unconditionalsetup
+#| label: descriptivessetup
 #| echo: false
 #| output: false
 

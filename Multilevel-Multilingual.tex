@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-05-25}
+\date{2024-05-28}
 
 \begin{document}
 \maketitle
@@ -268,7 +268,7 @@ thrilled.'' (Schanen, 2021)
 \section{Introduction}\label{introduction}
 
 Below, I describe the use of \href{https://www.stata.com/}{Stata}
-(StataCorp, 2021), \href{https://www.r-project.org/}{R} (Bates et al.,
+(StataCorp, 2023), \href{https://www.r-project.org/}{R} (Bates et al.,
 2015; R Core Team, 2023), and \href{https://www.julialang.org/}{Julia}
 (Bates, 2024; Bezanson et al., 2017) to estimate multilevel models and
 to visualize data.
@@ -332,7 +332,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, left=2mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -343,7 +343,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, left=2mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -372,7 +372,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, left=2mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black]
 
 I used Quarto (\url{https://quarto.org/}) to create this Appendix.
 Quarto is a programming and publishing environment that can run multiple
@@ -390,7 +390,7 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, left=2mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, coltitle=black]
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} and
 \texttt{simulated\_multilevel\_longitudinal\_data.dta} files. Here is a
@@ -1098,7 +1098,7 @@ Note: LR test is conservative and provided only for reference.
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, left=2mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1107,7 +1107,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, left=2mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1314,7 +1314,7 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, left=2mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black]
 
 Thus, again following Section 6.4, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
@@ -1495,7 +1495,7 @@ Note: LR test is conservative and provided only for reference.
 
 \subsubsection{Run The Model}\label{run-the-model-4}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, left=2mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1504,7 +1504,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, leftrule=.75mm, titlerule=0mm, toprule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, left=2mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, breakable, toprule=.15mm, bottomrule=.15mm, toptitle=1mm, colback=white, titlerule=0mm, opacityback=0, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1719,10 +1719,10 @@ Linear mixed model fit by maximum likelihood
 
 Variance components:
             Column    Variance Std.Dev.   Corr.
-id       (Intercept)   8.387216 2.896069
+id       (Intercept)   8.387214 2.896069
 country  (Intercept)   3.167143 1.779647
          warmth        0.010762 0.103739   .  
-Residual              26.027362 5.101702
+Residual              26.027363 5.101702
  Number of obs: 9000; levels of grouping factors: 3000, 30
 
   Fixed-effects parameters:
@@ -1735,7 +1735,7 @@ warmth                0.913496      0.0423744   21.56    <1e-99
 physical_punishment  -1.0079        0.0497622  -20.25    <1e-90
 identity             -0.127692      0.151583    -0.84    0.3996
 intervention          0.858997      0.151909     5.65    <1e-07
-HDI                  -0.000566029   0.0196439   -0.03    0.9770
+HDI                  -0.000566026   0.0196439   -0.03    0.9770
 ───────────────────────────────────────────────────────────────
 \end{verbatim}
 
@@ -1762,7 +1762,7 @@ Linear mixed model fit by maximum likelihood
 Variance components:
             Column    Variance Std.Dev.   Corr.
 id       (Intercept)   8.391746 2.896851
-country  (Intercept)   3.170026 1.780457
+country  (Intercept)   3.170032 1.780458
          warmth        0.010609 0.102999   .  
 Residual              26.015906 5.100579
  Number of obs: 9000; levels of grouping factors: 3000, 30
@@ -1777,7 +1777,7 @@ warmth                    0.817076     0.0826636    9.88    <1e-22
 physical_punishment      -1.00903      0.111293    -9.07    <1e-18
 identity                 -0.238714     0.303996    -0.79    0.4323
 intervention              0.660761     0.30445      2.17    0.0300
-HDI                       0.00136064   0.0210842    0.06    0.9485
+HDI                       0.00136065   0.0210842    0.06    0.9485
 t & warmth                0.0483635    0.0356074    1.36    0.1744
 t & physical_punishment   0.000542203  0.0494355    0.01    0.9912
 t & identity              0.0554385    0.131745     0.42    0.6739
@@ -1851,6 +1851,10 @@ National Museum of Mathematics.
 \bibitem[\citeproctext]{ref-StataCorp2021:2}
 StataCorp. (2021). \emph{Stata 17 multilevel mixed effects reference
 manual}. Stata Press.
+
+\bibitem[\citeproctext]{ref-StataCorp2023}
+StataCorp. (2023). \emph{Stata 18 mixed effects reference manual}. Stata
+Press.
 
 \bibitem[\citeproctext]{ref-Thoreau1975}
 Thoreau, H. D. (1975). The commercial spirit of modern times {[}1837{]}.
