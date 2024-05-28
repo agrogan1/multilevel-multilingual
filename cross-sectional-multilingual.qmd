@@ -43,7 +43,7 @@ var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) & var(u_{1j}) 
 \end{bmatrix}$$ {#eq-varcovaruns}
 
-Procedures for estimating models with uncorrelated and correlated random effects are detailed below [@StataCorp2021:2; @JSSv067i01; @MixedModels].
+Procedures for estimating models with uncorrelated and correlated random effects are detailed below [@StataCorp2023; @JSSv067i01; @MixedModels].
 
 -------------------------------------------------------------
 Software    Uncorrelated          Correlated
