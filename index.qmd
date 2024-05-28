@@ -104,6 +104,8 @@ pander(head(df)) # nice table
 
 library(JuliaCall)
 
+# julia <- julia_setup()
+
 julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/bin")
 
 # OS dependent location of Julia

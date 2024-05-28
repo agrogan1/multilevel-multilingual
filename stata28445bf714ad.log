@@ -1,0 +1,11 @@
+
+
+Running /Users/agrogan/Desktop/GitHub/multilevel-multilingual/profile.do ...
+
+
+. 
+. use simulated_multilevel_data.dta // use data
+
+. 
+. 
+end of do-file

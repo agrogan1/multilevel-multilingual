@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-05-25">
+<meta name="dcterms.date" content="2024-05-28">
 
 <title>Multilevel Multilingual</title>
 <style>
@@ -168,10 +168,10 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Multilevel Multilingual">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-05-25">
-<meta name="citation_cover_date" content="2024-05-25">
+<meta name="citation_publication_date" content="2024-05-28">
+<meta name="citation_cover_date" content="2024-05-28">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-05-25">
+<meta name="citation_online_date" content="2024-05-28">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
@@ -179,6 +179,7 @@ window.Quarto = {
 <meta name="citation_reference" content="citation_title=Julia: A fresh approach to numerical computing;,citation_abstract=Bridging cultures that have often been distant, Julia combines expertise from the diverse fields of computer science and computational science to create a new approach to numerical computing. Julia is designed to be easy and fast and questions notions generally held to be “laws of nature&amp;amp;amp;quot; by practitioners of numerical computing: High-level dynamic programs have to be slow.One must prototype in one language and then rewrite in another language for speed or deployment.There are parts of a system appropriate for the programmer, and other parts that are best left untouched as they have been built by the experts. We introduce the Julia programming language and its design—a dance between specialization and abstraction. Specialization allows for custom treatment. Multiple dispatch, a technique from computer science, picks the right algorithm for the right circumstance. Abstraction, which is what good computation is really about, recognizes what remains the same after differences are stripped away. Abstractions in mathematics are captured as code through another technique from computer science, generic programming. Julia shows that one can achieve machine performance without sacrificing human convenience.;,citation_author=Jeff Bezanson;,citation_author=Alan Edelman;,citation_author=Stefan Karpinski;,citation_author=Viral B. Shah;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_fulltext_html_url=https://doi.org/10.1137/141000671;,citation_issue=1;,citation_doi=10.1137/141000671;,citation_volume=59;,citation_journal_title=SIAM Review;">
 <meta name="citation_reference" content="citation_title=Math person (Strogatz Prize entry);,citation_author=Julia Schanen;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_publisher=National Museum of Mathematics;">
 <meta name="citation_reference" content="citation_title=Stata 17 multilevel mixed effects reference manual;,citation_author=StataCorp;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;">
+<meta name="citation_reference" content="citation_title=Stata 18 mixed effects reference manual;,citation_author=StataCorp;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;">
 <meta name="citation_reference" content="citation_title=The commercial spirit of modern times [1837];,citation_author=Henry David Thoreau;,citation_editor=Joseph J. Moldenhauer;,citation_editor=Edwin Moser;,citation_editor=Alexander C. Kern;,citation_publication_date=1975;,citation_cover_date=1975;,citation_year=1975;,citation_isbn=0691062862 :;,citation_inbook_title=Early essays and miscellanies;">
 <meta name="citation_reference" content="citation_title=R: A language and environment for statistical computing;,citation_author=R Core Team;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://www.R-project.org/;">
 </head>
@@ -320,7 +321,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 25, 2024</p>
+      <p class="date">May 28, 2024</p>
     </div>
   </div>
   
@@ -336,14 +337,14 @@ window.Quarto = {
 <section id="multilevel-multilingual" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Multilevel Multilingual</h1>
 <blockquote class="blockquote">
-<p>“This curious world which we inhabit is more wonderful than it is convenient…” <span class="citation" data-cites="Thoreau1975">(<a href="references.html#ref-Thoreau1975" role="doc-biblioref">Thoreau, 1975</a>)</span></p>
+<p>“This curious world which we inhabit is more wonderful than it is convenient…” <span class="citation" data-cites="Thoreau1975">(<a href="#ref-Thoreau1975" role="doc-biblioref">Thoreau, 1975</a>)</span></p>
 </blockquote>
 <blockquote class="blockquote">
-<p>“Mathematics is my secret. My secret weakness. I feel like a stubborn, helpless fool in the middle of a problem. Trapped and crazed. Also, thrilled.” <span class="citation" data-cites="Schanen2021">(<a href="references.html#ref-Schanen2021" role="doc-biblioref">Schanen, 2021</a>)</span></p>
+<p>“Mathematics is my secret. My secret weakness. I feel like a stubborn, helpless fool in the middle of a problem. Trapped and crazed. Also, thrilled.” <span class="citation" data-cites="Schanen2021">(<a href="#ref-Schanen2021" role="doc-biblioref">Schanen, 2021</a>)</span></p>
 </blockquote>
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a> <span class="citation" data-cites="StataCorp2021:2">(<a href="references.html#ref-StataCorp2021:2" role="doc-biblioref">StataCorp, 2021</a>)</span>, <a href="https://www.r-project.org/">R</a> <span class="citation" data-cites="RProgram JSSv067i01">(<a href="references.html#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="references.html#ref-RProgram" role="doc-biblioref">R Core Team, 2023</a>)</span>, and <a href="https://www.julialang.org/">Julia</a> <span class="citation" data-cites="JuliaArticle MixedModels">(<a href="references.html#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="references.html#ref-JuliaArticle" role="doc-biblioref">Bezanson et al., 2017</a>)</span> to estimate multilevel models and to visualize data.</p>
+<p>Below, I describe the use of <a href="https://www.stata.com/">Stata</a> <span class="citation" data-cites="StataCorp2023">(<a href="#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>, <a href="https://www.r-project.org/">R</a> <span class="citation" data-cites="RProgram JSSv067i01">(<a href="#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="#ref-RProgram" role="doc-biblioref">R Core Team, 2023</a>)</span>, and <a href="https://www.julialang.org/">Julia</a> <span class="citation" data-cites="JuliaArticle MixedModels">(<a href="#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="#ref-JuliaArticle" role="doc-biblioref">Bezanson et al., 2017</a>)</span> to estimate multilevel models and to visualize data.</p>
 <p>All of these software packages can estimate multilevel models and can visualize relationships in the data. However, there are substantial differences between the different packages: Stata is proprietary <em>for cost</em> software, which is very well documented and very intuitive. While it costs money to purchase Stata, the price is often very reasonable for academic and educational use. R is free open source software which is less intuitive, but there are many excellent resources for learning R. There is often a cost associated with purchasing books and other materials for learning R, which sometimes feels like it offsets the fact that R is free. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more <em>stable</em> than Julia which is still evolving software.</p>
 <p>While any of these software packages can be used for learning and estimating multilevel models, I will offer my own opinion–based upon 15 years of teaching multilevel models at the doctoral level–that Stata offers the quickest pathway for learning the basic and advanced uses of multilevel models. I also believe the intuitive nature of Stata syntax contributes to accurate and replicable work in this area.</p>
 <div id="tbl-software" class="quarto-float anchored">
@@ -586,13 +587,13 @@ Table&nbsp;1.2: Sample of Simulated Multilevel Data
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
+<p>In Stata <code>mixed</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-MLMsimple</span></a> is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mixed <span class="fu">y</span> x z || <span class="fu">group</span>: x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
+<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-MLMsimple</span></a> is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -600,7 +601,7 @@ Table&nbsp;1.2: Sample of Simulated Multilevel Data
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
+<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-MLMsimple</span></a> is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">MixedModels</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -611,7 +612,7 @@ Table&nbsp;1.2: Sample of Simulated Multilevel Data
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-MixedModels" class="csl-entry" role="listitem">
 Bates, D. (2024). <em><span class="nocase">MixedModels.jl Documentation</span></em>. <a href="https://juliastats.org/MixedModels.jl/stable/">https://juliastats.org/MixedModels.jl/stable/</a>
 </div>
@@ -627,8 +628,8 @@ R Core Team. (2023). <em>R: A language and environment for statistical computing
 <div id="ref-Schanen2021" class="csl-entry" role="listitem">
 Schanen, J. (2021). <em>Math person (<span>Strogatz Prize</span> entry)</em>. National Museum of Mathematics.
 </div>
-<div id="ref-StataCorp2021:2" class="csl-entry" role="listitem">
-StataCorp. (2021). <em>Stata 17 multilevel mixed effects reference manual</em>. Stata Press.
+<div id="ref-StataCorp2023" class="csl-entry" role="listitem">
+StataCorp. (2023). <em>Stata 18 mixed effects reference manual</em>. Stata Press.
 </div>
 <div id="ref-Thoreau1975" class="csl-entry" role="listitem">
 Thoreau, H. D. (1975). The commercial spirit of modern times [1837]. In J. J. Moldenhauer, E. Moser, &amp; A. C. Kern (Eds.), <em>Early essays and miscellanies</em>. Princeton University Press.
@@ -1179,7 +1180,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
