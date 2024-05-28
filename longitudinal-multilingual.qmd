@@ -207,7 +207,13 @@ The *main effects only model* suggests that time is associated with increases in
 
 The second model adds interactions with time to the first model. Results are largly similar to the prior model. However, here we not only examine whether main effects other than time are associated with higher or lower time trajectories, but also whether particular variables are associated with differences in the slope of the time trajectory. In this case, we find insufficient evidence that any independent variable is associated with changes in the slope of the time trajectory.
 
-However, it may be illustrative to imagine how we would interpret the results had a particular interaction term been statistically significant. Let us consider one of the interaction terms with the largest coefficient, `intervention#time`. The interaction of the intervention with time is positive. Had this coefficient been statistically signifcant, it would have indicated that the intervention was associated with more rapid increases in the outcome over time *in addition to* the fact that the intervention is associated with higher initial levels of the outcome.
+::: {.callout-tip}
+## Which Interactions To Test?
+
+In this example--for the sake of illustration--I test the interaction of *every* independent variable with time. In many cases, it may make sense to test only only one or two interactions of time with particular variables of key interest. Also, after finding, as I did in this model, that none of the interactions of other independent variables with time are significant, I might report the model with interactions, or might report only the results of the model with only main effects. 
+:::
+
+It may be illustrative to imagine how we would interpret the results had a particular interaction term been statistically significant. Let us consider one of the interaction terms with the largest coefficient, `intervention#time`. The interaction of the intervention with time is positive. Had this coefficient been statistically signifcant, it would have indicated that the intervention was associated with more rapid increases in the outcome over time *in addition to* the fact that the intervention is associated with higher initial levels of the outcome.
 
 
 
