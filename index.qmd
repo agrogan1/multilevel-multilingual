@@ -98,6 +98,7 @@ pander(head(df)) # nice table
 ```{r}
 #| echo: false
 #| output: false
+#| label: JuliaCall-index
 
 # KEEP THIS CHUNK FOR INFORMATIONAL PURPOSES!!!
 
