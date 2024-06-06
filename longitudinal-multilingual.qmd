@@ -99,6 +99,16 @@ dfL <- read_dta("simulated_multilevel_longitudinal_data.dta")
 
 ```
 
+#### Change Some Variables To Categorical
+
+```{r}
+
+dfL$identity <- factor(dfL$identity)
+
+dfL$intervention <- factor(dfL$intervention)
+
+```
+
 #### Run The Model
 
 ::: {.callout-caution collapse="false"}
@@ -167,6 +177,10 @@ dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
 
 @transform!(dfL, :country = categorical(:country))
 
+@transform!(dfL, :identity = categorical(:identity))
+
+@transform!(dfL, :intervention = categorical(:intervention))
+
 ```
 
 ##### Main Effects Only
@@ -205,7 +219,7 @@ m2B = fit(MixedModel, @formula(outcome ~ t * (warmth +
 
 The *main effects only model* suggests that time is associated with increases in the outcome. In the main effects model, main effects other than time, indicate whether a particular variable is associated with higher or lower intercepts of the time trajectory, at the beginning of the study time. Warmth is again associated with increases in the outcome, while physical punishment is associated with decreases in the outcome. Identity is again not associated with the outcome, while the intervention is associated with higher levels of the outcome. The Human Development Index is again not associated with the outcome.
 
-The second model adds interactions with time to the first model. Results are largly similar to the prior model. However, here we not only examine whether main effects other than time are associated with higher or lower time trajectories, but also whether particular variables are associated with differences in the slope of the time trajectory. In this case, we find insufficient evidence that any independent variable is associated with changes in the slope of the time trajectory.
+The second model adds interactions with time to the first model. Results are largely similar to the prior model. However, here we not only examine whether main effects other than time are associated with higher or lower time trajectories, but also whether particular variables are associated with differences in the slope of the time trajectory. In this case, we find insufficient evidence that any independent variable is associated with changes in the slope of the time trajectory.
 
 ::: {.callout-tip}
 ## Which Interactions To Test?
