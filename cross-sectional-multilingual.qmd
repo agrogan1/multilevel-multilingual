@@ -70,6 +70,10 @@ All models in the examples below are run with *uncorrelated* random effects, but
 
 ## Run Models
 
+::: {.callout-warning}
+Statistically--as noted in the main text--it is important to be clear on whether independent variables in one's model are continuous or categorical. *Continuous* variables can be entered straightforwardly into statistical syntax. *Categorical* variables, on the other hand usually require specific attention in Statistical software. In Stata, categorical variables are indicated in a statistical model by prefixing them with an `i.`. In R, categorical variables are distinguished by making them into factors e.g. `x <- factor(x)`. In Julia, categorical variables are created by using the `@transform` syntax detailed below.
+:::
+
 ::: {.panel-tabset group="language"}
 
 ### Stata
@@ -83,10 +87,6 @@ use simulated_multilevel_data.dta
 ```
 
 #### Run The Model
-
-::: {.callout-warning}
-Statistically--as noted in the main text--it is important to be clear on whether independent variables in one's model are continuous or categorical. *Continuous* variables can be entered straightforwardly into statistical syntax. *Categorical* variables, on the other hand usually require specific attention in Statistical software. In Stata, categorical variables are indicated in a statistical model by prefixing them with an `i.`. In R, categorical variables are distinguished by making them into factors e.g. `x <- factor(x)`. In Julia, categorical variables are created by using the `@transform` syntax detailed below.
-:::
 
 ```{stata}
 #| label: Stata-cross-sectional

@@ -329,7 +329,7 @@ var(u_{0j}) &amp; 0 \\
 var(u_{0j}) &amp; cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
 \end{bmatrix} \tag{4.3}\]</span></span></p>
-<p>Procedures for estimating models with uncorrelated and correlated random effects are detailed below <span class="citation" data-cites="StataCorp2021:2 JSSv067i01 MixedModels">(<a href="references.html#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="references.html#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="references.html#ref-StataCorp2021:2" role="doc-biblioref">StataCorp, 2021</a>)</span>.</p>
+<p>Procedures for estimating models with uncorrelated and correlated random effects are detailed below <span class="citation" data-cites="StataCorp2023 JSSv067i01 MixedModels">(<a href="references.html#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="references.html#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>.</p>
 <div id="tbl-REs" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-REs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -374,6 +374,19 @@ Table&nbsp;4.1: Correlated and Uncorrelated Random Effects
 </section>
 <section id="run-models" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="run-models"><span class="header-section-number">4.3</span> Run Models</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Statistically–as noted in the main text–it is important to be clear on whether independent variables in one’s model are continuous or categorical. <em>Continuous</em> variables can be entered straightforwardly into statistical syntax. <em>Categorical</em> variables, on the other hand usually require specific attention in Statistical software. In Stata, categorical variables are indicated in a statistical model by prefixing them with an <code>i.</code>. In R, categorical variables are distinguished by making them into factors e.g.&nbsp;<code>x &lt;- factor(x)</code>. In Julia, categorical variables are created by using the <code>@transform</code> syntax detailed below.</p>
+</div>
+</div>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
@@ -444,10 +457,18 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model-1" class="level4" data-number="4.3.0.4">
-<h4 data-number="4.3.0.4" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">4.3.0.4</span> Run The Model</h4>
+<section id="change-some-variables-to-categorical" class="level4" data-number="4.3.0.4">
+<h4 data-number="4.3.0.4" class="anchored" data-anchor-id="change-some-variables-to-categorical"><span class="header-section-number">4.3.0.4</span> Change Some Variables To Categorical</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>identity <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>identity)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>intervention <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>intervention)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="run-the-model-1" class="level4" data-number="4.3.0.5">
+<h4 data-number="4.3.0.5" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">4.3.0.5</span> Run The Model</h4>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -456,7 +477,7 @@ Caution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><code>lme4</code> does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library <code>lmerTest</code> to provide p values for <code>lme4</code> results.</p>
 </div>
@@ -476,18 +497,18 @@ Tip
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmerTest)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmerTest)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite's method [
 lmerModLmerTest]
@@ -513,53 +534,57 @@ Fixed effects:
 (Intercept)           52.011324    1.414976   30.293141  36.758
 warmth                 0.834562    0.064250   41.896457  12.989
 physical_punishment   -0.991893    0.079845 2968.012381 -12.423
-identity              -0.300354    0.217179 2970.108153  -1.383
-intervention           0.639060    0.217603 2971.186718   2.937
+identity1             -0.300354    0.217179 2970.108153  -1.383
+intervention1          0.639060    0.217603 2971.186718   2.937
 HDI                   -0.003394    0.020598   27.592814  -0.165
                                 Pr(&gt;|t|)    
 (Intercept)         &lt; 0.0000000000000002 ***
 warmth              0.000000000000000277 ***
 physical_punishment &lt; 0.0000000000000002 ***
-identity                         0.16678    
-intervention                     0.00334 ** 
+identity1                        0.16678    
+intervention1                    0.00334 ** 
 HDI                              0.87030    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
-            (Intr) warmth physc_ idntty intrvn
+            (Intr) warmth physc_ idntt1 intrv1
 warmth      -0.124                            
 physcl_pnsh -0.149 -0.003                     
-identity    -0.072 -0.012 -0.003              
-interventin -0.082  0.034  0.022 -0.018       
+identity1   -0.072 -0.012 -0.003              
+interventn1 -0.082  0.034  0.022 -0.018       
 HDI         -0.943 -0.006  0.009 -0.001  0.000</code></pre>
 </div>
 </div>
 </section>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<section id="get-the-data-2" class="level4" data-number="4.3.0.5">
-<h4 data-number="4.3.0.5" class="anchored" data-anchor-id="get-the-data-2"><span class="header-section-number">4.3.0.5</span> Get The Data</h4>
+<section id="get-the-data-2" class="level4" data-number="4.3.0.6">
+<h4 data-number="4.3.0.6" class="anchored" data-anchor-id="get-the-data-2"><span class="header-section-number">4.3.0.6</span> Get The Data</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="change-country-to-categorical" class="level4" data-number="4.3.0.6">
-<h4 data-number="4.3.0.6" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">4.3.0.6</span> Change Country To Categorical</h4>
+<section id="change-some-variables-to-categorical-1" class="level4" data-number="4.3.0.7">
+<h4 data-number="4.3.0.7" class="anchored" data-anchor-id="change-some-variables-to-categorical-1"><span class="header-section-number">4.3.0.7</span> Change Some Variables To Categorical</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>identity <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>identity))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>intervention <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>intervention))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model-2" class="level4" data-number="4.3.0.7">
-<h4 data-number="4.3.0.7" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">4.3.0.7</span> Run The Model</h4>
+<section id="run-the-model-2" class="level4" data-number="4.3.0.8">
+<h4 data-number="4.3.0.8" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">4.3.0.8</span> Run The Model</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>               identity <span class="op">+</span> intervention <span class="op">+</span> HDI <span class="op">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">0</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>               identity <span class="op">+</span> intervention <span class="op">+</span> HDI <span class="op">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">0</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
  outcome ~ 1 + warmth + physical_punishment + identity + intervention + HDI + (1 | country) + (0 + warmth | country)
@@ -580,8 +605,8 @@ Residual              34.974984 5.913965
 (Intercept)          51.9999      1.37124     37.92    &lt;1e-99
 warmth                0.834537    0.0637228   13.10    &lt;1e-38
 physical_punishment  -0.991665    0.0797906  -12.43    &lt;1e-34
-identity             -0.300475    0.217029    -1.38    0.1662
-intervention          0.639641    0.217452     2.94    0.0033
+identity: 1.0        -0.300475    0.217029    -1.38    0.1662
+intervention: 1.0     0.639641    0.217452     2.94    0.0033
 HDI                  -0.0032286   0.0199255   -0.16    0.8713
 ─────────────────────────────────────────────────────────────</code></pre>
 </div>
@@ -603,8 +628,8 @@ Bates, D. (2024). <em><span class="nocase">MixedModels.jl Documentation</span></
 <div id="ref-JSSv067i01" class="csl-entry" role="listitem">
 Bates, D., Mächler, M., Bolker, B., &amp; Walker, S. (2015). Fitting linear mixed-effects models using lme4. <em>Journal of Statistical Software</em>, <em>67</em>(1), 1–48. <a href="https://doi.org/10.18637/jss.v067.i01">https://doi.org/10.18637/jss.v067.i01</a>
 </div>
-<div id="ref-StataCorp2021:2" class="csl-entry" role="listitem">
-StataCorp. (2021). <em>Stata 17 multilevel mixed effects reference manual</em>. Stata Press.
+<div id="ref-StataCorp2023" class="csl-entry" role="listitem">
+StataCorp. (2023). <em>Stata 18 mixed effects reference manual</em>. Stata Press.
 </div>
 </div>
 </section>

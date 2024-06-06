@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-05-28}
+\date{2024-06-06}
 
 \begin{document}
 \maketitle
@@ -332,7 +332,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -343,7 +343,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -372,7 +372,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 I used Quarto (\url{https://quarto.org/}) to create this Appendix.
 Quarto is a programming and publishing environment that can run multiple
@@ -390,7 +390,7 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} and
 \texttt{simulated\_multilevel\_longitudinal\_data.dta} files. Here is a
@@ -975,7 +975,7 @@ cov(u_{0j}, u_{1j}) & var(u_{1j})
 
 Procedures for estimating models with uncorrelated and correlated random
 effects are detailed below (Bates et al., 2015; Bates, 2024; StataCorp,
-2021).
+2023).
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1667}}
@@ -1020,6 +1020,22 @@ effects, but could just as easily be run with \emph{correlated} random
 effects.
 
 \section{Run Models}\label{run-models-1}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
+
+Statistically--as noted in the main text--it is important to be clear on
+whether independent variables in one's model are continuous or
+categorical. \emph{Continuous} variables can be entered
+straightforwardly into statistical syntax. \emph{Categorical} variables,
+on the other hand usually require specific attention in Statistical
+software. In Stata, categorical variables are indicated in a statistical
+model by prefixing them with an \texttt{i.}. In R, categorical variables
+are distinguished by making them into factors
+e.g.~\texttt{x\ \textless{}-\ factor(x)}. In Julia, categorical
+variables are created by using the \texttt{@transform} syntax detailed
+below.
+
+\end{tcolorbox}
 
 \subsection{Stata}
 
@@ -1096,9 +1112,20 @@ Note: LR test is conservative and provided only for reference.
 \end{Highlighting}
 \end{Shaded}
 
+\subsubsection{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{identity }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{identity)}
+
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{intervention }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{intervention)}
+\end{Highlighting}
+\end{Shaded}
+
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1107,7 +1134,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1158,25 +1185,25 @@ Fixed effects:
 (Intercept)           52.011324    1.414976   30.293141  36.758
 warmth                 0.834562    0.064250   41.896457  12.989
 physical_punishment   -0.991893    0.079845 2968.012381 -12.423
-identity              -0.300354    0.217179 2970.108153  -1.383
-intervention           0.639060    0.217603 2971.186718   2.937
+identity1             -0.300354    0.217179 2970.108153  -1.383
+intervention1          0.639060    0.217603 2971.186718   2.937
 HDI                   -0.003394    0.020598   27.592814  -0.165
                                 Pr(>|t|)    
 (Intercept)         < 0.0000000000000002 ***
 warmth              0.000000000000000277 ***
 physical_punishment < 0.0000000000000002 ***
-identity                         0.16678    
-intervention                     0.00334 ** 
+identity1                        0.16678    
+intervention1                    0.00334 ** 
 HDI                              0.87030    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
-            (Intr) warmth physc_ idntty intrvn
+            (Intr) warmth physc_ idntt1 intrv1
 warmth      -0.124                            
 physcl_pnsh -0.149 -0.003                     
-identity    -0.072 -0.012 -0.003              
-interventin -0.082  0.034  0.022 -0.018       
+identity1   -0.072 -0.012 -0.003              
+interventn1 -0.082  0.034  0.022 -0.018       
 HDI         -0.943 -0.006  0.009 -0.001  0.000
 \end{verbatim}
 
@@ -1192,12 +1219,16 @@ HDI         -0.943 -0.006  0.009 -0.001  0.000
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Change Country To
-Categorical}\label{change-country-to-categorical}
+\subsubsection{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \PreprocessorTok{@transform}\NormalTok{!(df, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
+
+\PreprocessorTok{@transform}\NormalTok{!(df, }\OperatorTok{:}\NormalTok{identity }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{identity))}
+
+\PreprocessorTok{@transform}\NormalTok{!(df, }\OperatorTok{:}\NormalTok{intervention }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{intervention))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1233,8 +1264,8 @@ Residual              34.974984 5.913965
 (Intercept)          51.9999      1.37124     37.92    <1e-99
 warmth                0.834537    0.0637228   13.10    <1e-38
 physical_punishment  -0.991665    0.0797906  -12.43    <1e-34
-identity             -0.300475    0.217029    -1.38    0.1662
-intervention          0.639641    0.217452     2.94    0.0033
+identity: 1.0        -0.300475    0.217029    -1.38    0.1662
+intervention: 1.0     0.639641    0.217452     2.94    0.0033
 HDI                  -0.0032286   0.0199255   -0.16    0.8713
 ─────────────────────────────────────────────────────────────
 \end{verbatim}
@@ -1314,7 +1345,7 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 Thus, again following Section 6.4, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
@@ -1493,9 +1524,20 @@ Note: LR test is conservative and provided only for reference.
 \end{Highlighting}
 \end{Shaded}
 
+\subsubsection{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical-2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dfL}\SpecialCharTok{$}\NormalTok{identity }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(dfL}\SpecialCharTok{$}\NormalTok{identity)}
+
+\NormalTok{dfL}\SpecialCharTok{$}\NormalTok{intervention }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(dfL}\SpecialCharTok{$}\NormalTok{intervention)}
+\end{Highlighting}
+\end{Shaded}
+
 \subsubsection{Run The Model}\label{run-the-model-4}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1504,7 +1546,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1559,27 +1601,27 @@ Fixed effects:
 t                      0.9433806    0.0658755 5998.3764548  14.321
 warmth                 0.9140307    0.0379336 4745.3497493  24.096
 physical_punishment   -1.0087537    0.0497972 6483.6771808 -20.257
-identity              -0.1319548    0.1517350 2968.7828107  -0.870
-intervention           0.8591494    0.1520510 2971.8111995   5.650
+identity1             -0.1319548    0.1517350 2968.7828107  -0.870
+intervention1          0.8591494    0.1520510 2971.8111995   5.650
 HDI                    0.0007909    0.0207656   28.0001855   0.038
                                 Pr(>|t|)    
 (Intercept)         < 0.0000000000000002 ***
 t                   < 0.0000000000000002 ***
 warmth              < 0.0000000000000002 ***
 physical_punishment < 0.0000000000000002 ***
-identity                           0.385    
-intervention                0.0000000175 ***
+identity1                          0.385    
+intervention1               0.0000000175 ***
 HDI                                0.970    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
-            (Intr) t      warmth physc_ idntty intrvn
+            (Intr) t      warmth physc_ idntt1 intrv1
 t           -0.092                                   
 warmth      -0.091 -0.002                            
 physcl_pnsh -0.092 -0.007 -0.012                     
-identity    -0.051  0.000 -0.013 -0.003              
-interventin -0.058  0.000  0.039  0.019 -0.018       
+identity1   -0.051  0.000 -0.013 -0.003              
+interventn1 -0.058  0.000  0.039  0.019 -0.018       
 HDI         -0.951  0.000 -0.004  0.005  0.000  0.002
 \end{verbatim}
 
@@ -1623,54 +1665,54 @@ Fixed effects:
 t                        0.7552909    0.3263028 6176.7440549   2.315
 warmth                   0.8170912    0.0805355 8274.9995422  10.146
 physical_punishment     -1.0097729    0.1113557 8084.6084915  -9.068
-identity                -0.2446453    0.3041604 8695.8966197  -0.804
-intervention             0.6604671    0.3046286 8697.0843430   2.168
+identity1               -0.2446453    0.3041604 8695.8966197  -0.804
+intervention1            0.6604671    0.3046286 8697.0843430   2.168
 HDI                      0.0026692    0.0221295   36.1037733   0.121
 t:warmth                 0.0486211    0.0356217 6404.8723333   1.365
 t:physical_punishment    0.0004964    0.0494590 6753.0158441   0.010
-t:identity               0.0563140    0.1318043 5993.4518022   0.427
-t:intervention           0.0995037    0.1319917 5994.1433001   0.754
+t:identity1              0.0563140    0.1318043 5993.4518022   0.427
+t:intervention1          0.0995037    0.1319917 5994.1433001   0.754
 t:HDI                   -0.0009379    0.0038233 5993.9090880  -0.245
                                  Pr(>|t|)    
 (Intercept)           <0.0000000000000002 ***
 t                                  0.0207 *  
 warmth                <0.0000000000000002 ***
 physical_punishment   <0.0000000000000002 ***
-identity                           0.4212    
-intervention                       0.0302 *  
+identity1                          0.4212    
+intervention1                      0.0302 *  
 HDI                                0.9047    
 t:warmth                           0.1723    
 t:physical_punishment              0.9920    
-t:identity                         0.6692    
-t:intervention                     0.4510    
+t:identity1                        0.6692    
+t:intervention1                    0.4510    
 t:HDI                              0.8062    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
-            (Intr) t      warmth physc_ idntty intrvn HDI    t:wrmt t:phy_
+            (Intr) t      warmth physc_ idntt1 intrv1 HDI    t:wrmt t:phy_
 t           -0.421                                                        
 warmth      -0.178  0.331                                                 
 physcl_pnsh -0.190  0.360 -0.005                                          
-identity    -0.093  0.166 -0.013 -0.002                                   
-interventin -0.107  0.192  0.039  0.019 -0.017                            
+identity1   -0.093  0.166 -0.013 -0.002                                   
+interventn1 -0.107  0.192  0.039  0.019 -0.017                            
 HDI         -0.925  0.264 -0.007  0.012 -0.001  0.003                     
 t:warmth     0.158 -0.377 -0.882  0.001  0.011 -0.035  0.006              
 t:physcl_pn  0.170 -0.402  0.004 -0.894 -0.001 -0.017 -0.010 -0.003       
-t:identity   0.081 -0.192  0.011  0.000 -0.867  0.014  0.001 -0.013  0.002
-t:intervntn  0.093 -0.222 -0.035 -0.017  0.014 -0.867 -0.003  0.041  0.019
+t:identity1  0.081 -0.192  0.011  0.000 -0.867  0.014  0.001 -0.013  0.002
+t:intrvntn1  0.093 -0.222 -0.035 -0.017  0.014 -0.867 -0.003  0.041  0.019
 t:HDI        0.322 -0.765  0.015 -0.027  0.002 -0.007 -0.346 -0.016  0.029
-            t:dntt t:ntrv
+            t:dnt1 t:ntr1
 t                        
 warmth                   
 physcl_pnsh              
-identity                 
-interventin              
+identity1                
+interventn1              
 HDI                      
 t:warmth                 
 t:physcl_pn              
-t:identity               
-t:intervntn -0.016       
+t:identity1              
+t:intrvntn1 -0.016       
 t:HDI       -0.002  0.008
 \end{verbatim}
 
@@ -1689,11 +1731,15 @@ t:HDI       -0.002  0.008
 \subsubsection{Run The Model}\label{run-the-model-5}
 
 \paragraph{Change Country To
-Categorical}\label{change-country-to-categorical-1}
+Categorical}\label{change-country-to-categorical}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \PreprocessorTok{@transform}\NormalTok{!(dfL, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
+
+\PreprocessorTok{@transform}\NormalTok{!(dfL, }\OperatorTok{:}\NormalTok{identity }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{identity))}
+
+\PreprocessorTok{@transform}\NormalTok{!(dfL, }\OperatorTok{:}\NormalTok{intervention }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{intervention))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1733,8 +1779,8 @@ Residual              26.027363 5.101702
 t                     0.943864      0.0658717   14.33    <1e-45
 warmth                0.913496      0.0423744   21.56    <1e-99
 physical_punishment  -1.0079        0.0497622  -20.25    <1e-90
-identity             -0.127692      0.151583    -0.84    0.3996
-intervention          0.858997      0.151909     5.65    <1e-07
+identity: 1.0        -0.127692      0.151583    -0.84    0.3996
+intervention: 1.0     0.858997      0.151909     5.65    <1e-07
 HDI                  -0.000566026   0.0196439   -0.03    0.9770
 ───────────────────────────────────────────────────────────────
 \end{verbatim}
@@ -1775,13 +1821,13 @@ Residual              26.015906 5.100579
 t                         0.758209     0.326177     2.32    0.0201
 warmth                    0.817076     0.0826636    9.88    <1e-22
 physical_punishment      -1.00903      0.111293    -9.07    <1e-18
-identity                 -0.238714     0.303996    -0.79    0.4323
-intervention              0.660761     0.30445      2.17    0.0300
+identity: 1.0            -0.238714     0.303996    -0.79    0.4323
+intervention: 1.0         0.660761     0.30445      2.17    0.0300
 HDI                       0.00136065   0.0210842    0.06    0.9485
 t & warmth                0.0483635    0.0356074    1.36    0.1744
 t & physical_punishment   0.000542203  0.0494355    0.01    0.9912
-t & identity              0.0554385    0.131745     0.42    0.6739
-t & intervention          0.0992809    0.131925     0.75    0.4517
+t & identity: 1.0         0.0554385    0.131745     0.42    0.6739
+t & intervention: 1.0     0.0992809    0.131925     0.75    0.4517
 t & HDI                  -0.000955067  0.00382162  -0.25    0.8027
 ──────────────────────────────────────────────────────────────────
 \end{verbatim}
@@ -1799,14 +1845,14 @@ intervention is associated with higher levels of the outcome. The Human
 Development Index is again not associated with the outcome.
 
 The second model adds interactions with time to the first model. Results
-are largly similar to the prior model. However, here we not only examine
-whether main effects other than time are associated with higher or lower
-time trajectories, but also whether particular variables are associated
-with differences in the slope of the time trajectory. In this case, we
-find insufficient evidence that any independent variable is associated
-with changes in the slope of the time trajectory.
+are largely similar to the prior model. However, here we not only
+examine whether main effects other than time are associated with higher
+or lower time trajectories, but also whether particular variables are
+associated with differences in the slope of the time trajectory. In this
+case, we find insufficient evidence that any independent variable is
+associated with changes in the slope of the time trajectory.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toprule=.15mm, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, leftrule=.75mm, colback=white, breakable, coltitle=black, left=2mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, coltitle=black, leftrule=.75mm, colback=white, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, titlerule=0mm, arc=.35mm, toptitle=1mm, bottomrule=.15mm, toprule=.15mm]
 
 In this example--for the sake of illustration--I test the interaction of
 \emph{every} independent variable with time. In many cases, it may make
@@ -1859,10 +1905,6 @@ computing}. R Foundation for Statistical Computing.
 \bibitem[\citeproctext]{ref-Schanen2021}
 Schanen, J. (2021). \emph{Math person ({Strogatz Prize} entry)}.
 National Museum of Mathematics.
-
-\bibitem[\citeproctext]{ref-StataCorp2021:2}
-StataCorp. (2021). \emph{Stata 17 multilevel mixed effects reference
-manual}. Stata Press.
 
 \bibitem[\citeproctext]{ref-StataCorp2023}
 StataCorp. (2023). \emph{Stata 18 mixed effects reference manual}. Stata
