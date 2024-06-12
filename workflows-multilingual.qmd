@@ -1,0 +1,43 @@
+# Statistical Workflows
+
+## Statistical Software Is Best Run Using a Script
+
+Many statistical workflows--whatever the statistical package being used--follow the same conceptual pattern.
+
+![A Common Statistical Workflow](workflow.png){width=33%}
+
+Increasingly, we want to think about workflows that are 
+
+* **documentable**, **transparent**, and **auditable**: We have a record of what we did if we want to double check our work, clarify a result, or develop a new project with a similar process. We, or others, can find the inevitable errors in our work, **and correct them**.
+* **replicable**: Others can replicate our findings with the same or new data.
+* **scalable**: We are developing a process that can be as easily used with *thousands* or *millions* of rows of data as it can with *ten* rows of data. We are developing a process that can be easily repeated if we are *constantly getting new or updated data*, e.g. getting new data every week, or every month.
+
+For most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document [@Allaire_Quarto_2024] as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: In Stata, scripts are stored in `.do` files; in R, scripts are stored in `.R` files, and in Julia, scripts are stored in `.jl` files. 
+
+## Script Flow
+
+A good practice when writing a script, is to have a script that begins with the raw data, moves through any necessary re-coding or cleaning of the data, generates descriptive statistics, generates the appropriate multivariate results, and then generates any necessary visualizations. 
+
+## Storing Statistical Data
+
+It is usually best to store quantitative data in a statistical format such as R (`.Rdata`), or Stata (`.dta`), or even a text format such as `.csv`. Spreadsheets are likely to be a bad tool for storing quantitative data.
+
+## It Is Possible To Use Multiple Statistical Packages
+
+While this Appendix focuses on the use of each individual statistical package on its own, it is certainly possible to use multiple statistical packages as part of the same workflow. For example, one might employ Stata to carry out data management tasks, and then possibly use R to run a multilevel model with a more complicated multilevel structure, such as a cross-classified model, or Julia to more quickly run a model with a large data.
+
+## Good Statistical Workflows Require Safe Workspaces
+
+It is also *very important* to be aware that good complex workflows are *highly iterative* and *highly collaborative*. Good complex workflows require a *safe workspace* in which team members feel free to admit their own errors, and help with others' mistakes in a non-judgmental fashion. Such a *safe environment* is necessary to build an environment where the *overall error rate* is low.
+
+## Good Statistical Workflows Require Patience And Can Be Psychologically Demanding
+
+Developing a good documented and auditable workflow that is implemented in code requires a lot of patience, and often, **many iterations**. Working through these many iterations can be psychologically demanding. It is important to remember that careful attention to getting the details right early in the research process, while sometimes tiring and frustrating, will pay large dividends later on when the research is reviewed, presented, published and read.
+
+
+
+
+
+
+
+
