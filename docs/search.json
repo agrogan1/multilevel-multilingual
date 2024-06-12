@@ -60,6 +60,16 @@
     ]
   },
   {
+    "objectID": "workflows-multilingual.html#scripts",
+    "href": "workflows-multilingual.html#scripts",
+    "title": "2  Statistical Workflows",
+    "section": "2.2 Scripts",
+    "text": "2.2 Scripts\nFor most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document (Allaire et al., 2024) as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: in Stata, scripts are stored in .do files; in R, scripts are stored in .R files, and in Julia, scripts are stored in .jl files.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Statistical Workflows</span>"
+    ]
+  },
+  {
     "objectID": "workflows-multilingual.html#script-flow",
     "href": "workflows-multilingual.html#script-flow",
     "title": "2  Statistical Workflows",
@@ -277,16 +287,6 @@
     "text": "Allaire, J. J., Teague, C., Scheidegger, C., Xie, Y., & Dervieux, C.\n(2024). Quarto (Version 1.4). https://doi.org/10.5281/zenodo.5960048\n\n\nBates, D. (2024). MixedModels.jl\nDocumentation. https://juliastats.org/MixedModels.jl/stable/\n\n\nBates, D., Mächler, M., Bolker, B., & Walker, S. (2015). Fitting\nlinear mixed-effects models using lme4. Journal of Statistical\nSoftware, 67(1), 1–48. https://doi.org/10.18637/jss.v067.i01\n\n\nBezanson, J., Edelman, A., Karpinski, S., & Shah, V. B. (2017).\nJulia: A fresh approach to numerical computing. SIAM Review,\n59(1), 65–98. https://doi.org/10.1137/141000671\n\n\nHemken, D. (2023). Statamarkdown: ’Stata’ markdown. https://CRAN.R-project.org/package=Statamarkdown\n\n\nLi, C. (2019). JuliaCall: An R package for\nseamless integration between R and Julia.\nThe Journal of Open Source Software, 4(35), 1284. https://doi.org/10.21105/joss.01284\n\n\nR Core Team. (2023). R: A language and environment for statistical\ncomputing. R Foundation for Statistical Computing. https://www.R-project.org/\n\n\nSchanen, J. (2021). Math person (Strogatz Prize\nentry). National Museum of Mathematics.\n\n\nStataCorp. (2023). Stata 18 mixed effects reference manual.\nStata Press.\n\n\nThoreau, H. D. (1975). The commercial spirit of modern times [1837]. In\nJ. J. Moldenhauer, E. Moser, & A. C. Kern (Eds.), Early essays\nand miscellanies. Princeton University Press.",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "workflows-multilingual.html#scripts",
-    "href": "workflows-multilingual.html#scripts",
-    "title": "2  Statistical Workflows",
-    "section": "2.2 Scripts",
-    "text": "2.2 Scripts\nFor most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document (Allaire et al., 2024) as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: in Stata, scripts are stored in .do files; in R, scripts are stored in .R files, and in Julia, scripts are stored in .jl files.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Statistical Workflows</span>"
     ]
   }
 ]
