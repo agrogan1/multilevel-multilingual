@@ -86,7 +86,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./descriptives-multilingual.html" rel="next">
+<link href="./workflows-multilingual.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -254,26 +254,32 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./workflows-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Workflows</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./descriptives-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./longitudinal-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -433,47 +439,6 @@ Running Statistical Packages in Quarto
 <div class="callout-body-container callout-body">
 <p>I used Quarto <span class="citation" data-cites="Allaire_Quarto_2024">(<a href="references.html#ref-Allaire_Quarto_2024" role="doc-biblioref">Allaire et al., 2024</a>)</span> (<a href="https://quarto.org/">https://quarto.org/</a>) to create this Appendix. Quarto is a programming and publishing environment that can run multiple programming languages, including Stata, R and Julia, and that can write to multiple output formats including HTML, PDF, and MS Word. To run Stata, I used the <code>Statamarkdown</code> library <span class="citation" data-cites="Hemken">(<a href="references.html#ref-Hemken" role="doc-biblioref">Hemken, 2023</a>)</span> in R to connect Stata to Quarto. Quarto has a built in connection to R, and runs R without issue. To run Julia, I used the <code>JuliaCall</code> library <span class="citation" data-cites="JuliaCall">(<a href="references.html#ref-JuliaCall" role="doc-biblioref">Li, 2019</a>)</span> in R to connect Quarto to Julia.</p>
 <p>Of course, each of these programs can be run by itself, if you have them installed on your computer.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Statistical Software Is Best Run Using a Script
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Many statistical workflows follow the same conceptual pattern.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="A Common Statistical Workflow"><img src="workflow.png" class="img-fluid figure-img" style="width:33.0%" alt="A Common Statistical Workflow"></a></p>
-<figcaption>A Common Statistical Workflow</figcaption>
-</figure>
-</div>
-<p>Increasingly, we want to think about workflows that are</p>
-<ul>
-<li><strong>documentable</strong>, <strong>transparent</strong>, and <strong>auditable</strong>: We have a record of what we did if we want to double check our work, clarify a result, or develop a new project with a similar process. We, or others, can find the inevitable errors in our work, <strong>and correct them</strong>.</li>
-<li><strong>replicable</strong>: Others can replicate our findings with the same or new data.</li>
-<li><strong>scalable</strong>: We are developing a process that can be as easily used with <em>thousands</em> or <em>millions</em> of rows of data as it can with <em>ten</em> rows of data. We are developing a process that can be easily repeated if we are <em>constantly getting new or updated data</em>, e.g.&nbsp;getting new data every week, or every month.</li>
-</ul>
-<p>For most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document <span class="citation" data-cites="Allaire_Quarto_2024">(<a href="references.html#ref-Allaire_Quarto_2024" role="doc-biblioref">Allaire et al., 2024</a>)</span> as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: In Stata, scripts are stored in <code>.do</code> files; in R, scripts are stored in <code>.R</code> files, and in Julia, scripts are stored in <code>.jl</code> files.</p>
-<p>A good practice when writing a script, is to have a script that begins with the raw data, moves through any necessary re-coding or cleaning of the data, generates descriptive statistics, generates the appropriate multivariate results, and then generates any necessary visualizations.</p>
-<p>It is usually best to store quantitative data in a statistical format such as R (<code>.Rdata</code>), or Stata (<code>.dta</code>). Spreadsheets are likely to be a bad tool for storing quantitative data.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-It Is Possible To Use Multiple Statistical Packages
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>While this Appendix focuses on the use of each individual statistical package on its own, it is certainly possible to use multiple statistical packages as part of the same workflow. For example, one might employ Stata to carry out data management tasks, and then possibly use R to run a multilevel model with a more complicated multilevel structure, such as a cross-classified model, or Julia to more quickly run a model with a large data.</p>
 </div>
 </div>
 </section>
@@ -658,9 +623,6 @@ Table&nbsp;1.2: Sample of Simulated Multilevel Data
 </div>
 
 
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-2">A Common Statistical Workflow</span>
-</div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-Allaire_Quarto_2024" class="csl-entry" role="listitem">
 Allaire, J. J., Teague, C., Scheidegger, C., Xie, Y., &amp; Dervieux, C. (2024). <em><span>Quarto</span></em> (Version 1.4). <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>
@@ -1232,13 +1194,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./descriptives-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Descriptive Statistics</span>">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./workflows-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Statistical Workflows</span>">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Workflows</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

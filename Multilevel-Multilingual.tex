@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-09}
+\date{2024-06-12}
 
 \begin{document}
 \maketitle
@@ -332,7 +332,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -343,7 +343,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -372,16 +372,17 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
-I used Quarto (\url{https://quarto.org/}) to create this Appendix.
-Quarto is a programming and publishing environment that can run multiple
-programming languages, including Stata, R and Julia, and that can write
-to multiple output formats including HTML, PDF, and MS Word. To run
-Stata, I used the \texttt{Statamarkdown} library in R to connect Stata
-to Quarto. Quarto has a built in connection to R, and runs R without
-issue. To run Julia, I used the \texttt{JuliaCall} library in R to
-connect Quarto to Julia.
+I used Quarto (Allaire et al., 2024) (\url{https://quarto.org/}) to
+create this Appendix. Quarto is a programming and publishing environment
+that can run multiple programming languages, including Stata, R and
+Julia, and that can write to multiple output formats including HTML,
+PDF, and MS Word. To run Stata, I used the \texttt{Statamarkdown}
+library (Hemken, 2023) in R to connect Stata to Quarto. Quarto has a
+built in connection to R, and runs R without issue. To run Julia, I used
+the \texttt{JuliaCall} library (Li, 2019) in R to connect Quarto to
+Julia.
 
 Of course, each of these programs can be run by itself, if you have them
 installed on your computer.
@@ -390,12 +391,16 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, toptitle=1mm, colframe=quarto-callout-note-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, colframe=quarto-callout-note-color-frame, left=2mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} and
-\texttt{simulated\_multilevel\_longitudinal\_data.dta} files. Here is a
+\texttt{simulated\_multilevel\_longitudinal\_data.dta} files.
+
+Here is a
 \href{https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta}{direct
-link} to download the cross-sectional data. Here is a
+link} to download the cross-sectional data.
+
+Here is a
 \href{https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta}{direct
 link} to download the longitudinal data.
 
@@ -535,6 +540,102 @@ of the form described in Equation~\ref{eq-MLMsimple} is:
 \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(y }\OperatorTok{\textasciitilde{}}\NormalTok{ x }\OperatorTok{+}\NormalTok{ z }\OperatorTok{+}\NormalTok{ (}\FloatTok{1} \OperatorTok{+}\NormalTok{ x }\OperatorTok{|}\NormalTok{ group)), data)}
 \end{Highlighting}
 \end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Statistical Workflows}\label{statistical-workflows}
+
+\section{Statistical Software Is Best Run Using a
+Script}\label{statistical-software-is-best-run-using-a-script}
+
+Many statistical workflows--whatever the statistical package being
+used--follow the same conceptual pattern.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.33\textwidth,height=\textheight]{workflow.png}
+
+}
+
+\caption{A Common Statistical Workflow}
+
+\end{figure}%
+
+Increasingly, we want to think about workflows that are
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{documentable}, \textbf{transparent}, and \textbf{auditable}:
+  We have a record of what we did if we want to double check our work,
+  clarify a result, or develop a new project with a similar process. We,
+  or others, can find the inevitable errors in our work, \textbf{and
+  correct them}.
+\item
+  \textbf{replicable}: Others can replicate our findings with the same
+  or new data.
+\item
+  \textbf{scalable}: We are developing a process that can be as easily
+  used with \emph{thousands} or \emph{millions} of rows of data as it
+  can with \emph{ten} rows of data. We are developing a process that can
+  be easily repeated if we are \emph{constantly getting new or updated
+  data}, e.g.~getting new data every week, or every month.
+\end{itemize}
+
+For most statistical workflows, we will often want to write a script or
+code. Data analysis scripts can be stored in a Quarto document (Allaire
+et al., 2024) as they are in this Appendix, or every statistical package
+has its own unique format for storing scripts as a text file: In Stata,
+scripts are stored in \texttt{.do} files; in R, scripts are stored in
+\texttt{.R} files, and in Julia, scripts are stored in \texttt{.jl}
+files.
+
+\section{Script Flow}\label{script-flow}
+
+A good practice when writing a script, is to have a script that begins
+with the raw data, moves through any necessary re-coding or cleaning of
+the data, generates descriptive statistics, generates the appropriate
+multivariate results, and then generates any necessary visualizations.
+
+\section{Storing Statistical Data}\label{storing-statistical-data}
+
+It is usually best to store quantitative data in a statistical format
+such as R (\texttt{.Rdata}), or Stata (\texttt{.dta}), or even a text
+format such as \texttt{.csv}. Spreadsheets are likely to be a bad tool
+for storing quantitative data.
+
+\section{It Is Possible To Use Multiple Statistical
+Packages}\label{it-is-possible-to-use-multiple-statistical-packages}
+
+While this Appendix focuses on the use of each individual statistical
+package on its own, it is certainly possible to use multiple statistical
+packages as part of the same workflow. For example, one might employ
+Stata to carry out data management tasks, and then possibly use R to run
+a multilevel model with a more complicated multilevel structure, such as
+a cross-classified model, or Julia to more quickly run a model with a
+large data.
+
+\section{Good Statistical Workflows Require Safe
+Workspaces}\label{good-statistical-workflows-require-safe-workspaces}
+
+It is also \emph{very important} to be aware that good complex workflows
+are \emph{highly iterative} and \emph{highly collaborative}. Good
+complex workflows require a \emph{safe workspace} in which team members
+feel free to admit their own errors, and help with others' mistakes in a
+non-judgmental fashion. Such a \emph{safe environment} is necessary to
+build an environment where the \emph{overall error rate} is low.
+
+\section{Good Statistical Workflows Require Patience And Can Be
+Psychologically
+Demanding}\label{good-statistical-workflows-require-patience-and-can-be-psychologically-demanding}
+
+Developing a good documented and auditable workflow that is implemented
+in code requires a lot of patience, and often, \textbf{many iterations}.
+Working through these many iterations can be psychologically demanding.
+It is important to remember that careful attention to getting the
+details right early in the research process, while sometimes tiring and
+frustrating, will pay large dividends later on when the research is
+reviewed, presented, published and read.
 
 \bookmarksetup{startatroot}
 
@@ -1021,7 +1122,7 @@ effects.
 
 \section{Run Models}\label{run-models-1}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, toptitle=1mm, colframe=quarto-callout-warning-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-warning-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, colframe=quarto-callout-warning-color-frame, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 Statistically--as noted in the main text--it is important to be clear on
 whether independent variables in one's model are continuous or
@@ -1125,7 +1226,7 @@ Categorical}\label{change-some-variables-to-categorical}
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, toptitle=1mm, colframe=quarto-callout-caution-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colframe=quarto-callout-caution-color-frame, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1134,7 +1235,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1345,7 +1446,7 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 Thus, again following Section 6.4, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
@@ -1537,7 +1638,7 @@ Categorical}\label{change-some-variables-to-categorical-2}
 
 \subsubsection{Run The Model}\label{run-the-model-4}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, toptitle=1mm, colframe=quarto-callout-caution-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colframe=quarto-callout-caution-color-frame, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1546,7 +1647,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1852,7 +1953,7 @@ associated with differences in the slope of the time trajectory. In this
 case, we find insufficient evidence that any independent variable is
 associated with changes in the slope of the time trajectory.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colback=white, opacityback=0, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, toprule=.15mm, titlerule=0mm, coltitle=black, arc=.35mm, rightrule=.15mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, leftrule=.75mm]
 
 In this example--for the sake of illustration--I test the interaction of
 \emph{every} independent variable with time. In many cases, it may make
@@ -1883,6 +1984,11 @@ outcome.
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-Allaire_Quarto_2024}
+Allaire, J. J., Teague, C., Scheidegger, C., Xie, Y., \& Dervieux, C.
+(2024). \emph{{Quarto}} (Version 1.4).
+\url{https://doi.org/10.5281/zenodo.5960048}
+
 \bibitem[\citeproctext]{ref-MixedModels}
 Bates, D. (2024). \emph{{MixedModels.jl Documentation}}.
 \url{https://juliastats.org/MixedModels.jl/stable/}
@@ -1896,6 +2002,15 @@ mixed-effects models using lme4. \emph{Journal of Statistical Software},
 Bezanson, J., Edelman, A., Karpinski, S., \& Shah, V. B. (2017). Julia:
 A fresh approach to numerical computing. \emph{SIAM Review},
 \emph{59}(1), 65--98. \url{https://doi.org/10.1137/141000671}
+
+\bibitem[\citeproctext]{ref-Hemken}
+Hemken, D. (2023). \emph{Statamarkdown: 'Stata' markdown}.
+\url{https://CRAN.R-project.org/package=Statamarkdown}
+
+\bibitem[\citeproctext]{ref-JuliaCall}
+Li, C. (2019). {JuliaCall}: An {R} package for seamless integration
+between {R} and {Julia}. \emph{The Journal of Open Source Software},
+\emph{4}(35), 1284. \url{https://doi.org/10.21105/joss.01284}
 
 \bibitem[\citeproctext]{ref-RProgram}
 R Core Team. (2023). \emph{R: A language and environment for statistical

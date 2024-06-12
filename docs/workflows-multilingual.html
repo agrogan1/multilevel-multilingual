@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Multilingual - 5&nbsp; Cross Sectional Multilevel Models</title>
+<title>Multilevel Multilingual - 2&nbsp; Statistical Workflows</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -84,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./longitudinal-multilingual.html" rel="next">
-<link href="./unconditional-multilingual.html" rel="prev">
+<link href="./descriptives-multilingual.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -97,6 +63,9 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,45 +94,16 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 5&nbsp; Cross Sectional Multilevel Models">
+<meta property="og:title" content="Multilevel Multilingual - 2&nbsp; Statistical Workflows">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 5&nbsp; Cross Sectional Multilevel Models">
+<meta name="twitter:title" content="Multilevel Multilingual - 2&nbsp; Statistical Workflows">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[5]{.chapter-number}&nbsp; [Cross Sectional Multilevel Models]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//cross-sectional-multilingual.html">
+<meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Statistical Workflows]{.chapter-title}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//workflows-multilingual.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Quarto;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Carlos Scheidegger;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_fulltext_html_url=https://github.com/quarto-dev/quarto-cli;,citation_doi=10.5281/zenodo.5960048;">
 <meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
@@ -225,7 +165,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cross-sectional-multilingual.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-multilingual.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Workflows</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -245,7 +185,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workflows-multilingual.html" class="sidebar-item-text sidebar-link">
+  <a href="./workflows-multilingual.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Workflows</span></span></a>
   </div>
 </li>
@@ -263,7 +203,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link active">
+  <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span></a>
   </div>
 </li>
@@ -289,10 +229,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-equation" id="toc-the-equation" class="nav-link active" data-scroll-target="#the-equation"><span class="header-section-number">5.1</span> The Equation</a></li>
-  <li><a href="#correlated-and-uncorrelated-random-effects" id="toc-correlated-and-uncorrelated-random-effects" class="nav-link" data-scroll-target="#correlated-and-uncorrelated-random-effects"><span class="header-section-number">5.2</span> Correlated and Uncorrelated Random Effects</a></li>
-  <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">5.3</span> Run Models</a></li>
-  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">5.4</span> Interpretation</a></li>
+  <li><a href="#statistical-software-is-best-run-using-a-script" id="toc-statistical-software-is-best-run-using-a-script" class="nav-link active" data-scroll-target="#statistical-software-is-best-run-using-a-script"><span class="header-section-number">2.1</span> Statistical Software Is Best Run Using a Script</a></li>
+  <li><a href="#script-flow" id="toc-script-flow" class="nav-link" data-scroll-target="#script-flow"><span class="header-section-number">2.2</span> Script Flow</a></li>
+  <li><a href="#storing-statistical-data" id="toc-storing-statistical-data" class="nav-link" data-scroll-target="#storing-statistical-data"><span class="header-section-number">2.3</span> Storing Statistical Data</a></li>
+  <li><a href="#it-is-possible-to-use-multiple-statistical-packages" id="toc-it-is-possible-to-use-multiple-statistical-packages" class="nav-link" data-scroll-target="#it-is-possible-to-use-multiple-statistical-packages"><span class="header-section-number">2.4</span> It Is Possible To Use Multiple Statistical Packages</a></li>
+  <li><a href="#good-statistical-workflows-require-safe-workspaces" id="toc-good-statistical-workflows-require-safe-workspaces" class="nav-link" data-scroll-target="#good-statistical-workflows-require-safe-workspaces"><span class="header-section-number">2.5</span> Good Statistical Workflows Require Safe Workspaces</a></li>
+  <li><a href="#good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" id="toc-good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" class="nav-link" data-scroll-target="#good-statistical-workflows-require-patience-and-can-be-psychologically-demanding"><span class="header-section-number">2.6</span> Good Statistical Workflows Require Patience And Can Be Psychologically Demanding</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -301,7 +243,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Workflows</span></h1>
 </div>
 
 
@@ -318,327 +260,50 @@ window.Quarto = {
 </header>
 
 
-<section id="the-equation" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">5.1</span> The Equation</h2>
-<p>Recall the general model of <a href="index.html#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a>, and the syntax outlined in <a href="index.html#sec-syntax" class="quarto-xref"><span>Section 1.3</span></a>. Below in <a href="#eq-MLMsubstantive" class="quarto-xref">Equation&nbsp;<span>5.1</span></a>, we consider a more substantive example.</p>
-<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \tag{5.1}\]</span></span></p>
-<p><span class="math display">\[\beta_2 \text{physical punishment}_{ij} +\]</span></p>
-<p><span class="math display">\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{j} +\]</span></p>
-<p><span class="math display">\[u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}\]</span></p>
-</section>
-<section id="correlated-and-uncorrelated-random-effects" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="correlated-and-uncorrelated-random-effects"><span class="header-section-number">5.2</span> Correlated and Uncorrelated Random Effects</h2>
-<p>Consider the covariance matrix of random effects (e.g.&nbsp;<span class="math inline">\(u_{0j}\)</span> and <span class="math inline">\(u_{1j}\)</span>). In <a href="#eq-varcovar" class="quarto-xref">Equation&nbsp;<span>5.2</span></a> the covariances of the random effects are constrained to be zero.</p>
-<p><span id="eq-varcovar"><span class="math display">\[\begin{bmatrix}
-var(u_{0j}) &amp; 0 \\
-0 &amp; var(u_{1j})
-\end{bmatrix} \tag{5.2}\]</span></span></p>
-<p>As discussed in the Chapter on multilevel models with cross-sectional data, however, one can consider a multilevel model in which the random effects are correlated, as is the case in <a href="#eq-varcovaruns" class="quarto-xref">Equation&nbsp;<span>5.3</span></a>.</p>
-<p><span id="eq-varcovaruns"><span class="math display">\[\begin{bmatrix}
-var(u_{0j}) &amp; cov(u_{0j}, u_{1j}) \\
-cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
-\end{bmatrix} \tag{5.3}\]</span></span></p>
-<p>Procedures for estimating models with uncorrelated and correlated random effects are detailed below <span class="citation" data-cites="StataCorp2023 JSSv067i01 MixedModels">(<a href="references.html#ref-JSSv067i01" role="doc-biblioref">Bates et al., 2015</a>; <a href="references.html#ref-MixedModels" role="doc-biblioref">Bates, 2024</a>; <a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>.</p>
-<div id="tbl-REs" class="quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-REs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.1: Correlated and Uncorrelated Random Effects
-</figcaption>
-<div aria-describedby="tbl-REs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 30%">
-<col style="width: 38%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Software</th>
-<th style="text-align: left;">Uncorrelated Random Effects</th>
-<th style="text-align: left;">Correlated Random Effects</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Stata</td>
-<td style="text-align: left;">default</td>
-<td style="text-align: left;">add option: <code>, cov(uns)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">separate random effects from grouping variable with <code>||</code></td>
-<td style="text-align: left;">separate random effects from grouping variable with <code>|</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Julia</td>
-<td style="text-align: left;">separate terms for each random effect e.g. <code>(1 | group) +</code> <code>(0 + x | group)</code></td>
-<td style="text-align: left;">separate random effects from grouping variable with <code>|</code>.</td>
-</tr>
-</tbody>
-</table>
-</div>
+<section id="statistical-software-is-best-run-using-a-script" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="statistical-software-is-best-run-using-a-script"><span class="header-section-number">2.1</span> Statistical Software Is Best Run Using a Script</h2>
+<p>Many statistical workflows–whatever the statistical package being used–follow the same conceptual pattern.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="A Common Statistical Workflow"><img src="workflow.png" class="img-fluid figure-img" style="width:33.0%" alt="A Common Statistical Workflow"></a></p>
+<figcaption>A Common Statistical Workflow</figcaption>
 </figure>
 </div>
-<p>All models in the examples below are run with <em>uncorrelated</em> random effects, but could just as easily be run with <em>correlated</em> random effects.</p>
+<p>Increasingly, we want to think about workflows that are</p>
+<ul>
+<li><strong>documentable</strong>, <strong>transparent</strong>, and <strong>auditable</strong>: We have a record of what we did if we want to double check our work, clarify a result, or develop a new project with a similar process. We, or others, can find the inevitable errors in our work, <strong>and correct them</strong>.</li>
+<li><strong>replicable</strong>: Others can replicate our findings with the same or new data.</li>
+<li><strong>scalable</strong>: We are developing a process that can be as easily used with <em>thousands</em> or <em>millions</em> of rows of data as it can with <em>ten</em> rows of data. We are developing a process that can be easily repeated if we are <em>constantly getting new or updated data</em>, e.g.&nbsp;getting new data every week, or every month.</li>
+</ul>
+<p>For most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document <span class="citation" data-cites="Allaire_Quarto_2024">(<a href="references.html#ref-Allaire_Quarto_2024" role="doc-biblioref">Allaire et al., 2024</a>)</span> as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: In Stata, scripts are stored in <code>.do</code> files; in R, scripts are stored in <code>.R</code> files, and in Julia, scripts are stored in <code>.jl</code> files.</p>
 </section>
-<section id="run-models" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="run-models"><span class="header-section-number">5.3</span> Run Models</h2>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Continuous and Categorical Variables
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Statistically–as noted in the main text–it is important to be clear on whether independent variables in one’s model are continuous or categorical. <em>Continuous</em> variables can be entered straightforwardly into statistical syntax. <em>Categorical</em> variables, on the other hand usually require specific attention in statistical software. In Stata, categorical variables are indicated in a statistical model by prefixing them with an <code>i.</code>. In R, categorical variables are distinguished by making them into factors e.g.&nbsp;<code>x &lt;- factor(x)</code>. In Julia, categorical variables are created by using the <code>@transform</code> syntax detailed below.</p>
-</div>
-</div>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
-<div class="tab-content" data-group="language">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<section id="get-the-data" class="level4" data-number="5.3.0.1">
-<h4 data-number="5.3.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">5.3.0.1</span> Get The Data</h4>
-<div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="script-flow" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="script-flow"><span class="header-section-number">2.2</span> Script Flow</h2>
+<p>A good practice when writing a script, is to have a script that begins with the raw data, moves through any necessary re-coding or cleaning of the data, generates descriptive statistics, generates the appropriate multivariate results, and then generates any necessary visualizations.</p>
 </section>
-<section id="run-the-model" class="level4" data-number="5.3.0.2">
-<h4 data-number="5.3.0.2" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">5.3.0.2</span> Run The Model</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Performing EM optimization ...
-
-Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -9626.6279  
-Iteration 1:  Log likelihood =  -9626.607  
-Iteration 2:  Log likelihood =  -9626.607  
-
-Computing standard errors ...
-
-Mixed-effects ML regression                          Number of obs    =  3,000
-Group variable: country                              Number of groups =     30
-                                                     Obs per group:
-                                                                  min =    100
-                                                                  avg =  100.0
-                                                                  max =    100
-                                                     Wald chi2(5)     = 334.14
-Log likelihood =  -9626.607                          Prob &gt; chi2      = 0.0000
-
--------------------------------------------------------------------------------------
-            outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
---------------------+----------------------------------------------------------------
-             warmth |   .8345368   .0637213    13.10   0.000     .7096453    .9594282
-physical_punishment |  -.9916657   .0797906   -12.43   0.000    -1.148052   -.8352791
-         1.identity |  -.3004767   .2170295    -1.38   0.166    -.7258466    .1248933
-     1.intervention |   .6396427   .2174519     2.94   0.003     .2134448    1.065841
-                HDI |   -.003228   .0199257    -0.16   0.871    -.0422817    .0358256
-              _cons |   51.99991   1.371257    37.92   0.000      49.3123    54.68753
--------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------
-  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
------------------------------+------------------------------------------------
-country: Independent         |
-                 var(warmth) |   .0227504   .0257784      .0024689    .2096436
-                  var(_cons) |   2.963975   .9737647      1.556777    5.643163
------------------------------+------------------------------------------------
-               var(Residual) |   34.97499   .9097109      33.23668    36.80422
-------------------------------------------------------------------------------
-LR test vs. linear model: chi2(2) = 205.74                Prob &gt; chi2 = 0.0000
-
-Note: LR test is conservative and provided only for reference.</code></pre>
-</div>
-</div>
+<section id="storing-statistical-data" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="storing-statistical-data"><span class="header-section-number">2.3</span> Storing Statistical Data</h2>
+<p>It is usually best to store quantitative data in a statistical format such as R (<code>.Rdata</code>), or Stata (<code>.dta</code>), or even a text format such as <code>.csv</code>. Spreadsheets are likely to be a bad tool for storing quantitative data.</p>
 </section>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<section id="get-the-data-1" class="level4" data-number="5.3.0.3">
-<h4 data-number="5.3.0.3" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">5.3.0.3</span> Get The Data</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="it-is-possible-to-use-multiple-statistical-packages" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="it-is-possible-to-use-multiple-statistical-packages"><span class="header-section-number">2.4</span> It Is Possible To Use Multiple Statistical Packages</h2>
+<p>While this Appendix focuses on the use of each individual statistical package on its own, it is certainly possible to use multiple statistical packages as part of the same workflow. For example, one might employ Stata to carry out data management tasks, and then possibly use R to run a multilevel model with a more complicated multilevel structure, such as a cross-classified model, or Julia to more quickly run a model with a large data.</p>
 </section>
-<section id="change-some-variables-to-categorical" class="level4" data-number="5.3.0.4">
-<h4 data-number="5.3.0.4" class="anchored" data-anchor-id="change-some-variables-to-categorical"><span class="header-section-number">5.3.0.4</span> Change Some Variables To Categorical</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>identity <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>identity)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>intervention <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>intervention)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="good-statistical-workflows-require-safe-workspaces" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="good-statistical-workflows-require-safe-workspaces"><span class="header-section-number">2.5</span> Good Statistical Workflows Require Safe Workspaces</h2>
+<p>It is also <em>very important</em> to be aware that good complex workflows are <em>highly iterative</em> and <em>highly collaborative</em>. Good complex workflows require a <em>safe workspace</em> in which team members feel free to admit their own errors, and help with others’ mistakes in a non-judgmental fashion. Such a <em>safe environment</em> is necessary to build an environment where the <em>overall error rate</em> is low.</p>
 </section>
-<section id="run-the-model-1" class="level4" data-number="5.3.0.5">
-<h4 data-number="5.3.0.5" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">5.3.0.5</span> Run The Model</h4>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<p><code>lme4</code> does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library <code>lmerTest</code> to provide p values for <code>lme4</code> results.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>R prefers to use scientific notation when possible. I find that the use of scientific notation can be confusing in reading results. I turn off scientific notation by setting a penalty for its use: <code>options(scipen = 999)</code>.</p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmerTest)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> warmth <span class="sc">+</span> physical_punishment <span class="sc">+</span> </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>               identity <span class="sc">+</span> intervention <span class="sc">+</span> HDI <span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>               (<span class="dv">1</span> <span class="sc">+</span> warmth <span class="sc">||</span> country),</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite's method [
-lmerModLmerTest]
-Formula: outcome ~ warmth + physical_punishment + identity + intervention +  
-    HDI + (1 + warmth || country)
-   Data: df
-
-REML criterion at convergence: 19268.8
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--3.9774 -0.6563  0.0186  0.6645  3.6730 
-
-Random effects:
- Groups    Name        Variance Std.Dev.
- country   (Intercept)  3.19120 1.786   
- country.1 warmth       0.02464 0.157   
- Residual              35.01779 5.918   
-Number of obs: 3000, groups:  country, 30
-
-Fixed effects:
-                       Estimate  Std. Error          df t value
-(Intercept)           52.011324    1.414976   30.293141  36.758
-warmth                 0.834562    0.064250   41.896457  12.989
-physical_punishment   -0.991893    0.079845 2968.012381 -12.423
-identity1             -0.300354    0.217179 2970.108153  -1.383
-intervention1          0.639060    0.217603 2971.186718   2.937
-HDI                   -0.003394    0.020598   27.592814  -0.165
-                                Pr(&gt;|t|)    
-(Intercept)         &lt; 0.0000000000000002 ***
-warmth              0.000000000000000277 ***
-physical_punishment &lt; 0.0000000000000002 ***
-identity1                        0.16678    
-intervention1                    0.00334 ** 
-HDI                              0.87030    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Correlation of Fixed Effects:
-            (Intr) warmth physc_ idntt1 intrv1
-warmth      -0.124                            
-physcl_pnsh -0.149 -0.003                     
-identity1   -0.072 -0.012 -0.003              
-interventn1 -0.082  0.034  0.022 -0.018       
-HDI         -0.943 -0.006  0.009 -0.001  0.000</code></pre>
-</div>
-</div>
-</section>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<section id="get-the-data-2" class="level4" data-number="5.3.0.6">
-<h4 data-number="5.3.0.6" class="anchored" data-anchor-id="get-the-data-2"><span class="header-section-number">5.3.0.6</span> Get The Data</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="change-some-variables-to-categorical-1" class="level4" data-number="5.3.0.7">
-<h4 data-number="5.3.0.7" class="anchored" data-anchor-id="change-some-variables-to-categorical-1"><span class="header-section-number">5.3.0.7</span> Change Some Variables To Categorical</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>identity <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>identity))</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>intervention <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>intervention))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="run-the-model-2" class="level4" data-number="5.3.0.8">
-<h4 data-number="5.3.0.8" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">5.3.0.8</span> Run The Model</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> warmth <span class="op">+</span> physical_punishment <span class="op">+</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>               identity <span class="op">+</span> intervention <span class="op">+</span> HDI <span class="op">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>               (<span class="fl">0</span> <span class="op">+</span> warmth <span class="op">|</span> country)), df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed model fit by maximum likelihood
- outcome ~ 1 + warmth + physical_punishment + identity + intervention + HDI + (1 | country) + (0 + warmth | country)
-   logLik   -2 logLik     AIC       AICc        BIC    
- -9626.6070 19253.2140 19271.2140 19271.2742 19325.2713
-
-Variance components:
-            Column    Variance Std.Dev.   Corr.
-country  (Intercept)   2.963849 1.721583
-         warmth        0.022756 0.150852   .  
-Residual              34.974984 5.913965
- Number of obs: 3000; levels of grouping factors: 30
-
-  Fixed-effects parameters:
-─────────────────────────────────────────────────────────────
-                          Coef.  Std. Error       z  Pr(&gt;|z|)
-─────────────────────────────────────────────────────────────
-(Intercept)          51.9999      1.37124     37.92    &lt;1e-99
-warmth                0.834537    0.0637228   13.10    &lt;1e-38
-physical_punishment  -0.991665    0.0797906  -12.43    &lt;1e-34
-identity: 1.0        -0.300475    0.217029    -1.38    0.1662
-intervention: 1.0     0.639641    0.217452     2.94    0.0033
-HDI                  -0.0032286   0.0199255   -0.16    0.8713
-─────────────────────────────────────────────────────────────</code></pre>
-</div>
-</div>
-</section>
-</div>
-</div>
-</div>
-</section>
-<section id="interpretation" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">5.4</span> Interpretation</h2>
-<p>Models suggest that parental warmth is associated with increases in the beneficial outcome, while physical punishment is associated with decreases in the beneficial outcome. The intervention is associated with increases in the outcome. There is insufficient evidence that either identity group or the Human Development Index are associated with the outcome.</p>
+<section id="good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="good-statistical-workflows-require-patience-and-can-be-psychologically-demanding"><span class="header-section-number">2.6</span> Good Statistical Workflows Require Patience And Can Be Psychologically Demanding</h2>
+<p>Developing a good documented and auditable workflow that is implemented in code requires a lot of patience, and often, <strong>many iterations</strong>. Working through these many iterations can be psychologically demanding. It is important to remember that careful attention to getting the details right early in the research process, while sometimes tiring and frustrating, will pay large dividends later on when the research is reviewed, presented, published and read.</p>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">A Common Statistical Workflow</span>
+</div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-MixedModels" class="csl-entry" role="listitem">
-Bates, D. (2024). <em><span class="nocase">MixedModels.jl Documentation</span></em>. <a href="https://juliastats.org/MixedModels.jl/stable/">https://juliastats.org/MixedModels.jl/stable/</a>
-</div>
-<div id="ref-JSSv067i01" class="csl-entry" role="listitem">
-Bates, D., Mächler, M., Bolker, B., &amp; Walker, S. (2015). Fitting linear mixed-effects models using lme4. <em>Journal of Statistical Software</em>, <em>67</em>(1), 1–48. <a href="https://doi.org/10.18637/jss.v067.i01">https://doi.org/10.18637/jss.v067.i01</a>
-</div>
-<div id="ref-StataCorp2023" class="csl-entry" role="listitem">
-StataCorp. (2023). <em>Stata 18 mixed effects reference manual</em>. Stata Press.
+<div id="ref-Allaire_Quarto_2024" class="csl-entry" role="listitem">
+Allaire, J. J., Teague, C., Scheidegger, C., Xie, Y., &amp; Dervieux, C. (2024). <em><span>Quarto</span></em> (Version 1.4). <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>
 </div>
 </div>
 </section>
@@ -1177,19 +842,44 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./unconditional-multilingual.html" class="pagination-link  aria-label=" &lt;span="" model&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span>
+      <a href="./index.html" class="pagination-link  aria-label=" &lt;span="" multilingual&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilevel Multilingual</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./longitudinal-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>6</span>&nbsp; <span class='chapter-title'>Longitudinal Multilevel Models</span>">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./descriptives-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Descriptive Statistics</span>">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

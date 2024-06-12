@@ -12,7 +12,9 @@ Increasingly, we want to think about workflows that are
 * **replicable**: Others can replicate our findings with the same or new data.
 * **scalable**: We are developing a process that can be as easily used with *thousands* or *millions* of rows of data as it can with *ten* rows of data. We are developing a process that can be easily repeated if we are *constantly getting new or updated data*, e.g. getting new data every week, or every month.
 
-For most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document [@Allaire_Quarto_2024] as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: In Stata, scripts are stored in `.do` files; in R, scripts are stored in `.R` files, and in Julia, scripts are stored in `.jl` files. 
+## Scripts
+
+For most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document [@Allaire_Quarto_2024] as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: in Stata, scripts are stored in `.do` files; in R, scripts are stored in `.R` files, and in Julia, scripts are stored in `.jl` files. 
 
 ## Script Flow
 
