@@ -1,0 +1,16 @@
+flowchart TB
+
+ask[ask a question]-->open
+
+open[open the raw data]-->clean
+
+clean[clean the data, e.g. outliers & errors]-->wrangle
+
+wrangle[create any new variables or scales]-->descriptives
+
+descriptives[descriptive statistics]-->visualize
+
+visualize[visualize the data]-->analyze
+
+analyze[analyze with bivariate or multivariate statistics]-->share["share your results with your community(ies)"]
+
