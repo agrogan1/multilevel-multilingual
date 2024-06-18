@@ -55,6 +55,10 @@ Thus, again following Section 6.4, in longitudinal multilevel models, *main effe
 
 ## Run Models
 
+::: {.callout-warning}
+Remember that we are estimating a model in which time points are nested inside families, who are in turn nested inside countries. For each software package, it is accordingly important to specify the way in which different levels of the data are nested. Pay careful attention to the syntax examples below with regard to `id` and `country` 
+:::
+
 ::: {.panel-tabset group="language"}
 
 ### Stata
@@ -74,7 +78,7 @@ use simulated_multilevel_longitudinal_data.dta
 ```{stata}
 #| label: Stata-maineffects
 
-mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth || family: t
+mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth || id: t
 
 ```
 
@@ -83,7 +87,7 @@ mixed outcome t warmth physical_punishment i.identity i.intervention HDI || coun
 ```{stata}
 #| label: Stata-interactions
 
-mixed outcome c.t##(c.warmth c.physical_punishment i.identity i.intervention c.HDI) || country: warmth || family: t
+mixed outcome c.t##(c.warmth c.physical_punishment i.identity i.intervention c.HDI) || country: warmth || id: t
 
 ```
 
