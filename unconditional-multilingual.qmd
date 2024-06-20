@@ -1,8 +1,10 @@
 # Unconditional Model
 
+## Two Level Model
+
 An *unconditional* multilevel model is a model with no independent variables. One should always run an unconditional model as the first step of a multilevel model in order to get a sense of the way that variation is apportioned in the model across the different levels.
 
-## The Equation
+### The Equation
 
 $$\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}$$ {#eq-MLMunconditional}
 
@@ -27,11 +29,11 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/
 
 ```
 
-## Run Models
+### Run Models
 
 ::: {.panel-tabset group="language"}
 
-### Stata
+#### Stata
 
 ```{stata, collectcode=TRUE}
 
@@ -51,7 +53,7 @@ estat icc // ICC
 
 ```
 
-### R
+#### R
 
 ```{r}
 
@@ -81,7 +83,7 @@ performance::icc(fit0) # ICC
 
 ```
 
-### Julia
+#### Julia
 
 ```{julia}
 #| output: false
@@ -115,9 +117,21 @@ icc(m0) # ICC
 
 :::
 
-## Interpretation
+### Interpretation
 
 In each case, the software finds that nearly 8% of the variation in the outcome is explainable by the clustering of the observations in each country.
+
+## Three Level Model
+
+### The Equation
+
+$$\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}$$ {#eq-MLMunconditional}
+
+The Intraclass Correlation Coefficient (ICC) is given by:
+
+$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCunconditional}
+
+In a two level multilevel model, the ICC provides a measure of the proportion of variation attributable to Level 2.
 
 
 
