@@ -391,8 +391,8 @@ Warning
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model" class="level4" data-number="6.4.0.2">
-<h4 data-number="6.4.0.2" class="anchored" data-anchor-id="run-the-model"><span class="header-section-number">6.4.0.2</span> Run The Model</h4>
+<section id="run-the-models" class="level4" data-number="6.4.0.2">
+<h4 data-number="6.4.0.2" class="anchored" data-anchor-id="run-the-models"><span class="header-section-number">6.4.0.2</span> Run The Models</h4>
 <section id="main-effects-only" class="level5" data-number="6.4.0.2.1">
 <h5 data-number="6.4.0.2.1" class="anchored" data-anchor-id="main-effects-only"><span class="header-section-number">6.4.0.2.1</span> Main Effects Only</h5>
 <div class="cell">
@@ -548,8 +548,8 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dfL<span class="sc">$</span>intervention <span class="ot">&lt;-</span> <span class="fu">factor</span>(dfL<span class="sc">$</span>intervention)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model-1" class="level4" data-number="6.4.0.5">
-<h4 data-number="6.4.0.5" class="anchored" data-anchor-id="run-the-model-1"><span class="header-section-number">6.4.0.5</span> Run The Model</h4>
+<section id="run-the-models-1" class="level4" data-number="6.4.0.5">
+<h4 data-number="6.4.0.5" class="anchored" data-anchor-id="run-the-models-1"><span class="header-section-number">6.4.0.5</span> Run The Models</h4>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -745,10 +745,8 @@ t:HDI       -0.002  0.008</code></pre>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-model-2" class="level4" data-number="6.4.0.7">
-<h4 data-number="6.4.0.7" class="anchored" data-anchor-id="run-the-model-2"><span class="header-section-number">6.4.0.7</span> Run The Model</h4>
-<section id="change-country-to-categorical" class="level5" data-number="6.4.0.7.1">
-<h5 data-number="6.4.0.7.1" class="anchored" data-anchor-id="change-country-to-categorical"><span class="header-section-number">6.4.0.7.1</span> Change Country To Categorical</h5>
+<section id="change-some-variables-to-categorical-1" class="level4" data-number="6.4.0.7">
+<h4 data-number="6.4.0.7" class="anchored" data-anchor-id="change-some-variables-to-categorical-1"><span class="header-section-number">6.4.0.7</span> Change Some Variables To Categorical</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(dfL, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -757,8 +755,10 @@ t:HDI       -0.002  0.008</code></pre>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(dfL, <span class="op">:</span>intervention <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>intervention))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="main-effects-only-2" class="level5" data-number="6.4.0.7.2">
-<h5 data-number="6.4.0.7.2" class="anchored" data-anchor-id="main-effects-only-2"><span class="header-section-number">6.4.0.7.2</span> Main Effects Only</h5>
+<section id="run-the-models-2" class="level4" data-number="6.4.0.8">
+<h4 data-number="6.4.0.8" class="anchored" data-anchor-id="run-the-models-2"><span class="header-section-number">6.4.0.8</span> Run The Models</h4>
+<section id="main-effects-only-2" class="level5" data-number="6.4.0.8.1">
+<h5 data-number="6.4.0.8.1" class="anchored" data-anchor-id="main-effects-only-2"><span class="header-section-number">6.4.0.8.1</span> Main Effects Only</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>m2A <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> t <span class="op">+</span> warmth <span class="op">+</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                                 physical_punishment <span class="op">+</span> </span>
@@ -796,8 +796,8 @@ HDI                  -0.000566026   0.0196439   -0.03    0.9770
 </div>
 </div>
 </section>
-<section id="interactions-with-time-2" class="level5" data-number="6.4.0.7.3">
-<h5 data-number="6.4.0.7.3" class="anchored" data-anchor-id="interactions-with-time-2"><span class="header-section-number">6.4.0.7.3</span> Interactions With Time</h5>
+<section id="interactions-with-time-2" class="level5" data-number="6.4.0.8.2">
+<h5 data-number="6.4.0.8.2" class="anchored" data-anchor-id="interactions-with-time-2"><span class="header-section-number">6.4.0.8.2</span> Interactions With Time</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>m2B <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> t <span class="op">*</span> (warmth <span class="op">+</span> </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                                 physical_punishment <span class="op">+</span> </span>

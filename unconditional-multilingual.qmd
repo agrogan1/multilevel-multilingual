@@ -43,7 +43,7 @@ use simulated_multilevel_data.dta // use data
 
 ```{stata, collectcode=TRUE}
 
-mixed outcome || country: // unconditional model
+mixed outcome || country: id: // unconditional model
   
 ```
 
@@ -125,13 +125,109 @@ In each case, the software finds that nearly 8% of the variation in the outcome 
 
 ### The Equation
 
-$$\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}$$ {#eq-MLMunconditional}
+$$\text{outcome}_{ij}= \beta_0 + u_{0j} + v_{0i} + e_{ij}$$ {#eq-MLMunconditional3}
 
-The Intraclass Correlation Coefficient (ICC) is given by:
+In a three level model, there are two intraclass correlation coefficients [@StataCorp2023]. The formulas for the Intraclass Correlation Coefficient (ICC) are given by [@StataCorp2023]:
 
-$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCunconditional}
+$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3A}
 
-In a two level multilevel model, the ICC provides a measure of the proportion of variation attributable to Level 2.
+Following @StataCorp2023, @eq-ICCunconditional3A is the correlation of responses for person-timepoints from the same country but different persons.
+
+$$\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3B}
+
+Again, closely following @StataCorp2023, @eq-ICCunconditional3B is the correlation of responses for person-timepoints from the same country and same person.
+
+### Run Models
+
+::: {.panel-tabset group="language"}
+
+#### Stata
+
+```{stata, collectcode=TRUE}
+
+use simulated_multilevel_longitudinal_data.dta // use data
+
+```
+
+```{stata, collectcode=TRUE}
+
+mixed outcome || country: || id:  // unconditional model
+  
+```
+
+```{stata}
+  
+estat icc // ICC
+
+```
+
+#### R
+
+```{r}
+
+library(haven)
+
+dfL <- read_dta("simulated_multilevel_longitudinal_data.dta")
+
+```
+
+```{r}
+#| warning: false
+
+library(lme4) # estimate multilevel models
+
+fit0L <- lmer(outcome ~ (1 | country/id),
+             data = dfL) # unconditional model
+
+summary(fit0L)
+
+```
+
+```{r}
+
+3.351 / (11.724 + 3.351 + 28.234)
+
+(3.351 + 11.724) / (11.724 + 3.351 + 28.234)
+
+```
+
+#### Julia
+
+```{julia}
+#| output: false
+
+using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
+
+```
+
+```{julia}
+#| output: false
+
+@transform!(dfL, :country = categorical(:country))
+
+```
+
+```{julia}
+
+m0L = fit(MixedModel, @formula(outcome ~ 
+                                 (1 | country) + 
+                                 (1 | id)), dfL)
+
+```
+
+```{julia}
+
+3.23190 / (11.72401 + 3.23190 + 28.23426)
+
+(3.23190 + 11.72401) / (11.72401 + 3.23190 + 28.23426)
+
+```
+
+:::
+
+### Interpretation
 
 
 

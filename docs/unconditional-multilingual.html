@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -269,9 +289,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-equation" id="toc-the-equation" class="nav-link active" data-scroll-target="#the-equation"><span class="header-section-number">4.1</span> The Equation</a></li>
-  <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">4.2</span> Run Models</a></li>
-  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">4.3</span> Interpretation</a></li>
+  <li><a href="#two-level-model" id="toc-two-level-model" class="nav-link active" data-scroll-target="#two-level-model"><span class="header-section-number">4.1</span> Two Level Model</a>
+  <ul class="collapse">
+  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">4.1.1</span> The Equation</a></li>
+  <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">4.1.2</span> Run Models</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">4.1.3</span> Interpretation</a></li>
+  </ul></li>
+  <li><a href="#three-level-model" id="toc-three-level-model" class="nav-link" data-scroll-target="#three-level-model"><span class="header-section-number">4.2</span> Three Level Model</a>
+  <ul class="collapse">
+  <li><a href="#the-equation-1" id="toc-the-equation-1" class="nav-link" data-scroll-target="#the-equation-1"><span class="header-section-number">4.2.1</span> The Equation</a></li>
+  <li><a href="#run-models-1" id="toc-run-models-1" class="nav-link" data-scroll-target="#run-models-1"><span class="header-section-number">4.2.2</span> Run Models</a></li>
+  <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1"><span class="header-section-number">4.2.3</span> Interpretation</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -297,16 +326,18 @@ window.Quarto = {
 </header>
 
 
+<section id="two-level-model" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="two-level-model"><span class="header-section-number">4.1</span> Two Level Model</h2>
 <p>An <em>unconditional</em> multilevel model is a model with no independent variables. One should always run an unconditional model as the first step of a multilevel model in order to get a sense of the way that variation is apportioned in the model across the different levels.</p>
-<section id="the-equation" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">4.1</span> The Equation</h2>
+<section id="the-equation" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">4.1.1</span> The Equation</h3>
 <p><span id="eq-MLMunconditional"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij} \tag{4.1}\]</span></span></p>
 <p>The Intraclass Correlation Coefficient (ICC) is given by:</p>
 <p><span id="eq-ICCunconditional"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{4.2}\]</span></span></p>
 <p>In a two level multilevel model, the ICC provides a measure of the proportion of variation attributable to Level 2.</p>
 </section>
-<section id="run-models" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="run-models"><span class="header-section-number">4.2</span> Run Models</h2>
+<section id="run-models" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="run-models"><span class="header-section-number">4.1.2</span> Run Models</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
@@ -317,54 +348,27 @@ window.Quarto = {
 </div>
 <div class="cell" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: <span class="co">// unconditional model</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: id: <span class="co">// unconditional model</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Performing EM optimization ...
+<pre><code>invalid syntax
+r(198);
 
-Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -9802.8371  
-Iteration 1:  Log likelihood = -9802.8371  
-
-Computing standard errors ...
-
-Mixed-effects ML regression                           Number of obs    = 3,000
-Group variable: country                               Number of groups =    30
-                                                      Obs per group:
-                                                                   min =   100
-                                                                   avg = 100.0
-                                                                   max =   100
-                                                      Wald chi2(0)     =     .
-Log likelihood = -9802.8371                           Prob &gt; chi2      =     .
-
-------------------------------------------------------------------------------
-     outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
--------------+----------------------------------------------------------------
-       _cons |   52.43327   .3451217   151.93   0.000     51.75685     53.1097
-------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------
-  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
------------------------------+------------------------------------------------
-country: Identity            |
-                  var(_cons) |   3.178658   .9226737      1.799552    5.614658
------------------------------+------------------------------------------------
-               var(Residual) |   39.46106   1.024013      37.50421       41.52
-------------------------------------------------------------------------------
-LR test vs. linear model: chibar2(01) = 166.31        Prob &gt;= chibar2 = 0.0000</code></pre>
+r(198);</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Intraclass correlation
+<pre><code>invalid syntax
+r(198);
 
-------------------------------------------------------------------------------
-                       Level |        ICC   Std. err.     [95% conf. interval]
------------------------------+------------------------------------------------
-                     country |   .0745469   .0201254      .0434963    .1248696
-------------------------------------------------------------------------------</code></pre>
+
+last estimates not found
+r(301);
+
+r(301);</code></pre>
 </div>
 </div>
 </div>
@@ -460,11 +464,114 @@ Residual              39.46106 6.28180
 </div>
 </div>
 </section>
-<section id="interpretation" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">4.3</span> Interpretation</h2>
+<section id="interpretation" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">4.1.3</span> Interpretation</h3>
 <p>In each case, the software finds that nearly 8% of the variation in the outcome is explainable by the clustering of the observations in each country.</p>
+</section>
+</section>
+<section id="three-level-model" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="three-level-model"><span class="header-section-number">4.2</span> Three Level Model</h2>
+<section id="the-equation-1" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="the-equation-1"><span class="header-section-number">4.2.1</span> The Equation</h3>
+<p><span id="eq-MLMunconditional3"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + u_{0j} + v_{0i} + e_{ij} \tag{4.3}\]</span></span></p>
+<p>In a three level model, there are two intraclass correlation coefficients <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>. The formulas for the Intraclass Correlation Coefficient (ICC) are given by <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>:</p>
+<p><span id="eq-ICCunconditional3A"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})} \tag{4.4}\]</span></span></p>
+<p>Following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="references.html#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3A" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> is the correlation of responses for person-timepoints from the same country but different persons.</p>
+<p><span id="eq-ICCunconditional3B"><span class="math display">\[\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})} \tag{4.5}\]</span></span></p>
+<p>Again, closely following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="references.html#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3B" class="quarto-xref">Equation&nbsp;<span>4.5</span></a> is the correlation of responses for person-timepoints from the same country and same person.</p>
+</section>
+<section id="run-models-1" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="run-models-1"><span class="header-section-number">4.2.2</span> Run Models</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Julia</a></li></ul>
+<div class="tab-content" data-group="language">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta <span class="co">// use data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>invalid syntax
+r(198);</code></pre>
+</div>
+</div>
+<div class="cell" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: <span class="co">// unconditional model</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>invalid syntax
+r(198);
 
 
+
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -9802.8371  
+Iteration 1:  Log likelihood = -9802.8371  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                           Number of obs    = 3,000
+Group variable: country                               Number of groups =    30
+                                                      Obs per group:
+                                                                   min =   100
+                                                                   avg = 100.0
+                                                                   max =   100
+                                                      Wald chi2(0)     =     .
+Log likelihood = -9802.8371                           Prob &gt; chi2      =     .
+
+------------------------------------------------------------------------------
+     outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       _cons |   52.43327   .3451217   151.93   0.000     51.75685     53.1097
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+country: Identity            |
+                  var(_cons) |   3.178658   .9226737      1.799552    5.614658
+-----------------------------+------------------------------------------------
+               var(Residual) |   39.46106   1.024013      37.50421       41.52
+------------------------------------------------------------------------------
+LR test vs. linear model: chibar2(01) = 166.31        Prob &gt;= chibar2 = 0.0000</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>invalid syntax
+r(198);
+
+
+last estimates not found
+r(301);
+
+r(301);</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+
+</div>
+</div>
+</div>
+</section>
+<section id="interpretation-1" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">4.2.3</span> Interpretation</h3>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-StataCorp2023" class="csl-entry" role="listitem">
+StataCorp. (2023). <em>Stata 18 mixed effects reference manual</em>. Stata Press.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
