@@ -58,4 +58,5 @@ format:
     execute:
       echo: true
       warning: false
+      freeze: auto
 
