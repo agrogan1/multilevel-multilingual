@@ -71,7 +71,7 @@ use simulated_multilevel_longitudinal_data.dta
 
 ```
 
-#### Run The Model
+#### Run The Models
 
 ##### Main Effects Only
 
@@ -113,7 +113,7 @@ dfL$intervention <- factor(dfL$intervention)
 
 ```
 
-#### Run The Model
+#### Run The Models
 
 ::: {.callout-caution collapse="false"}
 `lme4` does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library `lmerTest` to provide p values for `lme4` results.
@@ -172,9 +172,7 @@ dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
 
 ```
 
-#### Run The Model
-
-##### Change Country To Categorical
+#### Change Some Variables To Categorical
 
 ```{julia}
 #| output: false
@@ -186,6 +184,8 @@ dfL = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
 @transform!(dfL, :intervention = categorical(:intervention))
 
 ```
+
+#### Run The Models
 
 ##### Main Effects Only
 
