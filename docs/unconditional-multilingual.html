@@ -345,21 +345,29 @@ window.Quarto = {
 <div class="cell" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta <span class="co">// use data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: id: <span class="co">// unconditional model</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
+r(198);</code></pre>
+</div>
+</div>
+<div class="cell" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: id: <span class="co">// unconditional model</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>invalid syntax
+r(198);
+
+
+invalid syntax
 r(198);
 
 r(198);</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);
@@ -374,17 +382,17 @@ r(301);</code></pre>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fit0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df) <span class="co"># unconditional model</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fit0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df) <span class="co"># unconditional model</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
 Formula: outcome ~ (1 | country)
@@ -408,9 +416,9 @@ Fixed effects:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>performance<span class="sc">::</span><span class="fu">icc</span>(fit0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>performance<span class="sc">::</span><span class="fu">icc</span>(fit0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Intraclass Correlation Coefficient
 
@@ -421,18 +429,18 @@ Fixed effects:
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">MixedModelsExtras</span>, </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">MixedModelsExtras</span>, </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>m0 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         <span class="pp">@formula</span>(outcome <span class="op">~</span> (<span class="fl">1</span> <span class="op">|</span> country)), df) <span class="co"># unconditional model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>m0 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         <span class="pp">@formula</span>(outcome <span class="op">~</span> (<span class="fl">1</span> <span class="op">|</span> country)), df) <span class="co"># unconditional model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
  outcome ~ 1 + (1 | country)
@@ -454,8 +462,8 @@ Residual              39.46106 6.28180
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icc</span>(m0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icc</span>(m0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.07454637475695493</code></pre>
 </div>
@@ -474,9 +482,9 @@ Residual              39.46106 6.28180
 <section id="the-equation-1" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="the-equation-1"><span class="header-section-number">4.2.1</span> The Equation</h3>
 <p><span id="eq-MLMunconditional3"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + u_{0j} + v_{0i} + e_{ij} \tag{4.3}\]</span></span></p>
-<p>In a three level model, there are two intraclass correlation coefficients <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>. The formulas for the Intraclass Correlation Coefficient (ICC) are given by <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>:</p>
+<p>As discussed in the main text, in a three level model, there are two intraclass correlation coefficients <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>. The formulas for the Intraclass Correlation Coefficient (ICC) are given by <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>:</p>
 <p><span id="eq-ICCunconditional3A"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})} \tag{4.4}\]</span></span></p>
-<p>Following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="references.html#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3A" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> is the correlation of responses for person-timepoints from the same country but different persons.</p>
+<p>Again, following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="references.html#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3A" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> is the correlation of responses for person-timepoints from the same country but different persons.</p>
 <p><span id="eq-ICCunconditional3B"><span class="math display">\[\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})} \tag{4.5}\]</span></span></p>
 <p>Again, closely following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="references.html#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3B" class="quarto-xref">Equation&nbsp;<span>4.5</span></a> is the correlation of responses for person-timepoints from the same country and same person.</p>
 </section>
@@ -487,17 +495,17 @@ Residual              39.46106 6.28180
 <div class="tab-content" data-group="language">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta <span class="co">// use data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta <span class="co">// use data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);</code></pre>
 </div>
 </div>
 <div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: <span class="co">// unconditional model</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: || id:  <span class="co">// unconditional model</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);
@@ -507,40 +515,145 @@ r(198);
 Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood = -9802.8371  
-Iteration 1:  Log likelihood = -9802.8371  
+Iteration 0:  Log likelihood = -9802.8371  (not concave)
+Iteration 1:  Log likelihood = -9802.8371  (not concave)
+Iteration 2:  Log likelihood = -9802.8371  (not concave)
+Iteration 3:  Log likelihood = -9802.8371  (backed up)
+Iteration 4:  Log likelihood = -9802.8371  (backed up)
+Iteration 5:  Log likelihood = -9802.8371  (backed up)
+Iteration 6:  Log likelihood = -9802.8371  (backed up)
+Iteration 7:  Log likelihood = -9802.8371  (backed up)
+Iteration 8:  Log likelihood = -9802.8371  (backed up)
+Iteration 9:  Log likelihood = -9802.8371  (backed up)
+Iteration 10: Log likelihood = -9802.8371  (backed up)
+Iteration 11: Log likelihood = -9802.8371  (backed up)
+Iteration 12: Log likelihood = -9802.8371  (backed up)
+Iteration 13: Log likelihood = -9802.8371  (backed up)
+Iteration 14: Log likelihood = -9802.8371  (backed up)
+Iteration 15: Log likelihood = -9802.8371  (backed up)
+Iteration 16: Log likelihood = -9802.8371  (backed up)
+Iteration 17: Log likelihood = -9802.8371  (backed up)
+Iteration 18: Log likelihood = -9802.8371  (backed up)
+Iteration 19: Log likelihood = -9802.8371  (backed up)
+Iteration 20: Log likelihood = -9802.8371  (backed up)
+Iteration 21: Log likelihood = -9802.8371  (backed up)
+Iteration 22: Log likelihood = -9802.8371  (backed up)
+Iteration 23: Log likelihood = -9802.8371  (backed up)
+Iteration 24: Log likelihood = -9802.8371  (backed up)
+Iteration 25: Log likelihood = -9802.8371  (backed up)
+Iteration 26: Log likelihood = -9802.8371  (backed up)
+Iteration 27: Log likelihood = -9802.8371  (backed up)
+Iteration 28: Log likelihood = -9802.8371  (backed up)
+Iteration 29: Log likelihood = -9802.8371  (backed up)
+Iteration 30: Log likelihood = -9802.8371  (backed up)
+Iteration 31: Log likelihood = -9802.8371  (backed up)
+Iteration 32: Log likelihood = -9802.8371  (backed up)
+Iteration 33: Log likelihood = -9802.8371  (backed up)
+Iteration 34: Log likelihood = -9802.8371  (backed up)
+Iteration 35: Log likelihood = -9802.8371  (backed up)
+Iteration 36: Log likelihood = -9802.8371  (backed up)
+Iteration 37: Log likelihood = -9802.8371  (backed up)
+Iteration 38: Log likelihood = -9802.8371  (backed up)
+Iteration 39: Log likelihood = -9802.8371  (backed up)
+Iteration 40: Log likelihood = -9802.8371  (backed up)
+Iteration 41: Log likelihood = -9802.8371  (backed up)
+Iteration 42: Log likelihood = -9802.8371  (backed up)
+Iteration 43: Log likelihood = -9802.8371  (backed up)
+Iteration 44: Log likelihood = -9802.8371  (backed up)
+Iteration 45: Log likelihood = -9802.8371  (backed up)
+Iteration 46: Log likelihood = -9802.8371  (backed up)
+Iteration 47: Log likelihood = -9802.8371  (backed up)
+Iteration 48: Log likelihood = -9802.8371  (backed up)
+Iteration 49: Log likelihood = -9802.8371  (backed up)
+Iteration 50: Log likelihood = -9802.8371  (backed up)
+Iteration 51: Log likelihood = -9802.8371  (backed up)
+Iteration 52: Log likelihood = -9802.8371  (backed up)
+Iteration 53: Log likelihood = -9802.8371  (backed up)
+Iteration 54: Log likelihood = -9802.8371  (backed up)
+Iteration 55: Log likelihood = -9802.8371  (backed up)
+Iteration 56: Log likelihood = -9802.8371  (backed up)
+Iteration 57: Log likelihood = -9802.8371  (backed up)
+Iteration 58: Log likelihood = -9802.8371  (backed up)
+Iteration 59: Log likelihood = -9802.8371  (backed up)
+Iteration 60: Log likelihood = -9802.8371  (backed up)
+Iteration 61: Log likelihood = -9802.8371  (backed up)
+Iteration 62: Log likelihood = -9802.8371  (backed up)
+Iteration 63: Log likelihood = -9802.8371  (backed up)
+Iteration 64: Log likelihood = -9802.8371  (backed up)
+Iteration 65: Log likelihood = -9802.8371  (backed up)
+Iteration 66: Log likelihood = -9802.8371  (backed up)
+Iteration 67: Log likelihood = -9802.8371  (backed up)
+Iteration 68: Log likelihood = -9802.8371  (backed up)
+Iteration 69: Log likelihood = -9802.8371  (backed up)
+Iteration 70: Log likelihood = -9802.8371  (backed up)
+Iteration 71: Log likelihood = -9802.8371  (backed up)
+Iteration 72: Log likelihood = -9802.8371  (backed up)
+Iteration 73: Log likelihood = -9802.8371  (backed up)
+Iteration 74: Log likelihood = -9802.8371  (backed up)
+Iteration 75: Log likelihood = -9802.8371  (backed up)
+Iteration 76: Log likelihood = -9802.8371  (backed up)
+Iteration 77: Log likelihood = -9802.8371  (backed up)
+Iteration 78: Log likelihood = -9802.8371  (backed up)
+Iteration 79: Log likelihood = -9802.8371  (backed up)
+Iteration 80: Log likelihood = -9802.8371  (backed up)
+Iteration 81: Log likelihood = -9802.8371  (backed up)
+Iteration 82: Log likelihood = -9802.8371  (backed up)
+Iteration 83: Log likelihood = -9802.8371  (backed up)
+Iteration 84: Log likelihood = -9802.8371  (backed up)
+Iteration 85: Log likelihood = -9802.8371  (backed up)
+Iteration 86: Log likelihood = -9802.8371  (backed up)
+Iteration 87: Log likelihood = -9802.8371  (backed up)
+Iteration 88: Log likelihood = -9802.8371  (backed up)
+Iteration 89: Log likelihood = -9802.8371  (backed up)
+Iteration 90: Log likelihood = -9802.8371  (backed up)
+Iteration 91: Log likelihood = -9802.8371  (backed up)
+Iteration 92: Log likelihood = -9802.8371  (backed up)
+Iteration 93: Log likelihood = -9802.8371  (backed up)
+Iteration 94: Log likelihood = -9802.8371  (backed up)
+Iteration 95: Log likelihood = -9802.8371  (backed up)
+Iteration 96: Log likelihood = -9802.8371  (backed up)
+Iteration 97: Log likelihood = -9802.8371  (backed up)
+Iteration 98: Log likelihood = -9802.8371  (backed up)
+Iteration 99: Log likelihood = -9802.8371  (backed up)
+Iteration 100: Log likelihood = -9802.8371  (backed up)
+Iteration 101: Log likelihood = -9802.8371  (backed up)
+Iteration 102: Log likelihood = -9802.8371  (backed up)
+Iteration 103: Log likelihood = -9802.8371  (backed up)
+Iteration 104: Log likelihood = -9802.8371  (backed up)
+Iteration 105: Log likelihood = -9802.8371  (backed up)
+Iteration 106: Log likelihood = -9802.8371  (backed up)
+Iteration 107: Log likelihood = -9802.8371  (backed up)
+Iteration 108: Log likelihood = -9802.8371  (backed up)
+Iteration 109: Log likelihood = -9802.8371  (backed up)
+Iteration 110: Log likelihood = -9802.8371  (backed up)
+Iteration 111: Log likelihood = -9802.8371  (backed up)
+Iteration 112: Log likelihood = -9802.8371  (backed up)
+Iteration 113: Log likelihood = -9802.8371  (backed up)
+Iteration 114: Log likelihood = -9802.8371  (backed up)
+Iteration 115: Log likelihood = -9802.8371  (backed up)
+Iteration 116: Log likelihood = -9802.8371  (backed up)
+Iteration 117: Log likelihood = -9802.8371  (backed up)
+Iteration 118: Log likelihood = -9802.8371  (backed up)
+Iteration 119: Log likelihood = -9802.8371  (backed up)
+Iteration 120: Log likelihood = -9802.8371  (backed up)
+Iteration 121: Log likelihood = -9802.8371  (backed up)
+Iteration 122: Log likelihood = -9802.8371  (backed up)
+Iteration 123: Log likelihood = -9802.8371  (backed up)
+Iteration 124: Log likelihood = -9802.8371  (backed up)
+Iteration 125: Log likelihood = -9802.8371  (backed up)
+Iteration 126: Log likelihood = -9802.8371  (backed up)
+Iteration 127: Log likelihood = -9802.8371  (backed up)
+Iteration 128: Log likelihood = -9802.8371  (backed up)
+--Break--
+r(1);
 
-Computing standard errors ...
-
-Mixed-effects ML regression                           Number of obs    = 3,000
-Group variable: country                               Number of groups =    30
-                                                      Obs per group:
-                                                                   min =   100
-                                                                   avg = 100.0
-                                                                   max =   100
-                                                      Wald chi2(0)     =     .
-Log likelihood = -9802.8371                           Prob &gt; chi2      =     .
-
-------------------------------------------------------------------------------
-     outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
--------------+----------------------------------------------------------------
-       _cons |   52.43327   .3451217   151.93   0.000     51.75685     53.1097
-------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------
-  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
------------------------------+------------------------------------------------
-country: Identity            |
-                  var(_cons) |   3.178658   .9226737      1.799552    5.614658
------------------------------+------------------------------------------------
-               var(Residual) |   39.46106   1.024013      37.50421       41.52
-------------------------------------------------------------------------------
-LR test vs. linear model: chibar2(01) = 166.31        Prob &gt;= chibar2 = 0.0000</code></pre>
+--Break--
+r(1);</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);
@@ -554,16 +667,108 @@ r(301);</code></pre>
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>In R, the ICC for a three level model is easiest to estimate “by hand”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>fit0L <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country<span class="sc">/</span>id),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> dfL) <span class="co"># unconditional model</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: outcome ~ (1 | country/id)
+   Data: dfL
 
+REML criterion at convergence: 58116.8
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7858 -0.6059 -0.0062  0.6017  3.4348 
+
+Random effects:
+ Groups     Name        Variance Std.Dev.
+ id:country (Intercept) 11.724   3.424   
+ country    (Intercept)  3.351   1.830   
+ Residual               28.234   5.314   
+Number of obs: 9000, groups:  id:country, 3000; country, 30
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  53.3777     0.3446   154.9</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fl">3.351</span> <span class="sc">/</span> (<span class="fl">11.724</span> <span class="sc">+</span> <span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">28.234</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.07737422</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">11.724</span>) <span class="sc">/</span> (<span class="fl">11.724</span> <span class="sc">+</span> <span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">28.234</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3480801</code></pre>
+</div>
+</div>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p>In Julia, the ICC for a three level model is also easiest to estimate “by hand”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(dfL, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>m0L <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span> </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + (1 | country) + (1 | id)
+    logLik   -2 logLik      AIC         AICc        BIC     
+ -29058.2592  58116.5184  58124.5184  58124.5229  58152.9384
 
+Variance components:
+            Column   Variance Std.Dev.
+id       (Intercept)  11.72401 3.42403
+country  (Intercept)   3.23190 1.79775
+Residual              28.23426 5.31359
+ Number of obs: 9000; levels of grouping factors: 3000, 30
+
+  Fixed-effects parameters:
+──────────────────────────────────────────────────
+               Coef.  Std. Error       z  Pr(&gt;|z|)
+──────────────────────────────────────────────────
+(Intercept)  53.3777    0.338785  157.56    &lt;1e-99
+──────────────────────────────────────────────────</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fl">3.23190</span> <span class="op">/</span> (<span class="fl">11.72401</span> <span class="op">+</span> <span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">28.23426</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.07482952718176382</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>(<span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">11.72401</span>) <span class="op">/</span> (<span class="fl">11.72401</span> <span class="op">+</span> <span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">28.23426</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.34628041519632824</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
 <section id="interpretation-1" class="level3" data-number="4.2.3">
 <h3 data-number="4.2.3" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">4.2.3</span> Interpretation</h3>
+<p>Each software suggests that almost 8% of the variation in the outcome is within time points for different individuals within the same country, while almost 35% of the variation in the outcome is within time points for the same individual within the same country.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">

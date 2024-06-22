@@ -127,11 +127,11 @@ In each case, the software finds that nearly 8% of the variation in the outcome 
 
 $$\text{outcome}_{ij}= \beta_0 + u_{0j} + v_{0i} + e_{ij}$$ {#eq-MLMunconditional3}
 
-In a three level model, there are two intraclass correlation coefficients [@StataCorp2023]. The formulas for the Intraclass Correlation Coefficient (ICC) are given by [@StataCorp2023]:
+As discussed in the main text, in a three level model, there are two intraclass correlation coefficients [@StataCorp2023]. The formulas for the Intraclass Correlation Coefficient (ICC) are given by [@StataCorp2023]:
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3A}
 
-Following @StataCorp2023, @eq-ICCunconditional3A is the correlation of responses for person-timepoints from the same country but different persons.
+Again, following @StataCorp2023, @eq-ICCunconditional3A is the correlation of responses for person-timepoints from the same country but different persons.
 
 $$\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3B}
 
@@ -163,6 +163,8 @@ estat icc // ICC
 
 #### R
 
+In R, the ICC for a three level model is easiest to estimate "by hand".
+
 ```{r}
 
 library(haven)
@@ -192,6 +194,8 @@ summary(fit0L)
 ```
 
 #### Julia
+
+In Julia, the ICC for a three level model is also easiest to estimate "by hand".
 
 ```{julia}
 #| output: false
@@ -229,7 +233,7 @@ m0L = fit(MixedModel, @formula(outcome ~
 
 ### Interpretation
 
-
+Each software suggests that almost 8% of the variation in the outcome is within time points for different individuals within the same country, while almost 35% of the variation in the outcome is within time points for the same individual within the same country. 
 
 
 
