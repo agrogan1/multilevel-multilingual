@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.4.549" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
 
-<title>Multilevel Multilingual - 4&nbsp; Unconditional Model</title>
+<title>Multilevel Multilingual – 4  Unconditional Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,27 +78,7 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./cross-sectional-multilingual.html" rel="next">
-<link href="./descriptives-multilingual.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<!-- htmldependencies:E3FAD763 -->
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -155,43 +137,23 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 4&nbsp; Unconditional Model">
-<meta property="og:description" content="">
-<meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 4&nbsp; Unconditional Model">
-<meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[4]{.chapter-number}&nbsp; [Unconditional Model]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//unconditional-multilingual.html">
-<meta name="citation_language" content="en">
-<meta name="citation_reference" content="citation_title=Quarto;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Carlos Scheidegger;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_fulltext_html_url=https://github.com/quarto-dev/quarto-cli;,citation_doi=10.5281/zenodo.5960048;">
-<meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
-<meta name="citation_reference" content="citation_title=Fitting linear mixed-effects models using lme4;,citation_abstract=Maximum likelihood or restricted maximum likelihood (REML) estimates of the parameters in linear mixed-effects models can be determined using the lmer function in the lme4 package for R. As for most model-fitting functions in R, the model is described in an lmer call by a formula, in this case including both fixed- and random-effects terms. The formula and data together determine a numerical representation of the model from which the profiled deviance or the profiled REML criterion can be evaluated as a function of some of the model parameters. The appropriate criterion is optimized, using one of the constrained optimization functions in R, to provide the parameter estimates. We describe the structure of the model, the steps in evaluating the profiled deviance or REML criterion, and the structure of classes or types that represents such a model. Sufficient detail is included to allow specialization of these structures by users who wish to write functions to fit specialized linear mixed models, such as models incorporating pedigrees or smoothing splines, that are not easily expressible in the formula language used by lmer.;,citation_author=Douglas Bates;,citation_author=Martin Mächler;,citation_author=Ben Bolker;,citation_author=Steve Walker;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=https://www.jstatsoft.org/index.php/jss/article/view/v067i01;,citation_issue=1;,citation_doi=10.18637/jss.v067.i01;,citation_volume=67;,citation_journal_title=Journal of Statistical Software;">
-<meta name="citation_reference" content="citation_title=Julia: A fresh approach to numerical computing;,citation_abstract=Bridging cultures that have often been distant, Julia combines expertise from the diverse fields of computer science and computational science to create a new approach to numerical computing. Julia is designed to be easy and fast and questions notions generally held to be “laws of nature&amp;amp;amp;quot; by practitioners of numerical computing: High-level dynamic programs have to be slow.One must prototype in one language and then rewrite in another language for speed or deployment.There are parts of a system appropriate for the programmer, and other parts that are best left untouched as they have been built by the experts. We introduce the Julia programming language and its design—a dance between specialization and abstraction. Specialization allows for custom treatment. Multiple dispatch, a technique from computer science, picks the right algorithm for the right circumstance. Abstraction, which is what good computation is really about, recognizes what remains the same after differences are stripped away. Abstractions in mathematics are captured as code through another technique from computer science, generic programming. Julia shows that one can achieve machine performance without sacrificing human convenience.;,citation_author=Jeff Bezanson;,citation_author=Alan Edelman;,citation_author=Stefan Karpinski;,citation_author=Viral B. Shah;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_fulltext_html_url=https://doi.org/10.1137/141000671;,citation_issue=1;,citation_doi=10.1137/141000671;,citation_volume=59;,citation_journal_title=SIAM Review;">
-<meta name="citation_reference" content="citation_title=Statamarkdown: ’Stata’ markdown;,citation_author=Doug Hemken;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://CRAN.R-project.org/package=Statamarkdown;">
-<meta name="citation_reference" content="citation_title=JuliaCall: An R package for seamless integration between R and Julia;,citation_author=Changcheng Li;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=35;,citation_doi=10.21105/joss.01284;,citation_volume=4;,citation_journal_title=The Journal of Open Source Software;,citation_publisher=The Open Journal;">
-<meta name="citation_reference" content="citation_title=R: A language and environment for statistical computing;,citation_author=R Core Team;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://www.R-project.org/;">
-<meta name="citation_reference" content="citation_title=Math person (Strogatz Prize entry);,citation_author=Julia Schanen;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_publisher=National Museum of Mathematics;">
-<meta name="citation_reference" content="citation_title=Stata 17 multilevel mixed effects reference manual;,citation_author=StataCorp;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;">
-<meta name="citation_reference" content="citation_title=Stata 18 mixed effects reference manual;,citation_author=StataCorp;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;">
-<meta name="citation_reference" content="citation_title=The commercial spirit of modern times [1837];,citation_author=Henry David Thoreau;,citation_editor=Joseph J. Moldenhauer;,citation_editor=Edwin Moser;,citation_editor=Alexander C. Kern;,citation_publication_date=1975;,citation_cover_date=1975;,citation_year=1975;,citation_isbn=0691062862 :;,citation_inbook_title=Early essays and miscellanies;">
+<link rel="stylesheet" href="multilevel-multilingual.css" />
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="/index.html">
     <span class="navbar-title">Multilevel Multilingual</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-wide">
-    <a href="https://github.com/agrogan1/multilevel-multilingual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./Multilevel-Multilingual.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="https://github.com/agrogan1/multilevel-multilingual"  title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="/Multilevel-Multilingual.pdf"  title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -222,11 +184,16 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn"
+      data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" 
+      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unconditional-multilingual.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unconditional Model</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" 
+        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -239,77 +206,60 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilevel Multilingual</span></span></a>
+  <a href="/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>1</span>  <span class='chapter-title'>Multilevel Multilingual</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workflows-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Workflows</span></span></a>
+  <a href="/workflows-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>2</span>  <span class='chapter-title'>Statistical Workflows</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptives-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+  <a href="/descriptives-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>3</span>  <span class='chapter-title'>Descriptive Statistics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span></a>
+  <a href="/unconditional-multilingual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class='chapter-number'>4</span>  <span class='chapter-title'>Unconditional Model</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span></a>
+  <a href="/cross-sectional-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>5</span>  <span class='chapter-title'>Cross Sectional Multilevel Models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./longitudinal-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span></a>
+  <a href="/longitudinal-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>6</span>  <span class='chapter-title'>Longitudinal Multilevel Models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#two-level-model" id="toc-two-level-model" class="nav-link active" data-scroll-target="#two-level-model"><span class="header-section-number">4.1</span> Two Level Model</a>
-  <ul class="collapse">
-  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">4.1.1</span> The Equation</a></li>
-  <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">4.1.2</span> Run Models</a></li>
-  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">4.1.3</span> Interpretation</a></li>
-  </ul></li>
-  <li><a href="#three-level-model" id="toc-three-level-model" class="nav-link" data-scroll-target="#three-level-model"><span class="header-section-number">4.2</span> Three Level Model</a>
-  <ul class="collapse">
-  <li><a href="#the-equation-1" id="toc-the-equation-1" class="nav-link" data-scroll-target="#the-equation-1"><span class="header-section-number">4.2.1</span> The Equation</a></li>
-  <li><a href="#run-models-1" id="toc-run-models-1" class="nav-link" data-scroll-target="#run-models-1"><span class="header-section-number">4.2.2</span> Run Models</a></li>
-  <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1"><span class="header-section-number">4.2.3</span> Interpretation</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+        <div id="quarto-toc-target"></div>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unconditional Model</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>  <span class="chapter-title">Unconditional Model</span></h1>
 </div>
 
 
@@ -325,35 +275,52 @@ window.Quarto = {
 
 </header>
 
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#two-level-model" id="toc-two-level-model"><span class="header-section-number">4.1</span> Two Level Model</a>
+  <ul>
+  <li><a href="#the-equation" id="toc-the-equation"><span class="header-section-number">4.1.1</span> The Equation</a></li>
+  <li><a href="#run-models" id="toc-run-models"><span class="header-section-number">4.1.2</span> Run Models</a></li>
+  <li><a href="#interpretation" id="toc-interpretation"><span class="header-section-number">4.1.3</span> Interpretation</a></li>
+  </ul></li>
+  <li><a href="#three-level-model" id="toc-three-level-model"><span class="header-section-number">4.2</span> Three Level Model</a>
+  <ul>
+  <li><a href="#the-equation-1" id="toc-the-equation-1"><span class="header-section-number">4.2.1</span> The Equation</a></li>
+  <li><a href="#run-models-1" id="toc-run-models-1"><span class="header-section-number">4.2.2</span> Run Models</a></li>
+  <li><a href="#interpretation-1" id="toc-interpretation-1"><span class="header-section-number">4.2.3</span> Interpretation</a></li>
+  </ul></li>
+  </ul>
+</nav>
 <section id="two-level-model" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="two-level-model"><span class="header-section-number">4.1</span> Two Level Model</h2>
+<h2 data-number="4.1"><span class="header-section-number">4.1</span> Two Level Model</h2>
 <p>An <em>unconditional</em> multilevel model is a model with no independent variables. One should always run an unconditional model as the first step of a multilevel model in order to get a sense of the way that variation is apportioned in the model across the different levels.</p>
 <section id="the-equation" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">4.1.1</span> The Equation</h3>
+<h3 data-number="4.1.1"><span class="header-section-number">4.1.1</span> The Equation</h3>
 <p><span id="eq-MLMunconditional"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij} \tag{4.1}\]</span></span></p>
 <p>The Intraclass Correlation Coefficient (ICC) is given by:</p>
 <p><span id="eq-ICCunconditional"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{4.2}\]</span></span></p>
 <p>In a two level multilevel model, the ICC provides a measure of the proportion of variation attributable to Level 2.</p>
 </section>
 <section id="run-models" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="run-models"><span class="header-section-number">4.1.2</span> Run Models</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
+<h3 data-number="4.1.2"><span class="header-section-number">4.1.2</span> Run Models</h3>
+<div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta <span class="co">// use data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode stata cell-code"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta <span class="co">// use data</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);</code></pre>
 </div>
 </div>
 <div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode stata cell-code"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: id: <span class="co">// unconditional model</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  </span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);
@@ -366,8 +333,8 @@ r(198);</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode stata cell-code"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);
@@ -382,19 +349,19 @@ r(301);</code></pre>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;simulated_multilevel_data.dta&quot;</span>)</span></code></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fit0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df) <span class="co"># unconditional model</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed model fit by REML ['lmerMod']
+<pre><code>Linear mixed model fit by REML [&#39;lmerMod&#39;]
 Formula: outcome ~ (1 | country)
    Data: df
 
@@ -416,9 +383,9 @@ Fixed effects:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>performance<span class="sc">::</span><span class="fu">icc</span>(fit0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>performance<span class="sc">::</span><span class="fu">icc</span>(fit0) <span class="co"># ICC</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Intraclass Correlation Coefficient
 
@@ -429,18 +396,18 @@ Fixed effects:
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">MixedModelsExtras</span>, </span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">MixedModelsExtras</span>, </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">&quot;simulated_multilevel_data.dta&quot;</span>))</span></code></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(df, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>m0 <span class="op">=</span> <span class="fu">fit</span>(MixedModel, </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         <span class="pp">@formula</span>(outcome <span class="op">~</span> (<span class="fl">1</span> <span class="op">|</span> country)), df) <span class="co"># unconditional model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         <span class="pp">@formula</span>(outcome <span class="op">~</span> (<span class="fl">1</span> <span class="op">|</span> country)), df) <span class="co"># unconditional model</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
  outcome ~ 1 + (1 | country)
@@ -462,8 +429,8 @@ Residual              39.46106 6.28180
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icc</span>(m0) <span class="co"># ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">icc</span>(m0) <span class="co"># ICC</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.07454637475695493</code></pre>
 </div>
@@ -473,39 +440,39 @@ Residual              39.46106 6.28180
 </div>
 </section>
 <section id="interpretation" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">4.1.3</span> Interpretation</h3>
+<h3 data-number="4.1.3"><span class="header-section-number">4.1.3</span> Interpretation</h3>
 <p>In each case, the software finds that nearly 8% of the variation in the outcome is explainable by the clustering of the observations in each country.</p>
 </section>
 </section>
 <section id="three-level-model" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="three-level-model"><span class="header-section-number">4.2</span> Three Level Model</h2>
+<h2 data-number="4.2"><span class="header-section-number">4.2</span> Three Level Model</h2>
 <section id="the-equation-1" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="the-equation-1"><span class="header-section-number">4.2.1</span> The Equation</h3>
+<h3 data-number="4.2.1"><span class="header-section-number">4.2.1</span> The Equation</h3>
 <p><span id="eq-MLMunconditional3"><span class="math display">\[\text{outcome}_{ij}= \beta_0 + u_{0j} + v_{0i} + e_{ij} \tag{4.3}\]</span></span></p>
-<p>As discussed in the main text, in a three level model, there are two intraclass correlation coefficients <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>. The formulas for the Intraclass Correlation Coefficient (ICC) are given by <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>:</p>
+<p>As discussed in the main text, in a three level model, there are two intraclass correlation coefficients <span class="citation" data-cites="StataCorp2023">(<a href="#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>. The formulas for the Intraclass Correlation Coefficient (ICC) are given by <span class="citation" data-cites="StataCorp2023">(<a href="#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span>:</p>
 <p><span id="eq-ICCunconditional3A"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})} \tag{4.4}\]</span></span></p>
-<p>Again, following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="references.html#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3A" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> is the correlation of responses for person-timepoints from the same country but different persons.</p>
+<p>Again, following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3A" class="quarto-xref">Equation <span class="quarto-unresolved-ref">eq-ICCunconditional3A</span></a> is the correlation of responses for person-timepoints from the same country but different persons.</p>
 <p><span id="eq-ICCunconditional3B"><span class="math display">\[\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})} \tag{4.5}\]</span></span></p>
-<p>Again, closely following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="references.html#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3B" class="quarto-xref">Equation&nbsp;<span>4.5</span></a> is the correlation of responses for person-timepoints from the same country and same person.</p>
+<p>Again, closely following <span class="citation" data-cites="StataCorp2023">StataCorp (<a href="#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span>, <a href="#eq-ICCunconditional3B" class="quarto-xref">Equation <span class="quarto-unresolved-ref">eq-ICCunconditional3B</span></a> is the correlation of responses for person-timepoints from the same country and same person.</p>
 </section>
 <section id="run-models-1" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="run-models-1"><span class="header-section-number">4.2.2</span> Run Models</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
+<h3 data-number="4.2.2"><span class="header-section-number">4.2.2</span> Run Models</h3>
+<div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Julia</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta <span class="co">// use data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode stata cell-code"><code class="sourceCode stata"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta <span class="co">// use data</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);</code></pre>
 </div>
 </div>
 <div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode stata cell-code"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: || id:  <span class="co">// unconditional model</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  </span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);
@@ -652,8 +619,8 @@ r(1);</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode stata cell-code"><code class="sourceCode stata"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc <span class="co">// ICC</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>invalid syntax
 r(198);
@@ -669,19 +636,19 @@ r(301);</code></pre>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>In R, the ICC for a three level model is easiest to estimate “by hand”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;simulated_multilevel_longitudinal_data.dta&quot;</span>)</span></code></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># estimate multilevel models</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>fit0L <span class="ot">&lt;-</span> <span class="fu">lmer</span>(outcome <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country<span class="sc">/</span>id),</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> dfL) <span class="co"># unconditional model</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit0L)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed model fit by REML ['lmerMod']
+<pre><code>Linear mixed model fit by REML [&#39;lmerMod&#39;]
 Formula: outcome ~ (1 | country/id)
    Data: dfL
 
@@ -704,11 +671,11 @@ Fixed effects:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fl">3.351</span> <span class="sc">/</span> (<span class="fl">11.724</span> <span class="sc">+</span> <span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">28.234</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fl">3.351</span> <span class="sc">/</span> (<span class="fl">11.724</span> <span class="sc">+</span> <span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">28.234</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.07737422</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">11.724</span>) <span class="sc">/</span> (<span class="fl">11.724</span> <span class="sc">+</span> <span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">28.234</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">11.724</span>) <span class="sc">/</span> (<span class="fl">11.724</span> <span class="sc">+</span> <span class="fl">3.351</span> <span class="sc">+</span> <span class="fl">28.234</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3480801</code></pre>
 </div>
@@ -717,18 +684,18 @@ Fixed effects:
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>In Julia, the ICC for a three level model is also easiest to estimate “by hand”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
+<div class="sourceCode" id="cb31"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tables</span>, <span class="bu">MixedModels</span>, <span class="bu">StatFiles</span>, <span class="bu">DataFrames</span>, <span class="bu">CategoricalArrays</span>, <span class="bu">DataFramesMeta</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">"simulated_multilevel_longitudinal_data.dta"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="op">=</span> <span class="fu">DataFrame</span>(<span class="fu">load</span>(<span class="st">&quot;simulated_multilevel_longitudinal_data.dta&quot;</span>))</span></code></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(dfL, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(dfL, <span class="op">:</span>country <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>country))</span></code></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb33"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>m0L <span class="op">=</span> <span class="fu">fit</span>(MixedModel, <span class="pp">@formula</span>(outcome <span class="op">~</span> </span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> country) <span class="op">+</span> </span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                                 (<span class="fl">1</span> <span class="op">|</span> id)), dfL)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood
  outcome ~ 1 + (1 | country) + (1 | id)
@@ -751,13 +718,13 @@ Residual              28.23426 5.31359
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fl">3.23190</span> <span class="op">/</span> (<span class="fl">11.72401</span> <span class="op">+</span> <span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">28.23426</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fl">3.23190</span> <span class="op">/</span> (<span class="fl">11.72401</span> <span class="op">+</span> <span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">28.23426</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.07482952718176382</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>(<span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">11.72401</span>) <span class="op">/</span> (<span class="fl">11.72401</span> <span class="op">+</span> <span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">28.23426</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode julia cell-code"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>(<span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">11.72401</span>) <span class="op">/</span> (<span class="fl">11.72401</span> <span class="op">+</span> <span class="fl">3.23190</span> <span class="op">+</span> <span class="fl">28.23426</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.34628041519632824</code></pre>
 </div>
@@ -767,11 +734,15 @@ Residual              28.23426 5.31359
 </div>
 </section>
 <section id="interpretation-1" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">4.2.3</span> Interpretation</h3>
+<h3 data-number="4.2.3"><span class="header-section-number">4.2.3</span> Interpretation</h3>
 <p>Each software suggests that almost 8% of the variation in the outcome is within time points for different individuals within the same country, while almost 35% of the variation in the outcome is within time points for the same individual within the same country.</p>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden" data-render-id="quarto-int-sidebar-title">Multilevel Multilingual</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Multilevel Multilingual</span> <span class="hidden" data-render-id="quarto-int-next"><span class="chapter-number">5</span>  <span class="chapter-title">Cross Sectional Multilevel Models</span></span> <span class="hidden" data-render-id="quarto-int-prev"><span class="chapter-number">3</span>  <span class="chapter-title">Descriptive Statistics</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/index.html&lt;span-class=&#39;chapter-number&#39;&gt;1&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Multilevel-Multilingual&lt;/span&gt;"><span class="chapter-number">1</span>  <span class="chapter-title">Multilevel Multilingual</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/workflows-multilingual.html&lt;span-class=&#39;chapter-number&#39;&gt;2&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Statistical-Workflows&lt;/span&gt;"><span class="chapter-number">2</span>  <span class="chapter-title">Statistical Workflows</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/descriptives-multilingual.html&lt;span-class=&#39;chapter-number&#39;&gt;3&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Descriptive-Statistics&lt;/span&gt;"><span class="chapter-number">3</span>  <span class="chapter-title">Descriptive Statistics</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/unconditional-multilingual.html&lt;span-class=&#39;chapter-number&#39;&gt;4&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Unconditional-Model&lt;/span&gt;"><span class="chapter-number">4</span>  <span class="chapter-title">Unconditional Model</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/cross-sectional-multilingual.html&lt;span-class=&#39;chapter-number&#39;&gt;5&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Cross-Sectional-Multilevel-Models&lt;/span&gt;"><span class="chapter-number">5</span>  <span class="chapter-title">Cross Sectional Multilevel Models</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/longitudinal-multilingual.html&lt;span-class=&#39;chapter-number&#39;&gt;6&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Longitudinal-Multilevel-Models&lt;/span&gt;"><span class="chapter-number">6</span>  <span class="chapter-title">Longitudinal Multilevel Models</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/references.htmlReferences">References</span> <span class="hidden" data-render-id="quarto-navbar-tools:https://github.com/agrogan1/multilevel-multilingual">https://github.com/agrogan1/multilevel-multilingual</span> <span class="hidden" data-render-id="quarto-navbar-tools:/Multilevel-Multilingual.pdf">/Multilevel-Multilingual.pdf</span> <span class="hidden" data-render-id="quarto-breadcrumbs-&lt;span-class=&#39;chapter-number&#39;&gt;4&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Unconditional-Model&lt;/span&gt;"><span class="chapter-number">4</span>  <span class="chapter-title">Unconditional Model</span></span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden" data-render-id="quarto-metatitle">Multilevel Multilingual - <span class="chapter-number">4</span>  <span class="chapter-title">Unconditional Model</span></span> <span class="hidden" data-render-id="quarto-twittercardtitle">Multilevel Multilingual - <span class="chapter-number">4</span>  <span class="chapter-title">Unconditional Model</span></span> <span class="hidden" data-render-id="quarto-ogcardtitle">Multilevel Multilingual - <span class="chapter-number">4</span>  <span class="chapter-title">Unconditional Model</span></span> <span class="hidden" data-render-id="quarto-metasitename">Multilevel Multilingual</span> <span class="hidden" data-render-id="quarto-twittercarddesc"></span> <span class="hidden" data-render-id="quarto-ogcardddesc"></span></p>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-StataCorp2023" class="csl-entry" role="listitem">
 StataCorp. (2023). <em>Stata 18 mixed effects reference manual</em>. Stata Press.
 </div>
@@ -780,7 +751,7 @@ StataCorp. (2023). <em>Stata 18 mixed effects reference manual</em>. Stata Press
 </section>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1313,19 +1284,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./descriptives-multilingual.html" class="pagination-link  aria-label=" &lt;span="" statistics&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span>
+      <a  href="/descriptives-multilingual.html" class="pagination-link  aria-label="&lt;span class=&#39;chapter-number&#39;&gt;3&lt;/span&gt;  &lt;span class=&#39;chapter-title&#39;&gt;Descriptive Statistics&lt;/span&gt;">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class='chapter-number'>3</span>  <span class='chapter-title'>Descriptive Statistics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cross-sectional-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Cross Sectional Multilevel Models</span>">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cross Sectional Multilevel Models</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a  href="/cross-sectional-multilingual.html" class="pagination-link" aria-label="&lt;span class=&#39;chapter-number&#39;&gt;5&lt;/span&gt;  &lt;span class=&#39;chapter-title&#39;&gt;Cross Sectional Multilevel Models&lt;/span&gt;">
+        <span class="nav-page-text"><span class='chapter-number'>5</span>  <span class='chapter-title'>Cross Sectional Multilevel Models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 
+</body>
 
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</html>
