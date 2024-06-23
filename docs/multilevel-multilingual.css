@@ -1,0 +1,9 @@
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
+.quarto-cover-image {  
+  max-width: 25%;
+}

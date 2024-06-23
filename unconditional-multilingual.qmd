@@ -35,20 +35,12 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/
 
 #### Stata
 
-```{stata, collectcode=TRUE}
+```{stata}
 
 use simulated_multilevel_data.dta // use data
 
-```
+mixed outcome || country:  // unconditional model
 
-```{stata, collectcode=TRUE}
-
-mixed outcome || country: id: // unconditional model
-  
-```
-
-```{stata}
-  
 estat icc // ICC
 
 ```
@@ -143,19 +135,11 @@ Again, closely following @StataCorp2023, @eq-ICCunconditional3B is the correlati
 
 #### Stata
 
-```{stata, collectcode=TRUE}
+```{stata}
 
 use simulated_multilevel_longitudinal_data.dta // use data
 
-```
-
-```{stata, collectcode=TRUE}
-
-mixed outcome || country: || id:  // unconditional model
-  
-```
-
-```{stata}
+mixed outcome || country: || id: // unconditional model
   
 estat icc // ICC
 

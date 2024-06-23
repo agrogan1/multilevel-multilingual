@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-18}
+\date{2024-06-22}
 
 \begin{document}
 \maketitle
@@ -332,7 +332,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -343,7 +343,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -372,7 +372,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 I used Quarto (Allaire et al., 2024) (\url{https://quarto.org/}) to
 create this Appendix. Quarto is a programming and publishing environment
@@ -391,7 +391,7 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} and
 \texttt{simulated\_multilevel\_longitudinal\_data.dta} files.
@@ -828,12 +828,14 @@ the data.
 
 \chapter{Unconditional Model}\label{unconditional-model}
 
+\section{Two Level Model}\label{two-level-model}
+
 An \emph{unconditional} multilevel model is a model with no independent
 variables. One should always run an unconditional model as the first
 step of a multilevel model in order to get a sense of the way that
 variation is apportioned in the model across the different levels.
 
-\section{The Equation}\label{the-equation}
+\subsection{The Equation}\label{the-equation}
 
 \begin{equation}\phantomsection\label{eq-MLMunconditional}{\text{outcome}_{ij}= \beta_0 + u_{0j} + e_{ij}}\end{equation}
 
@@ -844,22 +846,18 @@ The Intraclass Correlation Coefficient (ICC) is given by:
 In a two level multilevel model, the ICC provides a measure of the
 proportion of variation attributable to Level 2.
 
-\section{Run Models}\label{run-models}
+\subsection{Run Models}\label{run-models}
 
-\subsection{Stata}
+\subsubsection{Stata}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
 \KeywordTok{use}\NormalTok{ simulated\_multilevel\_data.dta }\CommentTok{// use data}
-\end{Highlighting}
-\end{Shaded}
 
-\begin{Shaded}
-\begin{Highlighting}[]
+\NormalTok{mixed outcome || country:  }\CommentTok{// unconditional model}
 
-\NormalTok{mixed outcome || country: }\CommentTok{// unconditional model}
-  
+\KeywordTok{estat}\NormalTok{ icc }\CommentTok{// ICC}
 \end{Highlighting}
 \end{Shaded}
 
@@ -896,16 +894,8 @@ country: Identity            |
                var(Residual) |   39.46106   1.024013      37.50421       41.52
 ------------------------------------------------------------------------------
 LR test vs. linear model: chibar2(01) = 166.31        Prob >= chibar2 = 0.0000
-\end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-  
-\KeywordTok{estat}\NormalTok{ icc }\CommentTok{// ICC}
-\end{Highlighting}
-\end{Shaded}
 
-\begin{verbatim}
 Intraclass correlation
 
 ------------------------------------------------------------------------------
@@ -915,7 +905,7 @@ Intraclass correlation
 ------------------------------------------------------------------------------
 \end{verbatim}
 
-\subsection{R}
+\subsubsection{R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -973,7 +963,7 @@ Fixed effects:
   Unadjusted ICC: 0.077
 \end{verbatim}
 
-\subsection{Julia}
+\subsubsection{Julia}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1029,18 +1019,257 @@ Residual              39.46106 6.28180
 0.07454637475695493
 \end{verbatim}
 
-\section{Interpretation}\label{interpretation-1}
+\subsection{Interpretation}\label{interpretation-1}
 
 In each case, the software finds that nearly 8\% of the variation in the
 outcome is explainable by the clustering of the observations in each
 country.
+
+\section{Three Level Model}\label{three-level-model}
+
+\subsection{The Equation}\label{the-equation-1}
+
+\begin{equation}\phantomsection\label{eq-MLMunconditional3}{\text{outcome}_{ij}= \beta_0 + u_{0j} + v_{0i} + e_{ij}}\end{equation}
+
+As discussed in the main text, in a three level model, there are two
+intraclass correlation coefficients (StataCorp, 2023). The formulas for
+the Intraclass Correlation Coefficient (ICC) are given by (StataCorp,
+2023):
+
+\begin{equation}\phantomsection\label{eq-ICCunconditional3A}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}}\end{equation}
+
+Again, following StataCorp (2023), Equation~\ref{eq-ICCunconditional3A}
+is the correlation of responses for person-timepoints from the same
+country but different persons.
+
+\begin{equation}\phantomsection\label{eq-ICCunconditional3B}{\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}}\end{equation}
+
+Again, closely following StataCorp (2023),
+Equation~\ref{eq-ICCunconditional3B} is the correlation of responses for
+person-timepoints from the same country and same person.
+
+\subsection{Run Models}\label{run-models-1}
+
+\subsubsection{Stata}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{use}\NormalTok{ simulated\_multilevel\_longitudinal\_data.dta }\CommentTok{// use data}
+
+\NormalTok{mixed outcome || country: || id: }\CommentTok{// unconditional model}
+  
+\KeywordTok{estat}\NormalTok{ icc }\CommentTok{// ICC}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -29058.266  
+Iteration 1:  Log likelihood = -29058.259  
+Iteration 2:  Log likelihood = -29058.259  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                              Number of obs = 9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+                country |         30        300      300.0        300
+                     id |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                         Wald chi2(0)  =     .
+Log likelihood = -29058.259                              Prob > chi2   =     .
+
+------------------------------------------------------------------------------
+     outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       _cons |   53.37768   .3387943   157.55   0.000     52.71366    54.04171
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+country: Identity            |
+                  var(_cons) |   3.232092   .8891367      1.885043     5.54174
+-----------------------------+------------------------------------------------
+id: Identity                 |
+                  var(_cons) |   11.72403   .5747501      10.64996    12.90641
+-----------------------------+------------------------------------------------
+               var(Residual) |   28.23424   .5154843      27.24178    29.26287
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 1314.88               Prob > chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
+
+
+Intraclass correlation
+
+------------------------------------------------------------------------------
+                       Level |        ICC   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+                     country |   .0748336   .0190847      .0450028    .1219141
+                  id|country |   .3462837   .0171461      .3134867    .3806097
+------------------------------------------------------------------------------
+\end{verbatim}
+
+\subsubsection{R}
+
+In R, the ICC for a three level model is easiest to estimate ``by
+hand''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(haven)}
+
+\NormalTok{dfL }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"simulated\_multilevel\_longitudinal\_data.dta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lme4) }\CommentTok{\# estimate multilevel models}
+
+\NormalTok{fit0L }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country}\SpecialCharTok{/}\NormalTok{id),}
+             \AttributeTok{data =}\NormalTok{ dfL) }\CommentTok{\# unconditional model}
+
+\FunctionTok{summary}\NormalTok{(fit0L)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by REML ['lmerMod']
+Formula: outcome ~ (1 | country/id)
+   Data: dfL
+
+REML criterion at convergence: 58116.8
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7858 -0.6059 -0.0062  0.6017  3.4348 
+
+Random effects:
+ Groups     Name        Variance Std.Dev.
+ id:country (Intercept) 11.724   3.424   
+ country    (Intercept)  3.351   1.830   
+ Residual               28.234   5.314   
+Number of obs: 9000, groups:  id:country, 3000; country, 30
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  53.3777     0.3446   154.9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{3.351} \SpecialCharTok{/}\NormalTok{ (}\FloatTok{11.724} \SpecialCharTok{+} \FloatTok{3.351} \SpecialCharTok{+} \FloatTok{28.234}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.07737422
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\FloatTok{3.351} \SpecialCharTok{+} \FloatTok{11.724}\NormalTok{) }\SpecialCharTok{/}\NormalTok{ (}\FloatTok{11.724} \SpecialCharTok{+} \FloatTok{3.351} \SpecialCharTok{+} \FloatTok{28.234}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.3480801
+\end{verbatim}
+
+\subsubsection{Julia}
+
+In Julia, the ICC for a three level model is also easiest to estimate
+``by hand''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{using} \BuiltInTok{Tables}\NormalTok{, }\BuiltInTok{MixedModels}\NormalTok{, }\BuiltInTok{StatFiles}\NormalTok{, }\BuiltInTok{DataFrames}\NormalTok{, }\BuiltInTok{CategoricalArrays}\NormalTok{, }\BuiltInTok{DataFramesMeta}
+
+\NormalTok{dfL }\OperatorTok{=} \FunctionTok{DataFrame}\NormalTok{(}\FunctionTok{load}\NormalTok{(}\StringTok{"simulated\_multilevel\_longitudinal\_data.dta"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{@transform}\NormalTok{!(dfL, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{m0L }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}} 
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country) }\OperatorTok{+} 
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ id)), dfL)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + (1 | country) + (1 | id)
+    logLik   -2 logLik      AIC         AICc        BIC     
+ -29058.2592  58116.5184  58124.5184  58124.5229  58152.9384
+
+Variance components:
+            Column   Variance Std.Dev.
+id       (Intercept)  11.72401 3.42403
+country  (Intercept)   3.23190 1.79775
+Residual              28.23426 5.31359
+ Number of obs: 9000; levels of grouping factors: 3000, 30
+
+  Fixed-effects parameters:
+──────────────────────────────────────────────────
+               Coef.  Std. Error       z  Pr(>|z|)
+──────────────────────────────────────────────────
+(Intercept)  53.3777    0.338785  157.56    <1e-99
+──────────────────────────────────────────────────
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\FloatTok{3.23190} \OperatorTok{/}\NormalTok{ (}\FloatTok{11.72401} \OperatorTok{+} \FloatTok{3.23190} \OperatorTok{+} \FloatTok{28.23426}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+0.07482952718176382
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{(}\FloatTok{3.23190} \OperatorTok{+} \FloatTok{11.72401}\NormalTok{) }\OperatorTok{/}\NormalTok{ (}\FloatTok{11.72401} \OperatorTok{+} \FloatTok{3.23190} \OperatorTok{+} \FloatTok{28.23426}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+0.34628041519632824
+\end{verbatim}
+
+\subsection{Interpretation}\label{interpretation-2}
+
+Each software suggests that almost 8\% of the variation in the outcome
+is within time points for different individuals within the same country,
+while almost 35\% of the variation in the outcome is within time points
+for the same individual within the same country.
 
 \bookmarksetup{startatroot}
 
 \chapter{Cross Sectional Multilevel
 Models}\label{cross-sectional-multilevel-models}
 
-\section{The Equation}\label{the-equation-1}
+\section{The Equation}\label{the-equation-2}
 
 Recall the general model of Equation~\ref{eq-MLMsimple}, and the syntax
 outlined in Section~\ref{sec-syntax}. Below in
@@ -1122,9 +1351,9 @@ All models in the examples below are run with \emph{uncorrelated} random
 effects, but could just as easily be run with \emph{correlated} random
 effects.
 
-\section{Run Models}\label{run-models-1}
+\section{Run Models}\label{run-models-2}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 Statistically--as noted in the main text--it is important to be clear on
 whether independent variables in one's model are continuous or
@@ -1228,7 +1457,7 @@ Categorical}\label{change-some-variables-to-categorical}
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-caution-color-frame, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1237,7 +1466,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1373,7 +1602,7 @@ HDI                  -0.0032286   0.0199255   -0.16    0.8713
 ─────────────────────────────────────────────────────────────
 \end{verbatim}
 
-\section{Interpretation}\label{interpretation-2}
+\section{Interpretation}\label{interpretation-3}
 
 Models suggest that parental warmth is associated with increases in the
 beneficial outcome, while physical punishment is associated with
@@ -1392,7 +1621,7 @@ Models}\label{longitudinal-multilevel-models}
 The data employed in these examples are a longitudinal extension of the
 data described in Section~\ref{sec-data}.
 
-\section{The Equation}\label{the-equation-2}
+\section{The Equation}\label{the-equation-3}
 
 \begin{equation}\phantomsection\label{eq-MLM-longitudinal}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\end{equation}
 
@@ -1448,7 +1677,7 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 Thus, again following Section 6.4, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
@@ -1458,9 +1687,9 @@ models with \emph{main effects, and interactions with time}.
 
 \end{tcolorbox}
 
-\section{Run Models}\label{run-models-2}
+\section{Run Models}\label{run-models-3}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 Remember that we are estimating a model in which time points are nested
 inside families, who are in turn nested inside countries. For each
@@ -1482,7 +1711,7 @@ the syntax examples below with regard to \texttt{id} and
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Run The Model}\label{run-the-model-3}
+\subsubsection{Run The Models}\label{run-the-models}
 
 \paragraph{Main Effects Only}\label{main-effects-only}
 
@@ -1649,9 +1878,9 @@ Categorical}\label{change-some-variables-to-categorical-2}
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Run The Model}\label{run-the-model-4}
+\subsubsection{Run The Models}\label{run-the-models-1}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-caution-color-frame, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1660,7 +1889,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1842,10 +2071,8 @@ t:HDI       -0.002  0.008
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Run The Model}\label{run-the-model-5}
-
-\paragraph{Change Country To
-Categorical}\label{change-country-to-categorical}
+\subsubsection{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical-3}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1856,6 +2083,8 @@ Categorical}\label{change-country-to-categorical}
 \PreprocessorTok{@transform}\NormalTok{!(dfL, }\OperatorTok{:}\NormalTok{intervention }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{intervention))}
 \end{Highlighting}
 \end{Shaded}
+
+\subsubsection{Run The Models}\label{run-the-models-2}
 
 \paragraph{Main Effects Only}\label{main-effects-only-2}
 
@@ -1946,7 +2175,7 @@ t & HDI                  -0.000955067  0.00382162  -0.25    0.8027
 ──────────────────────────────────────────────────────────────────
 \end{verbatim}
 
-\section{Interpretation}\label{interpretation-3}
+\section{Interpretation}\label{interpretation-4}
 
 The \emph{main effects only model} suggests that time is associated with
 increases in the outcome. In the main effects model, main effects other
@@ -1966,7 +2195,7 @@ associated with differences in the slope of the time trajectory. In this
 case, we find insufficient evidence that any independent variable is
 associated with changes in the slope of the time trajectory.
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, left=2mm, breakable, opacityback=0, toptitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, breakable, opacityback=0, toptitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, colback=white, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toprule=.15mm]
 
 In this example--for the sake of illustration--I test the interaction of
 \emph{every} independent variable with time. In many cases, it may make
