@@ -1,4 +1,4 @@
-# Unconditional Model
+# Unconditional Models
 
 ## Two Level Model
 
