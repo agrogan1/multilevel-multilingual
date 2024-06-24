@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-06-22">
+<meta name="dcterms.date" content="2024-06-24">
 
 <title>Multilevel Multilingual</title>
 <style>
@@ -168,10 +168,10 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Multilevel Multilingual">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-06-22">
-<meta name="citation_cover_date" content="2024-06-22">
+<meta name="citation_publication_date" content="2024-06-24">
+<meta name="citation_cover_date" content="2024-06-24">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-06-22">
+<meta name="citation_online_date" content="2024-06-24">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Quarto;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Carlos Scheidegger;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_fulltext_html_url=https://github.com/quarto-dev/quarto-cli;,citation_doi=10.5281/zenodo.5960048;">
@@ -267,7 +267,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unconditional-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unconditional Model</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unconditional Models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -330,7 +330,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 22, 2024</p>
+      <p class="date">June 24, 2024</p>
     </div>
   </div>
   
@@ -592,7 +592,7 @@ Table&nbsp;1.2: Sample of Simulated Multilevel Data
 </section>
 <section id="sec-syntax" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="sec-syntax"><span class="header-section-number">1.3</span> An Introduction To Equations and Syntax</h2>
-<p>To explain statistical syntax for each software, I consider the general case of a multilevel model with dependent variable <code>y</code>, independent variables <code>x</code> and <code>z</code>, clustering variable <code>group</code>, and a random slope for <code>x</code>. <em>i</em> is the index for the person, while <em>j</em> is the index for the <code>group</code>.</p>
+<p>To explain statistical syntax for each software, I consider the general case of a multilevel model with dependent variable <code>y</code>, independent variables <code>x</code> and <code>z</code>, clustering variable <code>group</code>, and a random slope for <code>x</code>. <em>i</em> is the index for the person, while <em>j</em> is the index for the group.</p>
 <p><span id="eq-MLMsimple"><span class="math display">\[y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} + u_{1j} \times x_{ij} + e_{ij} \tag{1.1}\]</span></span></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Julia</a></li></ul>
@@ -604,7 +604,7 @@ Table&nbsp;1.2: Sample of Simulated Multilevel Data
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>In R <code>lme4</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
+<p>In R <code>lme4</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -612,7 +612,7 @@ Table&nbsp;1.2: Sample of Simulated Multilevel Data
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>In Julia <code>MixedModels</code>, the general syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
+<p>In Julia <code>MixedModels</code>, the syntax for a multilevel model of the form described in <a href="#eq-MLMsimple" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">MixedModels</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1200,7 +1200,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
