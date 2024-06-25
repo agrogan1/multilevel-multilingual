@@ -15,9 +15,9 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 ```
 
-In many instances, we may wish to aggregate data. For example, we may wish to create contextual variables representing the average level of an indicator across a group. In the examples I am using in this book, the group under consideration is the country. Aggregating data is also an important part of discussions of within and between variation, and is an important part of the correlated random effects model.
+In many instances, we may wish to aggregate data. For example, we may wish to create *contextual variables* representing the average level of an indicator across a group. In the examples I am using in this book, the group under consideration is the country. Aggregating data is also an important part of discussions of within and between variation, and is an important part of the correlated random effects model.
 
-In the examples below, I create a group level variable for `warmth`, representing the average level of warmth in each country. If warmth is denoted by $\text{warmth}_{ij}$ then the country level variable is denoted by $\overline{warmth}_{.j}$.
+In the examples below, I create a group level variable for `warmth`, representing the average level of parental warmth in each country. If warmth is denoted by $\text{warmth}_{ij}$ then the country level variable is denoted by $\overline{warmth}_{.j}$.
 
 ::: {.panel-tabset group="language"}
 
