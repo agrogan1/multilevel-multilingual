@@ -123,7 +123,7 @@ As discussed in the main text, in a three level model, there are two intraclass 
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3A}
 
-Again, following @StataCorp2023, @eq-ICCunconditional3A is the correlation of responses for person-timepoints from the same country but different persons.
+Following @StataCorp2023, @eq-ICCunconditional3A is the correlation of responses for person-timepoints from the same country but different persons.
 
 $$\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3B}
 

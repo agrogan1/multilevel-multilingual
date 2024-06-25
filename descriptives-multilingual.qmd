@@ -102,7 +102,7 @@ describe(df) # descriptive statistics
 
 ## Interpretation
 
-Examining descriptive statistics is an important first step in any analysis. It is important to examine your descriptive statistics first, before skipping ahead to more sophisticated analyses, such as multilevel models.
+Examining descriptive statistics is an important first step in any analysis. It is important to examine your descriptive statistics before skipping ahead to more sophisticated analyses, such as multilevel models.
 
 In examining the descriptive statistics for this data, we get a sense of the data.
 

@@ -93,7 +93,8 @@ use simulated_multilevel_data.dta
 ```{stata}
 #| label: Stata-cross-sectional
 
-mixed outcome warmth physical_punishment i.identity i.intervention HDI || country: warmth
+mixed outcome warmth physical_punishment i.identity i.intervention HDI || /// 
+country: warmth
 
 ```
 

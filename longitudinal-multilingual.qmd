@@ -31,9 +31,9 @@ $$v_{0ij} + v_{1ij} \times \text{time}_{itj} + e_{itj}$$
 
 ## Growth Trajectories
 
-Remember, following Section 6.4, that in longitudinal multilevel models, the variable for *time* assumes an important role as we are often thinking of a *growth trajectory* over time.
+Remember, following the discussion in the main text, that in longitudinal multilevel models, the variable for *time* assumes an important role as we are often thinking of a *growth trajectory* over time.
 
-As discussed in Section 6.4, think about a model where *identity* is a (1/0) variable for membership in one of two groups:
+As discussed in the main text, think about a model where *identity* is a (1/0) variable for membership in one of two groups:
 
 $$\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{identity} \text{identity} + \beta_\text{interaction} \text{identity} \times \text{time} + u_{0i} + e_{it}$$
 
@@ -50,7 +50,7 @@ Then, each identity group has its own intercept and time trajectory:
 ::: {.callout-tip}
 ## Main Effects and Interactions
 
-Thus, again following Section 6.4, in longitudinal multilevel models, *main effects* modify the *intercept* of the time trajectory, while *interactions with time*, modify the *slope* of the time trajectory. Below, we run models with *main effects only*, then models with *main effects, and interactions with time*.
+Thus, again following the main text, in longitudinal multilevel models, *main effects* modify the *intercept* of the time trajectory, while *interactions with time*, modify the *slope* of the time trajectory. Below, we run models with *main effects only*, then models with *main effects, and interactions with time*.
 :::
 
 ## Run Models
@@ -78,7 +78,8 @@ use simulated_multilevel_longitudinal_data.dta
 ```{stata}
 #| label: Stata-maineffects
 
-mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth || id: t
+mixed outcome t warmth physical_punishment i.identity i.intervention HDI || /// 
+country: warmth || id: t
 
 ```
 

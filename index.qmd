@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Below, I describe the use of [Stata](https://www.stata.com/) [@StataCorp2023], [R](https://www.r-project.org/) [@RProgram; @JSSv067i01], and [Julia](https://www.julialang.org/) [@JuliaArticle; @MixedModels] to estimate multilevel models and to visualize data. 
+Below, I describe the use of [Stata](https://www.stata.com/) [@StataCorp2023], [R](https://www.r-project.org/) [@RProgram; @JSSv067i01], and [Julia](https://www.julialang.org/) [@JuliaArticle; @MixedModels] to estimate multilevel models. 
 
 All of these software packages can estimate multilevel models and can visualize relationships in the data. However, there are substantial differences between the different packages: Stata is proprietary *for cost* software, which is very well documented and very intuitive. While it costs money to purchase Stata, the price is often very reasonable for academic and educational use. R is free open source software which is less intuitive, but there are many excellent resources for learning R. There is often a cost associated with purchasing books and other materials for learning R, which sometimes feels like it offsets the fact that R is free. Julia is newer open source software, and ostensibly much faster than either Stata or R, which may be an important advantage when running multilevel models with very large data sets. At this point in time, both Stata and R feel much more *stable* than Julia which is still evolving software.
 
@@ -62,7 +62,8 @@ Of course, each of these programs can be run by itself, if you have them install
 ::: {.callout-note}
 ### Datasets
 
-The examples use the `simulated_multilevel_data.dta` and `simulated_multilevel_longitudinal_data.dta` files. 
+The examples use the `simulated_multilevel_data.dta` 
+and `simulated_multilevel_longitudinal_data.dta` files. 
 
 Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_data.dta) to download the cross-sectional data. 
 
