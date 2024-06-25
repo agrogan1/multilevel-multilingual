@@ -312,8 +312,8 @@ window.Quarto = {
 </section>
 <section id="growth-trajectories" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="growth-trajectories"><span class="header-section-number">6.3</span> Growth Trajectories</h2>
-<p>Remember, following Section 6.4, that in longitudinal multilevel models, the variable for <em>time</em> assumes an important role as we are often thinking of a <em>growth trajectory</em> over time.</p>
-<p>As discussed in Section 6.4, think about a model where <em>identity</em> is a (1/0) variable for membership in one of two groups:</p>
+<p>Remember, following the discussion in the main text, that in longitudinal multilevel models, the variable for <em>time</em> assumes an important role as we are often thinking of a <em>growth trajectory</em> over time.</p>
+<p>As discussed in the main text, think about a model where <em>identity</em> is a (1/0) variable for membership in one of two groups:</p>
 <p><span class="math display">\[\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{identity} \text{identity} + \beta_\text{interaction} \text{identity} \times \text{time} + u_{0i} + e_{it}\]</span></p>
 <p>Then, each identity group has its own intercept and time trajectory:</p>
 <div id="tbl-trajectory" class="quarto-float anchored">
@@ -361,7 +361,7 @@ Main Effects and Interactions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Thus, again following Section 6.4, in longitudinal multilevel models, <em>main effects</em> modify the <em>intercept</em> of the time trajectory, while <em>interactions with time</em>, modify the <em>slope</em> of the time trajectory. Below, we run models with <em>main effects only</em>, then models with <em>main effects, and interactions with time</em>.</p>
+<p>Thus, again following the main text, in longitudinal multilevel models, <em>main effects</em> modify the <em>intercept</em> of the time trajectory, while <em>interactions with time</em>, modify the <em>slope</em> of the time trajectory. Below, we run models with <em>main effects only</em>, then models with <em>main effects, and interactions with time</em>.</p>
 </div>
 </div>
 </section>
@@ -396,7 +396,8 @@ Warning
 <section id="main-effects-only" class="level5" data-number="6.4.0.2.1">
 <h5 data-number="6.4.0.2.1" class="anchored" data-anchor-id="main-effects-only"><span class="header-section-number">6.4.0.2.1</span> Main Effects Only</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || country: warmth || id: t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || <span class="co">/// </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>country: warmth || id: t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 

@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-24}
+\date{2024-06-25}
 
 \begin{document}
 \maketitle
@@ -270,8 +270,7 @@ thrilled.'' (Schanen, 2021)
 Below, I describe the use of \href{https://www.stata.com/}{Stata}
 (StataCorp, 2023), \href{https://www.r-project.org/}{R} (Bates et al.,
 2015; R Core Team, 2023), and \href{https://www.julialang.org/}{Julia}
-(Bates, 2024; Bezanson et al., 2017) to estimate multilevel models and
-to visualize data.
+(Bates, 2024; Bezanson et al., 2017) to estimate multilevel models.
 
 All of these software packages can estimate multilevel models and can
 visualize relationships in the data. However, there are substantial
@@ -332,7 +331,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -343,7 +342,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -372,7 +371,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 I used Quarto (Allaire et al., 2024) (\url{https://quarto.org/}) to
 create this Appendix. Quarto is a programming and publishing environment
@@ -391,7 +390,7 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} and
 \texttt{simulated\_multilevel\_longitudinal\_data.dta} files.
@@ -607,7 +606,7 @@ format such as \texttt{.csv}. Spreadsheets are likely to be a bad tool
 for storing quantitative data.
 
 \section{It Is Possible To Use Multiple Statistical
-Packages}\label{it-is-possible-to-use-multiple-statistical-packages}
+Packages}\label{sec-multiple-packages}
 
 While this Appendix focuses on the use of each individual statistical
 package on its own, it is certainly possible to use multiple statistical
@@ -796,8 +795,8 @@ Similarly to R, Julia relies on the idea of \emph{variable type}. I use
 \section{Interpretation}\label{interpretation}
 
 Examining descriptive statistics is an important first step in any
-analysis. It is important to examine your descriptive statistics first,
-before skipping ahead to more sophisticated analyses, such as multilevel
+analysis. It is important to examine your descriptive statistics before
+skipping ahead to more sophisticated analyses, such as multilevel
 models.
 
 In examining the descriptive statistics for this data, we get a sense of
@@ -1038,9 +1037,9 @@ the Intraclass Correlation Coefficient (ICC) are given by (StataCorp,
 
 \begin{equation}\phantomsection\label{eq-ICCunconditional3A}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}}\end{equation}
 
-Again, following StataCorp (2023), Equation~\ref{eq-ICCunconditional3A}
-is the correlation of responses for person-timepoints from the same
-country but different persons.
+Following StataCorp (2023), Equation~\ref{eq-ICCunconditional3A} is the
+correlation of responses for person-timepoints from the same country but
+different persons.
 
 \begin{equation}\phantomsection\label{eq-ICCunconditional3B}{\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}}\end{equation}
 
@@ -1353,7 +1352,7 @@ effects.
 
 \section{Run Models}\label{run-models-2}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 Statistically--as noted in the main text--it is important to be clear on
 whether independent variables in one's model are continuous or
@@ -1384,7 +1383,8 @@ below.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mixed outcome warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || country: warmth}
+\NormalTok{mixed outcome warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || }\CommentTok{/// }
+\NormalTok{country: warmth}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1457,7 +1457,7 @@ Categorical}\label{change-some-variables-to-categorical}
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1466,7 +1466,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1633,11 +1633,12 @@ data described in Section~\ref{sec-data}.
 
 \section{Growth Trajectories}\label{growth-trajectories}
 
-Remember, following Section 6.4, that in longitudinal multilevel models,
-the variable for \emph{time} assumes an important role as we are often
-thinking of a \emph{growth trajectory} over time.
+Remember, following the discussion in the main text, that in
+longitudinal multilevel models, the variable for \emph{time} assumes an
+important role as we are often thinking of a \emph{growth trajectory}
+over time.
 
-As discussed in Section 6.4, think about a model where \emph{identity}
+As discussed in the main text, think about a model where \emph{identity}
 is a (1/0) variable for membership in one of two groups:
 
 \[\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{identity} \text{identity} + \beta_\text{interaction} \text{identity} \times \text{time} + u_{0i} + e_{it}\]
@@ -1677,9 +1678,9 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
-Thus, again following Section 6.4, in longitudinal multilevel models,
+Thus, again following the main text, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
 while \emph{interactions with time}, modify the \emph{slope} of the time
 trajectory. Below, we run models with \emph{main effects only}, then
@@ -1689,7 +1690,7 @@ models with \emph{main effects, and interactions with time}.
 
 \section{Run Models}\label{run-models-3}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 Remember that we are estimating a model in which time points are nested
 inside families, who are in turn nested inside countries. For each
@@ -1717,7 +1718,8 @@ the syntax examples below with regard to \texttt{id} and
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mixed outcome t warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || country: warmth || id: t}
+\NormalTok{mixed outcome t warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || }\CommentTok{/// }
+\NormalTok{country: warmth || id: t}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1880,7 +1882,7 @@ Categorical}\label{change-some-variables-to-categorical-2}
 
 \subsubsection{Run The Models}\label{run-the-models-1}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1889,7 +1891,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -2195,7 +2197,7 @@ associated with differences in the slope of the time trajectory. In this
 case, we find insufficient evidence that any independent variable is
 associated with changes in the slope of the time trajectory.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, arc=.35mm, toprule=.15mm, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, opacityback=0, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, rightrule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, opacitybacktitle=0.6, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, bottomrule=.15mm, toprule=.15mm, coltitle=black, toptitle=1mm, colback=white, opacityback=0, titlerule=0mm, rightrule=.15mm, breakable]
 
 In this example--for the sake of illustration--I test the interaction of
 \emph{every} independent variable with time. In many cases, it may make
