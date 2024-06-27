@@ -620,6 +620,19 @@ intervention: 1.0     0.639641    0.217452     2.94    0.0033
 HDI                  -0.0032286   0.0199255   -0.16    0.8713
 ─────────────────────────────────────────────────────────────</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(<span class="fu">MIME</span>(<span class="st">"text/markdown"</span>), m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>|                     |    Est. |     SE |      z |      p | σ_country |
+|:------------------- | -------:| ------:| ------:| ------:| ---------:|
+| (Intercept)         | 51.9999 | 1.3712 |  37.92 | &lt;1e-99 |    1.7216 |
+| warmth              |  0.8345 | 0.0637 |  13.10 | &lt;1e-38 |    0.1509 |
+| physical_punishment | -0.9917 | 0.0798 | -12.43 | &lt;1e-34 |           |
+| identity: 1.0       | -0.3005 | 0.2170 |  -1.38 | 0.1662 |           |
+| intervention: 1.0   |  0.6396 | 0.2175 |   2.94 | 0.0033 |           |
+| HDI                 | -0.0032 | 0.0199 |  -0.16 | 0.8713 |           |
+| Residual            |  5.9140 |        |        |        |           |</code></pre>
+</div>
 </div>
 </section>
 </div>
