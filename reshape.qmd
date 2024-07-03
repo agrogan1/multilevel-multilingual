@@ -1,95 +1,138 @@
-# Reshaping Data in Stata {#sec-reshape}
+# Reshaping Data {#sec-reshape}
 
 ## Introduction
 
-Data can be reshaped from *wide* format to *long* format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data. The Stata command for reshaping data is `reshape`.
+Cross-sectional analyses make use of data in *wide* format: every row is a person, or family, and every person, or family, has a single row of data.
 
-Below, I detail the procedure for reshaping data in Stata. Here is a sample of the longitudinal data set used in this book.
+Longitudinal analyses make use of *long* data: every row is a person-timepoint, or family-timepoint, and every person, or family, has multiple rows of data.
 
-These data are in *long* format (see @tbl-datalong).
+Data therefore sometimes need to be *reshaped*, most often from *wide* format to *long* format. Almost any software that is capable of estimating multilevel models is capable of reshaping data. 
 
-> Every individual in the data has multiple rows. Every row of the data is a *person-timepoint*.
+Below, I detail the procedure for reshaping data in Stata and R. 
 
 ```{r}
+#| echo: false
+#| output: false
 
 library(haven)
 
 library(pander)
 
+library(Statamarkdown)
+
 ```
+
+
+## Data in Wide Format
+
+::: {.callout-note}
+The data below are in *wide* format.
+
+Every individual in the data set has a *single row of data*. Every row in the data set is an *individual* or *family*.
+:::
 
 ```{r}
+#| echo: false
 
-simulated_multilevel_longitudinal_data <- read_dta("simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta")
+simulated_multilevel_longitudinal_data_WIDE <- read_dta("simulated_multilevel_longitudinal_data_WIDE.dta")
 
-```
-
-```{r}
-#| label: tbl-reshapelongdata
-#| tbl-cap: "Data in Long Format"
-
-pander(head(simulated_multilevel_longitudinal_data))
-
-```
-
-## Data Management
-
-1. Because `reshape`-ing your data dramatically changes the structure of your data, it is a good idea to have your raw data saved in a location where it will not be changed, and can be retrieved again if the `reshape` command does not work correctly, or if you simply want to modify your `reshape`-ing data workflow.
-2. Usually we want to work with only a subset of your data, so keep only the data in which you are interested. In Stata, the command to keep only variables of interest would be `keep y x z t`.
-
-## Reshaping Data From Long To Wide
-
-While it is not often that we want to reshape data from *long* to *wide*, I do so here for illustrative purposes. The Stata command for reshaping the data to *wide* format is:
-
-```{stata, echo = TRUE, eval=FALSE}
-
-reshape wide physical_punishment warmth outcome, i(id) j(t)
-
-```
-
-Notice that I only list variables that vary over time, or are *time varying*. Stata assumes that variables that are not listed do not vary over time, or are *time invariant*.
-
-The data are now in *wide* format (See @tbl-datawide).
-
-> Every individual in the data set has a single row of data. Every row in the data set is an individual.
-
-```{r}
-
-simulated_multilevel_longitudinal_data_WIDE <- read_dta("simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data_WIDE.dta")
+simulated_multilevel_longitudinal_data <- read_dta("simulated_multilevel_longitudinal_data.dta")
 
 ```
 
 ```{r}
 #| label: tbl-reshapewidedata
 #| tbl-cap: "Data in Wide Format"
+#| echo: false
 
 pander(head(simulated_multilevel_longitudinal_data_WIDE))
 
 ```
 
+## Data Management
+
+1. Because reshaping your data dramatically changes the structure of your data, it is a good idea to have your raw data saved in a location where it will not be changed, and can be retrieved again if the reshape command does not work correctly, or if you simply want to modify your reshaping data workflow.
+2. Usually we want to work with only a subset of your data, so keep only the data in which you are interested. 
+    - In Stata, the command to keep only variables of interest would be `keep y x z t`.
+    - In R, one option would be to use the subset function: `mysubset <- subset(mydata, select = c(y, x, z, t))`
+
 ## Reshaping Data From Wide To Long
 
-Usually, we are more interested in reshaping data from *wide* to *long*, and that is what I do now.
+Usually, we are most interested in reshaping data from *wide* to *long*.
 
-Notice again that I only list variables that vary over time, or are *time varying*. As before, Stata assumes that variables that are not listed do not vary over time, or are *time invariant*.
+::: {.panel-tabset group="language"}
+
+### Stata
+
+Notice that in Stata, that I only list variables that vary over time, or are *time varying*. Stata assumes that variables that are *not listed* do *not vary over time*, or are *time invariant*.
 
 Notice also that our *time varying* data are in the *stub-time* format, e.g. `warmth1`, `warmth2`, `physical_punishment1` `physical_punishment2`, etc. Because the variables are named in this way, Stata knows to use the *stub* (e.g. `warmth`) as the variable name, and the numeric value, (e.g. 1, 2, 3) as the timepoint.
 
-The command is: 
+> The `id` variable, whatever it is named, has to uniquely identify the observations. A useful Stata command here is `isid`, e.g. `isid id`. If your `id` variable is not unique, it is often due to missing values. `drop if id == .` usually solves the problem (assuming that your `id` variable is indeed named `id`, and not something else).
 
-```{stata, echo = TRUE, eval=FALSE}
 
-reshape long physical_punishment warmth outcome, i(id) j(t)
+```{stata, collectcode=TRUE}
+
+use simulated_multilevel_longitudinal_data_WIDE.dta, clear
+
+describe
+
+reshape long outcome physical_punishment warmth, i(id) j(wave)
 
 ```
 
-> The `id` variable, whatever it is named, has to uniquely identify the observations. A useful Stata command here is `isid`, e.g. `isid id`. If your `id` variable is not unique, it is often due to missing values. `drop if id == .` usually solves the problem (assuming that your `id` variable is indeed named `id`, and not something else).
+### R
 
-If we use this command, we are back to the original format of the data set. 
+```{r}
+
+library(dplyr) # data wrangling
+
+library(tidyr) # tidy (reshape data)
+
+# rename variables with "_" separator
+
+df <- simulated_multilevel_longitudinal_data_WIDE %>%
+  rename(outcome_1 = outcome1,
+         outcome_2 = outcome2,
+         outcome_3 = outcome3,
+         physical_punishment_1 = physical_punishment1,
+         physical_punishment_2 = physical_punishment2,
+         physical_punishment_3 = physical_punishment3,
+         warmth_1 = warmth1,
+         warmth_2 = warmth2,
+         warmth_3 = warmth3) 
+
+# pivot_longer() to long data
+
+dfL <- df %>%
+  pivot_longer(cols = c(outcome_1,
+                        outcome_2,
+                        outcome_3,
+                        physical_punishment_1,
+                        physical_punishment_2,
+                        physical_punishment_3,
+                        warmth_1,
+                        warmth_2,
+                        warmth_3), 
+               names_pattern = "(.+)_(.+)",
+               names_to = c(".value", "t"))
+
+```
+
+:::
+
+## Data in Long Format
+
+::: {.callout-note}
+The data below are in *long* format.
+
+Every individual/family in the data set has a *multiple rows of data*. Every row in the data set is an *individual-timepoint* or *family-timepoint*.
+:::
 
 ```{r}
 #| label: tbl-reshapelongdata2
 #| tbl-cap: "Data in Long Format"
+#| echo: false
 
 pander(head(simulated_multilevel_longitudinal_data))
 
