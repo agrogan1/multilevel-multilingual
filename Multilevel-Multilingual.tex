@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-27}
+\date{2024-07-04}
 
 \begin{document}
 \maketitle
@@ -277,15 +277,16 @@ visualize relationships in the data. However, there are substantial
 differences between the different packages: Stata is proprietary
 \emph{for cost} software, which is very well documented and very
 intuitive. While it costs money to purchase Stata, the price is often
-very reasonable for academic and educational use. R is free open source
-software which is less intuitive, but there are many excellent resources
-for learning R. There is often a cost associated with purchasing books
-and other materials for learning R, which sometimes feels like it
-offsets the fact that R is free. Julia is newer open source software,
-and ostensibly much faster than either Stata or R, which may be an
-important advantage when running multilevel models with very large data
-sets. At this point in time, both Stata and R feel much more
-\emph{stable} than Julia which is still evolving software.
+very reasonable for academic and educational use. R is \emph{free} open
+source software which is less intuitive, but there are many excellent
+resources for learning R. There is often a cost associated with
+purchasing books and other materials for learning R, which sometimes
+feels like it offsets the fact that R is free. Julia is newer open
+source software, also \emph{free}, and ostensibly much faster than
+either Stata or R, which may be an important advantage when running
+multilevel models with very large data sets. At this point in time, both
+Stata and R feel much more \emph{stable} than Julia which is still
+evolving software.
 
 While any of these software packages can be used for learning and
 estimating multilevel models, I will offer my own opinion--based upon 15
@@ -331,7 +332,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colframe=quarto-callout-tip-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -342,7 +343,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colframe=quarto-callout-tip-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -371,7 +372,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colframe=quarto-callout-tip-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 I used Quarto (Allaire et al., 2024) (\url{https://quarto.org/}) to
 create this Appendix. Quarto is a programming and publishing environment
@@ -390,7 +391,7 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, colframe=quarto-callout-note-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} and
 \texttt{simulated\_multilevel\_longitudinal\_data.dta} files.
@@ -591,7 +592,7 @@ scripts are stored in \texttt{.do} files; in R, scripts are stored in
 \texttt{.R} files, and in Julia, scripts are stored in \texttt{.jl}
 files.
 
-\section{Script Flow}\label{script-flow}
+\section{Script Flow}\label{sec-script-flow}
 
 A good practice when writing a script, is to have a script that begins
 with the raw data, moves through any necessary re-coding or cleaning of
@@ -1265,8 +1266,7 @@ for the same individual within the same country.
 
 \bookmarksetup{startatroot}
 
-\chapter{Cross Sectional Multilevel
-Models}\label{cross-sectional-multilevel-models}
+\chapter{Cross Sectional Multilevel Models}\label{sec-crosssectional}
 
 \section{The Equation}\label{the-equation-2}
 
@@ -1352,7 +1352,7 @@ effects.
 
 \section{Run Models}\label{run-models-2}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, colframe=quarto-callout-warning-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 Statistically--as noted in the main text--it is important to be clear on
 whether independent variables in one's model are continuous or
@@ -1457,7 +1457,7 @@ Categorical}\label{change-some-variables-to-categorical}
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, opacityback=0, colframe=quarto-callout-caution-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1466,7 +1466,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colframe=quarto-callout-tip-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1613,8 +1613,7 @@ outcome.
 
 \bookmarksetup{startatroot}
 
-\chapter{Longitudinal Multilevel
-Models}\label{longitudinal-multilevel-models}
+\chapter{Longitudinal Multilevel Models}\label{sec-longitudinal}
 
 \section{The Data}\label{the-data}
 
@@ -1678,7 +1677,7 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colframe=quarto-callout-tip-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 Thus, again following the main text, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
@@ -1690,7 +1689,7 @@ models with \emph{main effects, and interactions with time}.
 
 \section{Run Models}\label{run-models-3}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, colframe=quarto-callout-warning-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 Remember that we are estimating a model in which time points are nested
 inside families, who are in turn nested inside countries. For each
@@ -1882,7 +1881,7 @@ Categorical}\label{change-some-variables-to-categorical-2}
 
 \subsubsection{Run The Models}\label{run-the-models-1}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, opacityback=0, colframe=quarto-callout-caution-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1891,7 +1890,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colframe=quarto-callout-tip-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -2197,7 +2196,7 @@ associated with differences in the slope of the time trajectory. In this
 case, we find insufficient evidence that any independent variable is
 associated with changes in the slope of the time trajectory.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, arc=.35mm, colback=white, opacitybacktitle=0.6, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, bottomtitle=1mm, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, colframe=quarto-callout-tip-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
 
 In this example--for the sake of illustration--I test the interaction of
 \emph{every} independent variable with time. In many cases, it may make
@@ -2218,6 +2217,445 @@ would have indicated that the intervention was associated with more
 rapid increases in the outcome over time \emph{in addition to} the fact
 that the intervention is associated with higher initial levels of the
 outcome.
+
+\bookmarksetup{startatroot}
+
+\chapter{Reshaping Data}\label{sec-reshape}
+
+\section{Introduction}\label{introduction-1}
+
+Cross-sectional analyses (Chapter~\ref{sec-crosssectional}) make use of
+data in \emph{wide} format: every row is a person, or family, and every
+person, or family, has a single row of data.
+
+Longitudinal analyses (Chapter~\ref{sec-longitudinal}) make use of
+\emph{long} data: every row is a person-timepoint, or family-timepoint,
+and every person, or family, has multiple rows of data.
+
+Data therefore sometimes need to be \emph{reshaped}, most often from
+\emph{wide} format to \emph{long} format. Almost any software that is
+capable of estimating multilevel models is capable of reshaping data.
+
+Below, I detail the procedure for reshaping data in Stata and R.
+
+\section{Data in Wide Format}\label{data-in-wide-format}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, colframe=quarto-callout-note-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
+
+The data below are in \emph{wide} format.
+
+Every individual in the data set has a \emph{single row of data}. Every
+row in the data set is an \emph{individual} or \emph{family}.
+
+\end{tcolorbox}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1067}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3067}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1333}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1467}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3067}}@{}}
+
+\caption{\label{tbl-reshapewidedata}Data in Wide Format}
+
+\tabularnewline
+
+\caption{Table continues below}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment2
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment2
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1.1 & 3 & 3 & 57.47 & 3 \\
+1.10 & 2 & 0 & 62.9 & 3 \\
+1.100 & 2 & 5 & 62.71 & 1 \\
+1.11 & 4 & 4 & 55.61 & 2 \\
+1.12 & 5 & 4 & 41.15 & 5 \\
+1.13 & 4 & 5 & 63.66 & 3 \\
+
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1235}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1358}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2840}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1235}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1358}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1235}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0741}}@{}}
+
+\caption{\label{tbl-reshapewidedata}Data in Wide Format}
+
+\tabularnewline
+
+\caption{Table continues below}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+warmth2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+country
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+warmth2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+country
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+4 & 55.06 & 1 & 2 & 58.77 & 1 & 69 \\
+0 & 56.67 & 2 & 0 & 68.22 & 1 & 69 \\
+4 & 51.58 & 2 & 5 & 55.51 & 1 & 69 \\
+5 & 50.9 & 3 & 3 & 48.02 & 1 & 69 \\
+5 & 45.4 & 3 & 4 & 55.86 & 1 & 69 \\
+3 & 64.81 & 3 & 3 & 58.3 & 1 & 69 \\
+
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2083}}@{}}
+
+\caption{\label{tbl-reshapewidedata}Data in Wide Format}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+family
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 1 & 0 \\
+10 & 1 & 0 \\
+100 & 1 & 1 \\
+11 & 1 & 1 \\
+12 & 0 & 0 \\
+13 & 0 & 1 \\
+
+\end{longtable}
+
+\section{Data Management}\label{data-management}
+
+Because reshaping your data dramatically changes the structure of your
+data\ldots{}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  It is a good idea to have your raw data saved in a location where it
+  will not be changed, and can be retrieved again if the reshape command
+  does not work correctly, or if you simply want to modify your
+  reshaping data workflow.(CF Section~\ref{sec-script-flow})
+\item
+  Usually we want to work with only a \emph{subset} of your data, to
+  keep only the data in which we are interested.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    In Stata, the command to keep only variables of interest would be:
+    \texttt{keep\ y\ x\ z\ t}.
+  \item
+    In R, one option would be to use the subset function:
+    \texttt{mysubset\ \textless{}-\ subset(mydata,\ select\ =\ c(y,\ x,\ z,\ t))}
+  \end{itemize}
+\end{enumerate}
+
+\section{Reshaping Data From Wide To
+Long}\label{reshaping-data-from-wide-to-long}
+
+Usually, we are most interested in reshaping data from \emph{wide} to
+\emph{long}.
+
+\subsection{Stata}
+
+In Stata, I only list variables that vary over time, or are \emph{time
+varying}. Stata assumes that variables that are \emph{not listed} do
+\emph{not vary over time}, or are \emph{time invariant}.
+
+Notice also that our \emph{time varying} data are in the
+\emph{stub-time} format, e.g.~\texttt{warmth1}, \texttt{warmth2},
+\texttt{physical\_punishment1} \texttt{physical\_punishment2}, etc.
+Because the variables are named in this way, Stata knows to use the
+\emph{stub} (e.g.~\texttt{warmth}) as the variable name, and the numeric
+value, (e.g.~1, 2, 3) as the timepoint.
+
+\begin{quote}
+The \texttt{id} variable, whatever it is named, has to uniquely identify
+the observations. A useful Stata command here is \texttt{isid},
+e.g.~\texttt{isid\ id}. If your \texttt{id} variable is not unique, it
+is often due to missing values. \texttt{drop\ if\ id\ ==\ .} usually
+solves the problem (assuming that your \texttt{id} variable is indeed
+named \texttt{id}, and not something else).
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{use}\NormalTok{ simulated\_multilevel\_longitudinal\_data\_WIDE.dta, }\KeywordTok{clear}
+
+\KeywordTok{describe}
+
+\KeywordTok{reshape} \KeywordTok{long}\NormalTok{ outcome physical\_punishment warmth, i(id) j(wave)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Contains data from simulated_multilevel_longitudinal_data_WIDE.dta
+ Observations:         3,000                  
+    Variables:            15                  3 Jul 2024 14:29
+-------------------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------------------
+id              str7    %9s                   unique country family id
+physical_puni~1 float   %9.0g                 1 physical_punishment
+warmth1         float   %9.0g                 1 warmth
+outcome1        float   %9.0g                 1 outcome
+physical_puni~2 float   %9.0g                 2 physical_punishment
+warmth2         float   %9.0g                 2 warmth
+outcome2        float   %9.0g                 2 outcome
+physical_puni~3 float   %9.0g                 3 physical_punishment
+warmth3         float   %9.0g                 3 warmth
+outcome3        float   %9.0g                 3 outcome
+country         float   %9.0g                 country id
+HDI             float   %9.0g                 Human Development Index
+family          float   %9.0g                 family id
+identity        float   %9.0g                 hypothetical identity group variable
+intervention    float   %9.0g                 recieved intervention
+-------------------------------------------------------------------------------------------
+Sorted by: id
+
+(j = 1 2 3)
+
+Data                               Wide   ->   Long
+-----------------------------------------------------------------------------
+Number of observations            3,000   ->   9,000       
+Number of variables                  15   ->   10          
+j variable (3 values)                     ->   wave
+xij variables:
+             outcome1 outcome2 outcome3   ->   outcome
+physical_punishment1 physical_punishment2 physical_punishment3->physical_punishment
+                warmth1 warmth2 warmth3   ->   warmth
+-----------------------------------------------------------------------------
+\end{verbatim}
+
+\subsection{R}
+
+In R, I only list variables that vary over time, or are \emph{time
+varying}.
+
+Notice also that our \emph{time varying} data are in the
+\emph{stub-time} format, e.g.~\texttt{warmth1}, \texttt{warmth2},
+\texttt{physical\_punishment1} \texttt{physical\_punishment2}, etc. In
+order to facilitate reshaping the data, it is helpful in R to insert an
+underscore (\texttt{\_}) to separate the \emph{stub} from the
+\emph{time} variable.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data wrangling}
+
+\FunctionTok{library}\NormalTok{(tidyr) }\CommentTok{\# tidy (reshape data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# rename variables with "\_" separator}
+
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ simulated\_multilevel\_longitudinal\_data\_WIDE }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{outcome\_1 =}\NormalTok{ outcome1,}
+         \AttributeTok{outcome\_2 =}\NormalTok{ outcome2,}
+         \AttributeTok{outcome\_3 =}\NormalTok{ outcome3,}
+         \AttributeTok{physical\_punishment\_1 =}\NormalTok{ physical\_punishment1,}
+         \AttributeTok{physical\_punishment\_2 =}\NormalTok{ physical\_punishment2,}
+         \AttributeTok{physical\_punishment\_3 =}\NormalTok{ physical\_punishment3,}
+         \AttributeTok{warmth\_1 =}\NormalTok{ warmth1,}
+         \AttributeTok{warmth\_2 =}\NormalTok{ warmth2,}
+         \AttributeTok{warmth\_3 =}\NormalTok{ warmth3) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# pivot\_longer() to long data}
+
+\NormalTok{dfL }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \FunctionTok{c}\NormalTok{(outcome\_1,}
+\NormalTok{                        outcome\_2,}
+\NormalTok{                        outcome\_3,}
+\NormalTok{                        physical\_punishment\_1,}
+\NormalTok{                        physical\_punishment\_2,}
+\NormalTok{                        physical\_punishment\_3,}
+\NormalTok{                        warmth\_1,}
+\NormalTok{                        warmth\_2,}
+\NormalTok{                        warmth\_3), }
+               \AttributeTok{names\_pattern =} \StringTok{"(.+)\_(.+)"}\NormalTok{,}
+               \AttributeTok{names\_to =} \FunctionTok{c}\NormalTok{(}\StringTok{".value"}\NormalTok{, }\StringTok{"t"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Data in Long Format}\label{data-in-long-format}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacitybacktitle=0.6, colback=white, leftrule=.75mm, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, colframe=quarto-callout-note-color-frame, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, bottomtitle=1mm, toprule=.15mm]
+
+The data below are in \emph{long} format.
+
+Every individual/family in the data set has a \emph{multiple rows of
+data}. Every row in the data set is an \emph{individual-timepoint} or
+\emph{family-timepoint}.
+
+\end{tcolorbox}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2083}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0556}}@{}}
+
+\caption{\label{tbl-reshapelongdata2}Data in Long Format}
+
+\tabularnewline
+
+\caption{Table continues below}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+country
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+family
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+country
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+family
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 69 & 1 & 1.1 & 1 & 0 & 1 \\
+1 & 69 & 1 & 1.1 & 1 & 0 & 2 \\
+1 & 69 & 1 & 1.1 & 1 & 0 & 3 \\
+1 & 69 & 2 & 1.2 & 1 & 1 & 1 \\
+1 & 69 & 2 & 1.2 & 1 & 1 & 2 \\
+1 & 69 & 2 & 1.2 & 1 & 1 & 3 \\
+
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3056}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1389}}@{}}
+
+\caption{\label{tbl-reshapelongdata2}Data in Long Format}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+physical\_punishment
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+3 & 3 & 57.47 \\
+3 & 4 & 55.06 \\
+1 & 2 & 58.77 \\
+2 & 1 & 50.1 \\
+3 & 0 & 53.31 \\
+3 & 1 & 49.79 \\
+
+\end{longtable}
 
 \bookmarksetup{startatroot}
 

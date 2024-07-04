@@ -215,6 +215,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./reshape-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -231,7 +237,7 @@ div.csl-indent {
   <ul>
   <li><a href="#statistical-software-is-best-run-using-a-script" id="toc-statistical-software-is-best-run-using-a-script" class="nav-link active" data-scroll-target="#statistical-software-is-best-run-using-a-script"><span class="header-section-number">2.1</span> Statistical Software Is Best Run Using a Script</a></li>
   <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts"><span class="header-section-number">2.2</span> Scripts</a></li>
-  <li><a href="#script-flow" id="toc-script-flow" class="nav-link" data-scroll-target="#script-flow"><span class="header-section-number">2.3</span> Script Flow</a></li>
+  <li><a href="#sec-script-flow" id="toc-sec-script-flow" class="nav-link" data-scroll-target="#sec-script-flow"><span class="header-section-number">2.3</span> Script Flow</a></li>
   <li><a href="#storing-statistical-data" id="toc-storing-statistical-data" class="nav-link" data-scroll-target="#storing-statistical-data"><span class="header-section-number">2.4</span> Storing Statistical Data</a></li>
   <li><a href="#sec-multiple-packages" id="toc-sec-multiple-packages" class="nav-link" data-scroll-target="#sec-multiple-packages"><span class="header-section-number">2.5</span> It Is Possible To Use Multiple Statistical Packages</a></li>
   <li><a href="#good-statistical-workflows-require-safe-workspaces" id="toc-good-statistical-workflows-require-safe-workspaces" class="nav-link" data-scroll-target="#good-statistical-workflows-require-safe-workspaces"><span class="header-section-number">2.6</span> Good Statistical Workflows Require Safe Workspaces</a></li>
@@ -266,7 +272,7 @@ div.csl-indent {
 <p>Many statistical workflows–whatever the statistical package being used–follow the same conceptual pattern.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="workflow.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="A Common Statistical Workflow"><img src="workflow.png" class="img-fluid figure-img" style="width:33.0%" alt="A Common Statistical Workflow"></a></p>
+<p><a href="workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="A Common Statistical Workflow"><img src="workflow.png" class="img-fluid figure-img" style="width:33.0%" alt="A Common Statistical Workflow"></a></p>
 <figcaption>A Common Statistical Workflow</figcaption>
 </figure>
 </div>
@@ -281,8 +287,8 @@ div.csl-indent {
 <h2 data-number="2.2" class="anchored" data-anchor-id="scripts"><span class="header-section-number">2.2</span> Scripts</h2>
 <p>For most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document <span class="citation" data-cites="Allaire_Quarto_2024">(<a href="references.html#ref-Allaire_Quarto_2024" role="doc-biblioref">Allaire et al., 2024</a>)</span> as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: in Stata, scripts are stored in <code>.do</code> files; in R, scripts are stored in <code>.R</code> files, and in Julia, scripts are stored in <code>.jl</code> files.</p>
 </section>
-<section id="script-flow" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="script-flow"><span class="header-section-number">2.3</span> Script Flow</h2>
+<section id="sec-script-flow" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-script-flow"><span class="header-section-number">2.3</span> Script Flow</h2>
 <p>A good practice when writing a script, is to have a script that begins with the raw data, moves through any necessary re-coding or cleaning of the data, generates descriptive statistics, generates the appropriate multivariate results, and then generates any necessary visualizations.</p>
 </section>
 <section id="storing-statistical-data" class="level2" data-number="2.4">
@@ -857,7 +863,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

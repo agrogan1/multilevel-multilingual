@@ -22,8 +22,8 @@ book:
     - descriptives-multilingual.qmd
     - unconditional-multilingual.qmd
     - cross-sectional-multilingual.qmd
-    - reshape-multilingual.qmd
     - longitudinal-multilingual.qmd
+    - reshape-multilingual.qmd
     - references.qmd
   navbar:
     background: primary

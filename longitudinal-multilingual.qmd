@@ -1,4 +1,4 @@
-# Longitudinal Multilevel Models
+# Longitudinal Multilevel Models {#sec-longitudinal}
 
 ```{r}
 #| label: longitudinalsetup
