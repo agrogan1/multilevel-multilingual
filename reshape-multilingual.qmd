@@ -51,9 +51,11 @@ pander(head(simulated_multilevel_longitudinal_data_WIDE))
 
 ## Data Management
 
-1. Because reshaping your data dramatically changes the structure of your data, it is a good idea to have your raw data saved in a location where it will not be changed, and can be retrieved again if the reshape command does not work correctly, or if you simply want to modify your reshaping data workflow.
-2. Usually we want to work with only a subset of your data, so keep only the data in which you are interested. 
-    - In Stata, the command to keep only variables of interest would be `keep y x z t`.
+Because reshaping your data dramatically changes the structure of your data... 
+
+1. It is a good idea to have your raw data saved in a location where it will not be changed, and can be retrieved again if the reshape command does not work correctly, or if you simply want to modify your reshaping data workflow.(CF @sec-script-flow)
+2. Usually we want to work with only a *subset* of your data, to keep only the data in which we are interested. 
+    - In Stata, the command to keep only variables of interest would be: `keep y x z t`.
     - In R, one option would be to use the subset function: `mysubset <- subset(mydata, select = c(y, x, z, t))`
 
 ## Reshaping Data From Wide To Long
@@ -64,7 +66,7 @@ Usually, we are most interested in reshaping data from *wide* to *long*.
 
 ### Stata
 
-Notice that in Stata, that I only list variables that vary over time, or are *time varying*. Stata assumes that variables that are *not listed* do *not vary over time*, or are *time invariant*.
+In Stata, I only list variables that vary over time, or are *time varying*. Stata assumes that variables that are *not listed* do *not vary over time*, or are *time invariant*.
 
 Notice also that our *time varying* data are in the *stub-time* format, e.g. `warmth1`, `warmth2`, `physical_punishment1` `physical_punishment2`, etc. Because the variables are named in this way, Stata knows to use the *stub* (e.g. `warmth`) as the variable name, and the numeric value, (e.g. 1, 2, 3) as the timepoint.
 
@@ -83,11 +85,20 @@ reshape long outcome physical_punishment warmth, i(id) j(wave)
 
 ### R
 
+In R, I only list variables that vary over time, or are *time varying*. 
+
+Notice also that our *time varying* data are in the *stub-time* format, e.g. `warmth1`, `warmth2`, `physical_punishment1` `physical_punishment2`, etc. In order to facilitate reshaping the data, it is helpful in R to insert an underscore (`_`) to separate the *stub* from the *time* variable. 
+
 ```{r}
+#| output: false
 
 library(dplyr) # data wrangling
 
 library(tidyr) # tidy (reshape data)
+
+```
+
+```{r}
 
 # rename variables with "_" separator
 
@@ -101,6 +112,10 @@ df <- simulated_multilevel_longitudinal_data_WIDE %>%
          warmth_1 = warmth1,
          warmth_2 = warmth2,
          warmth_3 = warmth3) 
+
+```
+
+```{r}
 
 # pivot_longer() to long data
 
