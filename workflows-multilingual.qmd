@@ -36,6 +36,23 @@ It is also *very important* to be aware that good complex workflows are *highly 
 
 Developing a good documented and auditable workflow that is implemented in code requires a lot of patience, and often, **many iterations**. Working through these many iterations can be psychologically demanding. It is important to remember that careful attention to getting the details right early in the research process, while sometimes tiring and frustrating, will pay large dividends later on when the research is reviewed, presented, published and read.
 
+## Good Statistical Workflows Often Allow Multiple Principled Ways Forward
+
+One of my most recent ideas about statistical workflows is that there are certainly *wrong* decisions that one can make with data. 
+
+For example, I would not want to write the paper that says that smoking prevents lung cancer, nor would I want to write a paper saying physical punishment is good for children. 
+
+That being said, I think there are often *multiple principled ways forward*.
+
+Often the key is not so much to make the 100% correct decision, but to make one of *several possible principled decisions*. 
+
+Then after making a *principled decision*, one is *transparent* and *thorough* about describing the decision that one made. 
+
+For example, in implementing a multilevel analysis, I would have many choices: I could estimate only a random intercept; estimate one or more random slopes; or estimate all possible random slopes. The random effects could be correlated or uncorrelated. I could estimate only main effects, or could estimate interactions of several variables. Each of these would be a different, yet principled, approach to analyzing the data.
+
+In science and statistics, we often want an answer that provides one clear direction. Instead, I'm increasingly convinced that the best science (and teaching!) often involves engaging in open discussion about the multiple possible alternatives, and then choosing one principled solution, and being transparent about its implementation. 
+
+
 
 
 
