@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Cross-sectional analyses (@sec-crosssectional) make use of data in *wide* format: every row is a person, or family, and every person, or family, has a single row of data.
+Cross-sectional analyses ([Section @sec-crosssectional]) make use of data in *wide* format: every row is a person, or family, and every person, or family, has a single row of data.
 
-Longitudinal analyses (@sec-longitudinal) make use of *long* data: every row is a person-timepoint, or family-timepoint, and every person, or family, has multiple rows of data.
+Longitudinal analyses ([Section @sec-longitudinal]) make use of *long* data: every row is a person-timepoint, or family-timepoint, and every person, or family, has multiple rows of data.
 
 Data therefore sometimes need to be *reshaped*, most often from *wide* format to *long* format. Almost any software that is capable of estimating multilevel models is capable of reshaping data. 
 

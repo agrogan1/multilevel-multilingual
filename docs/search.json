@@ -294,7 +294,7 @@
     "href": "reshape-multilingual.html",
     "title": "7  Reshaping Data",
     "section": "",
-    "text": "7.1 Introduction\nCross-sectional analyses (Chapter 5) make use of data in wide format: every row is a person, or family, and every person, or family, has a single row of data.\nLongitudinal analyses (Chapter 6) make use of long data: every row is a person-timepoint, or family-timepoint, and every person, or family, has multiple rows of data.\nData therefore sometimes need to be reshaped, most often from wide format to long format. Almost any software that is capable of estimating multilevel models is capable of reshaping data.\nBelow, I detail the procedure for reshaping data in Stata and R.",
+    "text": "7.1 Introduction\nCross-sectional analyses (Section 5) make use of data in wide format: every row is a person, or family, and every person, or family, has a single row of data.\nLongitudinal analyses (Section 6) make use of long data: every row is a person-timepoint, or family-timepoint, and every person, or family, has multiple rows of data.\nData therefore sometimes need to be reshaped, most often from wide format to long format. Almost any software that is capable of estimating multilevel models is capable of reshaping data.\nBelow, I detail the procedure for reshaping data in Stata and R.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Reshaping Data</span>"
     ]
