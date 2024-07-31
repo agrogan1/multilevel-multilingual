@@ -1,0 +1,21 @@
+{
+  "hash": "64d40ceddef6f19b84bc8ef2b71cdb7c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Aggregating Data\n\n\n\n::: {.cell}\n\n:::\n\n\n\nIn many instances, we may wish to aggregate data. For example, we may wish to create *contextual variables* representing the average level of an indicator across a group. In the examples I am using in this book, the group under consideration is the country. Aggregating data is also an important part of discussions of *within* and *between* variation, and is an important part of the correlated random effects model.\n\nIn the examples below, I create a group level variable for `warmth`, representing the average level of parental warmth in each country. If warmth is denoted by $\\text{warmth}_{ij}$ then the country level variable is denoted by $\\overline{warmth}_{.j}$.\n\nBelow, I detail the procedure for aggregating data in Stata and R.\n\n::: {.panel-tabset group=\"language\"}\n\n### Stata\n\n#### Get The Data\n\n\n\n::: {.cell collectcode='true'}\n\n```{.stata .cell-code}\n\nuse simulated_multilevel_data.dta\n\n```\n:::\n\n\n\n#### Create A Group Level Variable\n\n\n\n::: {.cell collectcode='true'}\n\n```{.stata .cell-code}\n\nbysort country: egen mean_warmth = mean(warmth)\n\n```\n:::\n\n\n\n### R\n\n#### Get The Data\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(haven)\n\ndf <- read_dta(\"simulated_multilevel_data.dta\")\n```\n:::\n\n\n\n#### Create A Group Level Variable\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(dplyr) \n\ndf <- df %>% \n  group_by(country) %>%\n  mutate(mean_warmth = mean(warmth))\n```\n:::\n\n\n\n:::\n\n\n\n",
+    "supporting": [
+      "aggregating-multilingual_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

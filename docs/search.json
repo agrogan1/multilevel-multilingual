@@ -340,6 +340,16 @@
     ]
   },
   {
+    "objectID": "aggregating-multilingual.html",
+    "href": "aggregating-multilingual.html",
+    "title": "8  Aggregating Data",
+    "section": "",
+    "text": "In many instances, we may wish to aggregate data. For example, we may wish to create contextual variables representing the average level of an indicator across a group. In the examples I am using in this book, the group under consideration is the country. Aggregating data is also an important part of discussions of within and between variation, and is an important part of the correlated random effects model.\nIn the examples below, I create a group level variable for warmth, representing the average level of parental warmth in each country. If warmth is denoted by \\(\\text{warmth}_{ij}\\) then the country level variable is denoted by \\(\\overline{warmth}_{.j}\\).\nBelow, I detail the procedure for aggregating data in Stata and R.\n\nStataR\n\n\n\n8.0.0.1 Get The Data\n\n\nuse simulated_multilevel_data.dta\n\n\n\n8.0.0.2 Create A Group Level Variable\n\n\nbysort country: egen mean_warmth = mean(warmth)\n\n\n\n\n\n8.0.0.3 Get The Data\n\nlibrary(haven)\n\ndf &lt;- read_dta(\"simulated_multilevel_data.dta\")\n\n\n\n8.0.0.4 Create A Group Level Variable\n\nlibrary(dplyr) \n\ndf &lt;- df %&gt;% \n  group_by(country) %&gt;%\n  mutate(mean_warmth = mean(warmth))",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Aggregating Data</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",

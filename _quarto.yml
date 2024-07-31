@@ -24,6 +24,7 @@ book:
     - cross-sectional-multilingual.qmd
     - longitudinal-multilingual.qmd
     - reshape-multilingual.qmd
+    - aggregating-multilingual.qmd
     - references.qmd
   navbar:
     background: primary

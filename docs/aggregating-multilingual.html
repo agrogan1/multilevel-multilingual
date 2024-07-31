@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Multilingual - 7&nbsp; Reshaping Data</title>
+<title>Multilevel Multilingual - 8&nbsp; Aggregating Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aggregating-multilingual.html" rel="next">
-<link href="./longitudinal-multilingual.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./reshape-multilingual.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -105,16 +105,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 7&nbsp; Reshaping Data">
+<meta property="og:title" content="Multilevel Multilingual - 8&nbsp; Aggregating Data">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 7&nbsp; Reshaping Data">
+<meta name="twitter:title" content="Multilevel Multilingual - 8&nbsp; Aggregating Data">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[[7]{.chapter-number}&nbsp; [Reshaping Data]{.chapter-title}]{#sec-reshape .quarto-section-identifier}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//reshape-multilingual.html">
+<meta name="citation_title" content="[8]{.chapter-number}&nbsp; [Aggregating Data]{.chapter-title}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//aggregating-multilingual.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Quarto;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Carlos Scheidegger;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_fulltext_html_url=https://github.com/quarto-dev/quarto-cli;,citation_doi=10.5281/zenodo.5960048;">
 <meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
@@ -176,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reshape-multilingual.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./aggregating-multilingual.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Aggregating Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -226,13 +255,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reshape-multilingual.html" class="sidebar-item-text sidebar-link active">
+  <a href="./reshape-multilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aggregating-multilingual.html" class="sidebar-item-text sidebar-link">
+  <a href="./aggregating-multilingual.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
   </div>
 </li>
@@ -248,24 +277,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
-  <li><a href="#data-in-wide-format" id="toc-data-in-wide-format" class="nav-link" data-scroll-target="#data-in-wide-format"><span class="header-section-number">7.2</span> Data in Wide Format</a></li>
-  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="header-section-number">7.3</span> Data Management</a></li>
-  <li><a href="#reshaping-data-from-wide-to-long" id="toc-reshaping-data-from-wide-to-long" class="nav-link" data-scroll-target="#reshaping-data-from-wide-to-long"><span class="header-section-number">7.4</span> Reshaping Data From Wide To Long</a></li>
-  <li><a href="#data-in-long-format" id="toc-data-in-long-format" class="nav-link" data-scroll-target="#data-in-long-format"><span class="header-section-number">7.5</span> Data in Long Format</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-reshape" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Aggregating Data</span></h1>
 </div>
 
 
@@ -282,502 +301,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.1</span> Introduction</h2>
-<p>Cross-sectional analyses (<a href="cross-sectional-multilingual.html" class="quarto-xref"><span>Chapter 5</span></a>) make use of data in <em>wide</em> format: every row is a person, or family, and every person, or family, has a single row of data.</p>
-<p>Longitudinal analyses (<a href="longitudinal-multilingual.html" class="quarto-xref"><span>Chapter 6</span></a>) make use of <em>long</em> data: every row is a person-timepoint, or family-timepoint, and every person, or family, has multiple rows of data.</p>
-<p>Data therefore sometimes need to be <em>reshaped</em>, most often from <em>wide</em> format to <em>long</em> format. Almost any software that is capable of estimating multilevel models is capable of reshaping data.</p>
-<p>Below, I detail the procedure for reshaping data in Stata and R.</p>
-</section>
-<section id="data-in-wide-format" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="data-in-wide-format"><span class="header-section-number">7.2</span> Data in Wide Format</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The data below are in <em>wide</em> format.</p>
-<p>Every individual in the data set has a <em>single row of data</em>. Every row in the data set is an <em>individual</em> or <em>family</em>.</p>
-</div>
-</div>
-<div class="cell">
-<div id="tbl-reshapewidedata" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reshapewidedata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.1: Data in Wide Format
-</figcaption>
-<div aria-describedby="tbl-reshapewidedata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<caption>Table continues below</caption>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 30%">
-<col style="width: 13%">
-<col style="width: 14%">
-<col style="width: 30%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">id</th>
-<th style="text-align: center;">physical_punishment1</th>
-<th style="text-align: center;">warmth1</th>
-<th style="text-align: center;">outcome1</th>
-<th style="text-align: center;">physical_punishment2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1.1</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">57.47</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1.10</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">62.9</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1.100</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">62.71</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1.11</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">55.61</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1.12</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">41.15</td>
-<td style="text-align: center;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1.13</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">63.66</td>
-<td style="text-align: center;">3</td>
-</tr>
-</tbody>
-</table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<caption>Table continues below</caption>
-<colgroup>
-<col style="width: 12%">
-<col style="width: 13%">
-<col style="width: 28%">
-<col style="width: 12%">
-<col style="width: 13%">
-<col style="width: 12%">
-<col style="width: 7%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">warmth2</th>
-<th style="text-align: center;">outcome2</th>
-<th style="text-align: center;">physical_punishment3</th>
-<th style="text-align: center;">warmth3</th>
-<th style="text-align: center;">outcome3</th>
-<th style="text-align: center;">country</th>
-<th style="text-align: center;">HDI</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">55.06</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">58.77</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">56.67</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">68.22</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">51.58</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">55.51</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">50.9</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">48.02</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">45.4</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">55.86</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">64.81</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">58.3</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-</tr>
-</tbody>
-</table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 15%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">family</th>
-<th style="text-align: center;">identity</th>
-<th style="text-align: center;">intervention</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">100</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">13</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-</section>
-<section id="data-management" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="data-management"><span class="header-section-number">7.3</span> Data Management</h2>
-<p>Because reshaping your data dramatically changes the structure of your data…</p>
-<ol type="1">
-<li>It is a good idea to have your raw data saved in a location where it will not be changed, and can be retrieved again if the reshape command does not work correctly, or if you simply want to modify your reshaping data workflow.(CF <a href="workflows-multilingual.html#sec-script-flow" class="quarto-xref"><span>Section 2.3</span></a>)</li>
-<li>Usually we want to work with only a <em>subset</em> of your data, to keep only the data in which we are interested.
-<ul>
-<li>In Stata, the command to keep only variables of interest would be: <code>keep y x z t</code>.</li>
-<li>In R, one option would be to use the subset function: <code>mysubset &lt;- subset(mydata, select = c(y, x, z, t))</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="reshaping-data-from-wide-to-long" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="reshaping-data-from-wide-to-long"><span class="header-section-number">7.4</span> Reshaping Data From Wide To Long</h2>
-<p>Usually, we are most interested in reshaping data from <em>wide</em> to <em>long</em>.</p>
+<p>In many instances, we may wish to aggregate data. For example, we may wish to create <em>contextual variables</em> representing the average level of an indicator across a group. In the examples I am using in this book, the group under consideration is the country. Aggregating data is also an important part of discussions of <em>within</em> and <em>between</em> variation, and is an important part of the correlated random effects model.</p>
+<p>In the examples below, I create a group level variable for <code>warmth</code>, representing the average level of parental warmth in each country. If warmth is denoted by <span class="math inline">\(\text{warmth}_{ij}\)</span> then the country level variable is denoted by <span class="math inline">\(\overline{warmth}_{.j}\)</span>.</p>
+<p>Below, I detail the procedure for aggregating data in Stata and R.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>In Stata, I only list variables that vary over time, or are <em>time varying</em>. Stata assumes that variables that are <em>not listed</em> do <em>not vary over time</em>, or are <em>time invariant</em>.</p>
-<p>Notice also that our <em>time varying</em> data are in the <em>stub-time</em> format, e.g.&nbsp;<code>warmth1</code>, <code>warmth2</code>, <code>physical_punishment1</code> <code>physical_punishment2</code>, etc. Because the variables are named in this way, Stata knows to use the <em>stub</em> (e.g.&nbsp;<code>warmth</code>) as the variable name, and the numeric value, (e.g.&nbsp;1, 2, 3) as the timepoint.</p>
-<blockquote class="blockquote">
-<p>The <code>id</code> variable, whatever it is named, has to uniquely identify the observations. A useful Stata command here is <code>isid</code>, e.g.&nbsp;<code>isid id</code>. If your <code>id</code> variable is not unique, it is often due to missing values. <code>drop if id == .</code> usually solves the problem (assuming that your <code>id</code> variable is indeed named <code>id</code>, and not something else).</p>
-</blockquote>
+<section id="get-the-data" class="level4" data-number="8.0.0.1">
+<h4 data-number="8.0.0.1" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">8.0.0.1</span> Get The Data</h4>
 <div class="cell" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data_WIDE.dta, <span class="kw">clear</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">describe</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">reshape</span> <span class="kw">long</span> outcome physical_punishment warmth, i(id) j(wave)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Contains data from simulated_multilevel_longitudinal_data_WIDE.dta
- Observations:         3,000                  
-    Variables:            15                  3 Jul 2024 14:29
--------------------------------------------------------------------------------------------
-Variable      Storage   Display    Value
-    name         type    format    label      Variable label
--------------------------------------------------------------------------------------------
-id              str7    %9s                   unique country family id
-physical_puni~1 float   %9.0g                 1 physical_punishment
-warmth1         float   %9.0g                 1 warmth
-outcome1        float   %9.0g                 1 outcome
-physical_puni~2 float   %9.0g                 2 physical_punishment
-warmth2         float   %9.0g                 2 warmth
-outcome2        float   %9.0g                 2 outcome
-physical_puni~3 float   %9.0g                 3 physical_punishment
-warmth3         float   %9.0g                 3 warmth
-outcome3        float   %9.0g                 3 outcome
-country         float   %9.0g                 country id
-HDI             float   %9.0g                 Human Development Index
-family          float   %9.0g                 family id
-identity        float   %9.0g                 hypothetical identity group variable
-intervention    float   %9.0g                 recieved intervention
--------------------------------------------------------------------------------------------
-Sorted by: id
-
-(j = 1 2 3)
-
-Data                               Wide   -&gt;   Long
------------------------------------------------------------------------------
-Number of observations            3,000   -&gt;   9,000       
-Number of variables                  15   -&gt;   10          
-j variable (3 values)                     -&gt;   wave
-xij variables:
-             outcome1 outcome2 outcome3   -&gt;   outcome
-physical_punishment1 physical_punishment2 physical_punishment3-&gt;physical_punishment
-                warmth1 warmth2 warmth3   -&gt;   warmth
------------------------------------------------------------------------------</code></pre>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="create-a-group-level-variable" class="level4" data-number="8.0.0.2">
+<h4 data-number="8.0.0.2" class="anchored" data-anchor-id="create-a-group-level-variable"><span class="header-section-number">8.0.0.2</span> Create A Group Level Variable</h4>
+<div class="cell" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">bysort</span> country: <span class="kw">egen</span> mean_warmth = <span class="kw">mean</span>(warmth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>In R, I only list variables that vary over time, or are <em>time varying</em>.</p>
-<p>Notice also that our <em>time varying</em> data are in the <em>stub-time</em> format, e.g.&nbsp;<code>warmth1</code>, <code>warmth2</code>, <code>physical_punishment1</code> <code>physical_punishment2</code>, etc. In order to facilitate reshaping the data, it is helpful in R to insert an underscore (<code>_</code>) to separate the <em>stub</em> from the <em>time</em> variable.</p>
+<section id="get-the-data-1" class="level4" data-number="8.0.0.3">
+<h4 data-number="8.0.0.3" class="anchored" data-anchor-id="get-the-data-1"><span class="header-section-number">8.0.0.3</span> Get The Data</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># data wrangling</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr) <span class="co"># tidy (reshape data)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="create-a-group-level-variable-1" class="level4" data-number="8.0.0.4">
+<h4 data-number="8.0.0.4" class="anchored" data-anchor-id="create-a-group-level-variable-1"><span class="header-section-number">8.0.0.4</span> Create A Group Level Variable</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename variables with "_" separator</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> simulated_multilevel_longitudinal_data_WIDE <span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">outcome_1 =</span> outcome1,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">outcome_2 =</span> outcome2,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">outcome_3 =</span> outcome3,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">physical_punishment_1 =</span> physical_punishment1,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">physical_punishment_2 =</span> physical_punishment2,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">physical_punishment_3 =</span> physical_punishment3,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">warmth_1 =</span> warmth1,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">warmth_2 =</span> warmth2,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">warmth_3 =</span> warmth3) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot_longer() to long data</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dfL <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(outcome_1,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                        outcome_2,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                        outcome_3,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                        physical_punishment_1,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                        physical_punishment_2,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                        physical_punishment_3,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                        warmth_1,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                        warmth_2,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                        warmth_3), </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_pattern =</span> <span class="st">"(.+)_(.+)"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"t"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_warmth =</span> <span class="fu">mean</span>(warmth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="data-in-long-format" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="data-in-long-format"><span class="header-section-number">7.5</span> Data in Long Format</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The data below are in <em>long</em> format.</p>
-<p>Every individual/family in the data set has a <em>multiple rows of data</em>. Every row in the data set is an <em>individual-timepoint</em> or <em>family-timepoint</em>.</p>
-</div>
-</div>
-<div class="cell">
-<div id="tbl-reshapelongdata2" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reshapelongdata2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.2: Data in Long Format
-</figcaption>
-<div aria-describedby="tbl-reshapelongdata2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<caption>Table continues below</caption>
-<colgroup>
-<col style="width: 13%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 8%">
-<col style="width: 15%">
-<col style="width: 20%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">country</th>
-<th style="text-align: center;">HDI</th>
-<th style="text-align: center;">family</th>
-<th style="text-align: center;">id</th>
-<th style="text-align: center;">identity</th>
-<th style="text-align: center;">intervention</th>
-<th style="text-align: center;">t</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1.1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1.1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1.1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1.2</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1.2</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1.2</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">3</td>
-</tr>
-</tbody>
-</table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 12%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">physical_punishment</th>
-<th style="text-align: center;">warmth</th>
-<th style="text-align: center;">outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">57.47</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">55.06</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">58.77</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">50.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">53.31</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">49.79</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1313,13 +882,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./longitudinal-multilingual.html" class="pagination-link  aria-label=" &lt;span="" multilevel="" models&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span>
+      <a href="./reshape-multilingual.html" class="pagination-link  aria-label=" &lt;span="" data&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aggregating-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Aggregating Data</span>">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1328,4 +897,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

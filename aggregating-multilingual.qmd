@@ -11,13 +11,15 @@ library(lme4)
 
 library(JuliaCall)
 
-julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
+julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/bin")
 
 ```
 
-In many instances, we may wish to aggregate data. For example, we may wish to create *contextual variables* representing the average level of an indicator across a group. In the examples I am using in this book, the group under consideration is the country. Aggregating data is also an important part of discussions of within and between variation, and is an important part of the correlated random effects model.
+In many instances, we may wish to aggregate data. For example, we may wish to create *contextual variables* representing the average level of an indicator across a group. In the examples I am using in this book, the group under consideration is the country. Aggregating data is also an important part of discussions of *within* and *between* variation, and is an important part of the correlated random effects model.
 
 In the examples below, I create a group level variable for `warmth`, representing the average level of parental warmth in each country. If warmth is denoted by $\text{warmth}_{ij}$ then the country level variable is denoted by $\overline{warmth}_{.j}$.
+
+Below, I detail the procedure for aggregating data in Stata and R.
 
 ::: {.panel-tabset group="language"}
 
@@ -61,43 +63,6 @@ library(dplyr)
 df <- df %>% 
   group_by(country) %>%
   mutate(mean_warmth = mean(warmth))
-
-```
-
-### Julia
-
-#### Get The Data
-
-```{julia}
-#| output: false
-
-using Tables, MixedModels, MixedModelsExtras, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
-
-df = DataFrame(load("simulated_multilevel_data.dta"))
-
-```
-
-#### Change Country To Categorical
-
-```{julia}
-#| output: false
-
-@transform!(df, :country = categorical(:country))
-
-```
-
-#### Create A Group Level Variable
-
-```{julia}
-#| output: false
-
-transform(groupby(df, :country), :warmth => mean)
-
-```
-
-```{julia}
-
-describe(df)
 
 ```
 
