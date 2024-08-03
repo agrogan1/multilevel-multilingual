@@ -1,7 +1,5 @@
 # Cross Sectional Multilevel Models {#sec-crosssectional}
 
-
-
 ```{r}
 #| label: unconditionalsetup
 #| echo: false
@@ -29,7 +27,7 @@ $$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \tex
 
 $$u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}$$ 
 
-## Correlated and Uncorrelated Random Effects
+## Correlated and Uncorrelated Random Effects {#sec-correlated-uncorrelated}
 
 Consider the covariance matrix of random effects (e.g. $u_{0j}$ and $u_{1j}$). In @eq-varcovar the covariances of the random effects are constrained to be zero.
 
