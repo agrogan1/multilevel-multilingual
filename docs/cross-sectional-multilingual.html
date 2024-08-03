@@ -275,14 +275,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./logistic-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Multilevel Logistic Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./reshape-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aggregating-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -302,7 +308,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#the-equation" id="toc-the-equation" class="nav-link active" data-scroll-target="#the-equation"><span class="header-section-number">5.1</span> The Equation</a></li>
-  <li><a href="#correlated-and-uncorrelated-random-effects" id="toc-correlated-and-uncorrelated-random-effects" class="nav-link" data-scroll-target="#correlated-and-uncorrelated-random-effects"><span class="header-section-number">5.2</span> Correlated and Uncorrelated Random Effects</a></li>
+  <li><a href="#sec-correlated-uncorrelated" id="toc-sec-correlated-uncorrelated" class="nav-link" data-scroll-target="#sec-correlated-uncorrelated"><span class="header-section-number">5.2</span> Correlated and Uncorrelated Random Effects</a></li>
   <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">5.3</span> Run Models</a></li>
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">5.4</span> Interpretation</a></li>
   </ul>
@@ -338,8 +344,8 @@ window.Quarto = {
 <p><span class="math display">\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{j} +\]</span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}\]</span></p>
 </section>
-<section id="correlated-and-uncorrelated-random-effects" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="correlated-and-uncorrelated-random-effects"><span class="header-section-number">5.2</span> Correlated and Uncorrelated Random Effects</h2>
+<section id="sec-correlated-uncorrelated" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-correlated-uncorrelated"><span class="header-section-number">5.2</span> Correlated and Uncorrelated Random Effects</h2>
 <p>Consider the covariance matrix of random effects (e.g.&nbsp;<span class="math inline">\(u_{0j}\)</span> and <span class="math inline">\(u_{1j}\)</span>). In <a href="#eq-varcovar" class="quarto-xref">Equation&nbsp;<span>5.2</span></a> the covariances of the random effects are constrained to be zero.</p>
 <p><span id="eq-varcovar"><span class="math display">\[\begin{bmatrix}
 var(u_{0j}) &amp; 0 \\

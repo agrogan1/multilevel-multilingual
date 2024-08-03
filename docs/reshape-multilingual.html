@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Multilingual - 7&nbsp; Reshaping Data</title>
+<title>Multilevel Multilingual - 8&nbsp; Reshaping Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./aggregating-multilingual.html" rel="next">
-<link href="./longitudinal-multilingual.html" rel="prev">
+<link href="./logistic-multilingual.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -107,13 +107,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 7&nbsp; Reshaping Data">
+<meta property="og:title" content="Multilevel Multilingual - 8&nbsp; Reshaping Data">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 7&nbsp; Reshaping Data">
+<meta name="twitter:title" content="Multilevel Multilingual - 8&nbsp; Reshaping Data">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[[7]{.chapter-number}&nbsp; [Reshaping Data]{.chapter-title}]{#sec-reshape .quarto-section-identifier}">
+<meta name="citation_title" content="[[8]{.chapter-number}&nbsp; [Reshaping Data]{.chapter-title}]{#sec-reshape .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//reshape-multilingual.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Quarto;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Carlos Scheidegger;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_fulltext_html_url=https://github.com/quarto-dev/quarto-cli;,citation_doi=10.5281/zenodo.5960048;">
@@ -176,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reshape-multilingual.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reshape-multilingual.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reshaping Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -226,14 +226,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./logistic-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Multilevel Logistic Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./reshape-multilingual.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aggregating-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -252,11 +258,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
-  <li><a href="#data-in-wide-format" id="toc-data-in-wide-format" class="nav-link" data-scroll-target="#data-in-wide-format"><span class="header-section-number">7.2</span> Data in Wide Format</a></li>
-  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="header-section-number">7.3</span> Data Management</a></li>
-  <li><a href="#reshaping-data-from-wide-to-long" id="toc-reshaping-data-from-wide-to-long" class="nav-link" data-scroll-target="#reshaping-data-from-wide-to-long"><span class="header-section-number">7.4</span> Reshaping Data From Wide To Long</a></li>
-  <li><a href="#data-in-long-format" id="toc-data-in-long-format" class="nav-link" data-scroll-target="#data-in-long-format"><span class="header-section-number">7.5</span> Data in Long Format</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">8.1</span> Introduction</a></li>
+  <li><a href="#data-in-wide-format" id="toc-data-in-wide-format" class="nav-link" data-scroll-target="#data-in-wide-format"><span class="header-section-number">8.2</span> Data in Wide Format</a></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="header-section-number">8.3</span> Data Management</a></li>
+  <li><a href="#reshaping-data-from-wide-to-long" id="toc-reshaping-data-from-wide-to-long" class="nav-link" data-scroll-target="#reshaping-data-from-wide-to-long"><span class="header-section-number">8.4</span> Reshaping Data From Wide To Long</a></li>
+  <li><a href="#data-in-long-format" id="toc-data-in-long-format" class="nav-link" data-scroll-target="#data-in-long-format"><span class="header-section-number">8.5</span> Data in Long Format</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -265,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-reshape" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></h1>
+<h1 class="title"><span id="sec-reshape" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></h1>
 </div>
 
 
@@ -282,15 +288,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">8.1</span> Introduction</h2>
 <p>Cross-sectional analyses (<a href="cross-sectional-multilingual.html" class="quarto-xref">Section&nbsp;<span>5</span></a>) make use of data in <em>wide</em> format: every row is a person, or family, and every person, or family, has a single row of data.</p>
 <p>Longitudinal analyses (<a href="longitudinal-multilingual.html" class="quarto-xref">Section&nbsp;<span>6</span></a>) make use of <em>long</em> data: every row is a person-timepoint, or family-timepoint, and every person, or family, has multiple rows of data.</p>
 <p>Data therefore sometimes need to be <em>reshaped</em>, most often from <em>wide</em> format to <em>long</em> format. Almost any software that is capable of estimating multilevel models is capable of reshaping data.</p>
 <p>Below, I detail the procedure for reshaping data in Stata and R.</p>
 </section>
-<section id="data-in-wide-format" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="data-in-wide-format"><span class="header-section-number">7.2</span> Data in Wide Format</h2>
+<section id="data-in-wide-format" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="data-in-wide-format"><span class="header-section-number">8.2</span> Data in Wide Format</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -309,7 +315,7 @@ Note
 <div id="tbl-reshapewidedata" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reshapewidedata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.1: Data in Wide Format
+Table&nbsp;8.1: Data in Wide Format
 </figcaption>
 <div aria-describedby="tbl-reshapewidedata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -507,8 +513,8 @@ Table&nbsp;7.1: Data in Wide Format
 </div>
 </div>
 </section>
-<section id="data-management" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="data-management"><span class="header-section-number">7.3</span> Data Management</h2>
+<section id="data-management" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="data-management"><span class="header-section-number">8.3</span> Data Management</h2>
 <p>Because reshaping your data dramatically changes the structure of your data…</p>
 <ol type="1">
 <li>It is a good idea to have your raw data saved in a location where it will not be changed, and can be retrieved again if the reshape command does not work correctly, or if you simply want to modify your reshaping data workflow.(CF <a href="workflows-multilingual.html#sec-script-flow" class="quarto-xref"><span>Section 2.3</span></a>)</li>
@@ -519,8 +525,8 @@ Table&nbsp;7.1: Data in Wide Format
 </ul></li>
 </ol>
 </section>
-<section id="reshaping-data-from-wide-to-long" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="reshaping-data-from-wide-to-long"><span class="header-section-number">7.4</span> Reshaping Data From Wide To Long</h2>
+<section id="reshaping-data-from-wide-to-long" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="reshaping-data-from-wide-to-long"><span class="header-section-number">8.4</span> Reshaping Data From Wide To Long</h2>
 <p>Usually, we are most interested in reshaping data from <em>wide</em> to <em>long</em>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li></ul>
@@ -621,8 +627,8 @@ physical_punishment1 physical_punishment2 physical_punishment3-&gt;physical_puni
 </div>
 </div>
 </section>
-<section id="data-in-long-format" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="data-in-long-format"><span class="header-section-number">7.5</span> Data in Long Format</h2>
+<section id="data-in-long-format" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="data-in-long-format"><span class="header-section-number">8.5</span> Data in Long Format</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -641,7 +647,7 @@ Note
 <div id="tbl-reshapelongdata2" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reshapelongdata2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.2: Data in Long Format
+Table&nbsp;8.2: Data in Long Format
 </figcaption>
 <div aria-describedby="tbl-reshapelongdata2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1313,13 +1319,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./longitudinal-multilingual.html" class="pagination-link  aria-label=" &lt;span="" multilevel="" models&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Longitudinal Multilevel Models</span></span>
+      <a href="./logistic-multilingual.html" class="pagination-link  aria-label=" &lt;span="" logistic="" regression&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Multilevel Logistic Regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aggregating-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Aggregating Data</span>">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./aggregating-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>Aggregating Data</span>">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

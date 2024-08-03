@@ -19,11 +19,11 @@ Below, I detail the procedure for multilevel logistic regression models in Stata
 
 ## The Data
 
-The data employed in these examples are the data described in @sec-data.
+The data employed in these examples are the cross-sectional data described in @sec-data.
 
 ## The Equation
 
-To explain statistical syntax for each Stata and R, I consider the general case of a multilevel model with *categorical* dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`. *i* is the index for the person, while *j* is the index for the group.
+To explain statistical syntax for Stata and R, I consider the general case of a multilevel model with *categorical* dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`. *i* is the index for the person, while *j* is the index for the group.
 
 $$\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j}$$ {#eq-MLMsimple-logistic}
 

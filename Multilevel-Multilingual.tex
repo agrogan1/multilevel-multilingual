@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-07-31}
+\date{2024-08-03}
 
 \begin{document}
 \maketitle
@@ -332,7 +332,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -343,7 +343,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -372,7 +372,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm]
 
 I used Quarto (Allaire et al., 2024) (\url{https://quarto.org/}) to
 create this Appendix. Quarto is a programming and publishing environment
@@ -391,7 +391,7 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, arc=.35mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm]
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} and
 \texttt{simulated\_multilevel\_longitudinal\_data.dta} files.
@@ -606,7 +606,7 @@ such as R (\texttt{.Rdata}), or Stata (\texttt{.dta}), or even a text
 format such as \texttt{.csv}. Spreadsheets are likely to be a bad tool
 for storing quantitative data.
 
-\section{It Is Possible To Use Multiple Statistical
+\section{Good Statistical Workflows Allow Multiple Statistical
 Packages}\label{sec-multiple-packages}
 
 While this Appendix focuses on the use of each individual statistical
@@ -1318,7 +1318,7 @@ example.
 \[u_{0j} + u_{1j} \times \text{warmth}_{ij} + e_{ij}\]
 
 \section{Correlated and Uncorrelated Random
-Effects}\label{correlated-and-uncorrelated-random-effects}
+Effects}\label{sec-correlated-uncorrelated}
 
 Consider the covariance matrix of random effects (e.g.~\(u_{0j}\) and
 \(u_{1j}\)). In Equation~\ref{eq-varcovar} the covariances of the random
@@ -1386,7 +1386,7 @@ effects.
 
 \section{Run Models}\label{run-models-2}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, arc=.35mm, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm]
 
 Statistically--as noted in the main text--it is important to be clear on
 whether independent variables in one's model are continuous or
@@ -1491,7 +1491,7 @@ Categorical}\label{change-some-variables-to-categorical}
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, arc=.35mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1500,7 +1500,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -1711,7 +1711,7 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm]
 
 Thus, again following the main text, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
@@ -1723,7 +1723,7 @@ models with \emph{main effects, and interactions with time}.
 
 \section{Run Models}\label{run-models-3}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm]
 
 Remember that we are estimating a model in which time points are nested
 inside families, who are in turn nested inside countries. For each
@@ -1915,7 +1915,7 @@ Categorical}\label{change-some-variables-to-categorical-2}
 
 \subsubsection{Run The Models}\label{run-the-models-1}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, arc=.35mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -1924,7 +1924,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -2230,7 +2230,7 @@ associated with differences in the slope of the time trajectory. In this
 case, we find insufficient evidence that any independent variable is
 associated with changes in the slope of the time trajectory.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm]
 
 In this example--for the sake of illustration--I test the interaction of
 \emph{every} independent variable with time. In many cases, it may make
@@ -2254,6 +2254,273 @@ outcome.
 
 \bookmarksetup{startatroot}
 
+\chapter{Multilevel Logistic
+Regression}\label{multilevel-logistic-regression}
+
+Below, I detail the procedure for multilevel logistic regression models
+in Stata and R.
+
+\section{The Data}\label{the-data-1}
+
+The data employed in these examples are the cross-sectional data
+described in Section~\ref{sec-data}.
+
+\section{The Equation}\label{the-equation-4}
+
+To explain statistical syntax for Stata and R, I consider the general
+case of a multilevel model with \emph{categorical} dependent variable
+\texttt{y}, independent variables \texttt{x} and \texttt{z}, clustering
+variable \texttt{group}, and a random slope for \texttt{x}. \emph{i} is
+the index for the person, while \emph{j} is the index for the group.
+
+\begin{equation}\phantomsection\label{eq-MLMsimple-logistic}{\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j}}\end{equation}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Correlated and Uncorrelated Random Effects in Logistic Regression}, arc=.35mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm]
+
+The reader is referred to the discussion of correlated and uncorrelated
+random effects in Section~\ref{sec-correlated-uncorrelated}
+
+\end{tcolorbox}
+
+\subsection{Stata}
+
+In Stata \texttt{mixed}, the syntax for a multilevel model of the form
+described in Equation~\ref{eq-MLMsimple-logistic} is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{melogit }\FunctionTok{y}\NormalTok{ x z || }\FunctionTok{group}\NormalTok{: }
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{R}
+
+In R \texttt{lme4}, the syntax for a multilevel model of the form
+described in Equation~\ref{eq-MLMsimple-logistic} is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lme4)}
+
+\FunctionTok{glmer}\NormalTok{(y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x }\SpecialCharTok{+}\NormalTok{ z }\SpecialCharTok{+}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ group), }\AttributeTok{data =}\NormalTok{ ...)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Run Models}\label{run-models-4}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Less Variation In Logistic Than Linear Models}, arc=.35mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm]
+
+Note that in \emph{logistic} regression models, there is less variation
+to work with--due to the fact that the outcome is \texttt{1/0}, than
+there is in \emph{linear} models. Therefore, in the models below, I do
+not attempt to estimate a random slope in addition to a random
+intercept, as I do in Section~\ref{sec-crosssectional}.
+
+\end{tcolorbox}
+
+\subsection{Stata}
+
+\subsubsection{Get The Data}\label{get-the-data-6}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{use}\NormalTok{ simulated\_multilevel\_data.dta}
+
+\KeywordTok{generate}\NormalTok{ outcome\_category = outcome \textgreater{} 52 }\CommentTok{// dichotomous outcome}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Run The Model}\label{run-the-model-3}
+
+As suggested in Equation~\ref{eq-MLMsimple-logistic}, odds ratios are
+obtained by exponentiating the \(\beta\) coefficients: \(e^{\beta}\).
+Stata provides the odds ratios automatically with option \texttt{,\ or}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{melogit outcome\_category warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || }\CommentTok{/// }
+\NormalTok{country:, }\KeywordTok{or}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Fitting fixed-effects model:
+
+Iteration 0:  Log likelihood = -1965.6466  
+Iteration 1:  Log likelihood = -1963.7805  
+Iteration 2:  Log likelihood = -1963.7791  
+Iteration 3:  Log likelihood = -1963.7791  
+
+Refining starting values:
+
+Grid node 0:  Log likelihood = -1908.9697
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -1908.9697  (not concave)
+Iteration 1:  Log likelihood =  -1903.703  
+Iteration 2:  Log likelihood = -1902.2851  
+Iteration 3:  Log likelihood = -1901.3176  
+Iteration 4:  Log likelihood = -1901.2662  
+Iteration 5:  Log likelihood = -1901.2661  
+
+Mixed-effects logistic regression               Number of obs     =      3,000
+Group variable: country                         Number of groups  =         30
+
+                                                Obs per group:
+                                                              min =        100
+                                                              avg =      100.0
+                                                              max =        100
+
+Integration method: mvaghermite                 Integration pts.  =          7
+
+                                                Wald chi2(5)      =     219.75
+Log likelihood = -1901.2661                     Prob > chi2       =     0.0000
+-------------------------------------------------------------------------------------
+   outcome_category | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+             warmth |   1.292603   .0278565    11.91   0.000     1.239142     1.34837
+physical_punishment |   .7524276   .0222773    -9.61   0.000     .7100077     .797382
+         1.identity |   .9517262   .0748541    -0.63   0.529     .8157636     1.11035
+     1.intervention |   1.191581   .0940459     2.22   0.026     1.020803    1.390929
+                HDI |   .9990491   .0061371    -0.15   0.877     .9870928     1.01115
+              _cons |   .9115548   .3901774    -0.22   0.829     .3939478    2.109244
+--------------------+----------------------------------------------------------------
+country             |
+          var(_cons)|   .2897697   .0880892                      .1596945    .5257944
+-------------------------------------------------------------------------------------
+Note: Estimates are transformed only in the first equation to odds ratios.
+Note: _cons estimates baseline odds (conditional on zero random effects).
+LR test vs. logistic model: chibar2(01) = 125.03      Prob >= chibar2 = 0.0000
+\end{verbatim}
+
+\subsection{R}
+
+\subsubsection{Get The Data}\label{get-the-data-7}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(haven)}
+
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"simulated\_multilevel\_data.dta"}\NormalTok{)}
+
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{outcome\_category }\OtherTok{\textless{}{-}} \DecValTok{0} \CommentTok{\# initialize to 0}
+
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{outcome\_category[df}\SpecialCharTok{$}\NormalTok{outcome }\SpecialCharTok{\textgreater{}} \DecValTok{52}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{1} \CommentTok{\# dichotomous outcome}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical-4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{identity }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{identity)}
+
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{intervention }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{intervention)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Run The Model}\label{run-the-model-4}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, arc=.35mm, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm]
+
+\texttt{lme4} does not directly provide p values in results, because of
+some disagreement over exactly how these p values should be calculated.
+Therefore, in this Appendix, I also call library \texttt{lmerTest} to
+provide p values for \texttt{lme4} results.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm]
+
+R prefers to use scientific notation when possible. I find that the use
+of scientific notation can be confusing in reading results. I turn off
+scientific notation by setting a penalty for its use:
+\texttt{options(scipen\ =\ 999)}.
+
+\end{tcolorbox}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lme4) }
+
+\FunctionTok{library}\NormalTok{(lmerTest)}
+
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{999}\NormalTok{) }
+
+\NormalTok{fit3 }\OtherTok{\textless{}{-}} \FunctionTok{glmer}\NormalTok{(outcome\_category }\SpecialCharTok{\textasciitilde{}}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
+\NormalTok{                identity }\SpecialCharTok{+}\NormalTok{ intervention }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+}
+\NormalTok{                (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country),}
+              \AttributeTok{family =} \FunctionTok{binomial}\NormalTok{(}\AttributeTok{link =} \StringTok{"logit"}\NormalTok{),}
+              \AttributeTok{data =}\NormalTok{ df)}
+
+\FunctionTok{summary}\NormalTok{(fit3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: outcome_category ~ warmth + physical_punishment + identity +  
+    intervention + HDI + (1 | country)
+   Data: df
+
+     AIC      BIC   logLik deviance df.resid 
+  3816.6   3858.7  -1901.3   3802.6     2993 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.0109 -0.8798  0.4369  0.8428  2.8223 
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ country (Intercept) 0.2894   0.5379  
+Number of obs: 3000, groups:  country, 30
+
+Fixed effects:
+                      Estimate Std. Error z value            Pr(>|z|)    
+(Intercept)         -0.0926371  0.4277643  -0.217              0.8286    
+warmth               0.2566693  0.0215443  11.914 <0.0000000000000002 ***
+physical_punishment -0.2844595  0.0295990  -9.610 <0.0000000000000002 ***
+identity1           -0.0494765  0.0786286  -0.629              0.5292    
+intervention1        0.1752879  0.0789030   2.222              0.0263 *  
+HDI                 -0.0009513  0.0061388  -0.155              0.8769    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) warmth physc_ idntt1 intrv1
+warmth      -0.158                            
+physcl_pnsh -0.170 -0.082                     
+identity1   -0.086 -0.014  0.002              
+interventn1 -0.102  0.055  0.006 -0.020       
+HDI         -0.930 -0.007  0.012 -0.001  0.004
+\end{verbatim}
+
+\subsubsection{Calculate Odds Ratios}\label{calculate-odds-ratios}
+
+R requires one to use a bit of extra syntax to extract the odds ratios.
+As suggested in Equation~\ref{eq-MLMsimple-logistic}, odds ratios are
+obtained by exponentiating the \(\beta\) coefficients: \(e^{\beta}\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{exp}\NormalTok{(}\FunctionTok{fixef}\NormalTok{(fit3))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        (Intercept)              warmth physical_punishment           identity1 
+          0.9115242           1.2926176           0.7524208           0.9517275 
+      intervention1                 HDI 
+          1.1915893           0.9990492 
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
 \chapter{Reshaping Data}\label{sec-reshape}
 
 \section{Introduction}\label{introduction-1}
@@ -2274,7 +2541,7 @@ Below, I detail the procedure for reshaping data in Stata and R.
 
 \section{Data in Wide Format}\label{data-in-wide-format}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm]
 
 The data below are in \emph{wide} format.
 
@@ -2590,7 +2857,7 @@ underscore (\texttt{\_}) to separate the \emph{stub} from the
 
 \section{Data in Long Format}\label{data-in-long-format}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, breakable, titlerule=0mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, breakable, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, left=2mm, opacityback=0, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm]
 
 The data below are in \emph{long} format.
 
@@ -2712,7 +2979,7 @@ Below, I detail the procedure for aggregating data in Stata and R.
 
 \subsection{Stata}
 
-\subsubsection{Get The Data}\label{get-the-data-6}
+\subsubsection{Get The Data}\label{get-the-data-8}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2733,7 +3000,7 @@ Variable}\label{create-a-group-level-variable}
 
 \subsection{R}
 
-\subsubsection{Get The Data}\label{get-the-data-7}
+\subsubsection{Get The Data}\label{get-the-data-9}
 
 \begin{Shaded}
 \begin{Highlighting}[]
