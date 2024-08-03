@@ -121,7 +121,7 @@ window.Quarto = {
 <p>To explain statistical syntax for each Stata and R, I consider the general case of a multilevel model with <em>categorical</em> dependent variable <code>y</code>, independent variables <code>x</code> and <code>z</code>, clustering variable <code>group</code>, and a random slope for <code>x</code>. <em>i</em> is the index for the person, while <em>j</em> is the index for the group.</p>
 <p><span id="eq-MLMsimple-logistic"><span class="math display">\[\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j} \tag{1}\]</span></span></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -130,7 +130,7 @@ Correlated and Uncorrelated Random Effects in Logistic Regression
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>The reader is referred to the discussion of correlated and uncorrelated random effects in <strong>?@sec-correlated-uncorrelated</strong></p>
 </div>
@@ -186,6 +186,7 @@ Less Variation In Logistic Than Linear Models
 </section>
 <section id="run-the-model" class="level4">
 <h4 class="anchored" data-anchor-id="run-the-model">Run The Model</h4>
+<p>As suggested in <a href="#eq-MLMsimple-logistic" class="quarto-xref">Equation&nbsp;1</a>, odds ratios are obtained by exponentiating the <span class="math inline">\(\beta\)</span> coefficients: <span class="math inline">\(e^{\beta}\)</span>. Stata provides the odds ratios automatically with option <code>, or</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>melogit outcome_category warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || <span class="co">/// </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>country:, <span class="kw">or</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -346,6 +347,19 @@ physcl_pnsh -0.170 -0.082
 identity1   -0.086 -0.014  0.002              
 interventn1 -0.102  0.055  0.006 -0.020       
 HDI         -0.930 -0.007  0.012 -0.001  0.004</code></pre>
+</div>
+</div>
+</section>
+<section id="calculate-odds-ratios" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-odds-ratios">Calculate Odds Ratios</h4>
+<p>R requires one to use a bit of extra syntax to extract the odds ratios. As suggested in <a href="#eq-MLMsimple-logistic" class="quarto-xref">Equation&nbsp;1</a>, odds ratios are obtained by exponentiating the <span class="math inline">\(\beta\)</span> coefficients: <span class="math inline">\(e^{\beta}\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">fixef</span>(fit3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        (Intercept)              warmth physical_punishment           identity1 
+          0.9115242           1.2926176           0.7524208           0.9517275 
+      intervention1                 HDI 
+          1.1915893           0.9990492 </code></pre>
 </div>
 </div>
 </section>

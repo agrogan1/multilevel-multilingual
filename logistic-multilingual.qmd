@@ -86,6 +86,8 @@ generate outcome_category = outcome > 52 // dichotomous outcome
 
 #### Run The Model
 
+As suggested in @eq-MLMsimple-logistic, odds ratios are obtained by exponentiating the $\beta$ coefficients: $e^{\beta}$. Stata provides the odds ratios automatically with option `, or`.
+
 ```{stata}
 #| label: Stata-logistic
 
@@ -147,6 +149,16 @@ fit3 <- glmer(outcome_category ~ warmth + physical_punishment +
               data = df)
 
 summary(fit3)
+
+```
+
+#### Calculate Odds Ratios
+
+R requires one to use a bit of extra syntax to extract the odds ratios. As suggested in @eq-MLMsimple-logistic, odds ratios are obtained by exponentiating the $\beta$ coefficients: $e^{\beta}$.
+
+```{r}
+
+exp(fixef(fit3))
 
 ```
 
