@@ -23,6 +23,7 @@ book:
     - unconditional-multilingual.qmd
     - cross-sectional-multilingual.qmd
     - longitudinal-multilingual.qmd
+    - logistic-multilingual.qmd
     - reshape-multilingual.qmd
     - aggregating-multilingual.qmd
     - references.qmd
