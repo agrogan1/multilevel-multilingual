@@ -1,0 +1,154 @@
+# Multilevel Logistic Regression
+
+```{r}
+#| label: logisticsetup
+#| echo: false
+#| output: false
+
+library(Statamarkdown)
+
+library(lme4) 
+
+# library(JuliaCall)
+
+# julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/bin")
+
+```
+
+Below, I detail the procedure for multilevel logistic regression models in Stata and R. 
+
+## The Data
+
+The data employed in these examples are the data described in @sec-data.
+
+## The Equation
+
+To explain statistical syntax for each Stata and R, I consider the general case of a multilevel model with *categorical* dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`. *i* is the index for the person, while *j* is the index for the group.
+
+$$\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j}$$ {#eq-MLMsimple-logistic}
+
+::: {.callout-caution collapse="false"}
+### Correlated and Uncorrelated Random Effects in Logistic Regression
+
+The reader is referred to the discussion of correlated and uncorrelated random effects in [Section @sec-correlated-uncorrelated]
+:::
+
+::: {.panel-tabset group="language"}
+
+### Stata
+
+In Stata `mixed`, the syntax for a multilevel model of the form described in @eq-MLMsimple-logistic is:
+
+```{stata}
+#| echo: true
+#| eval: false
+
+melogit y x z || group: 
+
+```
+
+### R
+
+In R `lme4`, the syntax for a multilevel model of the form described in @eq-MLMsimple-logistic is:
+
+```{r}
+#| echo: true
+#| eval: false
+
+library(lme4)
+
+glmer(y ~ x + z + (1 | group), data = ...)
+
+```
+:::
+
+## Run Models
+
+::: {.callout-caution}
+### Less Variation In Logistic Than Linear Models
+
+Note that in *logistic* regression models, there is less variation to work with--due to the fact that the outcome is `1/0`, than there is in *linear* models. Therefore, in the models below, I do not attempt to estimate a random slope in addition to a random intercept, as I do in [Section @sec-crosssectional].
+:::
+
+::: {.panel-tabset group="language"}
+
+### Stata
+
+#### Get The Data 
+
+```{stata, collectcode=TRUE}
+
+use simulated_multilevel_data.dta
+
+generate outcome_category = outcome > 52 // dichotomous outcome
+
+```
+
+#### Run The Model
+
+```{stata}
+#| label: Stata-logistic
+
+melogit outcome_category warmth physical_punishment i.identity i.intervention HDI || /// 
+country:, or
+
+```
+
+### R
+
+#### Get The Data
+
+```{r}
+
+library(haven)
+
+df <- read_dta("simulated_multilevel_data.dta")
+
+df$outcome_category <- 0 # initialize to 0
+
+df$outcome_category[df$outcome > 52] <- 1 # dichotomous outcome
+
+```
+
+#### Change Some Variables To Categorical
+
+```{r}
+
+df$identity <- factor(df$identity)
+
+df$intervention <- factor(df$intervention)
+
+```
+
+#### Run The Model
+
+::: {.callout-caution collapse="false"}
+`lme4` does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library `lmerTest` to provide p values for `lme4` results.
+:::
+
+::: {.callout-tip}
+R prefers to use scientific notation when possible. I find that the use of scientific notation can be confusing in reading results. I turn off scientific notation by setting a penalty for its use:  `options(scipen = 999)`.  
+:::
+
+```{r}
+#| warning: false
+#| label: R-logistic
+
+library(lme4) 
+
+library(lmerTest)
+
+options(scipen = 999) 
+
+fit3 <- glmer(outcome_category ~ warmth + physical_punishment + 
+                identity + intervention + HDI +
+                (1 | country),
+              family = binomial(link = "logit"),
+              data = df)
+
+summary(fit3)
+
+```
+
+:::
+
