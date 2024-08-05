@@ -19,6 +19,7 @@ book:
   chapters:
     - index.qmd
     - workflows-multilingual.qmd
+    - storage-multilingual.qmd
     - descriptives-multilingual.qmd
     - unconditional-multilingual.qmd
     - cross-sectional-multilingual.qmd
