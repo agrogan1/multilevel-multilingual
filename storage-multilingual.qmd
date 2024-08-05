@@ -1,4 +1,4 @@
-# Storing Data
+# Storing Statistical Data
 
 ```{r}
 #| echo: false
@@ -70,11 +70,13 @@ pander::pander(summary(df))
 
 ```
 
-#### Bar Graph
+#### Graph
 
 ```{r}
 #| echo: false
-#| output: false
+#| message: false
+#| label: fig-graph-statistical
+#| fig-cap: "Graph from Data Stored in Statistical Software"
 
 library(ggplot2)
 
@@ -126,9 +128,10 @@ df2 <- read_excel("simulated_multilevel_data.xlsx")
 ```
 
 We see right away that the data are less informative. 
+
 #### Describe The Data
 
-Notice how a description of the data contains information that helps us to understand the variables.
+Notice how a description of the data no long er contains much of the information that helped us to understand the variables.
 
 ```{r}
 #| echo: false
@@ -150,7 +153,7 @@ Adding this valuable information back into the data set may take a great deal of
 	
 #### Descriptive Statistics 
 
-Notice here how the descriptive statistics and graph are much less informative. For example, it is now not immediately clear what the values of `identity` or `intervention` represents. The information on variable label and value label will have to be added back into the data when preparing a final product for dissemination.
+Notice here how the descriptive statistics and graph are much less informative. For example, it is now not immediately clear what the values of `identity` or `intervention` represent. The information on variable labels and value labels will have to be added back into the data when preparing a final product for dissemination.
 
 ```{r}
 #| echo: false
@@ -159,13 +162,15 @@ pander::pander(summary(df2))
 
 ```
 
-#### Bar Graph
+#### Graph
 
-While the graph has an informative title, as well as informative axis labels, a crucial piece of information is missing, what each status of the intervention represents.
+While the graph has an informative title, as well as informative axis labels, a crucial piece of information is missing: what each status of the intervention represents.
 
 ```{r}
 #| echo: false
-#| output: false
+#| message: false
+#| label: fig-graph-spreadsheet
+#| fig-cap: "Graph from Data Stored in Spreadsheet"
 
 library(ggplot2)
 
