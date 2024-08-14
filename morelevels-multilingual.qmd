@@ -1,191 +1,70 @@
-# Cross-Classified Models in Stata, R and Julia
+# Models With Three or More Levels and Cross-Classified Models
+
+```{r}
+#| label: morelevelssetup
+#| echo: false
+#| output: false
+
+library(Statamarkdown)
+
+library(lme4) 
+
+library(JuliaCall)
+
+julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/bin")
+
+```
 
 ## Introduction
 
 A two level multilevel model imagines that *Level 1* units are nested in *Level 2* units. A three level multilevel model imagines that *Level 1* units are nested in *Level 2* units, which are in turn nested in *Level 3*. 
 
-A cross-classified model imagines that the nesting is not hierarchical, but rather that there are two sets of clusters or nestings in which individuals may be nested. 
+A *cross-classified* model imagines that the nesting is not hierarchical, but rather that there are two sets of clusters or nestings in which individuals may be nested. 
 
-In this data, *events* are nested inside *persons* which are in turn nested in *countries*, since in this data, individuals never change countries. However, the use of a cross-classified framework would allow for a situation in which *persons* moved from country to country, and experienced different *events* in different *countries*. 
+Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate these models.
 
-Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate cross-classified models. Because this document is built by [`Quarto`](https://quarto.org/), I describe calling these programs from within a `Quarto` environment. However, each piece of software could be used individually and separately.
+## Three Or More Levels {#sec-fourlevel}
 
-## The Data
+### The Data
+### The Equation
 
-The examples below use the `simulated_multilevel_longitudinal_data.dta` file from [*Multilevel Thinking*](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html). Here is a [direct link](https://github.com/agrogan1/multilevel-multilingual/raw/main/simulated_multilevel_longitudinal_data.dta) to download the data.
+## Cross-Classified Models
 
-```{r}
-#| echo: false
-#| output: false
+### The Data
 
-file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta", 
-          ".",
-          overwrite = TRUE) # copy over most recent version
+### The Equation
 
-```
-
-```{r}
-#| echo: false
-#| label: tbl-multilingual1
-#| tbl-cap: Sample of Simulated Multilevel Longitudinal Data
-
-library(haven) # read Stata
-
-library(pander) # nice tables
-
-df <- read_dta("simulated_multilevel_longitudinal_data.dta") # read in data
-
-pander(head(df)) # nice table
-
-```
-
-## The Equation
-
-$$\text{outcome}_{ijt}= \beta_0 + \beta_1 t_{ijt} + \beta_2 \text{warmth}_{ijt} + \beta_3 \text{physical punishment}_{ijt} + \\ \beta_4 \text{group}_{ijt} + \beta_5 \text{HDI}_{ijt} + \\ u_{0j} + v_{0i} + e_{ijt}$$ {#eq-crossclassifiedsubstantive}
-   
-## Setup 
+### Run The Models
 
 ::: {.panel-tabset group="language"}
 
-### Stata
+#### Stata
 
-I need to use the library `Statamarkdown` to call Stata, or I could run Stata on its own
+#### R
 
-```{r}
-
-library(Statamarkdown)
-
-```
-
-### R
-
-In R, I use the library `lme4` to run multilevel models.
-
-```{r}
-
-library(lme4)
-
-```
-
-### Julia
-
-I need to call Julia from R.
-
-```{r}
-
-library(JuliaCall)
-
-julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
-
-```
+#### Julia
 
 :::
 
-## Get Data & Run Models
+### Interpretation
 
-To explain statistical syntax for each software, I consider the more general case of a cross-classified model with dependent variable `y`, independent variables `x` and `z`, clustering variables `country` and `id`.
+## Cross-Classified Models
 
-$$y = \beta_0 + \beta_1 x_{ijt} + \beta_2 z_{ijt} + u_{0j} + v_{0i} + e_{ijt}$$ {#eq-crossclassfiedsimple}
+### The Data
+
+### The Equation
+
+### Run The Models
 
 ::: {.panel-tabset group="language"}
 
-### Stata
+#### Stata
 
-In Stata `mixed`, the syntax for a multilevel model of the form described in @eq-crossclassfiedsimple is:
+#### R
 
-`mixed y x || _all: R.group1 || group2:`
-
-#### Get The Data 
-
-::: {.callout-tip collapse="true"}
-#### Tip For Running Stata From Quarto
-
-Because I am running Stata from inside a Quarto document, and running Stata in multiple chunks, I need to use the `collectcode=TRUE` option in the first Stata chunk. i.e. my Quarto chunk needs to begin with ````{stata, collectcode=TRUE}`
-
-See Doug Hemken's excellent documentation on `Statamarkdown` [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/linking-code-blocks.html#linking-code-blocks-1).
-:::
-
-```{stata, collectcode=TRUE}
-
-use simulated_multilevel_longitudinal_data.dta
-
-```
-
-#### Run The Model
-
-```{stata}
-
-mixed outcome t warmth physical_punishment group HDI || _all: R.country || id:
-
-```
-
-### R
-
-In R `lme4`, the general syntax for a multilevel model of the form described in @eq-crossclassfiedsimple is:
-
-`lmer(y ~ x + z + (1 | group1) + (1 | group2), data = ...)`
-
-#### Get The Data
-
-```{r}
-
-library(haven)
-
-df <- read_dta("simulated_multilevel_longitudinal_data.dta")
-
-```
-
-#### Run The Model
-
-```{r}
-#| warning: false
-
-fit1 <- lmer(outcome ~ t + warmth + physical_punishment + 
-               group + HDI +
-               (1 | id) +
-               (1 | country),
-             data = df)
-
-summary(fit1)
-
-```
-
-### Julia
-
-In Julia `MixedModels`, the general syntax for a multilevel model of the form described in @eq-crossclassfiedsimple is:
-
-`fit(MixedModel, @formula(y ~ x + z + (1 | group1) + (1 | group2)), data)`
-
-#### Load The Needed Packages And Load The Data
-
-```{julia}
-#| output: false
-
-using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
-
-df = DataFrame(load("simulated_multilevel_longitudinal_data.dta"))
-
-```
-
-#### Change Country To Categorical
-
-```{julia}
-#| output: false
-
-@transform!(df, :country = categorical(:country))
-
-```
-
-#### Run The Model
-
-```{julia}
-
-m1 = fit(MixedModel, @formula(outcome ~ t + warmth + physical_punishment + 
-                                group + HDI +
-                                (1 | id) +
-                                (1 | country)), df)
-
-```
+#### Julia
 
 :::
+
+### Interpretation
 
