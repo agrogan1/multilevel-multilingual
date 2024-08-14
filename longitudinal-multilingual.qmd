@@ -53,7 +53,7 @@ Then, each identity group has its own intercept and time trajectory:
 Thus, again following the main text, in longitudinal multilevel models, *main effects* modify the *intercept* of the time trajectory, while *interactions with time*, modify the *slope* of the time trajectory. Below, we run models with *main effects only*, then models with *main effects, and interactions with time*.
 :::
 
-## Run Models
+## Run The Models
 
 ::: {.callout-warning}
 Remember that we are estimating a model in which time points are nested inside families, who are in turn nested inside countries. For each software package, it is accordingly important to specify the way in which different levels of the data are nested. Pay careful attention to the syntax examples below with regard to `id` and `country` 

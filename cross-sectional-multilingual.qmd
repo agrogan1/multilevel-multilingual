@@ -68,7 +68,7 @@ Julia       separate terms        separate random
 
 All models in the examples below are run with *uncorrelated* random effects, but could just as easily be run with *correlated* random effects. 
 
-## Run Models
+## Run The Models
 
 ::: {.callout-warning}
 ### Continuous and Categorical Variables
