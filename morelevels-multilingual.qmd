@@ -26,7 +26,18 @@ Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-
 ## Three Or More Levels {#sec-fourlevel}
 
 ### The Data
+
+I use the longitudinal data from *Multilevel Thinking* to which I have added an extra level of *United Nations Region* [@ArelBundock2018]. 
+
 ### The Equation
+
+$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-fourlevel-multilingual} 
+
+$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
+
+$$w_{0k} + u_{0j} + v_{0i} + e_{itjk}$$ 
+
+Here we imagine $w_{0k}$ (region), $u_{0j}$ (country) and $v_{0i}$ (family) are hierarchically nested effects. 
 
 ## Cross-Classified Models
 
