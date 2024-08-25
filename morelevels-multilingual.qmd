@@ -1,4 +1,9 @@
-# Models With Three or More Levels and Cross-Classified Models
+---
+title: "# Models With Three or More Levels and Cross-Classified Models"
+format:
+  html:
+    toc: true
+---
 
 ```{r}
 #| label: morelevelssetup
@@ -61,17 +66,23 @@ Here $u_{0j}$ (country) and $m_{0m}$ (language) are not nested hierarchically, b
 
 #### Stata
 
+##### Get The Data
+
 ```{stata, collectcode=TRUE}
 
 use "fourlevel.dta", clear
 
 ```
 
+##### Unconditional Model
+
 ```{stata, collectcode=TRUE}
 
 mixed outcome || UNregion: || country: || family:
 
 ```
+
+##### Conditional Model
 
 ```{stata, collectcode=TRUE}
 
@@ -81,6 +92,8 @@ mixed outcome t warmth physical_punishment i.identity i.intervention HDI || UNre
 
 #### R
 
+##### Get The Data
+
 ```{r}
 
 library(haven)
@@ -89,6 +102,8 @@ df4 <- read_dta("fourlevel.dta")
 
 ```
 
+##### Change Some Variables To Categorical
+
 ```{r}
 
 df4$identity <- factor(df4$identity)
@@ -96,6 +111,8 @@ df4$identity <- factor(df4$identity)
 df4$intervention <- factor(df4$intervention)
 
 ```
+
+##### Unconditional Model
 
 ::: {.callout-caution collapse="false"}
 `lme4` does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library `lmerTest` to provide p values for `lme4` results.
@@ -120,6 +137,8 @@ summary(fit4A)
 
 ```
 
+##### Conditional Model
+
 ```{r}
 
 fit4B <- lmer(outcome ~ t + warmth + physical_punishment + 
@@ -133,6 +152,8 @@ summary(fit4B)
 
 #### Julia
 
+##### Get The Data
+
 ```{julia}
 #| output: false
 #| label: Julia-getdata
@@ -143,6 +164,8 @@ using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesM
 df4 = DataFrame(load("fourlevel.dta"))
 
 ```
+
+##### Change Some Variables To Categorical
 
 ```{julia}
 #| output: false
@@ -158,6 +181,8 @@ df4 = DataFrame(load("fourlevel.dta"))
 
 ```
 
+##### Unconditional Model
+
 ```{julia}
 #| label: Julia-fourlevelA
 #| eval: false
@@ -171,6 +196,8 @@ m4A = fit(MixedModel, @formula(outcome ~ t + warmth +
                                   (1 | id)), df4)
 
 ```
+
+##### Conditional Model
 
 ```{julia}
 #| label: Julia-fourlevelB
@@ -202,17 +229,23 @@ m4B = fit(MixedModel, @formula(outcome ~ t + warmth +
 
 #### Stata
 
+##### Get The Data
+
 ```{stata, collectcode=TRUE}
 
 use "crossclassified.dta", clear
 
 ```
 
+##### Unconditional Model
+
 ```{stata}
 
 mixed outcome || _all: R.country || _all: R.language
 
 ```
+
+##### Conditional Model
 
 ```{stata}
 
@@ -222,6 +255,8 @@ mixed outcome warmth physical_punishment i.identity i.intervention HDI || _all: 
 
 #### R
 
+##### Get The Data
+
 ```{r}
 
 library(haven)
@@ -230,6 +265,8 @@ dfCC <- read_dta("crossclassified.dta")
 
 ```
 
+##### Change Some Variables To Categorical
+
 ```{r}
 
 dfCC$identity <- factor(dfCC$identity)
@@ -237,6 +274,8 @@ dfCC$identity <- factor(dfCC$identity)
 dfCC$intervention <- factor(dfCC$intervention)
 
 ```
+
+##### Unconditional Model
 
 ```{r}
 
@@ -255,6 +294,8 @@ summary(fitCC_A)
 
 ```
 
+##### Conditional Model
+
 ```{r}
 
 fitCC_B <- lmer(outcome ~ t + warmth + physical_punishment + 
@@ -269,6 +310,14 @@ summary(fitCC_B)
 
 
 #### Julia
+
+##### Get The Data
+
+##### Change Some Variables To Categorical
+
+##### Unconditional Model
+
+##### Conditional Model
 
 :::
 
