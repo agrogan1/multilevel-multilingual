@@ -87,6 +87,14 @@ file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/simulated
           ".",
           overwrite = TRUE) # copy over most recent version
 
+file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/fourlevel.dta", 
+          ".",
+          overwrite = TRUE) # copy over most recent version
+
+file.copy("../multilevel-thinking/simulate-and-analyze-multilevel-data/crossclassified.dta", 
+          ".",
+          overwrite = TRUE) # copy over most recent version
+
 ```
 
 ```{r}
