@@ -1,8 +1,13 @@
 ---
 title: "# Models With Three or More Levels and Cross-Classified Models"
+date: "today"
 format:
+  pdf: 
+    toc: true
+    toc-depth: 5
   html:
     toc: true
+bibliography: multilevel-multilingual.bib
 ---
 
 ```{r}
@@ -44,21 +49,6 @@ $$w_{0k} + u_{0j} + v_{0i} + e_{itjk}$$
 
 Here we imagine $w_{0k}$ (region), $u_{0j}$ (country) and $v_{0i}$ (family) are hierarchically nested effects. 
 
-## Cross-Classified Models
-
-### The Data
-
-I use the *cross-sectional* data from *Multilevel Thinking* to which I have added an extra level of a hypothetical language. 
-
-### The Equation
-
-$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-crossclassified-multilingual}
-
-$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$ 
-
-$$u_{0j} + m_{0m} + e_{ijm}$$ 
-
-Here $u_{0j}$ (country) and $m_{0m}$ (language) are not nested hierarchically, but are *cross classified*.
 
 ### Run The Models
 
@@ -221,7 +211,17 @@ m4B = fit(MixedModel, @formula(outcome ~ t + warmth +
 
 ### The Data
 
+I use the *cross-sectional* data from *Multilevel Thinking* to which I have added an extra level of a hypothetical language. 
+
 ### The Equation
+
+$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-crossclassified-multilingual}
+
+$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$ 
+
+$$u_{0j} + m_{0m} + e_{ijm}$$ 
+
+Here $u_{0j}$ (country) and $m_{0m}$ (language) are not nested hierarchically, but are *cross classified*.
 
 ### Run The Models
 
@@ -308,16 +308,60 @@ summary(fitCC_B)
 
 ```
 
-
 #### Julia
 
 ##### Get The Data
 
+```{julia}
+#| output: false
+#| label: Julia-CC-getdata
+
+using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+dfCC = DataFrame(load("crossclassified.dta"))
+
+```
+
 ##### Change Some Variables To Categorical
+
+```{julia}
+#| output: false
+#| eval: false
+
+@transform!(dfCC, :country = categorical(:country))
+
+@transform!(dfCC, :language = categorical(:language))
+
+@transform!(dfCC, :identity = categorical(:identity))
+
+@transform!(dfCC, :intervention = categorical(:intervention))
+
+```
 
 ##### Unconditional Model
 
+```{julia}
+#| label: Julia-CC-unconditional
+
+mCCA = fit(MixedModel, @formula(outcome ~ 
+                                 (1 | country) + 
+                                 (1 | language)), dfCC)
+
+```
+
 ##### Conditional Model
+
+```{julia}
+#| label: Julia-CC-conditional
+
+mCCA = fit(MixedModel, @formula(outcome ~ warmth + 
+                                 physical_punishment + 
+                                 identity + intervention + 
+                                 HDI +
+                                 (1 | country) + 
+                                 (1 | language)), dfCC)
+
+```
 
 :::
 
