@@ -238,7 +238,7 @@
 \makeatother
 \subtitle{Multilevel Models in Stata, R and Julia}
 \author{Andrew Grogan-Kaylor}
-\date{2024-08-05}
+\date{2024-08-26}
 
 \begin{document}
 \maketitle
@@ -332,7 +332,7 @@ multilevel modeling; and very steep learning curve for graphing.
 Graphics libraries are very much under development and in flux. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Results Will Vary Somewhat}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 Estimating multilevel models is a complex endeavor. The software details
 of how this is accomplished are beyond the purview of this book. Suffice
@@ -343,7 +343,7 @@ Substantively speaking, however, results should agree across software.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Multi-Line Commands}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 Sometimes I have written commands out over multiple lines. I have done
 this for especially long commands, but have also sometimes done this
@@ -372,7 +372,7 @@ different approaches to multi-line commands.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Running Statistical Packages in Quarto}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 I used Quarto (Allaire et al., 2024) (\url{https://quarto.org/}) to
 create this Appendix. Quarto is a programming and publishing environment
@@ -391,7 +391,7 @@ installed on your computer.
 
 \section{The Data}\label{sec-data}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Datasets}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 The examples use the \texttt{simulated\_multilevel\_data.dta} and
 \texttt{simulated\_multilevel\_longitudinal\_data.dta} files.
@@ -599,13 +599,6 @@ with the raw data, moves through any necessary re-coding or cleaning of
 the data, generates descriptive statistics, generates the appropriate
 multivariate results, and then generates any necessary visualizations.
 
-\section{Storing Statistical Data}\label{storing-statistical-data}
-
-It is usually best to store quantitative data in a statistical format
-such as R (\texttt{.Rdata}), or Stata (\texttt{.dta}), or even a text
-format such as \texttt{.csv}. Spreadsheets are likely to be a bad tool
-for storing quantitative data.
-
 \section{Good Statistical Workflows Allow Multiple Statistical
 Packages}\label{sec-multiple-packages}
 
@@ -675,7 +668,7 @@ solution, and being transparent about its implementation.
 
 \bookmarksetup{startatroot}
 
-\chapter{Storing Statistical Data}\label{storing-statistical-data-1}
+\chapter{Storing Statistical Data}\label{storing-statistical-data}
 
 \section{Spreadsheets}\label{spreadsheets}
 
@@ -739,7 +732,7 @@ label
 
 \subsubsection{Descriptive Statistics}\label{descriptive-statistics}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Variable Labels and Value Labels Help Us Understand Our Data}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Variable Labels and Value Labels Help Us Understand Our Data}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 Notice how the descriptive statistics and graph are informative in that
 they contain information on the \emph{variable label} and \emph{value
@@ -1057,7 +1050,7 @@ outcome
 3 & 49.81 \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 Adding this valuable information back into the data set may take a great
 deal of extra effort.
@@ -1956,9 +1949,9 @@ All models in the examples below are run with \emph{uncorrelated} random
 effects, but could just as easily be run with \emph{correlated} random
 effects.
 
-\section{Run Models}\label{run-models-2}
+\section{Run The Models}\label{run-the-models}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Continuous and Categorical Variables}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 Statistically--as noted in the main text--it is important to be clear on
 whether independent variables in one's model are continuous or
@@ -2063,7 +2056,7 @@ Categorical}\label{change-some-variables-to-categorical}
 
 \subsubsection{Run The Model}\label{run-the-model-1}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -2072,7 +2065,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -2283,7 +2276,7 @@ Slope (Time Trajectory)
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Main Effects and Interactions}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 Thus, again following the main text, in longitudinal multilevel models,
 \emph{main effects} modify the \emph{intercept} of the time trajectory,
@@ -2293,9 +2286,9 @@ models with \emph{main effects, and interactions with time}.
 
 \end{tcolorbox}
 
-\section{Run Models}\label{run-models-3}
+\section{Run The Models}\label{run-the-models-1}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 Remember that we are estimating a model in which time points are nested
 inside families, who are in turn nested inside countries. For each
@@ -2317,14 +2310,14 @@ the syntax examples below with regard to \texttt{id} and
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Run The Models}\label{run-the-models}
+\subsubsection{Run The Models}\label{run-the-models-2}
 
 \paragraph{Main Effects Only}\label{main-effects-only}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{mixed outcome t warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || }\CommentTok{/// }
-\NormalTok{country: warmth || id: t}
+\NormalTok{country: || id: t}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2332,11 +2325,11 @@ the syntax examples below with regard to \texttt{id} and
 Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood =  -28523.49  
-Iteration 1:  Log likelihood = -28499.987  
-Iteration 2:  Log likelihood = -28499.739  
-Iteration 3:  Log likelihood = -28499.604  
-Iteration 4:  Log likelihood = -28499.603  
+Iteration 0:  Log likelihood = -28523.888  
+Iteration 1:  Log likelihood = -28500.378  
+Iteration 2:  Log likelihood = -28500.105  
+Iteration 3:  Log likelihood = -28500.086  
+Iteration 4:  Log likelihood = -28500.086  
 
 Computing standard errors ...
 
@@ -2351,35 +2344,34 @@ Mixed-effects ML regression                            Number of obs =   9,000
                      id |      3,000          3        3.0          3
         -------------------------------------------------------------
 
-                                                       Wald chi2(6)  = 1096.15
-Log likelihood = -28499.603                            Prob > chi2   =  0.0000
+                                                       Wald chi2(6)  = 1208.49
+Log likelihood = -28500.086                            Prob > chi2   =  0.0000
 
 -------------------------------------------------------------------------------------
             outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 --------------------+----------------------------------------------------------------
-                  t |    .943864   .0658716    14.33   0.000      .814758     1.07297
-             warmth |   .9134959   .0423732    21.56   0.000      .830446    .9965459
-physical_punishment |  -1.007897   .0497622   -20.25   0.000    -1.105429   -.9103647
-         1.identity |  -.1276926   .1515835    -0.84   0.400    -.4247908    .1694057
-     1.intervention |   .8589966   .1519095     5.65   0.000     .5612596    1.156734
-                HDI |  -.0005657   .0196437    -0.03   0.977    -.0390666    .0379352
-              _cons |   50.46724   1.338318    37.71   0.000     47.84418    53.09029
+                  t |   .9433792   .0658667    14.32   0.000     .8142828    1.072476
+             warmth |   .9140251   .0379154    24.11   0.000     .8397122     .988338
+physical_punishment |   -1.00861   .0497766   -20.26   0.000    -1.106171   -.9110499
+         1.identity |  -.1319026   .1516462    -0.87   0.384    -.4291236    .1653184
+     1.intervention |   .8592402   .1519616     5.65   0.000     .5614009     1.15708
+                HDI |   .0007913   .0200615     0.04   0.969    -.0385285     .040111
+              _cons |   50.38381   1.367464    36.84   0.000     47.70363    53.06399
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
-country: Independent         |
-                 var(warmth) |   .0107586   .0127845      .0010478    .1104703
-                  var(_cons) |   3.167085   .9146761      1.798154    5.578181
+country: Identity            |
+                  var(_cons) |   3.418565   .9268849      2.009349    5.816108
 -----------------------------+------------------------------------------------
 id: Independent              |
-                      var(t) |   3.58e-09   7.06e-07      3.5e-177    3.7e+159
-                  var(_cons) |   8.387275   .4724188      7.510631    9.366242
+                      var(t) |   1.27e-08   2.25e-06      7.3e-160    2.2e+143
+                  var(_cons) |    8.42116   .4720261      7.545013    9.399046
 -----------------------------+------------------------------------------------
-               var(Residual) |   26.02733   .4753701      25.11211    26.97592
+               var(Residual) |   26.02918   .4753157      25.11405    26.97765
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(4) = 1247.03               Prob > chi2 = 0.0000
+LR test vs. linear model: chi2(3) = 1246.06               Prob > chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.
 \end{verbatim}
@@ -2485,9 +2477,9 @@ Categorical}\label{change-some-variables-to-categorical-2}
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Run The Models}\label{run-the-models-1}
+\subsubsection{Run The Models}\label{run-the-models-3}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -2496,7 +2488,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -2691,7 +2683,7 @@ Categorical}\label{change-some-variables-to-categorical-3}
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Run The Models}\label{run-the-models-2}
+\subsubsection{Run The Models}\label{run-the-models-4}
 
 \paragraph{Main Effects Only}\label{main-effects-only-2}
 
@@ -2802,7 +2794,7 @@ associated with differences in the slope of the time trajectory. In this
 case, we find insufficient evidence that any independent variable is
 associated with changes in the slope of the time trajectory.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Which Interactions To Test?}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 In this example--for the sake of illustration--I test the interaction of
 \emph{every} independent variable with time. In many cases, it may make
@@ -2847,7 +2839,7 @@ the index for the person, while \emph{j} is the index for the group.
 
 \begin{equation}\phantomsection\label{eq-MLMsimple-logistic}{\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_{0j}}\end{equation}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Correlated and Uncorrelated Random Effects in Logistic Regression}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Correlated and Uncorrelated Random Effects in Logistic Regression}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 The reader is referred to the discussion of correlated and uncorrelated
 random effects in Section~\ref{sec-correlated-uncorrelated}
@@ -2878,9 +2870,9 @@ described in Equation~\ref{eq-MLMsimple-logistic} is:
 \end{Highlighting}
 \end{Shaded}
 
-\section{Run Models}\label{run-models-4}
+\section{Run Models}\label{run-models-2}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Less Variation In Logistic Than Linear Models}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Less Variation In Logistic Than Linear Models}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 Note that in \emph{logistic} regression models, there is less variation
 to work with--due to the fact that the outcome is \texttt{1/0}, than
@@ -2996,7 +2988,7 @@ Categorical}\label{change-some-variables-to-categorical-4}
 
 \subsubsection{Run The Model}\label{run-the-model-4}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 \texttt{lme4} does not directly provide p values in results, because of
 some disagreement over exactly how these p values should be calculated.
@@ -3005,7 +2997,7 @@ provide p values for \texttt{lme4} results.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 R prefers to use scientific notation when possible. I find that the use
 of scientific notation can be confusing in reading results. I turn off
@@ -3093,9 +3085,797 @@ obtained by exponentiating the \(\beta\) coefficients: \(e^{\beta}\).
 
 \bookmarksetup{startatroot}
 
-\chapter{Reshaping Data}\label{sec-reshape}
+\chapter{\# Models With Three or More Levels and Cross-Classified
+Models}\label{models-with-three-or-more-levels-and-cross-classified-models}
 
 \section{Introduction}\label{introduction-1}
+
+A two level multilevel model imagines that \emph{Level 1} units are
+nested in \emph{Level 2} units. A three level multilevel model imagines
+that \emph{Level 1} units are nested in \emph{Level 2} units, which are
+in turn nested in \emph{Level 3}. As more levels are added to the model
+(e.g.~\emph{Level 4}), we imagine all of these levels to be
+hierarchically nested.
+
+A \emph{cross classified} model imagines that the nesting is not
+hierarchical, but rather that there are two sets of clusters or nestings
+in which individuals may be nested.
+
+Below, I describe the use of Stata, R, and Julia to estimate these
+models.
+
+\section{Three Or More Levels}\label{sec-fourlevel}
+
+\subsection{The Data}\label{the-data-2}
+
+I use the \emph{longitudinal} data from \emph{Multilevel Thinking}
+(Section~\ref{sec-data}) to which I have added an extra level of
+\emph{United Nations Region} (Arel-Bundock et al., 2018). This data thus
+requires a four level model.
+
+\subsection{The Equation}\label{the-equation-5}
+
+\begin{equation}\phantomsection\label{eq-MLM-fourlevel-multilingual}{\text{outcome}_{itjk} = \beta_0 + \beta_1 \text{parental warmth}_{itjk} + \beta_2 \text{physical punishment}_{itjk} + \beta_3 \text{time}_{itjk} \ + }\end{equation}
+
+\[\beta_4 \text{identity}_{itjk} + \beta_5 \text{intervention}_{itjk} + \beta_6 \text{HDI}_{itjk} +\]
+
+\[w_{0k} + u_{0j} + v_{0i} + e_{itjk}\]
+
+Here we imagine \(w_{0k}\) (region), \(u_{0j}\) (country) and \(v_{0i}\)
+(family) are hierarchically nested effects.
+
+\subsection{Run The Models}\label{run-the-models-5}
+
+\subsubsection{Stata}
+
+\paragraph{Get The Data}\label{get-the-data-8}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{use} \StringTok{"fourlevel.dta"}\NormalTok{, }\KeywordTok{clear}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Unconditional Model}\label{unconditional-model}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{mixed outcome || UNregion: || country: || }\KeywordTok{family}\NormalTok{:}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -29061.686  
+Iteration 1:  Log likelihood = -29061.679  
+Iteration 2:  Log likelihood = -29061.679  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                              Number of obs = 9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+               UNregion |          5        600    1,800.0      3,600
+                country |         30        300      300.0        300
+                 family |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                         Wald chi2(0)  =     .
+Log likelihood = -29061.679                              Prob > chi2   =     .
+
+------------------------------------------------------------------------------
+     outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       _cons |   54.05906    .987367    54.75   0.000     52.12385    55.99426
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+UNregion: Identity           |
+                  var(_cons) |   4.172687   3.187885      .9334852    18.65194
+-----------------------------+------------------------------------------------
+country: Identity            |
+                  var(_cons) |   2.849348   .8710225      1.565093    5.187414
+-----------------------------+------------------------------------------------
+family: Identity             |
+                  var(_cons) |   11.72403     .57475      10.64997    12.90641
+-----------------------------+------------------------------------------------
+               var(Residual) |   28.23424   .5154842      27.24177    29.26286
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(3) = 1843.44               Prob > chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
+\end{verbatim}
+
+\paragraph{Conditional Model}\label{conditional-model}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{mixed outcome t warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI }\CommentTok{///}
+\NormalTok{|| UNregion: || country: || id:}
+  
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -28503.082  
+Iteration 1:  Log likelihood = -28503.039  
+Iteration 2:  Log likelihood = -28503.039  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                            Number of obs =   9,000
+
+        Grouping information
+        -------------------------------------------------------------
+                        |     No. of       Observations per group
+         Group variable |     groups    Minimum    Average    Maximum
+        ----------------+--------------------------------------------
+               UNregion |          5        600    1,800.0      3,600
+                country |         30        300      300.0        300
+                     id |      3,000          3        3.0          3
+        -------------------------------------------------------------
+
+                                                       Wald chi2(6)  = 1209.42
+Log likelihood = -28503.039                            Prob > chi2   =  0.0000
+
+-------------------------------------------------------------------------------------
+            outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+                  t |   .9433791   .0658667    14.32   0.000     .8142827    1.072476
+             warmth |   .9140704   .0379156    24.11   0.000     .8397571    .9883837
+physical_punishment |  -1.008615   .0497772   -20.26   0.000    -1.106176   -.9110531
+         1.identity |  -.1332133   .1516437    -0.88   0.380    -.4304294    .1640028
+     1.intervention |   .8589263   .1519619     5.65   0.000     .5610865    1.156766
+                HDI |   .0148561   .0196605     0.76   0.450    -.0236777    .0533899
+              _cons |   50.16426   1.675219    29.94   0.000     46.88089    53.44763
+-------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+UNregion: Identity           |
+                  var(_cons) |   4.722007   3.585939      1.065898    20.91884
+-----------------------------+------------------------------------------------
+country: Identity            |
+                  var(_cons) |   2.863495   .8656459      1.583342    5.178668
+-----------------------------+------------------------------------------------
+id: Identity                 |
+                  var(_cons) |   8.421131   .4711947      7.546445    9.397199
+-----------------------------+------------------------------------------------
+               var(Residual) |   26.02919   .4752587      25.11417    26.97755
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(3) = 1844.00               Prob > chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
+\end{verbatim}
+
+\subsubsection{R}
+
+\paragraph{Get The Data}\label{get-the-data-9}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(haven)}
+
+\NormalTok{df4 }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"fourlevel.dta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical-5}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df4}\SpecialCharTok{$}\NormalTok{identity }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df4}\SpecialCharTok{$}\NormalTok{identity)}
+
+\NormalTok{df4}\SpecialCharTok{$}\NormalTok{intervention }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df4}\SpecialCharTok{$}\NormalTok{intervention)}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Unconditional Model}\label{unconditional-model-1}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
+
+\texttt{lme4} does not directly provide p values in results, because of
+some disagreement over exactly how these p values should be calculated.
+Therefore, in this Appendix, I also call library \texttt{lmerTest} to
+provide p values for \texttt{lme4} results.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
+
+R prefers to use scientific notation when possible. I find that the use
+of scientific notation can be confusing in reading results. I turn off
+scientific notation by setting a penalty for its use:
+\texttt{options(scipen\ =\ 999)}.
+
+\end{tcolorbox}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lme4) }
+
+\FunctionTok{library}\NormalTok{(lmerTest)}
+
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{999}\NormalTok{) }
+
+\NormalTok{fit4A }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{  (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ UNregion}\SpecialCharTok{/}\NormalTok{country}\SpecialCharTok{/}\NormalTok{id),}
+             \AttributeTok{data =}\NormalTok{ df4)}
+
+\FunctionTok{summary}\NormalTok{(fit4A)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: outcome ~ (1 | UNregion/country/id)
+   Data: df4
+
+REML criterion at convergence: 58121.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7850 -0.6064 -0.0047  0.6020  3.4399 
+
+Random effects:
+ Groups                Name        Variance Std.Dev.
+ id:(country:UNregion) (Intercept) 11.724   3.424   
+ country:UNregion      (Intercept)  2.842   1.686   
+ UNregion              (Intercept)  5.478   2.340   
+ Residual                          28.234   5.314   
+Number of obs: 9000, groups:  
+id:(country:UNregion), 3000; country:UNregion, 30; UNregion, 5
+
+Fixed effects:
+            Estimate Std. Error     df t value   Pr(>|t|)    
+(Intercept)   54.061      1.112  3.777    48.6 0.00000201 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\paragraph{Conditional Model}\label{conditional-model-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit4B }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ t }\SpecialCharTok{+}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
+\NormalTok{                identity }\SpecialCharTok{+}\NormalTok{ intervention }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+} 
+\NormalTok{                (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ UNregion}\SpecialCharTok{/}\NormalTok{country}\SpecialCharTok{/}\NormalTok{id),}
+              \AttributeTok{data =}\NormalTok{ df4)}
+
+\FunctionTok{summary}\NormalTok{(fit4B)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: 
+outcome ~ t + warmth + physical_punishment + identity + intervention +  
+    HDI + (1 | UNregion/country/id)
+   Data: df4
+
+REML criterion at convergence: 57026.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.6846 -0.6096 -0.0038  0.6138  3.6850 
+
+Random effects:
+ Groups                Name        Variance Std.Dev.
+ id:(country:UNregion) (Intercept)  8.438   2.905   
+ country:UNregion      (Intercept)  2.979   1.726   
+ UNregion              (Intercept)  6.178   2.486   
+ Residual                          26.036   5.103   
+Number of obs: 9000, groups:  
+id:(country:UNregion), 3000; country:UNregion, 30; UNregion, 5
+
+Fixed effects:
+                      Estimate Std. Error         df t value
+(Intercept)           50.11857    1.78086   15.79112  28.143
+t                      0.94338    0.06588 5998.37756  14.321
+warmth                 0.91406    0.03793 4745.28492  24.096
+physical_punishment   -1.00876    0.04980 6483.46337 -20.257
+identity1             -0.13324    0.15173 2969.00938  -0.878
+intervention1          0.85872    0.15205 2971.85430   5.648
+HDI                    0.01560    0.02006   24.39852   0.778
+                                Pr(>|t|)    
+(Intercept)          0.00000000000000641 ***
+t                   < 0.0000000000000002 ***
+warmth              < 0.0000000000000002 ***
+physical_punishment < 0.0000000000000002 ***
+identity1                          0.380    
+intervention1        0.00000001780521096 ***
+HDI                                0.444    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) t      warmth physc_ idntt1 intrv1
+t           -0.073                                   
+warmth      -0.071 -0.002                            
+physcl_pnsh -0.073 -0.007 -0.012                     
+identity1   -0.040  0.000 -0.013 -0.003              
+interventn1 -0.045  0.000  0.039  0.019 -0.018       
+HDI         -0.738  0.000 -0.005  0.005 -0.001  0.001
+\end{verbatim}
+
+\subsubsection{Julia}
+
+\paragraph{Get The Data}\label{get-the-data-10}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{using} \BuiltInTok{Tables}\NormalTok{, }\BuiltInTok{MixedModels}\NormalTok{, }\BuiltInTok{StatFiles}\NormalTok{, }\BuiltInTok{DataFrames}\NormalTok{, }\BuiltInTok{CategoricalArrays}\NormalTok{, }\BuiltInTok{DataFramesMeta}
+
+\NormalTok{df4 }\OperatorTok{=} \FunctionTok{DataFrame}\NormalTok{(}\FunctionTok{load}\NormalTok{(}\StringTok{"fourlevel.dta"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical-6}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{@transform}\NormalTok{!(df4, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
+
+\PreprocessorTok{@transform}\NormalTok{!(df4, }\OperatorTok{:}\NormalTok{UNregion }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{UNregion))}
+
+\PreprocessorTok{@transform}\NormalTok{!(df4, }\OperatorTok{:}\NormalTok{identity }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{identity))}
+
+\PreprocessorTok{@transform}\NormalTok{!(df4, }\OperatorTok{:}\NormalTok{intervention }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{intervention))}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Unconditional Model}\label{unconditional-model-2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m4A }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{+}\NormalTok{ warmth }\OperatorTok{+} 
+\NormalTok{                                  physical\_punishment }\OperatorTok{+} 
+\NormalTok{                                  identity }\OperatorTok{+}\NormalTok{ intervention }\OperatorTok{+} 
+\NormalTok{                                  HDI }\OperatorTok{+}
+\NormalTok{                                  (}\FloatTok{1} \OperatorTok{|}\NormalTok{ UNregion) }\OperatorTok{+} 
+\NormalTok{                                  (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country) }\OperatorTok{+} 
+\NormalTok{                                  (}\FloatTok{1} \OperatorTok{|}\NormalTok{ id)), df4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + t + warmth + physical_punishment + identity + intervention + HDI + (1 | UNregion) + (1 | country) + (1 | id)
+    logLik   -2 logLik      AIC         AICc        BIC     
+ -28503.0394  57006.0787  57028.0787  57028.1081  57106.2335
+
+Variance components:
+            Column   Variance Std.Dev.
+id       (Intercept)   8.42110 2.90191
+country  (Intercept)   2.86347 1.69218
+UNregion (Intercept)   4.72082 2.17274
+Residual              26.02921 5.10188
+ Number of obs: 9000; levels of grouping factors: 3000, 30, 5
+
+  Fixed-effects parameters:
+─────────────────────────────────────────────────────────────
+                          Coef.  Std. Error       z  Pr(>|z|)
+─────────────────────────────────────────────────────────────
+(Intercept)          50.1643      1.67514     29.95    <1e-99
+t                     0.943379    0.0658668   14.32    <1e-45
+warmth                0.91407     0.0379156   24.11    <1e-99
+physical_punishment  -1.00861     0.0497772  -20.26    <1e-90
+identity             -0.133213    0.151644    -0.88    0.3797
+intervention          0.858927    0.151962     5.65    <1e-07
+HDI                   0.0148553   0.0196604    0.76    0.4499
+─────────────────────────────────────────────────────────────
+\end{verbatim}
+
+\paragraph{Conditional Model}\label{conditional-model-2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m4B }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ t }\OperatorTok{+}\NormalTok{ warmth }\OperatorTok{+} 
+\NormalTok{                                  physical\_punishment }\OperatorTok{+} 
+\NormalTok{                                  identity }\OperatorTok{+}\NormalTok{ intervention }\OperatorTok{+} 
+\NormalTok{                                  HDI }\OperatorTok{+}
+\NormalTok{                                  (}\FloatTok{1} \OperatorTok{|}\NormalTok{ UNregion) }\OperatorTok{+} 
+\NormalTok{                                  (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country) }\OperatorTok{+} 
+\NormalTok{                                  (}\FloatTok{1} \OperatorTok{|}\NormalTok{ id)), df4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + t + warmth + physical_punishment + identity + intervention + HDI + (1 | UNregion) + (1 | country) + (1 | id)
+    logLik   -2 logLik      AIC         AICc        BIC     
+ -28503.0394  57006.0787  57028.0787  57028.1081  57106.2335
+
+Variance components:
+            Column   Variance Std.Dev.
+id       (Intercept)   8.42110 2.90191
+country  (Intercept)   2.86347 1.69218
+UNregion (Intercept)   4.72082 2.17274
+Residual              26.02921 5.10188
+ Number of obs: 9000; levels of grouping factors: 3000, 30, 5
+
+  Fixed-effects parameters:
+─────────────────────────────────────────────────────────────
+                          Coef.  Std. Error       z  Pr(>|z|)
+─────────────────────────────────────────────────────────────
+(Intercept)          50.1643      1.67514     29.95    <1e-99
+t                     0.943379    0.0658668   14.32    <1e-45
+warmth                0.91407     0.0379156   24.11    <1e-99
+physical_punishment  -1.00861     0.0497772  -20.26    <1e-90
+identity             -0.133213    0.151644    -0.88    0.3797
+intervention          0.858927    0.151962     5.65    <1e-07
+HDI                   0.0148553   0.0196604    0.76    0.4499
+─────────────────────────────────────────────────────────────
+\end{verbatim}
+
+\subsection{Interpretation}\label{interpretation-5}
+
+There is group level variation attributable to individual, country, and
+region.
+
+As in other models, parental warmth, and participation in the
+intervention are associated with increases in the outcome. Parental use
+of physical punishment is associated with decreases in the outcome.
+
+\section{Cross-Classified Models}\label{cross-classified-models}
+
+\subsection{The Data}\label{the-data-3}
+
+I use the \emph{cross-sectional} data from \emph{Multilevel Thinking}
+(Section~\ref{sec-data}) to which I have added an extra level of a
+hypothetical language.
+
+\subsection{The Equation}\label{the-equation-6}
+
+\begin{equation}\phantomsection\label{eq-crossclassified-multilingual}{\text{outcome}_{ijm} = \beta_0 + \beta_1 \text{parental warmth}_{ijm} + \beta_2 \text{physical punishment}_{ijm} + \beta_3 \text{time}_{ijm} \ + }\end{equation}
+
+\[\beta_4 \text{identity}_{ijm} + \beta_5 \text{intervention}_{ijm} + \beta_6 \text{HDI}_{ijm} +\]
+
+\[u_{0j} + m_{0m} + e_{ijm}\]
+
+Here \(u_{0j}\) (country) and \(m_{0m}\) (language) are not nested
+hierarchically, but are \emph{cross classified}.
+
+\subsection{Run The Models}\label{run-the-models-6}
+
+\subsubsection{Stata}
+
+\paragraph{Get The Data}\label{get-the-data-11}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{use} \StringTok{"crossclassified.dta"}\NormalTok{, }\KeywordTok{clear}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Unconditional Model}\label{unconditional-model-3}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{mixed outcome || }\DataTypeTok{\_all}\NormalTok{: R.country || }\DataTypeTok{\_all}\NormalTok{: R.language}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -9835.8123  
+Iteration 1:  Log likelihood = -9835.8111  
+Iteration 2:  Log likelihood = -9835.8111  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                         Number of obs    =   3,000
+Group variable: _all                                Number of groups =       1
+                                                    Obs per group:
+                                                                 min =   3,000
+                                                                 avg = 3,000.0
+                                                                 max =   3,000
+                                                    Wald chi2(0)     =       .
+Log likelihood = -9835.8111                         Prob > chi2      =       .
+
+---------------------------------------------------------------------------------
+        outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+----------------+----------------------------------------------------------------
+          _cons |   52.43187   .3590214   146.04   0.000      51.7282    53.13554
+---------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+_all: Identity               |
+              var(R.country) |   3.177791   .9244633      1.796798    5.620198
+-----------------------------+------------------------------------------------
+_all: Identity               |
+             var(R.language) |   .9566314   .3284087      .4881235     1.87482
+-----------------------------+------------------------------------------------
+               var(Residual) |   39.62877   1.045619      37.63148    41.73206
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 180.84                Prob > chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
+\end{verbatim}
+
+\paragraph{Conditional Model}\label{conditional-model-3}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{mixed outcome warmth physical\_punishment i.}\KeywordTok{identity}\NormalTok{ i.intervention HDI || }\DataTypeTok{\_all}\NormalTok{: R.country || }\DataTypeTok{\_all}\NormalTok{: R.language}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Performing EM optimization ...
+
+Performing gradient-based optimization: 
+Iteration 0:  Log likelihood = -9663.2195  
+Iteration 1:  Log likelihood = -9663.2194  
+
+Computing standard errors ...
+
+Mixed-effects ML regression                         Number of obs    =   3,000
+Group variable: _all                                Number of groups =       1
+                                                    Obs per group:
+                                                                 min =   3,000
+                                                                 avg = 3,000.0
+                                                                 max =   3,000
+                                                    Wald chi2(5)     =  367.04
+Log likelihood = -9663.2194                         Prob > chi2      =  0.0000
+
+-------------------------------------------------------------------------------------
+            outcome | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+             warmth |   .8331461   .0579811    14.37   0.000     .7195052     .946787
+physical_punishment |  -.9979749    .080268   -12.43   0.000    -1.155297   -.8406525
+         1.identity |  -.2922428   .2191421    -1.33   0.182    -.7217534    .1372678
+     1.intervention |   .6097458   .2195139     2.78   0.005     .1795064    1.039985
+                HDI |  -.0015879   .0204157    -0.08   0.938    -.0416021    .0384262
+              _cons |   51.92255   1.411069    36.80   0.000     49.15691     54.6882
+-------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
+-----------------------------+------------------------------------------------
+_all: Identity               |
+              var(R.country) |   3.361218   .9603072      1.920024    5.884192
+-----------------------------+------------------------------------------------
+_all: Identity               |
+             var(R.language) |   1.121946   .3269535      .6337502    1.986214
+-----------------------------+------------------------------------------------
+               var(Residual) |   35.11959   .9263999      33.35002    36.98306
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 227.02                Prob > chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
+\end{verbatim}
+
+\subsubsection{R}
+
+\paragraph{Get The Data}\label{get-the-data-12}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(haven)}
+
+\NormalTok{dfCC }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"crossclassified.dta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical-7}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dfCC}\SpecialCharTok{$}\NormalTok{identity }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(dfCC}\SpecialCharTok{$}\NormalTok{identity)}
+
+\NormalTok{dfCC}\SpecialCharTok{$}\NormalTok{intervention }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(dfCC}\SpecialCharTok{$}\NormalTok{intervention)}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Unconditional Model}\label{unconditional-model-4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lme4) }
+
+\FunctionTok{library}\NormalTok{(lmerTest)}
+
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{999}\NormalTok{) }
+
+\NormalTok{fitCC\_A }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}  
+\NormalTok{                 (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country) }\SpecialCharTok{+}
+\NormalTok{                 (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ language),}
+             \AttributeTok{data =}\NormalTok{ dfCC)}
+
+\FunctionTok{summary}\NormalTok{(fitCC\_A)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: outcome ~ (1 | country) + (1 | language)
+   Data: dfCC
+
+REML criterion at convergence: 19671.8
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3899 -0.6602 -0.0104  0.6798  3.6924 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ language (Intercept)  0.9604  0.980   
+ country  (Intercept)  3.2919  1.814   
+ Residual             39.6276  6.295   
+Number of obs: 3000, groups:  language, 100; country, 30
+
+Fixed effects:
+            Estimate Std. Error      df t value            Pr(>|t|)    
+(Intercept)  52.4319     0.3643 33.4284   143.9 <0.0000000000000002 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\paragraph{Conditional Model}\label{conditional-model-4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fitCC\_B }\OtherTok{\textless{}{-}} \FunctionTok{lmer}\NormalTok{(outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ t }\SpecialCharTok{+}\NormalTok{ warmth }\SpecialCharTok{+}\NormalTok{ physical\_punishment }\SpecialCharTok{+} 
+\NormalTok{                identity }\SpecialCharTok{+}\NormalTok{ intervention }\SpecialCharTok{+}\NormalTok{ HDI }\SpecialCharTok{+} 
+\NormalTok{                (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ country) }\SpecialCharTok{+}
+\NormalTok{                (}\DecValTok{1} \SpecialCharTok{|}\NormalTok{ language),}
+              \AttributeTok{data =}\NormalTok{ dfCC)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Error in model.frame.default(data = dfCC, drop.unused.levels = TRUE, formula = outcome ~ : invalid type (closure) for variable 't'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(fitCC\_B)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Error in h(simpleError(msg, call)): error in evaluating the argument 'object' in selecting a method for function 'summary': object 'fitCC_B' not found
+\end{verbatim}
+
+\subsubsection{Julia}
+
+\paragraph{Get The Data}\label{get-the-data-13}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{using} \BuiltInTok{Tables}\NormalTok{, }\BuiltInTok{MixedModels}\NormalTok{, }\BuiltInTok{StatFiles}\NormalTok{, }\BuiltInTok{DataFrames}\NormalTok{, }\BuiltInTok{CategoricalArrays}\NormalTok{, }\BuiltInTok{DataFramesMeta}
+
+\NormalTok{dfCC }\OperatorTok{=} \FunctionTok{DataFrame}\NormalTok{(}\FunctionTok{load}\NormalTok{(}\StringTok{"crossclassified.dta"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Change Some Variables To
+Categorical}\label{change-some-variables-to-categorical-8}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{@transform}\NormalTok{!(dfCC, }\OperatorTok{:}\NormalTok{country }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{country))}
+
+\PreprocessorTok{@transform}\NormalTok{!(dfCC, }\OperatorTok{:}\NormalTok{language }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{language))}
+
+\PreprocessorTok{@transform}\NormalTok{!(dfCC, }\OperatorTok{:}\NormalTok{identity }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{identity))}
+
+\PreprocessorTok{@transform}\NormalTok{!(dfCC, }\OperatorTok{:}\NormalTok{intervention }\OperatorTok{=} \FunctionTok{categorical}\NormalTok{(}\OperatorTok{:}\NormalTok{intervention))}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Unconditional Model}\label{unconditional-model-5}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mCCA }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}} 
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country) }\OperatorTok{+} 
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ language)), dfCC)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + (1 | country) + (1 | language)
+   logLik   -2 logLik     AIC       AICc        BIC    
+ -9835.8111 19671.6222 19679.6222 19679.6356 19703.6477
+
+Variance components:
+            Column    Variance Std.Dev. 
+language (Intercept)   0.956631 0.978075
+country  (Intercept)   3.177768 1.782629
+Residual              39.628773 6.295139
+ Number of obs: 3000; levels of grouping factors: 100, 30
+
+  Fixed-effects parameters:
+──────────────────────────────────────────────────
+               Coef.  Std. Error       z  Pr(>|z|)
+──────────────────────────────────────────────────
+(Intercept)  52.4319     0.35902  146.04    <1e-99
+──────────────────────────────────────────────────
+\end{verbatim}
+
+\paragraph{Conditional Model}\label{conditional-model-5}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mCCA }\OperatorTok{=} \FunctionTok{fit}\NormalTok{(MixedModel, }\PreprocessorTok{@formula}\NormalTok{(outcome }\OperatorTok{\textasciitilde{}}\NormalTok{ warmth }\OperatorTok{+} 
+\NormalTok{                                 physical\_punishment }\OperatorTok{+} 
+\NormalTok{                                 identity }\OperatorTok{+}\NormalTok{ intervention }\OperatorTok{+} 
+\NormalTok{                                 HDI }\OperatorTok{+}
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ country) }\OperatorTok{+} 
+\NormalTok{                                 (}\FloatTok{1} \OperatorTok{|}\NormalTok{ language)), dfCC)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Linear mixed model fit by maximum likelihood
+ outcome ~ 1 + warmth + physical_punishment + identity + intervention + HDI + (1 | country) + (1 | language)
+   logLik   -2 logLik     AIC       AICc        BIC    
+ -9663.2194 19326.4388 19344.4388 19344.4990 19398.4962
+
+Variance components:
+            Column   Variance Std.Dev.
+language (Intercept)   1.12193 1.05921
+country  (Intercept)   3.36119 1.83335
+Residual              35.11960 5.92618
+ Number of obs: 3000; levels of grouping factors: 100, 30
+
+  Fixed-effects parameters:
+──────────────────────────────────────────────────────────────
+                           Coef.  Std. Error       z  Pr(>|z|)
+──────────────────────────────────────────────────────────────
+(Intercept)          51.9226       1.41106     36.80    <1e-99
+warmth                0.833146     0.0579811   14.37    <1e-46
+physical_punishment  -0.997975     0.080268   -12.43    <1e-34
+identity             -0.292243     0.219142    -1.33    0.1823
+intervention          0.609746     0.219514     2.78    0.0055
+HDI                  -0.00158794   0.0204156   -0.08    0.9380
+──────────────────────────────────────────────────────────────
+\end{verbatim}
+
+\subsection{Interpretation}\label{interpretation-6}
+
+There is group level variation attributable to both language and
+country.
+
+As in other models, parental warmth, and participation in the
+intervention are associated with increases in the outcome. Parental use
+of physical punishment is associated with decreases in the outcome.
+
+\bookmarksetup{startatroot}
+
+\chapter{Reshaping Data}\label{sec-reshape}
+
+\section{Introduction}\label{introduction-2}
 
 Cross-sectional analyses (Section~\ref{sec-crosssectional}) make use of
 data in \emph{wide} format: every row is a person, or family, and every
@@ -3113,7 +3893,7 @@ Below, I detail the procedure for reshaping data in Stata and R.
 
 \section{Data in Wide Format}\label{data-in-wide-format}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 The data below are in \emph{wide} format.
 
@@ -3429,7 +4209,7 @@ underscore (\texttt{\_}) to separate the \emph{stub} from the
 
 \section{Data in Long Format}\label{data-in-long-format}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, arc=.35mm, breakable, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, leftrule=.75mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, left=2mm, titlerule=0mm, leftrule=.75mm, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, breakable, opacityback=0]
 
 The data below are in \emph{long} format.
 
@@ -3551,7 +4331,7 @@ Below, I detail the procedure for aggregating data in Stata and R.
 
 \subsection{Stata}
 
-\subsubsection{Get The Data}\label{get-the-data-8}
+\subsubsection{Get The Data}\label{get-the-data-14}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3572,7 +4352,7 @@ Variable}\label{create-a-group-level-variable}
 
 \subsection{R}
 
-\subsubsection{Get The Data}\label{get-the-data-9}
+\subsubsection{Get The Data}\label{get-the-data-15}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3608,6 +4388,12 @@ Variable}\label{create-a-group-level-variable-1}
 Allaire, J. J., Teague, C., Scheidegger, C., Xie, Y., \& Dervieux, C.
 (2024). \emph{{Quarto}} (Version 1.4).
 \url{https://doi.org/10.5281/zenodo.5960048}
+
+\bibitem[\citeproctext]{ref-ArelBundock2018}
+Arel-Bundock, V., Enevoldsen, N., \& Yetman, C. (2018). Countrycode: An
+r package to convert country names and country codes. \emph{Journal of
+Open Source Software}, \emph{3}(28), 848.
+\url{https://doi.org/10.21105/joss.00848}
 
 \bibitem[\citeproctext]{ref-MixedModels}
 Bates, D. (2024). \emph{{MixedModels.jl Documentation}}.

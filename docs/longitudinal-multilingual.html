@@ -145,6 +145,7 @@ window.Quarto = {
 <meta name="citation_title" content="[[7]{.chapter-number}&nbsp; [Longitudinal Multilevel Models]{.chapter-title}]{#sec-longitudinal .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//longitudinal-multilingual.html">
 <meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Countrycode: An r package to convert country names and country codes;,citation_author=Vincent Arel-Bundock;,citation_author=Nils Enevoldsen;,citation_author=CJ Yetman;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://doi.org/10.21105/joss.00848;,citation_issue=28;,citation_volume=3;,citation_journal_title=Journal of Open Source Software;">
 <meta name="citation_reference" content="citation_title=Quarto;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Carlos Scheidegger;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_fulltext_html_url=https://github.com/quarto-dev/quarto-cli;,citation_doi=10.5281/zenodo.5960048;">
 <meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
 <meta name="citation_reference" content="citation_title=Fitting linear mixed-effects models using lme4;,citation_abstract=Maximum likelihood or restricted maximum likelihood (REML) estimates of the parameters in linear mixed-effects models can be determined using the lmer function in the lme4 package for R. As for most model-fitting functions in R, the model is described in an lmer call by a formula, in this case including both fixed- and random-effects terms. The formula and data together determine a numerical representation of the model from which the profiled deviance or the profiled REML criterion can be evaluated as a function of some of the model parameters. The appropriate criterion is optimized, using one of the constrained optimization functions in R, to provide the parameter estimates. We describe the structure of the model, the steps in evaluating the profiled deviance or REML criterion, and the structure of classes or types that represents such a model. Sufficient detail is included to allow specialization of these structures by users who wish to write functions to fit specialized linear mixed models, such as models incorporating pedigrees or smoothing splines, that are not easily expressible in the formula language used by lmer.;,citation_author=Douglas Bates;,citation_author=Martin Mächler;,citation_author=Ben Bolker;,citation_author=Steve Walker;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=https://www.jstatsoft.org/index.php/jss/article/view/v067i01;,citation_issue=1;,citation_doi=10.18637/jss.v067.i01;,citation_volume=67;,citation_journal_title=Journal of Statistical Software;">
@@ -267,14 +268,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./morelevels-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Models With Three or More Levels and Cross-Classified Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./reshape-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aggregating-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -296,7 +303,7 @@ window.Quarto = {
   <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data"><span class="header-section-number">7.1</span> The Data</a></li>
   <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="header-section-number">7.2</span> The Equation</a></li>
   <li><a href="#growth-trajectories" id="toc-growth-trajectories" class="nav-link" data-scroll-target="#growth-trajectories"><span class="header-section-number">7.3</span> Growth Trajectories</a></li>
-  <li><a href="#run-models" id="toc-run-models" class="nav-link" data-scroll-target="#run-models"><span class="header-section-number">7.4</span> Run Models</a></li>
+  <li><a href="#run-the-models" id="toc-run-the-models" class="nav-link" data-scroll-target="#run-the-models"><span class="header-section-number">7.4</span> Run The Models</a></li>
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">7.5</span> Interpretation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -389,8 +396,8 @@ Main Effects and Interactions
 </div>
 </div>
 </section>
-<section id="run-models" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="run-models"><span class="header-section-number">7.4</span> Run Models</h2>
+<section id="run-the-models" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="run-the-models"><span class="header-section-number">7.4</span> Run The Models</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -415,22 +422,22 @@ Warning
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> simulated_multilevel_longitudinal_data.dta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-models" class="level4" data-number="7.4.0.2">
-<h4 data-number="7.4.0.2" class="anchored" data-anchor-id="run-the-models"><span class="header-section-number">7.4.0.2</span> Run The Models</h4>
+<section id="run-the-models-1" class="level4" data-number="7.4.0.2">
+<h4 data-number="7.4.0.2" class="anchored" data-anchor-id="run-the-models-1"><span class="header-section-number">7.4.0.2</span> Run The Models</h4>
 <section id="main-effects-only" class="level5" data-number="7.4.0.2.1">
 <h5 data-number="7.4.0.2.1" class="anchored" data-anchor-id="main-effects-only"><span class="header-section-number">7.4.0.2.1</span> Main Effects Only</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mixed outcome t warmth physical_punishment i.<span class="kw">identity</span> i.intervention HDI || <span class="co">/// </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>country: warmth || id: t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>country: || id: t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Performing EM optimization ...
 
 Performing gradient-based optimization: 
-Iteration 0:  Log likelihood =  -28523.49  
-Iteration 1:  Log likelihood = -28499.987  
-Iteration 2:  Log likelihood = -28499.739  
-Iteration 3:  Log likelihood = -28499.604  
-Iteration 4:  Log likelihood = -28499.603  
+Iteration 0:  Log likelihood = -28523.888  
+Iteration 1:  Log likelihood = -28500.378  
+Iteration 2:  Log likelihood = -28500.105  
+Iteration 3:  Log likelihood = -28500.086  
+Iteration 4:  Log likelihood = -28500.086  
 
 Computing standard errors ...
 
@@ -445,35 +452,34 @@ Mixed-effects ML regression                            Number of obs =   9,000
                      id |      3,000          3        3.0          3
         -------------------------------------------------------------
 
-                                                       Wald chi2(6)  = 1096.15
-Log likelihood = -28499.603                            Prob &gt; chi2   =  0.0000
+                                                       Wald chi2(6)  = 1208.49
+Log likelihood = -28500.086                            Prob &gt; chi2   =  0.0000
 
 -------------------------------------------------------------------------------------
             outcome | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
 --------------------+----------------------------------------------------------------
-                  t |    .943864   .0658716    14.33   0.000      .814758     1.07297
-             warmth |   .9134959   .0423732    21.56   0.000      .830446    .9965459
-physical_punishment |  -1.007897   .0497622   -20.25   0.000    -1.105429   -.9103647
-         1.identity |  -.1276926   .1515835    -0.84   0.400    -.4247908    .1694057
-     1.intervention |   .8589966   .1519095     5.65   0.000     .5612596    1.156734
-                HDI |  -.0005657   .0196437    -0.03   0.977    -.0390666    .0379352
-              _cons |   50.46724   1.338318    37.71   0.000     47.84418    53.09029
+                  t |   .9433792   .0658667    14.32   0.000     .8142828    1.072476
+             warmth |   .9140251   .0379154    24.11   0.000     .8397122     .988338
+physical_punishment |   -1.00861   .0497766   -20.26   0.000    -1.106171   -.9110499
+         1.identity |  -.1319026   .1516462    -0.87   0.384    -.4291236    .1653184
+     1.intervention |   .8592402   .1519616     5.65   0.000     .5614009     1.15708
+                HDI |   .0007913   .0200615     0.04   0.969    -.0385285     .040111
+              _cons |   50.38381   1.367464    36.84   0.000     47.70363    53.06399
 -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
   Random-effects parameters  |   Estimate   Std. err.     [95% conf. interval]
 -----------------------------+------------------------------------------------
-country: Independent         |
-                 var(warmth) |   .0107586   .0127845      .0010478    .1104703
-                  var(_cons) |   3.167085   .9146761      1.798154    5.578181
+country: Identity            |
+                  var(_cons) |   3.418565   .9268849      2.009349    5.816108
 -----------------------------+------------------------------------------------
 id: Independent              |
-                      var(t) |   3.58e-09   7.06e-07      3.5e-177    3.7e+159
-                  var(_cons) |   8.387275   .4724188      7.510631    9.366242
+                      var(t) |   1.27e-08   2.25e-06      7.3e-160    2.2e+143
+                  var(_cons) |    8.42116   .4720261      7.545013    9.399046
 -----------------------------+------------------------------------------------
-               var(Residual) |   26.02733   .4753701      25.11211    26.97592
+               var(Residual) |   26.02918   .4753157      25.11405    26.97765
 ------------------------------------------------------------------------------
-LR test vs. linear model: chi2(4) = 1247.03               Prob &gt; chi2 = 0.0000
+LR test vs. linear model: chi2(3) = 1246.06               Prob &gt; chi2 = 0.0000
 
 Note: LR test is conservative and provided only for reference.</code></pre>
 </div>
@@ -573,8 +579,8 @@ Note: LR test is conservative and provided only for reference.</code></pre>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dfL<span class="sc">$</span>intervention <span class="ot">&lt;-</span> <span class="fu">factor</span>(dfL<span class="sc">$</span>intervention)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-models-1" class="level4" data-number="7.4.0.5">
-<h4 data-number="7.4.0.5" class="anchored" data-anchor-id="run-the-models-1"><span class="header-section-number">7.4.0.5</span> Run The Models</h4>
+<section id="run-the-models-2" class="level4" data-number="7.4.0.5">
+<h4 data-number="7.4.0.5" class="anchored" data-anchor-id="run-the-models-2"><span class="header-section-number">7.4.0.5</span> Run The Models</h4>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -780,8 +786,8 @@ t:HDI       -0.002  0.008</code></pre>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@transform</span>!(dfL, <span class="op">:</span>intervention <span class="op">=</span> <span class="fu">categorical</span>(<span class="op">:</span>intervention))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="run-the-models-2" class="level4" data-number="7.4.0.8">
-<h4 data-number="7.4.0.8" class="anchored" data-anchor-id="run-the-models-2"><span class="header-section-number">7.4.0.8</span> Run The Models</h4>
+<section id="run-the-models-3" class="level4" data-number="7.4.0.8">
+<h4 data-number="7.4.0.8" class="anchored" data-anchor-id="run-the-models-3"><span class="header-section-number">7.4.0.8</span> Run The Models</h4>
 <section id="main-effects-only-2" class="level5" data-number="7.4.0.8.1">
 <h5 data-number="7.4.0.8.1" class="anchored" data-anchor-id="main-effects-only-2"><span class="header-section-number">7.4.0.8.1</span> Main Effects Only</h5>
 <div class="cell">

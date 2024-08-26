@@ -105,6 +105,7 @@ div.csl-indent {
 <meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Statistical Workflows]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//workflows-multilingual.html">
 <meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Countrycode: An r package to convert country names and country codes;,citation_author=Vincent Arel-Bundock;,citation_author=Nils Enevoldsen;,citation_author=CJ Yetman;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://doi.org/10.21105/joss.00848;,citation_issue=28;,citation_volume=3;,citation_journal_title=Journal of Open Source Software;">
 <meta name="citation_reference" content="citation_title=Quarto;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Carlos Scheidegger;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_fulltext_html_url=https://github.com/quarto-dev/quarto-cli;,citation_doi=10.5281/zenodo.5960048;">
 <meta name="citation_reference" content="citation_title=MixedModels.jl Documentation;,citation_author=Douglas Bates;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://juliastats.org/MixedModels.jl/stable/;">
 <meta name="citation_reference" content="citation_title=Fitting linear mixed-effects models using lme4;,citation_abstract=Maximum likelihood or restricted maximum likelihood (REML) estimates of the parameters in linear mixed-effects models can be determined using the lmer function in the lme4 package for R. As for most model-fitting functions in R, the model is described in an lmer call by a formula, in this case including both fixed- and random-effects terms. The formula and data together determine a numerical representation of the model from which the profiled deviance or the profiled REML criterion can be evaluated as a function of some of the model parameters. The appropriate criterion is optimized, using one of the constrained optimization functions in R, to provide the parameter estimates. We describe the structure of the model, the steps in evaluating the profiled deviance or REML criterion, and the structure of classes or types that represents such a model. Sufficient detail is included to allow specialization of these structures by users who wish to write functions to fit specialized linear mixed models, such as models incorporating pedigrees or smoothing splines, that are not easily expressible in the formula language used by lmer.;,citation_author=Douglas Bates;,citation_author=Martin Mächler;,citation_author=Ben Bolker;,citation_author=Steve Walker;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=https://www.jstatsoft.org/index.php/jss/article/view/v067i01;,citation_issue=1;,citation_doi=10.18637/jss.v067.i01;,citation_volume=67;,citation_journal_title=Journal of Statistical Software;">
@@ -227,14 +228,20 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./morelevels-multilingual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Models With Three or More Levels and Cross-Classified Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./reshape-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reshaping Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aggregating-multilingual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aggregating Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -256,11 +263,10 @@ div.csl-indent {
   <li><a href="#statistical-software-is-best-run-using-a-script" id="toc-statistical-software-is-best-run-using-a-script" class="nav-link active" data-scroll-target="#statistical-software-is-best-run-using-a-script"><span class="header-section-number">2.1</span> Statistical Software Is Best Run Using a Script</a></li>
   <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts"><span class="header-section-number">2.2</span> Scripts</a></li>
   <li><a href="#sec-script-flow" id="toc-sec-script-flow" class="nav-link" data-scroll-target="#sec-script-flow"><span class="header-section-number">2.3</span> Script Flow</a></li>
-  <li><a href="#storing-statistical-data" id="toc-storing-statistical-data" class="nav-link" data-scroll-target="#storing-statistical-data"><span class="header-section-number">2.4</span> Storing Statistical Data</a></li>
-  <li><a href="#sec-multiple-packages" id="toc-sec-multiple-packages" class="nav-link" data-scroll-target="#sec-multiple-packages"><span class="header-section-number">2.5</span> Good Statistical Workflows Allow Multiple Statistical Packages</a></li>
-  <li><a href="#good-statistical-workflows-require-safe-workspaces" id="toc-good-statistical-workflows-require-safe-workspaces" class="nav-link" data-scroll-target="#good-statistical-workflows-require-safe-workspaces"><span class="header-section-number">2.6</span> Good Statistical Workflows Require Safe Workspaces</a></li>
-  <li><a href="#good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" id="toc-good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" class="nav-link" data-scroll-target="#good-statistical-workflows-require-patience-and-can-be-psychologically-demanding"><span class="header-section-number">2.7</span> Good Statistical Workflows Require Patience And Can Be Psychologically Demanding</a></li>
-  <li><a href="#good-statistical-workflows-often-allow-multiple-principled-ways-forward" id="toc-good-statistical-workflows-often-allow-multiple-principled-ways-forward" class="nav-link" data-scroll-target="#good-statistical-workflows-often-allow-multiple-principled-ways-forward"><span class="header-section-number">2.8</span> Good Statistical Workflows Often Allow Multiple Principled Ways Forward</a></li>
+  <li><a href="#sec-multiple-packages" id="toc-sec-multiple-packages" class="nav-link" data-scroll-target="#sec-multiple-packages"><span class="header-section-number">2.4</span> Good Statistical Workflows Allow Multiple Statistical Packages</a></li>
+  <li><a href="#good-statistical-workflows-require-safe-workspaces" id="toc-good-statistical-workflows-require-safe-workspaces" class="nav-link" data-scroll-target="#good-statistical-workflows-require-safe-workspaces"><span class="header-section-number">2.5</span> Good Statistical Workflows Require Safe Workspaces</a></li>
+  <li><a href="#good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" id="toc-good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" class="nav-link" data-scroll-target="#good-statistical-workflows-require-patience-and-can-be-psychologically-demanding"><span class="header-section-number">2.6</span> Good Statistical Workflows Require Patience And Can Be Psychologically Demanding</a></li>
+  <li><a href="#good-statistical-workflows-often-allow-multiple-principled-ways-forward" id="toc-good-statistical-workflows-often-allow-multiple-principled-ways-forward" class="nav-link" data-scroll-target="#good-statistical-workflows-often-allow-multiple-principled-ways-forward"><span class="header-section-number">2.7</span> Good Statistical Workflows Often Allow Multiple Principled Ways Forward</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -310,24 +316,20 @@ div.csl-indent {
 <h2 data-number="2.3" class="anchored" data-anchor-id="sec-script-flow"><span class="header-section-number">2.3</span> Script Flow</h2>
 <p>A good practice when writing a script, is to have a script that begins with the raw data, moves through any necessary re-coding or cleaning of the data, generates descriptive statistics, generates the appropriate multivariate results, and then generates any necessary visualizations.</p>
 </section>
-<section id="storing-statistical-data" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="storing-statistical-data"><span class="header-section-number">2.4</span> Storing Statistical Data</h2>
-<p>It is usually best to store quantitative data in a statistical format such as R (<code>.Rdata</code>), or Stata (<code>.dta</code>), or even a text format such as <code>.csv</code>. Spreadsheets are likely to be a bad tool for storing quantitative data.</p>
-</section>
-<section id="sec-multiple-packages" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="sec-multiple-packages"><span class="header-section-number">2.5</span> Good Statistical Workflows Allow Multiple Statistical Packages</h2>
+<section id="sec-multiple-packages" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-multiple-packages"><span class="header-section-number">2.4</span> Good Statistical Workflows Allow Multiple Statistical Packages</h2>
 <p>While this Appendix focuses on the use of each individual statistical package on its own, it is certainly possible to use multiple statistical packages as part of the same workflow. For example, one might employ Stata to carry out data management tasks, and then possibly use R to run a multilevel model with a more complicated multilevel structure, such as a cross-classified model, or Julia to more quickly run a model with a large data.</p>
 </section>
-<section id="good-statistical-workflows-require-safe-workspaces" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="good-statistical-workflows-require-safe-workspaces"><span class="header-section-number">2.6</span> Good Statistical Workflows Require Safe Workspaces</h2>
+<section id="good-statistical-workflows-require-safe-workspaces" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="good-statistical-workflows-require-safe-workspaces"><span class="header-section-number">2.5</span> Good Statistical Workflows Require Safe Workspaces</h2>
 <p>It is also <em>very important</em> to be aware that good complex workflows are <em>highly iterative</em> and <em>highly collaborative</em>. Good complex workflows require a <em>safe workspace</em> in which team members feel free to admit their own errors, and help with others’ mistakes in a non-judgmental fashion. Such a <em>safe environment</em> is necessary to build an environment where the <em>overall error rate</em> is low.</p>
 </section>
-<section id="good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="good-statistical-workflows-require-patience-and-can-be-psychologically-demanding"><span class="header-section-number">2.7</span> Good Statistical Workflows Require Patience And Can Be Psychologically Demanding</h2>
+<section id="good-statistical-workflows-require-patience-and-can-be-psychologically-demanding" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="good-statistical-workflows-require-patience-and-can-be-psychologically-demanding"><span class="header-section-number">2.6</span> Good Statistical Workflows Require Patience And Can Be Psychologically Demanding</h2>
 <p>Developing a good documented and auditable workflow that is implemented in code requires a lot of patience, and often, <strong>many iterations</strong>. Working through these many iterations can be psychologically demanding. It is important to remember that careful attention to getting the details right early in the research process, while sometimes tiring and frustrating, will pay large dividends later on when the research is reviewed, presented, published and read.</p>
 </section>
-<section id="good-statistical-workflows-often-allow-multiple-principled-ways-forward" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="good-statistical-workflows-often-allow-multiple-principled-ways-forward"><span class="header-section-number">2.8</span> Good Statistical Workflows Often Allow Multiple Principled Ways Forward</h2>
+<section id="good-statistical-workflows-often-allow-multiple-principled-ways-forward" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="good-statistical-workflows-often-allow-multiple-principled-ways-forward"><span class="header-section-number">2.7</span> Good Statistical Workflows Often Allow Multiple Principled Ways Forward</h2>
 <p>One of my most recent ideas about statistical workflows is that there are certainly <em>wrong</em> decisions that one can make with data.</p>
 <p>For example, I would not want to write the paper that says that smoking prevents lung cancer, nor would I want to write a paper saying physical punishment is good for children.</p>
 <p>That being said, I think there are often <em>multiple principled ways forward</em>.</p>
@@ -892,7 +894,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
