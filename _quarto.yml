@@ -25,6 +25,7 @@ book:
     - cross-sectional-multilingual.qmd
     - longitudinal-multilingual.qmd
     - logistic-multilingual.qmd
+    - morelevels-multilingual.qmd
     - reshape-multilingual.qmd
     - aggregating-multilingual.qmd
     - references.qmd
