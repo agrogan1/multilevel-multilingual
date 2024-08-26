@@ -79,7 +79,7 @@ use simulated_multilevel_longitudinal_data.dta
 #| label: Stata-maineffects
 
 mixed outcome t warmth physical_punishment i.identity i.intervention HDI || /// 
-country: warmth || id: t
+country: || id: t
 
 ```
 
