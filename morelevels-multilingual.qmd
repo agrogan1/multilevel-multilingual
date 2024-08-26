@@ -31,13 +31,13 @@ A two level multilevel model imagines that *Level 1* units are nested in *Level 
 
 A *cross classified* model imagines that the nesting is not hierarchical, but rather that there are two sets of clusters or nestings in which individuals may be nested. 
 
-Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-project.org/), and [Julia](https://www.julialang.org/) to estimate these models.
+Below, I describe the use of Stata, R, and Julia to estimate these models.
 
 ## Three Or More Levels {#sec-fourlevel}
 
 ### The Data
 
-I use the *longitudinal* data from *Multilevel Thinking* to which I have added an extra level of *United Nations Region* [@ArelBundock2018]. This data thus requires a four level model.
+I use the *longitudinal* data from *Multilevel Thinking* (@sec-data) to which I have added an extra level of *United Nations Region* [@ArelBundock2018]. This data thus requires a four level model.
 
 ### The Equation
 
@@ -216,7 +216,7 @@ As in other models, parental warmth, and participation in the intervention are a
 
 ### The Data
 
-I use the *cross-sectional* data from *Multilevel Thinking* to which I have added an extra level of a hypothetical language. 
+I use the *cross-sectional* data from *Multilevel Thinking* (@sec-data) to which I have added an extra level of a hypothetical language. 
 
 ### The Equation
 
