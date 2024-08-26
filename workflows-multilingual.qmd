@@ -20,10 +20,6 @@ For most statistical workflows, we will often want to write a script or code. Da
 
 A good practice when writing a script, is to have a script that begins with the raw data, moves through any necessary re-coding or cleaning of the data, generates descriptive statistics, generates the appropriate multivariate results, and then generates any necessary visualizations. 
 
-## Storing Statistical Data
-
-It is usually best to store quantitative data in a statistical format such as R (`.Rdata`), or Stata (`.dta`), or even a text format such as `.csv`. Spreadsheets are likely to be a bad tool for storing quantitative data.
-
 ## Good Statistical Workflows Allow Multiple Statistical Packages {#sec-multiple-packages}
 
 While this Appendix focuses on the use of each individual statistical package on its own, it is certainly possible to use multiple statistical packages as part of the same workflow. For example, one might employ Stata to carry out data management tasks, and then possibly use R to run a multilevel model with a more complicated multilevel structure, such as a cross-classified model, or Julia to more quickly run a model with a large data.
