@@ -27,7 +27,7 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.10.app/Contents/Resources/julia/
 
 ## Introduction
 
-A two level multilevel model imagines that *Level 1* units are nested in *Level 2* units. A three level multilevel model imagines that *Level 1* units are nested in *Level 2* units, which are in turn nested in *Level 3*. 
+A two level multilevel model imagines that *Level 1* units are nested in *Level 2* units. A three level multilevel model imagines that *Level 1* units are nested in *Level 2* units, which are in turn nested in *Level 3*. As more levels are added to the model (e.g. *Level 4*), we imagine all of these levels to be hierarchically nested.
 
 A *cross classified* model imagines that the nesting is not hierarchical, but rather that there are two sets of clusters or nestings in which individuals may be nested. 
 
@@ -37,13 +37,13 @@ Below, I describe the use of [Stata](https://www.stata.com/), [R](https://www.r-
 
 ### The Data
 
-I use the *longitudinal* data from *Multilevel Thinking* to which I have added an extra level of *United Nations Region* [@ArelBundock2018]. 
+I use the *longitudinal* data from *Multilevel Thinking* to which I have added an extra level of *United Nations Region* [@ArelBundock2018]. This data thus requires a four level model.
 
 ### The Equation
 
-$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-fourlevel-multilingual} 
+$$\text{outcome}_{itjk} = \beta_0 + \beta_1 \text{parental warmth}_{itjk} + \beta_2 \text{physical punishment}_{itjk} + \beta_3 \text{time}_{itjk} \ + $$ {#eq-MLM-fourlevel-multilingual} 
 
-$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
+$$\beta_4 \text{identity}_{itjk} + \beta_5 \text{intervention}_{itjk} + \beta_6 \text{HDI}_{itjk} +$$
 
 $$w_{0k} + u_{0j} + v_{0i} + e_{itjk}$$ 
 
@@ -76,7 +76,8 @@ mixed outcome || UNregion: || country: || family:
 
 ```{stata, collectcode=TRUE}
 
-mixed outcome t warmth physical_punishment i.identity i.intervention HDI || UNregion: || country: || id:
+mixed outcome t warmth physical_punishment i.identity i.intervention HDI ///
+|| UNregion: || country: || id:
   
 ```
 
@@ -147,7 +148,7 @@ summary(fit4B)
 ```{julia}
 #| output: false
 #| label: Julia-getdata
-#| eval: false
+#| eval: true
 
 using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 
@@ -175,7 +176,7 @@ df4 = DataFrame(load("fourlevel.dta"))
 
 ```{julia}
 #| label: Julia-fourlevelA
-#| eval: false
+#| eval: true
 
 m4A = fit(MixedModel, @formula(outcome ~ t + warmth + 
                                   physical_punishment + 
@@ -191,7 +192,7 @@ m4A = fit(MixedModel, @formula(outcome ~ t + warmth +
 
 ```{julia}
 #| label: Julia-fourlevelB
-#| eval: false
+#| eval: true
 
 m4B = fit(MixedModel, @formula(outcome ~ t + warmth + 
                                   physical_punishment + 
