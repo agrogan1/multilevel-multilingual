@@ -11,14 +11,6 @@ library(Statamarkdown)
 
 ## Spreadsheets
 
-Spreadsheets are sometimes used to collect and store data. Spreadsheets may sometimes be used because they are the only program that some individuals or agencies have for storing data. Spreadsheet programs may also be used because spreadsheets can be very intuitive and easy ways of managing small amounts of data. 
-
-However, spreadsheets may be problematic as a data storage solution for a number of reasons detailed below, especially as data sets grow in size. Notably, statistical programs like [Stata](https://www.stata.com/), [R](https://www.r-project.org/), or [Julia](https://julialang.org/) can all store additional information with each variable such as: a *variable label*, describing the contents of the variable, or the survey question that resulted in the variable; and a *value label*, which attaches qualitative information to each possible value of the response. 
-
-Spreadsheets do not generally contain this extra information about each variable, or column of data, which may lead to errors in working with quantitative information.
-
-### Data in Statistical Format
-
 ```{r}
 #| echo: false
 #| output: false
@@ -28,6 +20,25 @@ library(haven) # import Stata format data
 df <- read_dta("simulated_multilevel_data.dta")
 
 ```
+
+Spreadsheets are sometimes used to collect and store data. Spreadsheets may sometimes be used because they are the only program that some individuals or agencies have for storing data. Spreadsheet programs may also be used because spreadsheets can be very intuitive and easy ways of managing small amounts of data. 
+
+However, spreadsheets may be problematic as an ultimate data storage solution for a number of reasons detailed below, especially as data sets grow in size. Notably, statistical programs like [Stata](https://www.stata.com/), [R](https://www.r-project.org/), or [Julia](https://julialang.org/) can all store additional information with each variable such as: a *variable label*, describing the contents of the variable, or the survey question that resulted in the variable; and a *value label*, which attaches qualitative information to each possible value of the response. 
+
+Spreadsheets do not generally contain this extra information about each variable, or column of data, which may lead to errors in working with quantitative information.
+
+### If Data Are Stored In A Spreadsheet, Variable Names Should Be Limited To a Single Row of the Spreadsheet
+
+If spreadsheets are used to store data, the first row of the data should be used to list the variable names, as is seen in the example below. Rows other than the first row should not contain additional information about the variables, but should only contain data. 
+
+```{r}
+#| echo: false
+
+pander::pander(head(df))
+
+```
+
+### Data in Statistical Format
 
 I load the data from a statistical program.
 
