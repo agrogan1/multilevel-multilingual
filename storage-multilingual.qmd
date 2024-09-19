@@ -152,7 +152,7 @@ We see right away that the data are less informative.
 
 ### Describe The Data
 
-Notice how a description of the data no long er contains much of the information that helped us to understand the variables.
+Notice how a description of the data no longer contains much of the information that helped us to understand the variables.
 
 ```{r}
 #| echo: false
@@ -217,15 +217,28 @@ ggplot(df2,
 
 ## A Few Final Issues
 
-Notice finally how spreadsheets doesn't enforce the idea of whether variables are *numeric*, or *text*, and so would allow storage of different types of information in the same column. Relatedly, *numeric* variables may be improperly stored as *text*, often necessitating recoding before graphical or statistical procedures can be employed.
+Notice, finally, how spreadsheets don't enforce the idea of whether variables are *numeric*, or *text*, and so would allow storage of different types of information in the same column. Relatedly, *numeric* variables may be improperly stored as *text*, often necessitating recoding before graphical or statistical procedures can be employed.
 
-Secondly, a spreadsheet would allow some of your columns to have the same name, which might make data difficult to work with in other software.
+Second, a spreadsheet would allow some of your columns to have the same name, which might make data difficult to work with in other software.
 
-| x           | y           | verylongvariablename | verylongvariablename |
-| ----------- | ----------- |--------------------- | -------------------- |
-| 100         | 1           | Smith                | 20                   |
-| 200         | 2           | 30                   | NA                   |
-| not applicable   | x      | yes                  | 60                   |
+Lastly, spreadsheets do not enforce the idea that the data have a *structure* wherein the *column header* is a *variable name*, while the *other rows* are *data*.
+
+-------------------------------------------------------------
+x           y       verylongvariablename   verylongvariablename
+----------- ------- ---------------------- -------------------------
+100         1       Smith                  20
+
+200         2       30                     NA
+
+not         x       yes                    60
+applicable
+
+                    some other
+                    random 
+                    information
+-------------------------------------------------------------
+
+: A Spreadsheet Table With Problematic Organization {#tbl-problematic}
 
 ## File Organization
 

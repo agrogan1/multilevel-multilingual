@@ -702,7 +702,7 @@ Table&nbsp;3.3: Descriptive Statistics
 <div id="fig-graph-statistical" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graph-statistical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="storage-multilingual_files/figure-html/fig-graph-statistical-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="storage-multilingual_files/figure-html/fig-graph-statistical-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="storage-multilingual_files/figure-html/fig-graph-statistical-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="storage-multilingual_files/figure-html/fig-graph-statistical-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graph-statistical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
@@ -852,7 +852,7 @@ Table&nbsp;3.4: Sample of Data
 <p>We see right away that the data are less informative.</p>
 <section id="describe-the-data-1" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="describe-the-data-1"><span class="header-section-number">3.3.1</span> Describe The Data</h3>
-<p>Notice how a description of the data no long er contains much of the information that helped us to understand the variables.</p>
+<p>Notice how a description of the data no longer contains much of the information that helped us to understand the variables.</p>
 <div class="cell">
 <div id="tbl-varlabels2" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1236,7 +1236,7 @@ Table&nbsp;3.7: Descriptive Statistics
 <div id="fig-graph-spreadsheet" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graph-spreadsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="storage-multilingual_files/figure-html/fig-graph-spreadsheet-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="storage-multilingual_files/figure-html/fig-graph-spreadsheet-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="storage-multilingual_files/figure-html/fig-graph-spreadsheet-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="storage-multilingual_files/figure-html/fig-graph-spreadsheet-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graph-spreadsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3.2: Graph from Data Stored in Spreadsheet
@@ -1250,50 +1250,66 @@ Figure&nbsp;3.2: Graph from Data Stored in Spreadsheet
 <section id="a-few-final-issues" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="a-few-final-issues"><span class="header-section-number">3.4</span> A Few Final Issues</h2>
 <p>Notice finally how spreadsheets doesn’t enforce the idea of whether variables are <em>numeric</em>, or <em>text</em>, and so would allow storage of different types of information in the same column. Relatedly, <em>numeric</em> variables may be improperly stored as <em>text</em>, often necessitating recoding before graphical or statistical procedures can be employed.</p>
-<p>Secondly, a spreadsheet would allow some of your columns to have the same name, which might make data difficult to work with in other software.</p>
+<p>Second, a spreadsheet would allow some of your columns to have the same name, which might make data difficult to work with in other software.</p>
+<p>Lastly, spreadsheets do not enforce the idea that the data have a <em>structure</em> wherein the <em>column header</em> is a <em>variable name</em>, while the <em>other rows</em> are <em>data</em>.</p>
+<div id="tbl-problematic" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-problematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.8: A Spreadsheet Table With Problematic Organization
+</figcaption>
+<div aria-describedby="tbl-problematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 33%">
+<col style="width: 16%">
+<col style="width: 11%">
 <col style="width: 31%">
+<col style="width: 36%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>x</th>
-<th>y</th>
-<th>verylongvariablename</th>
-<th>verylongvariablename</th>
+<th style="text-align: left;">x</th>
+<th style="text-align: left;">y</th>
+<th style="text-align: left;">verylongvariablename</th>
+<th style="text-align: left;">verylongvariablename</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>100</td>
-<td>1</td>
-<td>Smith</td>
-<td>20</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Smith</td>
+<td style="text-align: left;">20</td>
 </tr>
 <tr class="even">
-<td>200</td>
-<td>2</td>
-<td>30</td>
-<td>NA</td>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="odd">
-<td>not applicable</td>
-<td>x</td>
-<td>yes</td>
-<td>60</td>
+<td style="text-align: left;">not applicable</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">some other potentially important information</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
 <section id="file-organization" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="file-organization"><span class="header-section-number">3.5</span> File Organization</h2>
 <p>Files for all of your work should not be stored all together in <code>downloads</code>. Ideally, you should have a specific set of folders for your work. Each project, should be stored in its own individual folder. Ideally, each project folder would have a separate sub-folder for separate aspects of the project such as data, code or syntax, and various outputs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="storage.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="A Hypothetical Set of Folders and Subfolders"><img src="storage.png" class="img-fluid figure-img" alt="A Hypothetical Set of Folders and Subfolders"></a></p>
+<p><a href="storage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="A Hypothetical Set of Folders and Subfolders"><img src="storage.png" class="img-fluid figure-img" alt="A Hypothetical Set of Folders and Subfolders"></a></p>
 <figcaption>A Hypothetical Set of Folders and Subfolders</figcaption>
 </figure>
 </div>
@@ -1851,7 +1867,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
