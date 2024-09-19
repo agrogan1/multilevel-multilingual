@@ -240,13 +240,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#spreadsheets" id="toc-spreadsheets" class="nav-link active" data-scroll-target="#spreadsheets"><span class="header-section-number">3.1</span> Spreadsheets</a>
+  <li><a href="#spreadsheets" id="toc-spreadsheets" class="nav-link active" data-scroll-target="#spreadsheets"><span class="header-section-number">3.1</span> Spreadsheets</a></li>
+  <li><a href="#data-in-statistical-format" id="toc-data-in-statistical-format" class="nav-link" data-scroll-target="#data-in-statistical-format"><span class="header-section-number">3.2</span> Data in Statistical Format</a>
   <ul class="collapse">
-  <li><a href="#data-in-statistical-format" id="toc-data-in-statistical-format" class="nav-link" data-scroll-target="#data-in-statistical-format"><span class="header-section-number">3.1.1</span> Data in Statistical Format</a></li>
-  <li><a href="#data-in-spreadsheet-format" id="toc-data-in-spreadsheet-format" class="nav-link" data-scroll-target="#data-in-spreadsheet-format"><span class="header-section-number">3.1.2</span> Data In Spreadsheet Format</a></li>
-  <li><a href="#a-few-final-issues" id="toc-a-few-final-issues" class="nav-link" data-scroll-target="#a-few-final-issues"><span class="header-section-number">3.1.3</span> A Few Final Issues</a></li>
+  <li><a href="#describe-the-data" id="toc-describe-the-data" class="nav-link" data-scroll-target="#describe-the-data"><span class="header-section-number">3.2.1</span> Describe The Data</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">3.2.2</span> Descriptive Statistics</a></li>
+  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph"><span class="header-section-number">3.2.3</span> Graph</a></li>
+  <li><a href="#list-out-a-sample-of-the-data" id="toc-list-out-a-sample-of-the-data" class="nav-link" data-scroll-target="#list-out-a-sample-of-the-data"><span class="header-section-number">3.2.4</span> List Out A Sample Of The Data</a></li>
   </ul></li>
-  <li><a href="#file-organization" id="toc-file-organization" class="nav-link" data-scroll-target="#file-organization"><span class="header-section-number">3.2</span> File Organization</a></li>
+  <li><a href="#data-in-spreadsheet-format" id="toc-data-in-spreadsheet-format" class="nav-link" data-scroll-target="#data-in-spreadsheet-format"><span class="header-section-number">3.3</span> Data In Spreadsheet Format</a>
+  <ul class="collapse">
+  <li><a href="#describe-the-data-1" id="toc-describe-the-data-1" class="nav-link" data-scroll-target="#describe-the-data-1"><span class="header-section-number">3.3.1</span> Describe The Data</a></li>
+  <li><a href="#descriptive-statistics-1" id="toc-descriptive-statistics-1" class="nav-link" data-scroll-target="#descriptive-statistics-1"><span class="header-section-number">3.3.2</span> Descriptive Statistics</a></li>
+  <li><a href="#graph-1" id="toc-graph-1" class="nav-link" data-scroll-target="#graph-1"><span class="header-section-number">3.3.3</span> Graph</a></li>
+  </ul></li>
+  <li><a href="#a-few-final-issues" id="toc-a-few-final-issues" class="nav-link" data-scroll-target="#a-few-final-issues"><span class="header-section-number">3.4</span> A Few Final Issues</a></li>
+  <li><a href="#file-organization" id="toc-file-organization" class="nav-link" data-scroll-target="#file-organization"><span class="header-section-number">3.5</span> File Organization</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -275,17 +284,167 @@ ul.task-list li input[type="checkbox"] {
 <section id="spreadsheets" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="spreadsheets"><span class="header-section-number">3.1</span> Spreadsheets</h2>
 <p>Spreadsheets are sometimes used to collect and store data. Spreadsheets may sometimes be used because they are the only program that some individuals or agencies have for storing data. Spreadsheet programs may also be used because spreadsheets can be very intuitive and easy ways of managing small amounts of data.</p>
-<p>However, spreadsheets may be problematic as a data storage solution for a number of reasons detailed below, especially as data sets grow in size. Notably, statistical programs like <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, or <a href="https://julialang.org/">Julia</a> can all store additional information with each variable such as: a <em>variable label</em>, describing the contents of the variable, or the survey question that resulted in the variable; and a <em>value label</em>, which attaches qualitative information to each possible value of the response.</p>
+<p>However, spreadsheets may be problematic as an ultimate data storage solution for a number of reasons detailed below, especially as data sets grow in size. Notably, statistical programs like <a href="https://www.stata.com/">Stata</a>, <a href="https://www.r-project.org/">R</a>, or <a href="https://julialang.org/">Julia</a> can all store additional information with each variable such as: a <em>variable label</em>, describing the contents of the variable, or the survey question that resulted in the variable; and a <em>value label</em>, which attaches qualitative information to each possible value of the response.</p>
 <p>Spreadsheets do not generally contain this extra information about each variable, or column of data, which may lead to errors in working with quantitative information.</p>
-<section id="data-in-statistical-format" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="data-in-statistical-format"><span class="header-section-number">3.1.1</span> Data in Statistical Format</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If Data Are Stored In A Spreadsheet, Variable Names Should Be Limited To a Single Row of the Spreadsheet
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If spreadsheets are used to store data, the first row of the data should be used to list the variable names, as is seen in the example below. Rows other than the first row should not contain additional information about the variables, but should only contain data.</p>
+<div class="cell">
+<div id="tbl-spreadsheet" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spreadsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.1: Example Data As Stored in A Spreadsheet
+</figcaption>
+<div aria-describedby="tbl-spreadsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<caption>Table continues below</caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 7%">
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">country</th>
+<th style="text-align: center;">HDI</th>
+<th style="text-align: center;">family</th>
+<th style="text-align: center;">id</th>
+<th style="text-align: center;">identity</th>
+<th style="text-align: center;">intervention</th>
+<th style="text-align: center;">physical_punishment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1.4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1.6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+</tr>
+</tbody>
+</table>
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">warmth</th>
+<th style="text-align: center;">outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">57.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">50.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">52.92</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">60.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">55.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">49.81</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-in-statistical-format" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="data-in-statistical-format"><span class="header-section-number">3.2</span> Data in Statistical Format</h2>
 <p>I load the data from a statistical program.</p>
-<section id="describe-the-data" class="level4" data-number="3.1.1.1">
-<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="describe-the-data"><span class="header-section-number">3.1.1.1</span> Describe The Data</h4>
+<section id="describe-the-data" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="describe-the-data"><span class="header-section-number">3.2.1</span> Describe The Data</h3>
 <p>Notice how a description of the data contains information that helps us to understand the variables.</p>
 <div class="cell">
+<div id="tbl-varlabels" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-varlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.2: Variable Labels
+</figcaption>
+<div aria-describedby="tbl-varlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 30%">
@@ -348,9 +507,12 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 </section>
-<section id="descriptive-statistics" class="level4" data-number="3.1.1.2">
-<h4 data-number="3.1.1.2" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">3.1.1.2</span> Descriptive Statistics</h4>
+<section id="descriptive-statistics" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">3.2.2</span> Descriptive Statistics</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -365,8 +527,14 @@ Variable Labels and Value Labels Help Us Understand Our Data
 </div>
 </div>
 <div class="cell">
+<div id="tbl-descriptives" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.3: Descriptive Statistics
+</figcaption>
+<div aria-describedby="tbl-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 20%">
@@ -427,7 +595,7 @@ Variable Labels and Value Labels Help Us Understand Our Data
 </tr>
 </tbody>
 </table>
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 22%">
@@ -488,7 +656,7 @@ Variable Labels and Value Labels Help Us Understand Our Data
 </tr>
 </tbody>
 </table>
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 22%">
 </colgroup>
@@ -523,9 +691,12 @@ Variable Labels and Value Labels Help Us Understand Our Data
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 </section>
-<section id="graph" class="level4" data-number="3.1.1.3">
-<h4 data-number="3.1.1.3" class="anchored" data-anchor-id="graph"><span class="header-section-number">3.1.1.3</span> Graph</h4>
+<section id="graph" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="graph"><span class="header-section-number">3.2.3</span> Graph</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-graph-statistical" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -541,11 +712,17 @@ Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
 </div>
 </div>
 </section>
-<section id="list-out-a-sample-of-the-data" class="level4" data-number="3.1.1.4">
-<h4 data-number="3.1.1.4" class="anchored" data-anchor-id="list-out-a-sample-of-the-data"><span class="header-section-number">3.1.1.4</span> List Out A Sample Of The Data</h4>
+<section id="list-out-a-sample-of-the-data" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="list-out-a-sample-of-the-data"><span class="header-section-number">3.2.4</span> List Out A Sample Of The Data</h3>
 <div class="cell">
+<div id="tbl-head" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-head-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.4: Sample of Data
+</figcaption>
+<div aria-describedby="tbl-head-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 13%">
@@ -616,7 +793,7 @@ Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
 </tr>
 </tbody>
 </table>
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 30%">
 <col style="width: 12%">
@@ -664,18 +841,27 @@ Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 </section>
 </section>
-<section id="data-in-spreadsheet-format" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="data-in-spreadsheet-format"><span class="header-section-number">3.1.2</span> Data In Spreadsheet Format</h3>
+<section id="data-in-spreadsheet-format" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="data-in-spreadsheet-format"><span class="header-section-number">3.3</span> Data In Spreadsheet Format</h2>
 <p>I now import the spreadsheet data file. I use the first row of data as variable names.</p>
 <p>We see right away that the data are less informative.</p>
-<section id="describe-the-data-1" class="level4" data-number="3.1.2.1">
-<h4 data-number="3.1.2.1" class="anchored" data-anchor-id="describe-the-data-1"><span class="header-section-number">3.1.2.1</span> Describe The Data</h4>
+<section id="describe-the-data-1" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="describe-the-data-1"><span class="header-section-number">3.3.1</span> Describe The Data</h3>
 <p>Notice how a description of the data no long er contains much of the information that helped us to understand the variables.</p>
 <div class="cell">
+<div id="tbl-varlabels2" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-varlabels2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.5: Example Data As Stored in A Spreadsheet
+</figcaption>
+<div aria-describedby="tbl-varlabels2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 30%">
@@ -738,9 +924,18 @@ Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 <div class="cell">
+<div id="tbl-spreadsheet2" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spreadsheet2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.6: Example Data As Stored in A Spreadsheet
+</figcaption>
+<div aria-describedby="tbl-spreadsheet2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 12%">
@@ -819,7 +1014,7 @@ Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
 </tr>
 </tbody>
 </table>
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 12%">
 <col style="width: 13%">
@@ -859,6 +1054,9 @@ Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -873,12 +1071,18 @@ Warning
 </div>
 </div>
 </section>
-<section id="descriptive-statistics-1" class="level4" data-number="3.1.2.2">
-<h4 data-number="3.1.2.2" class="anchored" data-anchor-id="descriptive-statistics-1"><span class="header-section-number">3.1.2.2</span> Descriptive Statistics</h4>
+<section id="descriptive-statistics-1" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="descriptive-statistics-1"><span class="header-section-number">3.3.2</span> Descriptive Statistics</h3>
 <p>Notice here how the descriptive statistics and graph are much less informative. For example, it is now not immediately clear what the values of <code>identity</code> or <code>intervention</code> represent. The information on variable labels and value labels will have to be added back into the data when preparing a final product for dissemination.</p>
 <div class="cell">
+<div id="tbl-descriptives2" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descriptives2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.7: Descriptive Statistics
+</figcaption>
+<div aria-describedby="tbl-descriptives2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 20%">
@@ -933,7 +1137,7 @@ Warning
 </tr>
 </tbody>
 </table>
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 23%">
@@ -988,7 +1192,7 @@ Warning
 </tr>
 </tbody>
 </table>
-<table class="table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 22%">
 </colgroup>
@@ -1020,9 +1224,12 @@ Warning
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 </section>
-<section id="graph-1" class="level4" data-number="3.1.2.3">
-<h4 data-number="3.1.2.3" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">3.1.2.3</span> Graph</h4>
+<section id="graph-1" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="graph-1"><span class="header-section-number">3.3.3</span> Graph</h3>
 <p>While the graph has an informative title, as well as informative axis labels, a crucial piece of information is missing: what each status of the intervention represents.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1040,8 +1247,8 @@ Figure&nbsp;3.2: Graph from Data Stored in Spreadsheet
 </div>
 </section>
 </section>
-<section id="a-few-final-issues" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="a-few-final-issues"><span class="header-section-number">3.1.3</span> A Few Final Issues</h3>
+<section id="a-few-final-issues" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="a-few-final-issues"><span class="header-section-number">3.4</span> A Few Final Issues</h2>
 <p>Notice finally how spreadsheets doesn’t enforce the idea of whether variables are <em>numeric</em>, or <em>text</em>, and so would allow storage of different types of information in the same column. Relatedly, <em>numeric</em> variables may be improperly stored as <em>text</em>, often necessitating recoding before graphical or statistical procedures can be employed.</p>
 <p>Secondly, a spreadsheet would allow some of your columns to have the same name, which might make data difficult to work with in other software.</p>
 <table class="table">
@@ -1081,9 +1288,8 @@ Figure&nbsp;3.2: Graph from Data Stored in Spreadsheet
 </tbody>
 </table>
 </section>
-</section>
-<section id="file-organization" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="file-organization"><span class="header-section-number">3.2</span> File Organization</h2>
+<section id="file-organization" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="file-organization"><span class="header-section-number">3.5</span> File Organization</h2>
 <p>Files for all of your work should not be stored all together in <code>downloads</code>. Ideally, you should have a specific set of folders for your work. Each project, should be stored in its own individual folder. Ideally, each project folder would have a separate sub-folder for separate aspects of the project such as data, code or syntax, and various outputs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1645,7 +1851,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

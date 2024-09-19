@@ -27,43 +27,51 @@ However, spreadsheets may be problematic as an ultimate data storage solution fo
 
 Spreadsheets do not generally contain this extra information about each variable, or column of data, which may lead to errors in working with quantitative information.
 
+::: {.callout-warning}
 ### If Data Are Stored In A Spreadsheet, Variable Names Should Be Limited To a Single Row of the Spreadsheet
 
 If spreadsheets are used to store data, the first row of the data should be used to list the variable names, as is seen in the example below. Rows other than the first row should not contain additional information about the variables, but should only contain data. 
 
 ```{r}
 #| echo: false
+#| label: tbl-spreadsheet
+#| tbl-cap: "Example Data As Stored in A Spreadsheet"
 
 pander::pander(head(df))
 
 ```
+:::
 
-### Data in Statistical Format
+## Data in Statistical Format
 
 I load the data from a statistical program.
 
-#### Describe The Data
+### Describe The Data
 
 Notice how a description of the data contains information that helps us to understand the variables.
 
 ```{r}
 #| echo: false
+#| label: tbl-varlabels
+#| tbl-cap: "Variable Labels"
 
 pander::pander(labelled::look_for(df)[1:3])
 
 ```
 
 
-#### Descriptive Statistics 
+### Descriptive Statistics 
 
 ::: {.callout-tip}
-#### Variable Labels and Value Labels Help Us Understand Our Data
+### Variable Labels and Value Labels Help Us Understand Our Data
 
 Notice how the descriptive statistics and graph are informative in that they contain information on the *variable label* and *value label*. These help us to get an intuitive sense of the information in the data. We see this information when we list out the data as well.
 :::
 
 ```{r}
 #| echo: false
+#| label: tbl-descriptives
+#| tbl-cap: "Descriptive Statistics"
 
 df$country <- factor(df$country)
 
@@ -81,7 +89,7 @@ pander::pander(summary(df))
 
 ```
 
-#### Graph
+### Graph
 
 ```{r}
 #| echo: false
@@ -106,16 +114,18 @@ ggplot(df,
 ```
 
 
-#### List Out A Sample Of The Data
+### List Out A Sample Of The Data
 
 ```{r}
 #| echo: false
+#| label: tbl-head
+#| tbl-cap: "Sample of Data"
 
 pander::pander(head(df))
 
 ```
 
-### Data In Spreadsheet Format
+## Data In Spreadsheet Format
 
 ```{stata}
 #| echo: false
@@ -140,12 +150,14 @@ df2 <- read_excel("simulated_multilevel_data.xlsx")
 
 We see right away that the data are less informative. 
 
-#### Describe The Data
+### Describe The Data
 
 Notice how a description of the data no long er contains much of the information that helped us to understand the variables.
 
 ```{r}
 #| echo: false
+#| label: tbl-varlabels2
+#| tbl-cap: "Example Data As Stored in A Spreadsheet"
 
 pander::pander(labelled::look_for(df2)[1:3])
 
@@ -153,6 +165,8 @@ pander::pander(labelled::look_for(df2)[1:3])
 
 ```{r}
 #| echo: false
+#| label: tbl-spreadsheet2
+#| tbl-cap: "Example Data As Stored in A Spreadsheet"
 
 pander::pander(head(df2))
 
@@ -162,18 +176,20 @@ pander::pander(head(df2))
 Adding this valuable information back into the data set may take a great deal of extra effort.
 :::
 	
-#### Descriptive Statistics 
+### Descriptive Statistics 
 
 Notice here how the descriptive statistics and graph are much less informative. For example, it is now not immediately clear what the values of `identity` or `intervention` represent. The information on variable labels and value labels will have to be added back into the data when preparing a final product for dissemination.
 
 ```{r}
 #| echo: false
+#| tbl-cap: "Descriptive Statistics"
+#| label: tbl-descriptives2
 
 pander::pander(summary(df2))
 
 ```
 
-#### Graph
+### Graph
 
 While the graph has an informative title, as well as informative axis labels, a crucial piece of information is missing: what each status of the intervention represents.
 
@@ -199,7 +215,7 @@ ggplot(df2,
 
 ```
 
-### A Few Final Issues
+## A Few Final Issues
 
 Notice finally how spreadsheets doesn't enforce the idea of whether variables are *numeric*, or *text*, and so would allow storage of different types of information in the same column. Relatedly, *numeric* variables may be improperly stored as *text*, often necessitating recoding before graphical or statistical procedures can be employed.
 
