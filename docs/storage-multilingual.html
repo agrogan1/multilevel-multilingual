@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Multilingual - 3&nbsp; Storing Statistical Data</title>
+<title>3&nbsp; Storing Statistical Data – Multilevel Multilingual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,14 +76,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="multilevel-multilingual.css">
-<meta property="og:title" content="Multilevel Multilingual - 3&nbsp; Storing Statistical Data">
+<meta property="og:title" content="3&nbsp; Storing Statistical Data – Multilevel Multilingual">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Multilevel Multilingual">
-<meta name="twitter:title" content="Multilevel Multilingual - 3&nbsp; Storing Statistical Data">
+<meta name="twitter:title" content="3&nbsp; Storing Statistical Data – Multilevel Multilingual">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="[3]{.chapter-number}&nbsp; [Storing Statistical Data]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual//storage-multilingual.html">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-multilingual/storage-multilingual.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Countrycode: An r package to convert country names and country codes;,citation_author=Vincent Arel-Bundock;,citation_author=Nils Enevoldsen;,citation_author=CJ Yetman;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://doi.org/10.21105/joss.00848;,citation_issue=28;,citation_volume=3;,citation_journal_title=Journal of Open Source Software;">
 <meta name="citation_reference" content="citation_title=Quarto;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Carlos Scheidegger;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_fulltext_html_url=https://github.com/quarto-dev/quarto-cli;,citation_doi=10.5281/zenodo.5960048;">
@@ -110,27 +110,27 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Multilevel Multilingual</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-wide">
+        <div class="quarto-navbar-tools tools-wide tools-end">
     <a href="https://github.com/agrogan1/multilevel-multilingual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <a href="./Multilevel-Multilingual.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -143,11 +143,11 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./storage-multilingual.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Storing Statistical Data</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -298,14 +298,14 @@ If Data Are Stored In A Spreadsheet, Variable Names Should Be Limited To a Singl
 <div class="callout-body-container callout-body">
 <p>If spreadsheets are used to store data, the first row of the data should be used to list the variable names, as is seen in the example below. Rows other than the first row should not contain additional information about the variables, but should only contain data.</p>
 <div class="cell">
-<div id="tbl-spreadsheet" class="cell quarto-float anchored">
+<div id="tbl-spreadsheet" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spreadsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3.1: Example Data As Stored in A Spreadsheet
 </figcaption>
 <div aria-describedby="tbl-spreadsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 12%">
@@ -384,7 +384,7 @@ Table&nbsp;3.1: Example Data As Stored in A Spreadsheet
 </tr>
 </tbody>
 </table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 12%">
 <col style="width: 13%">
@@ -437,14 +437,14 @@ Table&nbsp;3.1: Example Data As Stored in A Spreadsheet
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="describe-the-data"><span class="header-section-number">3.2.1</span> Describe The Data</h3>
 <p>Notice how a description of the data contains information that helps us to understand the variables.</p>
 <div class="cell">
-<div id="tbl-varlabels" class="cell quarto-float anchored">
+<div id="tbl-varlabels" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-varlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3.2: Variable Labels
 </figcaption>
 <div aria-describedby="tbl-varlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 30%">
@@ -527,14 +527,14 @@ Variable Labels and Value Labels Help Us Understand Our Data
 </div>
 </div>
 <div class="cell">
-<div id="tbl-descriptives" class="cell quarto-float anchored">
+<div id="tbl-descriptives" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3.3: Descriptive Statistics
 </figcaption>
 <div aria-describedby="tbl-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 20%">
@@ -595,7 +595,7 @@ Table&nbsp;3.3: Descriptive Statistics
 </tr>
 </tbody>
 </table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 22%">
@@ -656,7 +656,7 @@ Table&nbsp;3.3: Descriptive Statistics
 </tr>
 </tbody>
 </table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 22%">
 </colgroup>
@@ -699,10 +699,10 @@ Table&nbsp;3.3: Descriptive Statistics
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="graph"><span class="header-section-number">3.2.3</span> Graph</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-graph-statistical" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-graph-statistical" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graph-statistical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="storage-multilingual_files/figure-html/fig-graph-statistical-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="storage-multilingual_files/figure-html/fig-graph-statistical-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="storage-multilingual_files/figure-html/fig-graph-statistical-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;3.1: Graph from Data Stored in Statistical Software"><img src="storage-multilingual_files/figure-html/fig-graph-statistical-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graph-statistical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
@@ -715,14 +715,14 @@ Figure&nbsp;3.1: Graph from Data Stored in Statistical Software
 <section id="list-out-a-sample-of-the-data" class="level3" data-number="3.2.4">
 <h3 data-number="3.2.4" class="anchored" data-anchor-id="list-out-a-sample-of-the-data"><span class="header-section-number">3.2.4</span> List Out A Sample Of The Data</h3>
 <div class="cell">
-<div id="tbl-head" class="cell quarto-float anchored">
+<div id="tbl-head" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-head-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3.4: Sample of Data
 </figcaption>
 <div aria-describedby="tbl-head-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 13%">
@@ -793,7 +793,7 @@ Table&nbsp;3.4: Sample of Data
 </tr>
 </tbody>
 </table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 30%">
 <col style="width: 12%">
@@ -854,14 +854,14 @@ Table&nbsp;3.4: Sample of Data
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="describe-the-data-1"><span class="header-section-number">3.3.1</span> Describe The Data</h3>
 <p>Notice how a description of the data no longer contains much of the information that helped us to understand the variables.</p>
 <div class="cell">
-<div id="tbl-varlabels2" class="cell quarto-float anchored">
+<div id="tbl-varlabels2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-varlabels2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3.5: Example Data As Stored in A Spreadsheet
 </figcaption>
 <div aria-describedby="tbl-varlabels2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 30%">
@@ -928,14 +928,14 @@ Table&nbsp;3.5: Example Data As Stored in A Spreadsheet
 </div>
 </div>
 <div class="cell">
-<div id="tbl-spreadsheet2" class="cell quarto-float anchored">
+<div id="tbl-spreadsheet2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spreadsheet2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3.6: Example Data As Stored in A Spreadsheet
 </figcaption>
 <div aria-describedby="tbl-spreadsheet2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 12%">
@@ -1014,7 +1014,7 @@ Table&nbsp;3.6: Example Data As Stored in A Spreadsheet
 </tr>
 </tbody>
 </table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 12%">
 <col style="width: 13%">
@@ -1075,14 +1075,14 @@ Warning
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="descriptive-statistics-1"><span class="header-section-number">3.3.2</span> Descriptive Statistics</h3>
 <p>Notice here how the descriptive statistics and graph are much less informative. For example, it is now not immediately clear what the values of <code>identity</code> or <code>intervention</code> represent. The information on variable labels and value labels will have to be added back into the data when preparing a final product for dissemination.</p>
 <div class="cell">
-<div id="tbl-descriptives2" class="cell quarto-float anchored">
+<div id="tbl-descriptives2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descriptives2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3.7: Descriptive Statistics
 </figcaption>
 <div aria-describedby="tbl-descriptives2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 20%">
@@ -1137,7 +1137,7 @@ Table&nbsp;3.7: Descriptive Statistics
 </tr>
 </tbody>
 </table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Table continues below</caption>
 <colgroup>
 <col style="width: 23%">
@@ -1192,7 +1192,7 @@ Table&nbsp;3.7: Descriptive Statistics
 </tr>
 </tbody>
 </table>
-<table class="do-not-create-environment cell table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 22%">
 </colgroup>
@@ -1233,10 +1233,10 @@ Table&nbsp;3.7: Descriptive Statistics
 <p>While the graph has an informative title, as well as informative axis labels, a crucial piece of information is missing: what each status of the intervention represents.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-graph-spreadsheet" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-graph-spreadsheet" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graph-spreadsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="storage-multilingual_files/figure-html/fig-graph-spreadsheet-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="storage-multilingual_files/figure-html/fig-graph-spreadsheet-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="storage-multilingual_files/figure-html/fig-graph-spreadsheet-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;3.2: Graph from Data Stored in Spreadsheet"><img src="storage-multilingual_files/figure-html/fig-graph-spreadsheet-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graph-spreadsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3.2: Graph from Data Stored in Spreadsheet
@@ -1252,13 +1252,13 @@ Figure&nbsp;3.2: Graph from Data Stored in Spreadsheet
 <p>Notice, finally, how spreadsheets don’t enforce the idea of whether variables are <em>numeric</em>, or <em>text</em>, and so would allow storage of different types of information in the same column. Relatedly, <em>numeric</em> variables may be improperly stored as <em>text</em>, often necessitating recoding before graphical or statistical procedures can be employed.</p>
 <p>Second, a spreadsheet would allow some of your columns to have the same name, which might make data difficult to work with in other software.</p>
 <p>Lastly, spreadsheets do not enforce the idea that the data have a <em>structure</em> wherein the <em>column header</em> is a <em>variable name</em>, while the <em>other rows</em> are <em>data</em>.</p>
-<div id="tbl-problematic" class="quarto-float anchored">
+<div id="tbl-problematic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-problematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3.8: A Spreadsheet Table With Problematic Organization
 </figcaption>
 <div aria-describedby="tbl-problematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 11%">
@@ -1309,17 +1309,12 @@ Table&nbsp;3.8: A Spreadsheet Table With Problematic Organization
 <p>Files for all of your work should not be stored all together in <code>downloads</code>. Ideally, you should have a specific set of folders for your work. Each project, should be stored in its own individual folder. Ideally, each project folder would have a separate sub-folder for separate aspects of the project such as data, code or syntax, and various outputs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="storage.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="A Hypothetical Set of Folders and Subfolders"><img src="storage.png" class="img-fluid figure-img" alt="A Hypothetical Set of Folders and Subfolders"></a></p>
+<p><a href="storage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="A Hypothetical Set of Folders and Subfolders"><img src="storage.png" class="img-fluid figure-img" alt="A Hypothetical Set of Folders and Subfolders"></a></p>
 <figcaption>A Hypothetical Set of Folders and Subfolders</figcaption>
 </figure>
 </div>
 
 
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;3.1: Graph from Data Stored in Statistical Software</span>
-<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;3.2: Graph from Data Stored in Spreadsheet</span>
-<span class="glightbox-desc lightbox-desc-3">A Hypothetical Set of Folders and Subfolders</span>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -1502,18 +1497,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1545,7 +1529,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/agrogan1\.github\.io\/multilevel-multilingual\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1580,7 +1604,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1856,41 +1884,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./workflows-multilingual.html" class="pagination-link  aria-label=" &lt;span="" workflows&lt;="" span&gt;"="">
+      <a href="./workflows-multilingual.html" class="pagination-link" aria-label="Statistical Workflows">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Workflows</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./descriptives-multilingual.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Descriptive Statistics</span>">
+      <a href="./descriptives-multilingual.html" class="pagination-link" aria-label="Descriptive Statistics">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-multilingual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
     }
-  });
-
-};
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
           </script>
 
 
