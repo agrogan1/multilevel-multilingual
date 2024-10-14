@@ -14,7 +14,7 @@ Increasingly, we want to think about workflows that are
 
 ## Scripts
 
-For most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document [@Allaire_Quarto_2024] as they are in this Appendix, or every statistical package has its own unique format for storing scripts as a text file: in Stata, scripts are stored in `.do` files; in R, scripts are stored in `.R` files, and in Julia, scripts are stored in `.jl` files. 
+For most statistical workflows, we will often want to write a script or code. Data analysis scripts can be stored in a Quarto document [@Allaire_Quarto_2024] as they are in this Appendix. Alternatively, every statistical package has its own unique format for storing scripts as a text file: in Stata, scripts are stored in `.do` files; in R, scripts are stored in `.R` files, and in Julia, scripts are stored in `.jl` files. 
 
 ## Script Flow {#sec-script-flow}
 
