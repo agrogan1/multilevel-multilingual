@@ -131,6 +131,7 @@ df$intervention <- factor(df$intervention)
 R prefers to use scientific notation when possible. I find that the use of scientific notation can be confusing in reading results. I turn off scientific notation by setting a penalty for its use:  `options(scipen = 999)`.  
 :::
 
+
 ```{r}
 #| warning: false
 #| label: R-cross-sectional
