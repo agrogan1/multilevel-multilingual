@@ -61,6 +61,7 @@ format:
       freeze: auto
   docx:
     reference-doc: markstat.docx
+    fig-dpi: 600
     execute:
       echo: true
       warning: false
