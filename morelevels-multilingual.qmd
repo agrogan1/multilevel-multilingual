@@ -1,14 +1,4 @@
----
-title: "# Models With Three or More Levels and Cross-Classified Models"
-date: "today"
-format:
-  pdf: 
-    toc: true
-    toc-depth: 5
-  html:
-    toc: true
-bibliography: multilevel-multilingual.bib
----
+# Models With Three or More Levels and Cross-Classified Models"
 
 ```{r}
 #| label: morelevelssetup
